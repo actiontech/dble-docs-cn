@@ -6,7 +6,7 @@
   * [0.3 快速开始](0.overview/0.3_dble_quick_start.md)
   * [0.4 数据拆分简介](0.overview/0.4_sharding_brief_introduction.md)
 * [1.配置文件](1.config_file/1.config_file.md)
-  * [1.1 rule.xml.md](1.config_file/1.1_rule.xml.md)
+  * [1.1 rule.xml](1.config_file/1.1_rule.xml.md)
   * [1.2 schema.xml](1.config_file/1.2_schema.xml.md)
   * [1.3 server.xml](1.config_file/1.3_server.xml.md)
   * [1.4 wrapper.conf](1.config_file/1.4_wrapper.conf.md)
