@@ -35,7 +35,7 @@
 * 3.语法兼容
   * [3.1 DDL](3.SQL_Syntax/3.1_DDL.md)
   * [3.2 DML](3.SQL_Syntax/3.2_DML.md)
-  * [3.3 Prepared SQL Syntax](3.SQL_Syntax/3.3_Prepared_SQL_Syntax)
+  * [3.3 Prepared SQL Syntax](3.SQL_Syntax/3.3_Prepared_SQL_Syntax.md)
   * [3.4 Transactional and Locking Statements](3.SQL_Syntax/3.4_Transactional_and_Locking_Statements.md)
   * [3.5 DAL](3.SQL_Syntax/3.5_DAL.md)
   * [3.6 存储过程支持方式](3.SQL_Syntax/3.6_procedure_support.md)
