@@ -28,6 +28,10 @@
   * [2.11 统计管理](2.Function/2.11_statistics_manager.md)
   * [2.12 故障切换](2.Function/2.12_failover.md)
   * [2.13 前后端连接检查](2.Function/2.13_conns_check.md)
+  * [2.14 ER表](2.Function/2.14_ER_Split.md)
+  * [2.15 global表](2.Function/2.15_global_table.md)
+  * [2.16 缓存的使用](2.Function/2.16_cache.md)
+  * [2.17 执行计划](2.Function/2.17_explain.md)
 * 3.语法兼容
   * [3.1 DDL](3.SQL_Syntax/3.1_DDL.md)
   * [3.2 DML](3.SQL_Syntax/3.2_DML.md)
