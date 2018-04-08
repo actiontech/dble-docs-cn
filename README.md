@@ -33,6 +33,7 @@
   * [2.15 global表](2.Function/2.15_global_table.md)
   * [2.16 缓存的使用](2.Function/2.16_cache.md)
   * [2.17 执行计划](2.Function/2.17_explain.md)
+  * [2.18 性能观测和调整](2.Function/2.18_performance_observation.md)
 * 3.语法兼容
   * [3.1 DDL](3.SQL_Syntax/3.1_DDL.md)
   * [3.2 DML](3.SQL_Syntax/3.2_DML.md)
