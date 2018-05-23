@@ -2,7 +2,7 @@
 注意,2.18.02.1/rel分支上的手册适用于dble的2.18.02.1版,其他版本的文档请参考对应分支  
 ## 目录
 * 0.概述
-  * [0.1 dble 简介与整体架构.md](0.overview/0.1_dble_overview.md)
+  * [0.1 dble 简介与整体架构](0.overview/0.1_dble_overview.md)
   * [0.2 dble对MyCat做的增强](0.overview/0.2_dble_enhance_MyCat.md)
   * [0.3 快速开始](0.overview/0.3_dble_quick_start.md)
   * [0.4 数据拆分简介](0.overview/0.4_sharding_brief_introduction.md)
@@ -16,15 +16,15 @@
   * [1.7 全局序列配置](1.config_file/1.7_global_sequence.md)
   * [1.8 myid.properties](1.config_file/1.8_myid.properties.md)
 * 2.功能描述
-  * [2.1 管理端命令](2.Function/2.1_manager_cmd.md)
-  * [2.2 全局序列](2.Function/2.2_global_sequence.md)
+  * [2.1 管理端命令](2.Function/2.01_manager_cmd.md)
+  * [2.2 全局序列](2.Function/2.02_global_sequence.md)
   * [2.3 读写分离](2.Function/2.3_separate_RW.md)
-  * [2.4 注解](2.Function/2.4_hint.md)
-  * [2.5 分布式事务](2.Function/2.5_distribute_transaction.md)
-  * [2.6 连接池管理](2.Function/2.6_conns_pool.md)
-  * [2.7 内存管理](2.Function/2.7_memory_manager.md)
-  * [2.8 集群同步协调&状态管理](2.Function/2.8_cluster.md)
-  * [2.9 grpc 告警](2.Function/2.9_Grpc_warning.md)
+  * [2.4 注解](2.Function/2.04_hint.md)
+  * [2.5 分布式事务](2.Function/2.05_distribute_transaction.md)
+  * [2.6 连接池管理](2.Function/2.06_conns_pool.md)
+  * [2.7 内存管理](2.Function/2.07_memory_manager.md)
+  * [2.8 集群同步协调&状态管理](2.Function/2.08_cluster.md)
+  * [2.9 grpc 告警](2.Function/2.09_Grpc_warning.md)
   * [2.10 表meta数据管理](2.Function/2.10_table_meta.md)
   * [2.11 统计管理](2.Function/2.11_statistics_manager.md)
   * [2.12 故障切换](2.Function/2.12_failover.md)
