@@ -20,7 +20,7 @@
 * 2.功能描述
     * [2.1 管理端命令](2.Function/2.01_manager_cmd.md)
     * [2.2 全局序列](2.Function/2.02_global_sequence.md)
-    * [2.3 读写分离](2.Function/2.3_separate_RW.md)
+    * [2.3 读写分离](2.Function/2.03_separate_RW.md)
     * [2.4 注解](2.Function/2.04_hint.md)
     * [2.5 分布式事务](2.Function/2.05_distribute_transaction.md)
     * [2.6 连接池管理](2.Function/2.06_conns_pool.md)
