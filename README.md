@@ -1,7 +1,9 @@
 # dble中文技术参考手册
-注意,master分支上的手册适用于最新的release版,目前是2.18.02.2，其他版本的文档请参考对应分支。
+
+注意,master分支上的手册适用于最新的release版,目前是2.18.06.0，其他版本的文档请参考对应分支。
             
 ## 目录  
+
 * 0.概述
     * [0.1 dble 简介与整体架构](0.overview/0.1_dble_overview.md)
     * [0.2 dble对MyCat做的增强](0.overview/0.2_dble_enhance_MyCat.md)
@@ -19,7 +21,7 @@
 * 2.功能描述
     * [2.1 管理端命令](2.Function/2.01_manager_cmd.md)
     * [2.2 全局序列](2.Function/2.02_global_sequence.md)
-    * [2.3 读写分离](2.Function/2.3_separate_RW.md)
+    * [2.3 读写分离](2.Function/2.03_separate_RW.md)
     * [2.4 注解](2.Function/2.04_hint.md)
     * [2.5 分布式事务](2.Function/2.05_distribute_transaction.md)
     * [2.6 连接池管理](2.Function/2.06_conns_pool.md)
