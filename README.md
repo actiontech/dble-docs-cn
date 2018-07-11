@@ -61,4 +61,5 @@
     * [7.1 SQL开发编写原则](7.Developer_Notice/7.1_SQL_develop_rule.md)
     * [7.2 dble连接Demo](7.Developer_Notice/7.2_Demo_for_connect_dble.md)
     * [7.3 其他注意事项](7.Developer_Notice/7.3_Other_Notice.md)
-
+* 8.配置示例
+    * [8.1 时间戳方式全局序列的配置](8.Configuration_samples/8.1_timestamp_sequence_table.md)
