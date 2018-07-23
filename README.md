@@ -63,3 +63,6 @@
     * [7.3 其他注意事项](7.Developer_Notice/7.3_Other_Notice.md)
 * 8.配置示例
     * [8.1 时间戳方式全局序列的配置](8.Configuration_samples/8.1_timestamp_sequence_table.md)
+    
+    
+### 提示：[如果您使用了DBLE，请告诉我们。](https://wj.qq.com/s/2291106/09f4)
