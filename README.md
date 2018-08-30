@@ -37,6 +37,9 @@
     * [2.16 缓存的使用](2.Function/2.16_cache.md)
     * [2.17 执行计划](2.Function/2.17_explain.md)
     * [2.18 性能观测和调整](2.Function/2.18_performance_observation.md)
+    * [2.19 智能计算reload](2.Function/2.19_reload_diff.md)
+    * [2.20 慢查询日志](2.Function/2.20_slow_query_log.md)
+    * [2.21 单条SQL性能trace](2.Function/2.21_query_trace.md)
 * 3.语法兼容
     * [3.1 DDL](3.SQL_Syntax/3.1_DDL.md)
     * [3.2 DML](3.SQL_Syntax/3.2_DML.md)
