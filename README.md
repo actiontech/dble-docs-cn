@@ -50,6 +50,7 @@
     * [3.7 Utility Statements](3.SQL_Syntax/3.7_Utility_Statements.md)
     * [3.8 Hint](3.SQL_Syntax/3.8_Hint.md)
     * [3.9 其他不支持语句](3.SQL_Syntax/3.9_Other_unsupport.md)
+    * [3.10 函数与操作符支持列表(alpha版本)](3.SQL_Syntax/3.10_func_and_operators.md)
 * 4.协议兼容
     * [4.0 基本包](4.Protocol/4.0_Packet.md)
     * [4.1 连接建立](4.Protocol/4.1_Connecting.md)
