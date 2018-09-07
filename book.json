@@ -5,5 +5,8 @@
             "theme": "sepia",
             "family": "serif"
         }
+    },
+    "styles": {
+        "website": "website.css"
     }
 }
