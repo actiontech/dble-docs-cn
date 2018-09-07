@@ -11,6 +11,7 @@ pdf:
 
 install:
 	npm install -g gitbook-cli
+	gitbook install
 
 publish_prepare:
 	git checkout gh-pages

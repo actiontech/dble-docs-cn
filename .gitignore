@@ -128,3 +128,4 @@ checkstyle-result.out
 
 # gitbook
 _book/
+node_modules/
