@@ -1,0 +1,9 @@
+{
+    "plugins": ["expandable-chapters"],
+    "pluginsConfig": {
+        "fontsettings": {
+            "theme": "sepia",
+            "family": "serif"
+        }
+    }
+}
