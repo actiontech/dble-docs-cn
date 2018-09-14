@@ -1,7 +1,7 @@
 # Summary
 
 
-* 0.概述
+* [0.概述](0.overview/0.0_overview.md)
     * [0.1 dble 简介与整体架构](0.overview/0.1_dble_overview.md)
     * [0.2 dble对MyCat做的增强](0.overview/0.2_dble_enhance_MyCat.md)
     * [0.3 快速开始](0.overview/0.3_dble_quick_start.md)
@@ -21,7 +21,7 @@
         * [1.7.3 分布式时间戳方式(类Snowflake)](1.config_file/1.7_global_sequence/1.7.3_distribute_timestamp.md)
         * [1.7.4 分布式offset-step方式](1.config_file/1.7_global_sequence/1.7.4_distribute_offset-step.md)
     * [1.8 myid.properties](1.config_file/1.8_myid.properties.md)
-* 2.功能描述
+* [2.功能描述](2.Function/2.00_overview.md)
     * [2.1 管理端命令](2.Function/2.01_manager_cmd.md)
     	* [2.1.1 select命令](2.Function/2.1_manager_cmd/2.1.01_select.md)
 		* [2.1.2 set命令](2.Function/2.1_manager_cmd/2.1.02_set.md)
@@ -78,7 +78,7 @@
     * [2.19 智能计算reload](2.Function/2.19_reload_diff.md)
     * [2.20 慢查询日志](2.Function/2.20_slow_query_log.md)
     * [2.21 单条SQL性能trace](2.Function/2.21_query_trace.md)
-* 3.语法兼容
+* [3.语法兼容](3.SQL_Syntax/3.0_overview.md)
     * [3.1 DDL](3.SQL_Syntax/3.1_DDL.md)
         * [3.1.1 DDL&Table Syntax](3.SQL_Syntax/3.1_DDL/3.1.1_DDL&Table_Syntax.md)
         * [3.1.2 DDL&View Syntax](3.SQL_Syntax/3.1_DDL/3.1.2_DDL&View_Syntax.md)
@@ -110,22 +110,28 @@
     * [3.8 Hint](3.SQL_Syntax/3.8_Hint.md)
     * [3.9 其他不支持语句](3.SQL_Syntax/3.9_Other_unsupport.md)
     * [3.10 函数与操作符支持列表(alpha版本)](3.SQL_Syntax/3.10_func_and_operators.md)
-* 4.协议兼容
-    * [4.0 基本包](4.Protocol/4.0_Packet.md)
-    * [4.1 连接建立](4.Protocol/4.1_Connecting.md)
-    * [4.2 文本协议](4.Protocol/4.2_Text_Protocol.md)
-    * [4.3 二进制协议 (Prepared Statements)](4.Protocol/4.3_Binary_Protocol.md)
-    * [4.4 服务响应包](4.Protocol/4.4_Server_Response_Packets.md)
-* 5.已知限制
+* [4.协议兼容](4.Protocol/4.0_overview.md)
+    * [4.1 基本包](4.Protocol/4.1_Packet.md)
+    * [4.2 连接建立](4.Protocol/4.2_Connecting.md)
+    * [4.3 文本协议](4.Protocol/4.3_Text_Protocol.md)
+    * [4.4 二进制协议 (Prepared Statements)](4.Protocol/4.4_Binary_Protocol.md)
+    * [4.5 服务响应包](4.Protocol/4.5_Server_Response_Packets.md)
+* [5.已知限制](5.Limit/5.0_overview.md)
     * [5.1 druid引发的限制](5.Limit/5.1_druid_limit.md)
     * [5.2 其他已知限制](5.Limit/5.2_other_limit.md)
-* [6.与MySQL Server的差异化描述](6.Differernce_from_MySQL_Server/6.Differernce_from_MySQL_Server.md)
-* 7.开发者须知
+* [6.与MySQL Server的差异化描述](6.Differernce_from_MySQL_Server/6.0_overview.md)
+    * [6.1 事务中遇到主键冲突需要显式回滚](6.Differernce_from_MySQL_Server/6.1_need_rollback.md)
+    * [6.2 INSERT不能显示自增序列](6.Differernce_from_MySQL_Server/6.2_insert_sequence.md)
+    * [6.3 增加"show all tables"](6.Differernce_from_MySQL_Server/6.3_add_show_all_tables.md)
+	* [6.4 去除了增删改的message 信息](6.Differernce_from_MySQL_Server/6.4_remove_message.md)
+* [7.开发者须知](7.Developer_Notice/7.0_overview.md)
     * [7.1 SQL开发编写原则](7.Developer_Notice/7.1_SQL_develop_rule.md)
     * [7.2 dble连接Demo](7.Developer_Notice/7.2_Demo_for_connect_dble.md)
     * [7.3 其他注意事项](7.Developer_Notice/7.3_Other_Notice.md)
-* 8.配置示例
+* [8.配置示例](8.Configuration_samples/8.0_overview.md)
     * [8.1 时间戳方式全局序列的配置](8.Configuration_samples/8.1_timestamp_sequence_table.md)
     * [8.2 MySQL-offset-step 方式全局序列的配置](8.Configuration_samples/8.2_MySQL-offset-step_sequence_table.md)
-* 9.sysbench压测dble示例
-    * [9.1 测试环境及架构](9.Sysbench_samples/9.1_sysbench_quick_test_dble.md)
+* [9.sysbench压测dble示例](9.Sysbench_samples/9.0_overview.md)
+    * [9.1 测试环境及架构](9.Sysbench_samples/9.1_env.md)
+	* [9.2 修改dble配置](9.Sysbench_samples/9.2_conf.md)
+	* [9.3 使用sysbench进行压测](9.Sysbench_samples/9.3_use_sysbench.md)
