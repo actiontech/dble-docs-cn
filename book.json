@@ -11,5 +11,8 @@
         "website": "website.css"
     },
     "author": "ActionTech",
-    "title": "dble manual"
+    "title": "dble manual",
+	"pdf":{
+		"paperSize":"a2"
+	}
 }
