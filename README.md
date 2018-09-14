@@ -3,6 +3,9 @@
 ## 目录
 参考 gitbook 左侧目录区 或 [SUMMARY.md](https://github.com/actiontech/dble-docs-cn/blob/master/SUMMARY.md) 
 
+## PDF下载
+[PDF下载](https://github.com/actiontech/dble-docs-cn/raw/master/book.pdf) 
+
 ## 官方技术支持
 - 代码库 github: [github.com/actiontech/dble](https://github.com/actiontech/dble)
 - 文档库 github: [github.com/actiontech/dble-docs-cn](https://github.com/actiontech/dble-docs-cn)
