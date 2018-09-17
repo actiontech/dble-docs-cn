@@ -125,3 +125,7 @@ version.txt
 copyResources.bat
 dependency-reduced-pom.xml
 checkstyle-result.out
+
+# gitbook
+_book/
+node_modules/
