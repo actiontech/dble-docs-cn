@@ -1,13 +1,13 @@
-default: gitbook_build publish pdf
+default: pull_code gitbook_build publish pdf
 publish: publish_prepare publish_push
 
 gitbook_preview:
 	gitbook serve
 gitbook_build:
 	gitbook build
-
-pdf:
+pull_code:
 	git pull origin master --rebase
+pdf:
 	gitbook pdf ./ ./dble-manual.pdf
 	git add .
 	git commit -a -m "Update pdf"
