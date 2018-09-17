@@ -1,5 +1,6 @@
 # dble 中文技术参考手册
 
+
 ## 目录
 参考 gitbook 左侧目录区 或 [SUMMARY.md](https://github.com/actiontech/dble-docs-cn/blob/master/SUMMARY.md) 
 
@@ -13,7 +14,7 @@
 - QQ group: 669663113
 
 ## 注意
-本分支上的手册适用于2.18.09.0版dble，其他版本的文档请参考对应分支。。
+本分支上的手册适用于2.18.09.0版dble，其他版本的文档请参考对应分支。 
     
 ## 提示
 [如果您使用了dble，请告诉我们。](https://wj.qq.com/s/2291106/09f4)
