@@ -1,4 +1,4 @@
-default: gitbook_build publish
+default: gitbook_build publish pdf
 publish: publish_prepare publish_push
 
 gitbook_preview:
@@ -7,7 +7,11 @@ gitbook_build:
 	gitbook build
 
 pdf:
+	git pull origin master --rebase
 	gitbook pdf ./ ./dble-manual.pdf
+	git add .
+	git commit -a -m "Update pdf"
+	git push
 
 install:
 	npm install -g gitbook-cli
@@ -17,7 +21,6 @@ publish_prepare:
 	git checkout gh-pages
 	git pull origin gh-pages --rebase
 	cp -R _book/* .
-	git clean -fx node_modules
 	git clean -fx _book
 	git add .
 	git commit -a -m "Update docs"
