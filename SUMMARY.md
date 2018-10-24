@@ -39,6 +39,7 @@
 		* [2.1.14 pause & resume 命令](2.Function/2.1_manager_cmd/2.1.14_pause_resume.md)
 		* [2.1.15 慢查询日志相关命令](2.Function/2.1_manager_cmd/2.1.15_slow_query.md)
 		* [2.1.16 create database命令](2.Function/2.1_manager_cmd/2.1.16_create_database.md)
+		* [2.1.17 check @@metadata命令](2.Function/2.1_manager_cmd/2.1.17_check_meta_data.md)
     * [2.2 全局序列](2.Function/2.02_global_sequence.md)
         * [2.2.1 MySQL offset-step方式](2.Function/2.2_global_sequence/2.2.1_MySQL-offset-setp.md)
         * [2.2.2 时间戳方式](2.Function/2.2_global_sequence/2.2.2_timestamp.md)
