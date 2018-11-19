@@ -1,21 +1,17 @@
-default: pull_code gitbook_build publish pdf
+default: pull_code gitbook_build publish gitbook_pdf
 publish: publish_prepare publish_push
 
 gitbook_preview:
-	gitbook serve
+	docker run --rm -v "${PWD}":/gitbook -p 4000:4000 billryan/gitbook:zh-hans gitbook serve
 gitbook_build:
-	gitbook build
+	docker run --rm -v "${PWD}":/gitbook -p 4000:4000 billryan/gitbook:zh-hans gitbook build
 pull_code:
 	git pull origin master --rebase
-pdf:
-	gitbook pdf ./ ./dble-manual.pdf
+gitbook_pdf:
+	docker run --rm -v "${PWD}":/gitbook -p 4000:4000 billryan/gitbook:zh-hans gitbook pdf ./ ./dble-manual.pdf
 	git add .
 	git commit -a -m "Update pdf"
 	git push
-
-install:
-	npm install -g gitbook-cli
-	gitbook install
 
 publish_prepare:
 	git checkout gh-pages
