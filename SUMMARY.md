@@ -124,7 +124,7 @@
     * [5.2 其他已知限制](5.Limit/5.2_other_limit.md)
 * [6.与MySQL Server的差异化描述](6.Differernce_from_MySQL_Server/6.0_overview.md)
     * [6.1 事务中遇到主键冲突需要显式回滚](6.Differernce_from_MySQL_Server/6.1_need_rollback.md)
-    * [6.2 INSERT不能显示自增序列](6.Differernce_from_MySQL_Server/6.2_insert_sequence.md)
+    * [6.2 INSERT不能显式指定自增序列](6.Differernce_from_MySQL_Server/6.2_insert_sequence.md)
     * [6.3 增加"show all tables"](6.Differernce_from_MySQL_Server/6.3_add_show_all_tables.md)
     * [6.4 去除了增删改的message信息](6.Differernce_from_MySQL_Server/6.4_remove_message.md)
     * [6.5 information_schema等库的支持](6.Differernce_from_MySQL_Server/6.5_about_information_schema.md)
