@@ -12,9 +12,13 @@
 - 文档库 github: [github.com/actiontech/dble-docs-cn](https://github.com/actiontech/dble-docs-cn)
 - 文档库 github pages: [actiontech.github.io/dble-docs-cn](https://actiontech.github.io/dble-docs-cn)
 - QQ group: 669663113
+- 开源社区微信公众号
+  
+  ![QR_code](./QR_code.png)
+
 
 ## 注意
-本分支上的手册适用于master版dble，其他版本的文档请参考对应分支或者release文档。 
+本分支上的手册适用于2.19.01.0版dble，其他版本的文档请参考对应分支或者release文档。 
     
 ## 提示
 [如果您使用了dble，请告诉我们。](https://wj.qq.com/s/2291106/09f4)
