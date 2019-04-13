@@ -2,7 +2,7 @@
 
 
 ## 目录
-参考 gitbook 左侧目录区 或 [SUMMARY.md](https://github.com/actiontech/dble-docs-cn/blob/master/SUMMARY.md) 
+参考 [gitbook](https://actiontech.github.io/dble-docs-cn) 左侧目录区 或 [SUMMARY.md](https://github.com/actiontech/dble-docs-cn/blob/master/SUMMARY.md) 
 
 ## PDF下载
 [PDF下载](https://github.com/actiontech/dble-docs-cn/raw/master/dble-manual.pdf) 
