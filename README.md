@@ -9,6 +9,7 @@
 
 ## 官方技术支持
 - 代码库 github: [github.com/actiontech/dble](https://github.com/actiontech/dble)
+- 自动化测试库 github: [github.com/actiontech/dble-test-suite](https://github.com/actiontech/dble-test-suite)
 - 文档库 github: [github.com/actiontech/dble-docs-cn](https://github.com/actiontech/dble-docs-cn)
 - 文档库 github pages: [actiontech.github.io/dble-docs-cn](https://actiontech.github.io/dble-docs-cn)
 - 网站：[DBLE官方网站](https://opensource.actionsky.com)
@@ -19,7 +20,7 @@
 
 
 ## 注意
-本分支上的手册适用于2.19.03.0版dble，其他版本的文档请参考对应tag分支或者release版文档。 
+本分支上的手册适用于2.19.05.0版dble，其他版本的文档请参考对应tag分支或者release版文档。 
     
 ## 提示
 [如果您使用了dble，请告诉我们。](https://wj.qq.com/s/2291106/09f4)
