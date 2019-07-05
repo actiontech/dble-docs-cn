@@ -143,3 +143,11 @@
     * [9.1 测试环境及架构](9.Sysbench_samples/9.1_env.md)
 	* [9.2 修改dble配置](9.Sysbench_samples/9.2_conf.md)
 	* [9.3 使用sysbench进行压测](9.Sysbench_samples/9.3_use_sysbench.md)
+* [A.Faq](A.Faq/A_overview.md)
+    * [A.1 ErrorCode](A.Faq/A_overview1.md)
+        * [OutOfMemoryError](A.Faq/ErrorCode/OutOfMemoryError.md)	
+        * [maxConnections](A.Faq/ErrorCode/maxConnections.md)
+	      
+
+
+        
