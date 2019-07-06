@@ -15,7 +15,7 @@ cache:
 notifications:
   email:
     recipients:
-      - $NF_MAIL1
+      - yanhuqing@actionskycom
     on_success: change # default: change
     on_failure: always # default: always
 
@@ -38,7 +38,7 @@ install:
 # gitbook生成静态文件
 script:
   - gitbook build
-  - gitbook pdf ./ ./dble-manual.pdf
+  - xvfb-run gitbook pdf ./ ./dble-manual.pdf
 
 # 生成文件后，进入静态文件目录，部署到指定仓库，需要填写用户名，邮件
 after_script:
