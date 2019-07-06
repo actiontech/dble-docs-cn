@@ -9,11 +9,11 @@ cache:
   directories:
     - node_modules
 
-# 邮件通知，这里配置不管成功或是失败都通知
+# 邮件通知
 notifications:
   email:
     recipients:
-      - ${NF_MAIL1}
+      - $NF_MAIL1
     on_success: change # default: change
     on_failure: always # default: always
 
