@@ -15,8 +15,8 @@ cache:
 notifications:
   email:
     recipients:
-      - yanhuqing@actionskycom
-    on_success: change # default: change
+      - yanhuqing@actionsky.com
+    on_success: never # default: change
     on_failure: always # default: always
 
 # 构建的分支
@@ -38,11 +38,6 @@ install:
 # gitbook生成静态文件
 script:
   - gitbook build
-  - xvfb-run gitbook pdf ./ ./dble-manual.pdf
-
-# 生成文件后，进入静态文件目录，部署到指定仓库，需要填写用户名，邮件
-after_script:
-  - cp ./seo/* ./_book/
   - cd ./_book
   - git init
   - git config user.name "${GH_USER}"
@@ -51,6 +46,8 @@ after_script:
   - git commit -m "Update GitBook By TravisCI With Build $TRAVIS_BUILD_NUMBER"
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages 
   - cd .. 
+# pdf
+  - xvfb-run gitbook pdf ./ ./dble-manual.pdf
   - mkdir pdf
   - cp dble-manual.pdf ./pdf/
   - cd ./pdf
