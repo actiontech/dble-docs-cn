@@ -1,3 +1,10 @@
+# 环境变量
+env:
+ global:
+   - GH_REF: github.com/actiontech/dble-docs-cn
+   - GH_USER: actiontech-bot
+   - GH_MAIL: github@actionsky.com
+
 services:
   - xvfb
 # 指定环境语言
