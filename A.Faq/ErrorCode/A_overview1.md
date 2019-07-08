@@ -1,4 +1,4 @@
-* [OutOfMemoryError](ErrorCode/OutOfMemoryError.md)
-* [MaxConnections](ErrorCode/MaxConnections.md)
-* [TemptableException](ErrorCode/TemptableException.md)
-* [TimedOutWaitingForJVM](ErrorCode/TimedOutWaitingForJVM.md)
+* [OutOfMemoryError](OutOfMemoryError.md)
+* [MaxConnections](MaxConnections.md)
+* [TemptableException](TemptableException.md)
+* [TimedOutWaitingForJVM](TimedOutWaitingForJVM.md)
