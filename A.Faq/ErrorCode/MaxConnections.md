@@ -1,4 +1,4 @@
-# dble-maxConnections  
+# dble-MaxConnections  
 
 ## Issue
 
