@@ -145,8 +145,11 @@
 	* [9.3 使用sysbench进行压测](9.Sysbench_samples/9.3_use_sysbench.md)
 * [A.Faq](A.Faq/A_overview.md)
     * [A.1 ErrorCode](A.Faq/ErrorCode/A_overview1.md)
-        * [OutOfMemoryError](ErrorCode/OutOfMemoryError.md)	
-        * [maxConnections](ErrorCode/maxConnections.md)
+        * [maxConnections](A.Faq/ErrorCode/Content/MaxConnections.md)
+        * [OutOfMemoryError](A.Faq/ErrorCode/Content/OutOfMemoryError.md)	
+        * [TemptableException](A.Faq/ErrorCode/Content/TemptableException.md)
+        * [TimedOutWaitingForJVM](A.Faq/ErrorCode/Content/TimedOutWaitingForJVM.md)
+	
 	
 	
 	
