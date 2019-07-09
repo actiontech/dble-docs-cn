@@ -149,6 +149,7 @@
         * [OutOfMemoryError](A.Faq/ErrorCode/Content/OutOfMemoryError.md)	
         * [TemptableException](A.Faq/ErrorCode/Content/TemptableException.md)
         * [TimedOutWaitingForJVM](A.Faq/ErrorCode/Content/TimedOutWaitingForJVM.md)
+        * [TheProblemOfHint](A.Faq/ErrorCode/Content/TheProblemOfHint.md)
     * [A.2 原理解释](A.Faq/Internals/A_overview2.md)
         * [ToBeContinued1](A.Faq/Internals/Content/ToBeContinued1.md)
     * [A.3 使用说明](A.Faq/Usage/A_overview3.md)
