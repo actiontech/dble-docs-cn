@@ -144,10 +144,14 @@
 	* [9.2 修改dble配置](9.Sysbench_samples/9.2_conf.md)
 	* [9.3 使用sysbench进行压测](9.Sysbench_samples/9.3_use_sysbench.md)
 * [A.Faq](A.Faq/A_overview.md)
-    * [A.1 ErrorCode](A.Faq/A_overview1.md)
-        * [OutOfMemoryError](A.Faq/ErrorCode/OutOfMemoryError.md)	
-        * [maxConnections](A.Faq/ErrorCode/maxConnections.md)
-	      
+    * [A.1 ErrorCode](A.Faq/ErrorCode/A_overview1.md)
+        * [maxConnections](A.Faq/ErrorCode/Content/MaxConnections.md)
+        * [OutOfMemoryError](A.Faq/ErrorCode/Content/OutOfMemoryError.md)	
+        * [TemptableException](A.Faq/ErrorCode/Content/TemptableException.md)
+        * [TimedOutWaitingForJVM](A.Faq/ErrorCode/Content/TimedOutWaitingForJVM.md)
+    * [A.2 原理解释](A.Faq/Internals/A_overview2.md)
+        * [ToBeContinued1](A.Faq/Internals/Content/ToBeContinued1.md)
+    * [A.3 使用说明](A.Faq/Usage/A_overview3.md)
+        * [ToBeContinued2](A.Faq/Usage/Content/ToBeContinued2.md)
 
 
-        
