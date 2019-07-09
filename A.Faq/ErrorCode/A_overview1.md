@@ -2,3 +2,4 @@
 * [OutOfMemoryError](Content/OutOfMemoryError.md)
 * [TemptableException](Content/TemptableException.md)
 * [TimedOutWaitingForJVM](Content/TimedOutWaitingForJVM.md)
+* [TheProblemOfHint](Content/TheProblemOfHint.md)
