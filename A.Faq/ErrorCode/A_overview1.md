@@ -2,3 +2,5 @@
 * [OutOfMemoryError](Content/OutOfMemoryError.md)
 * [TemptableException](Content/TemptableException.md)
 * [TimedOutWaitingForJVM](Content/TimedOutWaitingForJVM.md)
+* [TheProblemOfHint](Content/TheProblemOfHint.md)
+* [NestLoop Parameters Lead To Temptable Exception](Content/NestLoopParametersLeadToTemptableException.md)
