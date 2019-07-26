@@ -23,7 +23,7 @@
 | **nestLoopRowsSize** | 临时表阈值 | 默认2000 | 若临时表⾏数⼤于这两个值乘积，则报告错误 | 
 
 2. 或者关闭NestLoop，不使用其优化 
-`<property name="useJoinStrategy">false</property>`  
+- `<property name="useJoinStrategy">false</property>`  
 
 3. 为了更直观，本例提前调小参数值，引发场景复现 
 
