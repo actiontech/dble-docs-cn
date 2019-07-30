@@ -47,9 +47,9 @@ wrapper | <-- Wrapper Stopped
 
 1. 检查mysql是否正常启动, 如果启动正常见下一步；
 2. schema中的root用户能否通过配置文件的信息连接mysql，连接成功见下一步；
-3. 检查root用户权限
+3. 检查root用户权限；
 4. 连接mysql，并执行show variables命令，未执行成功见下一步；
-- 修改配置文件中datahost指定的后端数据库密码，更新配置文件，dble正常启动
+5. 修改配置文件中datahost指定的后端数据库密码，更新配置文件，dble正常启动
 
 ## Root Cause
 
@@ -60,7 +60,7 @@ wrapper | <-- Wrapper Stopped
 
 1. 安装好mysql5.7后，第一次初始化数据库
 2. 随机密码登录mysql，首次登录后，mysql要求必须修改默认密码，否则不能执行任何其他数据库操作，这样体现了不断增强的Mysql安全性。
-3. 第一次登陆后必须更改密码： 
+3. 第一次登陆后必须更改密码：
 	- mysql> show databases;
 	- ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.
 	- mysql > set password = password('xxxxxx');
