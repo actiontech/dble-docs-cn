@@ -25,6 +25,7 @@
     * [1.8 myid.properties](1.config_file/1.08_myid.properties.md)
     * [1.9 自定义拆分算法](1.config_file/1.09_dble_route_function_spec.md)
     * [1.10 配置文件变更记录](1.config_file/1.10_version_change.md)
+	* [1.11 自定义告警](1.config_file/1.11_customized_alert.md)
 * [2.功能描述](2.Function/2.00_overview.md)
     * [2.1 管理端命令](2.Function/2.01_manager_cmd.md)
     	* [2.1.1 select命令](2.Function/2.1_manager_cmd/2.1.01_select.md)
