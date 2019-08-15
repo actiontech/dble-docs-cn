@@ -32,8 +32,8 @@
 ```
 
 > **注意**：
-partitionCount：指定分区的区间数
-partitionLength：指定各区间的长度
+partitionCount：指定分区的区间数  
+partitionLength：指定各区间的长度  
 模值（M）为最后一个区间段的末尾值（C1L1 + ... + CnLn）
 
 对于dble-hash来说，该算法可以均匀地将数据打散到各个节点。由于该算法取余的方法强依赖于count的数目，因此，当count数发生变化的时候，datanode所对应的数据会发生剧烈变化，而发生变化的成本就是需要在count数发生变化的时候，进行数据迁移，绝大多数的数据都需要重新移动。
@@ -45,17 +45,17 @@ partitionLength：指定各区间的长度
 ### Consistent Hashing
 
 简单来说，一致性哈希将整个哈希值空间组织成一个虚拟的圆环，整个空间按顺时针方向组织。例如我们有NodeA、Node B、Node C、Node D四个节点，有Object A、Object B、Object C、Object D四个数据对象，根据一致性哈希算法，数据A会被定为到Node A上，B被定为到Node B上，C被定为到Node C上，D被定为到Node D上:
-> A ——> NodeA
-B ——> NodeB
-C ——> NodeC
+> A ——> NodeA  
+B ——> NodeB  
+C ——> NodeC  
 D ——> NodeD
 
 现假设Node C不幸宕机，此时对象A、B、D不会受到影响，只有C对象被重定位到Node D。
 如果在系统中增加一台服务器Node X:
-> A ——> NodeA
-B ——> NodeB
-新增 ——> NodeX
-C ——> NodeC
+> A ——> NodeA  
+B ——> NodeB  
+新增 ——> NodeX  
+C ——> NodeC  
 D ——> NodeD
 
 对象Object A、B、D不受影响，只有对象C需要重定位到新的Node X 。
@@ -66,12 +66,14 @@ D ——> NodeD
 
 因此，为使得每个节点在环上所“管辖”更加均匀，一致性哈希算法引入了虚拟节点机制，即对每一个服务节点计算多个哈希，每个计算结果位置都放置一个此服务节点，称为虚拟节点。
 
-例如：我们有NodeA、Node B；可以为每台服务器计算三个虚拟节点，于是可以分别计算 “Node A#1”、“Node A#2”、“Node A#3”、“Node B#1”、“Node B#2”、“Node B#3”的哈希值，形成六个虚拟节点。同时数据定位算法不变，只是多了一步虚拟节点到实际节点的映射，例如定位到“Node A#1”、“Node A#2”、“Node A#3”三个虚拟节点的数据均定位到Node A上。
-> Node A#1 ——> NodeA
-Node A#2 ——> NodeA
-Node A#3 ——> NodeA
-Node B#1 ——> NodeB
-Node B#2 ——> NodeB
+例如：  
+我们有NodeA、Node B；可以为每台服务器计算三个虚拟节点，于是可以分别计算 “Node A#1”、“Node A#2”、“Node A#3”、“Node B#1”、“Node B#2”、“Node B#3”的哈希值，形成六个虚拟节点。  
+同时数据定位算法不变，只是多了一步虚拟节点到实际节点的映射，例如定位到“Node A#1”、“Node A#2”、“Node A#3”三个虚拟节点的数据均定位到Node A上,“Node B#1”、“Node B#2”、“Node B#3”三个虚拟节点的数据均定位到Node B上，用来解决分布不均的问题。
+> Node A#1 ——> NodeA  
+Node A#2 ——> NodeA  
+Node A#3 ——> NodeA  
+Node B#1 ——> NodeB  
+Node B#2 ——> NodeB  
 Node B#3 ——> NodeB
 
 因此，通过增加虚节点的方法，使得每个节点在环上所“管辖”更加均匀。这样就既保证了在节点变化时，尽可能小的影响数据分布的变化，而同时又保证了数据分布的均匀。也就是靠增加“节点数量”加强管辖区间的均匀。
@@ -99,10 +101,10 @@ class="jumpStringHash">
 partitionCount：分片数量
 hashSlice：分片截取长度
 
-该算法该算法来自于Google的一篇文章A Fast, Minimal Memory, Consistent Hash Algorithm，核心思想是通过概率分布的方法将一个hash值在每个节点分布的概率变成1/n，并且可以通过更简便的方法可以计算得出，并且分布也更加均匀。
+该算法该算法来自于Google的一篇文章A Fast, Minimal Memory, Consistent Hash Algorithm，核心思想是通过概率分布的方法将一个hash值在每个节点分布的概率变成1/n，并且可以通过更简便的方法可以计算得出，并且分布也更加均匀。  
 设计目标是把对象均匀地分布在所有节点中（平衡性）；当节点数量变化时，只需要把一些对象从旧节点移动到新节点，不需要做其它移动（单调性）。
 
-根据论文原理，可以这样说明一下：
+根据论文原理，可以这样说明：
 - 记 ch(key,num_buckets) 为num_buckets时的hash函数。
 - 当num_buckets=1时，由于只有1个bucket，显而易见，对任意k，有ch(k,1)==0。
 - 当num_buckets=2时，为了使hash的结果保持均匀，ch(k,2)的结果应该有占比1/2的结果保持为0，有1/2跳变为1。
