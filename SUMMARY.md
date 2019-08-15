@@ -149,9 +149,11 @@
         * [Out Of Memory Error](A.Faq/ErrorCode/Content/OutOfMemoryError.md)	
         * [The Problem Of Hint](A.Faq/ErrorCode/Content/TheProblemOfHint.md)
         * [NestLoop Parameters Lead To Temptable Exception](A.Faq/ErrorCode/Content/NestLoopParametersLeadToTemptableException.md)
-        * [Can't Get Variables From DataNode](A.Faq/ErrorCode/Content/Can'tGetVariablesFromDataNode.md)
+        * [Can't Get Variables From DataNode](A.Faq/ErrorCode/Content/Can'tGetVariablesFromDataNode.md) 
+        * [Port already in use:1984](A.Faq/ErrorCode/Content/PortAlreadyInUse1984.md)
     * [A.2 原理解释](A.Faq/Internals/A_overview2.md)
         * [How To Use Explain To Resolve The Distribution Rules Of Group Gy](A.Faq/Internals/Content/UseExplainToTraceGroupBy.md)
+        * [Hash And ConsistentHashing And Jumpstringhash](A.Faq/Internals/Content/HashAndConsistentHashingAndJumpstringhash.md)
     * [A.3 使用说明](A.Faq/Usage/A_overview3.md)
         * [ToBeContinued2](A.Faq/Usage/Content/ToBeContinued2.md)
 
