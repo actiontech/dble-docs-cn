@@ -151,6 +151,7 @@
         * [NestLoop Parameters Lead To Temptable Exception](A.Faq/ErrorCode/Content/NestLoopParametersLeadToTemptableException.md)
         * [Can't Get Variables From DataNode](A.Faq/ErrorCode/Content/Can'tGetVariablesFromDataNode.md) 
         * [Port already in use:1984](A.Faq/ErrorCode/Content/PortAlreadyInUse1984.md)
+        * [Sharding Column Cannot Be Null](A.Faq/ErrorCode/Content/ShardingColumnCannotBeNull.md)
     * [A.2 原理解释](A.Faq/Internals/A_overview2.md)
         * [How To Use Explain To Resolve The Distribution Rules Of Group Gy](A.Faq/Internals/Content/UseExplainToTraceGroupBy.md)
         * [Hash And ConsistentHashing And Jumpstringhash](A.Faq/Internals/Content/HashAndConsistentHashingAndJumpstringhash.md)
