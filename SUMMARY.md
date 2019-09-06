@@ -119,6 +119,7 @@
     * [3.8 Hint](3.SQL_Syntax/3.8_Hint.md)
     * [3.9 其他不支持语句](3.SQL_Syntax/3.9_Other_unsupport.md)
     * [3.10 函数与操作符支持列表(alpha版本)](3.SQL_Syntax/3.10_func_and_operators.md)
+    * [3.11 导入导出方式](3.SQL_Syntax/3.11_Export_and_Import.md)
 * [4.协议兼容](4.Protocol/4.0_overview.md)
     * [4.1 基本包](4.Protocol/4.1_Packet.md)
     * [4.2 连接建立](4.Protocol/4.2_Connecting.md)
