@@ -159,6 +159,6 @@
         * [How To Use Explain To Resolve The Distribution Rules Of Group Gy](A.Faq/Internals/Content/UseExplainToTraceGroupBy.md)
         * [Hash And ConsistentHashing And Jumpstringhash](A.Faq/Internals/Content/HashAndConsistentHashingAndJumpstringhash.md)
     * [A.3 使用说明](A.Faq/Usage/A_overview3.md)
-        * [ToBeContinued2](A.Faq/Usage/Content/ToBeContinued2.md)
+        * [PasswordFormat](A.Faq/Usage/Content/PasswordFormat.md)
 
 
