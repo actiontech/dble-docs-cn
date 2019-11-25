@@ -87,6 +87,8 @@
     * [2.20 慢查询日志](2.Function/2.20_slow_query_log.md)
     * [2.21 单条SQL性能trace](2.Function/2.21_query_trace.md)
     * [2.22 KILL @@DDL_LOCK](2.Function/2.22_kill_ddl_lock.md)
+    * [2.23 外部高可用联动](2.23_outerHa_linkage.md)
+    * [2.24 超时控制](2.24_timeout_control.md)
 * [3.语法兼容](3.SQL_Syntax/3.0_overview.md)
     * [3.1 DDL](3.SQL_Syntax/3.1_DDL.md)
         * [3.1.1 DDL&Table Syntax](3.SQL_Syntax/3.1_DDL/3.1.1_DDL&Table_Syntax.md)
