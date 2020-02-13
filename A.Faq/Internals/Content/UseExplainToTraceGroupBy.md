@@ -16,7 +16,7 @@
 1. 配置好配置文件：
   
   schema.xml：
- `<table name="eee" dataNode="dn1,dn2" primaryKey="id" rule="sharding-by-hash"/>`
+ `<table name="eee" dataNode="dn1,dn2" cacheKey="id" rule="sharding-by-hash"/>`
  
  rule.xml：
  `<tableRule name="sharding-by-hash">
