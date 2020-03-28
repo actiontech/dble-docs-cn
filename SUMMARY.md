@@ -44,7 +44,7 @@
         * [2.1.13 配置检查命令](2.Function/2.1_manager_cmd/2.1.13_dryrun.md)
         * [2.1.14 pause & resume 命令](2.Function/2.1_manager_cmd/2.1.14_pause_resume.md)
         * [2.1.15 慢查询日志相关命令](2.Function/2.1_manager_cmd/2.1.15_slow_query.md)
-        * [2.1.16 create database命令](2.Function/2.1_manager_cmd/2.1.16_create_database.md)
+        * [2.1.16 创建/删除物理库命令](2.Function/2.1_manager_cmd/2.1.16_database.md)
         * [2.1.17 check @@metadata命令](2.Function/2.1_manager_cmd/2.1.17_check_meta_data.md)
         * [2.1.18 release @@metadata命令](2.Function/2.1_manager_cmd/2.1.18_release.md)
         * [2.1.19 split命令](2.Function/2.1_manager_cmd/2.1.19_split.md)
