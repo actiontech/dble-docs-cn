@@ -94,6 +94,8 @@
         * [2.23.2 命令的使用说明](2.Function/2.23_outerHa_linkage/2.23.2_command_usage.md)  
         * [2.23.3 命令的实现细节](2.Function/2.23_outerHa_linkage/2.23.3_Logical_detail.md)  
         * [2.23.4 简单的HA交互使用案例](2.Function/2.23_outerHa_linkage/2.23.4_mha_sample.md) 
+    * [2.24 超时控制](2.Function/2.24_timeout_control.md)
+    * [2.25 流量控制](2.Function/2.25_flow_control.md)
 * [3.语法兼容](3.SQL_Syntax/3.0_overview.md)
     * [3.1 DDL](3.SQL_Syntax/3.1_DDL.md)
         * [3.1.1 DDL&Table Syntax](3.SQL_Syntax/3.1_DDL/3.1.1_DDL&Table_Syntax.md)
