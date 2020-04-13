@@ -48,6 +48,7 @@
         * [2.1.17 check @@metadata命令](2.Function/2.1_manager_cmd/2.1.17_check_meta_data.md)
         * [2.1.18 release @@metadata命令](2.Function/2.1_manager_cmd/2.1.18_release.md)
         * [2.1.19 split命令](2.Function/2.1_manager_cmd/2.1.19_split.md)
+        * [2.1.20 flow_control 命令](2.Function/2.1.20_flow_control.md)
     * [2.2 全局序列](2.Function/2.02_global_sequence.md)
         * [2.2.1 MySQL offset-step方式](2.Function/2.2_global_sequence/2.2.1_MySQL-offset-setp.md)
         * [2.2.2 时间戳方式](2.Function/2.2_global_sequence/2.2.2_timestamp.md)
