@@ -19,11 +19,11 @@
 <table name="tb1_user" primary  Key="ID" dataNode="dn1,dn2" rule="rule_mod2" /> </schema>
 <dataNode name="dn1" dataHost="localhost1" database="t_dble1"/>
 <dataNode name="dn2" dataHost="localhost2" database="t_dble2"/>
-<dataHost name="localhost1" maxCon="1000" minCon="10" balance="0" switchType="1" slaveThreshold="100">
+<dataHost name="localhost1" maxCon="1000" minCon="10" balance="0" slaveThreshold="100">
 <heartbeat>show slave status</heartbeat>
 <writeHost host="hostM1" url="localhost:3306" user="root"  password="nE7jA%5m">  </writeHost>
 </dataHost>
-<dataHost name="localhost2" maxCon="1000" minCon="10" balance="0" switchType="1" slaveThreshold="100">
+<dataHost name="localhost2" maxCon="1000" minCon="10" balance="0" slaveThreshold="100">
 <heartbeat>show slave status</heartbeat>
 <writeHost host="hostM2" url="localhost:3306" user="root"  password="nE7jA%5m">  </writeHost>  </dataHost>
 ```
