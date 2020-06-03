@@ -44,10 +44,10 @@ public class CustomizeTest extends AbstractConsistencyChecker {
         } else {
             System.out.println("Global Consistency Check fail for table :" + schema + "-" + tableName);
             StringBuilder sb = new StringBuilder("Error when check Global Consistency, Table ");
-            sb.append(tableName).append(" dataNode ");
+            sb.append(tableName).append(" shardingNode ");
             for (SQLQueryResult<List<Map<String, String>>> r : elist) {
-                System.out.println("error node is : " + r.getTableName() + "-" + r.getDataNode());
-                sb.append(r.getDataNode()).append(",");
+                System.out.println("error node is : " + r.getTableName() + "-" + r.getShardingNode());
+                sb.append(r.getShardingNode()).append(",");
             }
             sb.setLength(sb.length() - 1);
         }
