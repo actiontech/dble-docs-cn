@@ -15,21 +15,18 @@
 
 1. 配置好配置文件：
   
-  schema.xml：
- `<table name="eee" dataNode="dn1,dn2" cacheKey="id" rule="sharding-by-hash"/>`
+  sharding.xml：
+ ```xml
+ <shardingTable name="eee" dataNode="dn1,dn2"  function="hashLong" shardingColumn="id"/>
+ ...
  
- rule.xml：
- `<tableRule name="sharding-by-hash">
-        <rule>
-            <columns>id</columns>
-            <algorithm>hashLong</algorithm>
-        </rule>
-    </tableRule>`
-    
-`<function name="hashLong" class="Hash">
+ <function name="hashLong" class="Hash">
         <property name="partitionCount">2</property>
         <property name="partitionLength">128</property>
-    </function>`
+    </function>
+
+ ```
+ 
 
 2. 在dble client创建表 eee 并插入数据：
 mysql> select * from eee;
