@@ -2,6 +2,6 @@
 * [Out Of Memory Error](Content/OutOfMemoryError.md)
 * [The Problem Of Hint](Content/TheProblemOfHint.md)
 * [NestLoop Parameters Lead To Temptable Exception](Content/NestLoopParametersLeadToTemptableException.md)
-* [Can't Get Variables From DataNode](Content/Can'tGetVariablesFromDataNode.md)
+* [Can't Get Variables From ShardingNode](Content/Can'tGetVariablesFromShardingNode.md)
 * [Port Already In Use 1984](Content/PortAlreadyInUse1984.md)
 * [Sharding Column Cannot Be Null](Content/ShardingColumnCannotBeNull.md)

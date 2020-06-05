@@ -2,14 +2,11 @@
 
 ## Setting
 
-- rule.xml部分配置如下：
+- sharding.xml部分配置如下：  
+
 ```xml
-<tablerule name="sharding-by-range">
-<rule>
-  <columns>number</columns>
-  <algorithm>rangeLong</algorithm>
-</rule>
-</tablerule>
+<sharingTable shadingColumn="number" ... >
+...
 <function name="rangeLong" class="NumberRange">
   <property name="mapFile">partition.txt</property>
   <property name="defaultNode">0</property>
@@ -28,23 +25,18 @@ ERROR 1064 (HY000): Sharding column can't be null when the table in MySQL column
 - 或者修改number列为允许插入NULL值;  
 ALTER TABLE `account` MODIFY `number` VARCHAR (20);
 - **注意**：上一步的前提是：  
-在server.xml中开启参数alterTableAllow;
+在blacklist中开启参数alterTableAllow;
 
 ```xml
-</whitehost>
-    <blacklist check="true">
+<blacklist name="bk1">
     <property name="alterTableAllow">true</property>
-    </blacklist>
+</blacklist>
 ```
 
 并修改sharding-by-range中的拆分列，dble不允许对分片键或ER键进行alter，会造成无法分片；
 
 ```xml
-<tablerule name="sharding-by-range">
-<rule>
-  <columns>id</columns>
-  <algorithm>rangeLong</algorithm>
-</rule>
+<sharingTable shadingColumn="id" ... >
 ```
 
 - alter列值为允许插入空值后，再将拆分列修改为原值。
