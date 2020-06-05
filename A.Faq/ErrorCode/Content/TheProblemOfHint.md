@@ -10,7 +10,7 @@
 
 - mysql> show @@processlist; 
 
-| Front_Id | Datanode | BconnID | user | Front_Host | db | Command | Time | State | Info |  
+| Front_Id | shardingNode | BconnID | user | Front_Host | db | Command | Time | State | Info |  
 | ---- | ---- | ---- | ----| ---- | ----| ---- | ----|---- | ----|
 | 33 | NULL | NULL | root | 略 | NULL | NULL | 0 | updating | NULL |  
 | 34 | NULL | NULL | root | 略 | NULL | NULL | 0 | updating | NULL |  
@@ -48,7 +48,7 @@ Hint语法有两种形式：
 1. /*!dble:type=....*/ 
 2. /*#dble:type=...*/ 
 
-type有3种值可选：datanode，db_type，sql。  
+type有3种值可选：shardingNode，db_type，sql。  
 type详情请见： https://actiontech.github.io/dble-docs-cn/2.Function/2.04_hint.html  
 
 **Hint注意事项**  
