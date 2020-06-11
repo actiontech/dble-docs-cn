@@ -8,6 +8,7 @@
     * [0.4 docker镜像快速开始](0.overview/0.4_dble_quick_start_docker.md)
     * [0.5 docker-compose快速开始](0.overview/0.5_dble_start_docker_compose.md)
     * [0.6 数据拆分简介](0.overview/0.6_sharding_brief_introduction.md)
+    * [0.7 docker-compose快速开始dble高可用](0.overview/0.7_dble_mgr_quick_start_docker.md)
 * [1.配置文件](1.config_file/1.00_config_file.md)
     * [1.1 cluster.cnf](1.config_file/1.01_cluster.cnf.md)
     * [1.2 bootstrap.cnf](1.config_file/1.02_bootstrap.cnf.md)
