@@ -16,7 +16,8 @@
 
 - 配置如下：
 
-- rule.xml
+- sharding.xml  
+
 ```
 <function name="hashLong" class="hash">
 <property name="partitionCount">1,2</property>
@@ -24,6 +25,7 @@
 </function>
 ```
 - 或者
+
 ```
 <function name="hashLong" class="hash">
 <property name="partitionCount">4</property>
@@ -104,10 +106,10 @@ Node B#3 ——> NodeB
 
 - 配置如下：
 
-- rule.xml
+- sharding.xml  
+
 ```
-<function name="jumphash"
-class="jumpStringHash">
+<function name="jumphash" class="jumpStringHash">
 <property name="partitionCount">2</property>
 <property name="hashSlice">0:2</property>
 </function>

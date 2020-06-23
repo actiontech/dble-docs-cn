@@ -15,21 +15,17 @@
 
 1. 配置好配置文件：
   
-  schema.xml：
- `<table name="eee" dataNode="dn1,dn2" cacheKey="id" rule="sharding-by-hash"/>`
- 
- rule.xml：
- `<tableRule name="sharding-by-hash">
-        <rule>
-            <columns>id</columns>
-            <algorithm>hashLong</algorithm>
-        </rule>
-    </tableRule>`
-    
-`<function name="hashLong" class="Hash">
+sharding.xml：
+ ```xml
+ <shardingTable name="eee" shardingNode="dn1,dn2"  function="hashLong" shardingColumn="id"/>
+ ...
+ <function name="hashLong" class="Hash">
         <property name="partitionCount">2</property>
         <property name="partitionLength">128</property>
-    </function>`
+    </function>
+
+ ```
+ 
 
 2. 在dble client创建表 eee 并插入数据：
 mysql> select * from eee;
@@ -58,7 +54,7 @@ mysql> select name,count(name) from eee group by name;
 
 3. 利用explain工具查看sql的执行过程
 
-| DATA_NOD | TYPE | SQL/REF |
+| SHARDING_NODE | TYPE | SQL/REF |
 | -- | -- | -- |
 | dn1_0 | BASE SQL| select `eee`.`name`,COUNT(name) as `_$COUNT$_rpda_0` from  `eee` GROUP BY `eee`.`name` ASC |
 | dn2_0 | BASE SQL| select `eee`.`name`,COUNT(name) as `_$COUNT$_rpda_0` from  `eee` GROUP BY `eee`.`name` ASC |
@@ -69,8 +65,8 @@ mysql> select name,count(name) from eee group by name;
 ## Instructions
 
 由explain的结果可知：
-1. dble将sql语句下发到对应datanode执行
-2. 将对应datanode数据结果进行merge
+1. dble将sql语句下发到对应shardingnode执行
+2. 将对应shardingnode数据结果进行merge
 3. 对merge后的数据进行group by聚合
 4. SHUFFLE_FIELD进行整理，达到用户预期的结果
 > **注意**：普通用户可以不关注SHUFFLE_FIELD
