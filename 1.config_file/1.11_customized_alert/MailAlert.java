@@ -2,10 +2,10 @@ package com.actiontech.addtionAlert;
 
 import com.actiontech.dble.alarm.Alert;
 import com.actiontech.dble.alarm.AlertGeneralConfig;
-import com.actiontech.dble.cluster.bean.ClusterAlertBean;
+import com.actiontech.dble.cluster.general.bean.ClusterAlertBean;
 import com.actiontech.dble.config.util.ConfigException;
-import com.sun.mail.util.MailSSLSocketFactory;
 
+import com.sun.mail.util.MailSSLSocketFactory;
 import javax.mail.Address;
 import javax.mail.Message;
 import javax.mail.Session;
