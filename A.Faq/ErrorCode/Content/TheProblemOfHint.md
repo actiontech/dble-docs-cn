@@ -44,11 +44,12 @@
 
 **Hint语法**  
 
-Hint语法有两种形式：  
-1. /*!dble:type=....*/ 
-2. /*#dble:type=...*/ 
+Hint语法有三种形式：  
+1. /\*!dble:type=....*/ 
+2. /\*#dble:type=...*/ 
+3.  /\*  */(只适用于读写分离功能)
 
-type有3种值可选：shardingNode，db_type，sql。  
+type有4种值可选：shardingNode，db_type，sql，db_instance_url。  
 type详情请见： https://actiontech.github.io/dble-docs-cn/2.Function/2.04_hint.html  
 
 **Hint注意事项**  
