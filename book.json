@@ -1,15 +1,10 @@
 {
-    "plugins": ["expandable-chapters", "splitter", "back-to-top-button","github","popup","tbfed-pagefooter"],
+    "plugins": ["expandable-chapters", "splitter", "back-to-top-button","github","popup"],
     "pluginsConfig": {
         "fontsettings": {
             "theme": "sepia",
             "family": "sans",
             "size": 2
-        },
-		"tbfed-pagefooter": {
-            "copyright":"Copyright (C) 2016-2020 ActionTech.",
-            "modify_label": "Last Update:",
-            "modify_format": "YYYY-MM-DD HH:mm:ss"
         },
 		"github":{
 			"url":"https://github.com/actiontech/dble"

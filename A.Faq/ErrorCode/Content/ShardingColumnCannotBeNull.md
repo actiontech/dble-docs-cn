@@ -49,11 +49,44 @@ ALTER TABLE `account` MODIFY `number` VARCHAR (20);
 2. desc查看表结构：number列和name列均定义为非空列，不允许插入空值。
 
 
-| Field | Type | Null | Key | Default | Extra |
-| ---- | ---- | ---- | ---- | ---- | ---- |
-| id | int(10) | YES |  | NULL |  |
-| number | int(10) | NO |  | NULL |  |
-| name | varchar(20) | NO |  | NULL |  |
+<table>
+<thead>
+  <tr>
+    <th>Field</th>
+    <th>Type</th>
+    <th>Null</th>
+    <th>Key</th>
+    <th>Default</th>
+    <th>Extra</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>id</td>
+    <td>int(10)</td>
+    <td>YES</td>
+    <td></td>
+    <td>NULL</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>number</td>
+    <td>int(10)</td>
+    <td>NO</td>
+    <td></td>
+    <td>NULL</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>varchar(20)</td>
+    <td>NO</td>
+    <td></td>
+    <td>NULL</td>
+    <td></td>
+  </tr>
+</tbody>
+</table>
 
   
 
