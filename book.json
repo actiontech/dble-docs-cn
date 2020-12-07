@@ -16,11 +16,12 @@
 		 ]
     },
     "styles": {
-        "website": "website.css"
+        "website": "website.css",
+      "pdf": "pdf.css"
     },
     "author": "ActionTech",
     "title": "dble manual",
 	"pdf":{
-		"paperSize":"a2"
+		"paperSize":"a3"
 	}
 }
