@@ -18,7 +18,7 @@
 
 | 配置名称 | 配置内容 | 默认值/单位 | 详细作用原理或应用 |
 | ---- | ---- | ---- | ----|
-| useJoinStrategy | 是否使用nestLoop优化 | 默认使用 | 开启之后会尝试判断join两边的where来重新调整查询SQL下发的顺序 |
+| useJoinStrategy | 是否使用nestLoop优化 | 默认不使用 | 开启之后会尝试判断join两边的where来重新调整查询SQL下发的顺序 |
 | nestLoopConnSize | 临时表阈值 | 默认4 | 若临时表⾏数⼤于这两个值乘积，则报告错误 |
 | nestLoopRowsSize | 临时表阈值 | 默认2000 | 若临时表⾏数⼤于这两个值乘积，则报告错误 |
 
