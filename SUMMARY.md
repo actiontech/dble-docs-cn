@@ -99,6 +99,7 @@
     * [2.26 client_found_rows权能标志](2.Function/2.26_cap_client_found_rows.md)
     * [2.27 general日志](2.Function/2.27_general_log.md)
     * [2.28 sql统计](2.Function/2.28_sql_statistic.md)
+    * [2.29 load data批处理模式](2.Function/2.29_load_data.md)
 * [3.语法兼容](3.SQL_Syntax/3.0_overview.md)
     * [3.1 DDL](3.SQL_Syntax/3.1_DDL.md)
         * [3.1.1 DDL&Table Syntax](3.SQL_Syntax/3.1_DDL/3.1.1_DDL&Table_Syntax.md)
