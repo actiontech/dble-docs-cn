@@ -22,7 +22,7 @@
         * [1.8.1 cache配置](1.config_file/1.8_cache/1.8.1_cache_setting.md) 
         * [1.8.2 ehcache配置](1.config_file/1.8_cache/1.8.2_ehcache_setting.md)
     * [1.9 自定义拆分算法](1.config_file/1.09_dble_route_function_spec.md)
-    * [1.10 配置文件变更记录](1.config_file/1.10_version_change.md)
+    * [1.10 版本变更](1.config_file/1.10_version_change.md)
     * [1.11 自定义告警](1.config_file/1.11_customized_alert.md)
     * [1.12 自定义全局表一致性检查](1.config_file/1.12_customized_global_table_check.md)
 * [2.功能描述](2.Function/2.000_overview.md)
