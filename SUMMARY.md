@@ -36,11 +36,11 @@
         * [2.1.5 kill命令](2.Function/2.1_manager_cmd/2.1.05_kill.md)
         * [2.1.6 stop命令](2.Function/2.1_manager_cmd/2.1.06_stop.md)
         * [2.1.7 reload命令](2.Function/2.1_manager_cmd/2.1.07_reload.md)
-        * [2.1.8 rollback命令(已废弃)](2.Function/2.1_manager_cmd/2.1.08_rollback.md)
+        * [2.1.8 rollback命令(已废弃)]
         * [2.1.9 offline命令](2.Function/2.1_manager_cmd/2.1.09_offline.md)
         * [2.1.10 online命令](2.Function/2.1_manager_cmd/2.1.10_online.md)
         * [2.1.11 file命令](2.Function/2.1_manager_cmd/2.1.11_file.md)
-        * [2.1.12 log命令](2.Function/2.1_manager_cmd/2.1.12_log.md)
+        * [2.1.12 log命令（已废弃）]
         * [2.1.13 配置检查命令](2.Function/2.1_manager_cmd/2.1.13_dryrun.md)
         * [2.1.14 pause & resume 命令](2.Function/2.1_manager_cmd/2.1.14_pause_resume.md)
         * [2.1.15 慢查询日志相关命令](2.Function/2.1_manager_cmd/2.1.15_slow_query.md)
