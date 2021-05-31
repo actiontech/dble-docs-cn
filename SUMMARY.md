@@ -63,6 +63,7 @@
         * [2.5.3 XA事务的后续补偿以及日志清理](2.Function/2.5_distribute_transaction/2.5.3_XA_trans_make_up.md)
         * [2.5.4 XA事务的记录](2.Function/2.5_distribute_transaction/2.5.4_XA_trans_records.md)
         * [2.5.5 一般分布式事务概述](2.Function/2.5_distribute_transaction/2.5.5_normal_trans_overview.md)
+        * [2.5.6 检测疑似残留XA事务](2.Function/2.5_distribute_transaction/2.5.6_XA_trans_residual_xid.md)
     * [2.6 连接池管理](2.Function/2.06_conns_pool.md)
     * [2.7 内存管理](2.Function/2.07_memory_manager.md)
     * [2.8 集群同步协调&状态管理](2.Function/2.08_cluster.md)
