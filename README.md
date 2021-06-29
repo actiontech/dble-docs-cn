@@ -7,6 +7,10 @@
 ## PDF下载
 [PDF下载](https://github.com/actiontech/dble-docs-cn/raw/pdf/dble-manual.pdf) 
 
+
+## 软件包下载
+[软件包下载](https://github.com/actiontech/dble/releases) 或者[github镜像站](https://hub.fastgit.org/actiontech/dble/releases）
+
 ## 中文公开课
 [dble中文公开课](https://opensource.actionsky.com/dble-lessons/) 
 
