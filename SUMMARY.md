@@ -27,6 +27,7 @@
     * [1.12 自定义全局表一致性检查](1.config_file/1.12_customized_global_table_check.md)
 * [2.功能描述](2.Function/2.000_overview.md)
     * [2.0 管理端元数据库](2.Function/2.001_manager_dble_information.md)
+        * [2.0.1 dble_config表](2.Function/2.001_dble_information/2.0.1.27_dble_config.md)
     * [2.1 管理端命令](2.Function/2.01_manager_cmd.md)
         * [2.1.1 select命令](2.Function/2.1_manager_cmd/2.1.01_select.md)
         * [2.1.2 set命令](2.Function/2.1_manager_cmd/2.1.02_set.md)
