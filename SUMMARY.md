@@ -25,6 +25,7 @@
     * [1.10 版本变更](1.config_file/1.10_version_change.md)
     * [1.11 自定义告警](1.config_file/1.11_customized_alert.md)
     * [1.12 自定义全局表一致性检查](1.config_file/1.12_customized_global_table_check.md)
+    * [1.13 Schema下默认拆分表](1.config_file/1.13_schema_default_sharding_table.md)
 * [2.功能描述](2.Function/2.000_overview.md)
     * [2.0 管理端元数据库](2.Function/2.001_manager_dble_information.md)
         * [2.0.1 dble_config表](2.Function/2.001_dble_information/2.0.1.27_dble_config.md)
