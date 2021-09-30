@@ -6,14 +6,27 @@
             "family": "sans",
             "size": 2
         },
-		"github":{
-			"url":"https://github.com/actiontech/dble"
+	"versions": {
+		"gitbookConfigURL": "https://raw.githubusercontent.com/actiontech/dble-docs-cn/master/book.json",
+		"options": [
+		{
+		  "value": "https://github.com/actiontech/dble-docs-cn/tree/gh-pages",
+		  "text": "Version 3.21.06.0"
 		},
-		"plugins": [
-			"yahei",
-			"katex",
-			 "-search" 
-		 ]
+		{
+		  "value": "https://github.com/actiontech/dble-docs-cn/tree/gh-pages",
+		  "text": "Version develop"
+		}
+		]
+	},
+	"github":{
+		"url":"https://github.com/actiontech/dble"
+	},
+	"plugins": [
+		"yahei",
+		"katex",
+		 "-search" 
+	 ]
     },
     "styles": {
         "website": "website.css",
