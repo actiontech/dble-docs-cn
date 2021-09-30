@@ -10,11 +10,11 @@
 		"gitbookConfigURL": "https://raw.githubusercontent.com/actiontech/dble-docs-cn/master/book.json",
 		"options": [
 		{
-		  "value": "https://github.com/actiontech/dble-docs-cn/tree/gh-pages",
+		  "value": "https://github.com/actiontech/dble-docs-cn/tree/gh-pages/",
 		  "text": "Version 3.21.06.0"
 		},
 		{
-		  "value": "https://github.com/actiontech/dble-docs-cn/tree/gh-pages",
+		  "value": "https://github.com/actiontech/dble-docs-cn/tree/gh-pages/",
 		  "text": "Version develop"
 		}
 		]
