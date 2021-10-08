@@ -43,6 +43,7 @@ install:
 script:
   - gitbook build
 deploy:
+  skip_cleanup: true
   # deploy develop to the staging environment
   - provider: script
     script: bash ./deploy.sh develop 1 ${GH_TOKEN} $TRAVIS_BUILD_NUMBER
