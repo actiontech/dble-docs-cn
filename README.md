@@ -7,8 +7,8 @@
 ## 软件包下载
 [下载](https://github.com/actiontech/dble/releases) 或者[github镜像站下载](https://hub.fastgit.org/actiontech/dble/releases)
 
-## 文档PDF下载
-[文档PDF下载](https://github.com/actiontech/dble-docs-cn/tree/pdf/dble-manual.pdf)  或者[github镜像站下载](https://hub.fastgit.org/actiontech/dble-docs-cn/tree/pdf/dble-manual.pdf)
+## 文档PDF下载(未发布版本不能下载)
+[文档PDF下载](https://github.com/actiontech/dble-docs-cn/releases/download/3.21.06.0%2Ftag/dble-manual-3.21.06.0.pdf)  或者[github镜像站下载](https://hub.fastgit.org/actiontech/dble-docs-cn/releases/download/3.21.06.0%2Ftag/dble-manual-3.21.06.0.pdf)
 
 
 

@@ -28,7 +28,7 @@ notifications:
 branches:
   only:
     - master 
-
+    - develop
 # 调整时区
 before_install:
   - export TZ='Asia/Shanghai'
@@ -39,31 +39,15 @@ install:
   - npm install -g gitbook-cli 
   - npm install gitbook-plugin-yahei
   - gitbook install
-  
-# gitbook生成静态文件
-script:
   - gitbook build
-  - mkdir _old_book
-  - cd ./_old_book
-  - git clone -b gh-pages https://github.com/actiontech/dble-docs-cn.git
-  - cd ..
-  - cp -R _old_book/dble-docs-cn/history _book/
-  - cd ./_book
-  - git init
-  - git config user.name "${GH_USER}"
-  - git config user.email "${GH_MAIL}"
-  - git add .
-  - git commit -m "Update GitBook By TravisCI With Build $TRAVIS_BUILD_NUMBER"
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages 
-  - cd .. 
-# pdf
-  - xvfb-run gitbook pdf ./ ./dble-manual.pdf
-  - mkdir pdf
-  - cp dble-manual.pdf ./pdf/
-  - cd ./pdf
-  - git init
-  - git config user.name "${GH_USER}"
-  - git config user.email "${GH_MAIL}"
-  - git add .
-  - git commit -m "Update GitBook By TravisCI With Build PDF $TRAVIS_BUILD_NUMBER"
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:pdf 
+deploy:
+  # deploy develop to the staging environment
+  - provider: script
+    script: bash ./deploy.sh develop 1 ${GH_TOKEN} $TRAVIS_BUILD_NUMBER
+    on:
+      branch: develop
+  # deploy master to production
+  - provider: script
+    script: bash ./deploy.sh master 1 ${GH_TOKEN} $TRAVIS_BUILD_NUMBER
+    on:
+      branch: master
