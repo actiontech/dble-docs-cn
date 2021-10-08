@@ -7,7 +7,7 @@ GH_TOKEN="$3"
 TRAVIS_BUILD_NUMBER="$4"
 
 
-GH_REF="hithub.com/actiontech/dble-docs-cn"
+GH_REF="github.com/actiontech/dble-docs-cn"
 GH_USER="actiontech-bot"
 GH_MAIL="github@actionsky.com"
 
