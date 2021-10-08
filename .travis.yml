@@ -43,14 +43,15 @@ install:
 script:
   - gitbook build
 deploy:
-  skip_cleanup: true
   # deploy develop to the staging environment
   - provider: script
+    skip_cleanup: true
     script: bash ./deploy.sh develop 1 ${GH_TOKEN} $TRAVIS_BUILD_NUMBER
     on:
       branch: develop
   # deploy master to production
   - provider: script
+    skip_cleanup: true
     script: bash ./deploy.sh master 1 ${GH_TOKEN} $TRAVIS_BUILD_NUMBER
     on:
       branch: master
