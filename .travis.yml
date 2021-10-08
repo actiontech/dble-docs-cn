@@ -39,6 +39,8 @@ install:
   - npm install -g gitbook-cli 
   - npm install gitbook-plugin-yahei
   - gitbook install
+# gitbook生成静态文件
+script:
   - gitbook build
 deploy:
   # deploy develop to the staging environment
