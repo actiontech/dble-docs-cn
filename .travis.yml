@@ -47,7 +47,7 @@ script:
   - cd ./_old_book
   - git clone -b gh-pages https://github.com/actiontech/dble-docs-cn.git
   - cd ..
-  - cp -R _old_book/history _book/
+  - cp -R _old_book/dble-docs-cn/history _book/
   - cd ./_book
   - git init
   - git config user.name "${GH_USER}"
