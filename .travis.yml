@@ -44,8 +44,9 @@ install:
 script:
   - gitbook build
   - mkdir _old_book
-  - git archive --format zip --output "_old_book/output.zip" gh-pages -0
-  - unzip _old_book/output.zip -d _old_book/
+  - cd ./_old_book
+  - git clone -b gh-pages https://github.com/actiontech/dble-docs-cn.git
+  - cd ..
   - cp -R _old_book/history _book/
   - cd ./_book
   - git init
