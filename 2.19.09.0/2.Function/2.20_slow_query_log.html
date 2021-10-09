@@ -1,0 +1,3421 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.20 慢查询日志 · dble manual</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ActionTech">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-versions-select/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2.21_query_trace.html" />
+    
+    
+    <link rel="prev" href="2.19_reload_diff.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../0.overview/0.0_overview.html">
+            
+                <a href="../0.overview/0.0_overview.html">
+            
+                    
+                    0.概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../0.overview/0.1_dble_overview.html">
+            
+                <a href="../0.overview/0.1_dble_overview.html">
+            
+                    
+                    0.1 dble 简介与整体架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../0.overview/0.2_dble_enhance_MyCat.html">
+            
+                <a href="../0.overview/0.2_dble_enhance_MyCat.html">
+            
+                    
+                    0.2 dble对MyCat做的增强
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../0.overview/0.3_dble_quick_start.html">
+            
+                <a href="../0.overview/0.3_dble_quick_start.html">
+            
+                    
+                    0.3 快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../0.overview/0.4_dble_quick_start_docker.html">
+            
+                <a href="../0.overview/0.4_dble_quick_start_docker.html">
+            
+                    
+                    0.4 docker镜像快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../0.overview/0.5_dble_start_docker_compose.html">
+            
+                <a href="../0.overview/0.5_dble_start_docker_compose.html">
+            
+                    
+                    0.5 docker-compose快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../0.overview/0.6_sharding_brief_introduction.html">
+            
+                <a href="../0.overview/0.6_sharding_brief_introduction.html">
+            
+                    
+                    0.6 数据拆分简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../1.config_file/1.00_config_file.html">
+            
+                <a href="../1.config_file/1.00_config_file.html">
+            
+                    
+                    1.配置文件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../1.config_file/1.01_rule.xml.html">
+            
+                <a href="../1.config_file/1.01_rule.xml.html">
+            
+                    
+                    1.1 rule.xml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../1.config_file/1.02_schema.xml.html">
+            
+                <a href="../1.config_file/1.02_schema.xml.html">
+            
+                    
+                    1.2 schema.xml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../1.config_file/1.03_server.xml.html">
+            
+                <a href="../1.config_file/1.03_server.xml.html">
+            
+                    
+                    1.3 server.xml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../1.config_file/1.04_wrapper.conf.html">
+            
+                <a href="../1.config_file/1.04_wrapper.conf.html">
+            
+                    
+                    1.4 wrapper.conf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../1.config_file/1.05_log4j2.xml.html">
+            
+                <a href="../1.config_file/1.05_log4j2.xml.html">
+            
+                    
+                    1.5 log4j2.xml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../1.config_file/1.06_cache.html">
+            
+                <a href="../1.config_file/1.06_cache.html">
+            
+                    
+                    1.6 cache配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.6.1" data-path="../1.config_file/1.6_cache/1.6.1_cache_setting.html">
+            
+                <a href="../1.config_file/1.6_cache/1.6.1_cache_setting.html">
+            
+                    
+                    1.6.1 cache配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.2" data-path="../1.config_file/1.6_cache/1.6.2_ehcache_setting.html">
+            
+                <a href="../1.config_file/1.6_cache/1.6.2_ehcache_setting.html">
+            
+                    
+                    1.6.2 ehcache配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../1.config_file/1.07_global_sequence.html">
+            
+                <a href="../1.config_file/1.07_global_sequence.html">
+            
+                    
+                    1.7 全局序列配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.7.1" data-path="../1.config_file/1.7_global_sequence/1.7.1_MySQL-offset-setp.html">
+            
+                <a href="../1.config_file/1.7_global_sequence/1.7.1_MySQL-offset-setp.html">
+            
+                    
+                    1.7.1 MySQL offset-step方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.2" data-path="../1.config_file/1.7_global_sequence/1.7.2_timestamp.html">
+            
+                <a href="../1.config_file/1.7_global_sequence/1.7.2_timestamp.html">
+            
+                    
+                    1.7.2 时间戳方式(类Snowflake)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.3" data-path="../1.config_file/1.7_global_sequence/1.7.3_distribute_timestamp.html">
+            
+                <a href="../1.config_file/1.7_global_sequence/1.7.3_distribute_timestamp.html">
+            
+                    
+                    1.7.3 分布式时间戳方式(类Snowflake)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.4" data-path="../1.config_file/1.7_global_sequence/1.7.4_distribute_offset-step.html">
+            
+                <a href="../1.config_file/1.7_global_sequence/1.7.4_distribute_offset-step.html">
+            
+                    
+                    1.7.4 分布式offset-step方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../1.config_file/1.08_myid.properties.html">
+            
+                <a href="../1.config_file/1.08_myid.properties.html">
+            
+                    
+                    1.8 myid.properties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../1.config_file/1.09_dble_route_function_spec.html">
+            
+                <a href="../1.config_file/1.09_dble_route_function_spec.html">
+            
+                    
+                    1.9 自定义拆分算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../1.config_file/1.10_version_change.html">
+            
+                <a href="../1.config_file/1.10_version_change.html">
+            
+                    
+                    1.10 配置文件变更记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../1.config_file/1.11_customized_alert.html">
+            
+                <a href="../1.config_file/1.11_customized_alert.html">
+            
+                    
+                    1.11 自定义告警
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="2.00_overview.html">
+            
+                <a href="2.00_overview.html">
+            
+                    
+                    2.功能描述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="2.01_manager_cmd.html">
+            
+                <a href="2.01_manager_cmd.html">
+            
+                    
+                    2.1 管理端命令
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="2.1_manager_cmd/2.1.01_select.html">
+            
+                <a href="2.1_manager_cmd/2.1.01_select.html">
+            
+                    
+                    2.1.1 select命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="2.1_manager_cmd/2.1.02_set.html">
+            
+                <a href="2.1_manager_cmd/2.1.02_set.html">
+            
+                    
+                    2.1.2 set命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="2.1_manager_cmd/2.1.03_show.html">
+            
+                <a href="2.1_manager_cmd/2.1.03_show.html">
+            
+                    
+                    2.1.3 show命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.4" data-path="2.1_manager_cmd/2.1.04_switch.html">
+            
+                <a href="2.1_manager_cmd/2.1.04_switch.html">
+            
+                    
+                    2.1.4 switch命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.5" data-path="2.1_manager_cmd/2.1.05_kill.html">
+            
+                <a href="2.1_manager_cmd/2.1.05_kill.html">
+            
+                    
+                    2.1.5 kill命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.6" data-path="2.1_manager_cmd/2.1.06_stop.html">
+            
+                <a href="2.1_manager_cmd/2.1.06_stop.html">
+            
+                    
+                    2.1.6 stop命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.7" data-path="2.1_manager_cmd/2.1.07_reload.html">
+            
+                <a href="2.1_manager_cmd/2.1.07_reload.html">
+            
+                    
+                    2.1.7 reload命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.8" data-path="2.1_manager_cmd/2.1.08_rollback.html">
+            
+                <a href="2.1_manager_cmd/2.1.08_rollback.html">
+            
+                    
+                    2.1.8 rollback命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.9" data-path="2.1_manager_cmd/2.1.09_offline.html">
+            
+                <a href="2.1_manager_cmd/2.1.09_offline.html">
+            
+                    
+                    2.1.9 offline命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.10" data-path="2.1_manager_cmd/2.1.10_online.html">
+            
+                <a href="2.1_manager_cmd/2.1.10_online.html">
+            
+                    
+                    2.1.10 online命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.11" data-path="2.1_manager_cmd/2.1.11_file.html">
+            
+                <a href="2.1_manager_cmd/2.1.11_file.html">
+            
+                    
+                    2.1.11 file命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.12" data-path="2.1_manager_cmd/2.1.12_log.html">
+            
+                <a href="2.1_manager_cmd/2.1.12_log.html">
+            
+                    
+                    2.1.12 log命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.13" data-path="2.1_manager_cmd/2.1.13_dryrun.html">
+            
+                <a href="2.1_manager_cmd/2.1.13_dryrun.html">
+            
+                    
+                    2.1.13 配置检查命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.14" data-path="2.1_manager_cmd/2.1.14_pause_resume.html">
+            
+                <a href="2.1_manager_cmd/2.1.14_pause_resume.html">
+            
+                    
+                    2.1.14 pause & resume 命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.15" data-path="2.1_manager_cmd/2.1.15_slow_query.html">
+            
+                <a href="2.1_manager_cmd/2.1.15_slow_query.html">
+            
+                    
+                    2.1.15 慢查询日志相关命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.16" data-path="2.1_manager_cmd/2.1.16_create_database.html">
+            
+                <a href="2.1_manager_cmd/2.1.16_create_database.html">
+            
+                    
+                    2.1.16 create database命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.17" data-path="2.1_manager_cmd/2.1.17_check_meta_data.html">
+            
+                <a href="2.1_manager_cmd/2.1.17_check_meta_data.html">
+            
+                    
+                    2.1.17 check @@metadata命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.18" data-path="2.1_manager_cmd/2.1.18_release.html">
+            
+                <a href="2.1_manager_cmd/2.1.18_release.html">
+            
+                    
+                    2.1.18 release @@metadata命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.19" data-path="2.1_manager_cmd/2.1.19_split.html">
+            
+                <a href="2.1_manager_cmd/2.1.19_split.html">
+            
+                    
+                    2.1.19 split命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="2.02_global_sequence.html">
+            
+                <a href="2.02_global_sequence.html">
+            
+                    
+                    2.2 全局序列
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="2.2_global_sequence/2.2.1_MySQL-offset-setp.html">
+            
+                <a href="2.2_global_sequence/2.2.1_MySQL-offset-setp.html">
+            
+                    
+                    2.2.1 MySQL offset-step方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="2.2_global_sequence/2.2.2_timestamp.html">
+            
+                <a href="2.2_global_sequence/2.2.2_timestamp.html">
+            
+                    
+                    2.2.2 时间戳方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3" data-path="2.2_global_sequence/2.2.3_distribute_timestamp.html">
+            
+                <a href="2.2_global_sequence/2.2.3_distribute_timestamp.html">
+            
+                    
+                    2.2.3 分布式时间戳方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.4" data-path="2.2_global_sequence/2.2.4_distribute_offset-step.html">
+            
+                <a href="2.2_global_sequence/2.2.4_distribute_offset-step.html">
+            
+                    
+                    2.2.4 分布式offset-step方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="2.03_separate_RW.html">
+            
+                <a href="2.03_separate_RW.html">
+            
+                    
+                    2.3 读写分离
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="2.04_hint.html">
+            
+                <a href="2.04_hint.html">
+            
+                    
+                    2.4 注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="2.05_distribute_transaction.html">
+            
+                <a href="2.05_distribute_transaction.html">
+            
+                    
+                    2.5 分布式事务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="2.5_distribute_transaction/2.5.1_XA_trans_overview.html">
+            
+                <a href="2.5_distribute_transaction/2.5.1_XA_trans_overview.html">
+            
+                    
+                    2.5.1 XA事务概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="2.5_distribute_transaction/2.5.2_XA_trans_commit&rollback.html">
+            
+                <a href="2.5_distribute_transaction/2.5.2_XA_trans_commit&rollback.html">
+            
+                    
+                    2.5.2 XA事务的提交以及回滚
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" data-path="2.5_distribute_transaction/2.5.3_XA_trans_make_up.html">
+            
+                <a href="2.5_distribute_transaction/2.5.3_XA_trans_make_up.html">
+            
+                    
+                    2.5.3 XA事务的后续补偿以及日志清理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.4" data-path="2.5_distribute_transaction/2.5.4_XA_trans_records.html">
+            
+                <a href="2.5_distribute_transaction/2.5.4_XA_trans_records.html">
+            
+                    
+                    2.5.4 XA事务的记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.5" data-path="2.5_distribute_transaction/2.5.5_normal_trans_overview.html">
+            
+                <a href="2.5_distribute_transaction/2.5.5_normal_trans_overview.html">
+            
+                    
+                    2.5.5 一般分布式事务概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="2.06_conns_pool.html">
+            
+                <a href="2.06_conns_pool.html">
+            
+                    
+                    2.6 连接池管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="2.07_memory_manager.html">
+            
+                <a href="2.07_memory_manager.html">
+            
+                    
+                    2.7 内存管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="2.08_cluster.html">
+            
+                <a href="2.08_cluster.html">
+            
+                    
+                    2.8 集群同步协调&状态管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="2.09_Grpc_warning.html">
+            
+                <a href="2.09_Grpc_warning.html">
+            
+                    
+                    2.9 grpc 告警
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="2.10_table_meta.html">
+            
+                <a href="2.10_table_meta.html">
+            
+                    
+                    2.10 表meta数据管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.10.1" data-path="2.10_table_meta/2.10.1_Meta_init.html">
+            
+                <a href="2.10_table_meta/2.10.1_Meta_init.html">
+            
+                    
+                    2.10.1 Meta信息初始化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10.2" data-path="2.10_table_meta/2.10.2_Meta_change.html">
+            
+                <a href="2.10_table_meta/2.10.2_Meta_change.html">
+            
+                    
+                    2.10.2 Meta信息维护
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10.3" data-path="2.10_table_meta/2.10.3_consistency_check.html">
+            
+                <a href="2.10_table_meta/2.10.3_consistency_check.html">
+            
+                    
+                    2.10.3 一致性检测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10.4" data-path="2.10_table_meta/2.10.4_View_Meta.html">
+            
+                <a href="2.10_table_meta/2.10.4_View_Meta.html">
+            
+                    
+                    2.10.4 View Meta
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="2.11_statistics_manager.html">
+            
+                <a href="2.11_statistics_manager.html">
+            
+                    
+                    2.11 统计管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.11.1" data-path="2.11_statistics_manager/2.11.1_condition_stat.html">
+            
+                <a href="2.11_statistics_manager/2.11.1_condition_stat.html">
+            
+                    
+                    2.11.1 查询条件统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.2" data-path="2.11_statistics_manager/2.11.2_table_stat.html">
+            
+                <a href="2.11_statistics_manager/2.11.2_table_stat.html">
+            
+                    
+                    2.11.2 表状态统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.3" data-path="2.11_statistics_manager/2.11.3_user_stat.html">
+            
+                <a href="2.11_statistics_manager/2.11.3_user_stat.html">
+            
+                    
+                    2.11.3 用户状态统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.4" data-path="2.11_statistics_manager/2.11.4_cmd_stat.html">
+            
+                <a href="2.11_statistics_manager/2.11.4_cmd_stat.html">
+            
+                    
+                    2.11.4 命令统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.5" data-path="2.11_statistics_manager/2.11.5_heartbeat_stat.html">
+            
+                <a href="2.11_statistics_manager/2.11.5_heartbeat_stat.html">
+            
+                    
+                    2.11.5 heartbeat统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.6" data-path="2.11_statistics_manager/2.11.6_net_io_stat.html">
+            
+                <a href="2.11_statistics_manager/2.11.6_net_io_stat.html">
+            
+                    
+                    2.11.6 网络读写统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="2.12_failover.html">
+            
+                <a href="2.12_failover.html">
+            
+                    
+                    2.12 故障切换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="2.13_conns_check.html">
+            
+                <a href="2.13_conns_check.html">
+            
+                    
+                    2.13 前后端连接检查
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="2.14_ER_Split.html">
+            
+                <a href="2.14_ER_Split.html">
+            
+                    
+                    2.14 ER表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="2.15_global_table.html">
+            
+                <a href="2.15_global_table.html">
+            
+                    
+                    2.15 global表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="2.16_cache.html">
+            
+                <a href="2.16_cache.html">
+            
+                    
+                    2.16 缓存的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="2.17_explain.html">
+            
+                <a href="2.17_explain.html">
+            
+                    
+                    2.17 执行计划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="2.18_performance_observation.html">
+            
+                <a href="2.18_performance_observation.html">
+            
+                    
+                    2.18 性能观测和调整
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="2.19_reload_diff.html">
+            
+                <a href="2.19_reload_diff.html">
+            
+                    
+                    2.19 智能计算reload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.20" data-path="2.20_slow_query_log.html">
+            
+                <a href="2.20_slow_query_log.html">
+            
+                    
+                    2.20 慢查询日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21" data-path="2.21_query_trace.html">
+            
+                <a href="2.21_query_trace.html">
+            
+                    
+                    2.21 单条SQL性能trace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22" data-path="2.22_kill_ddl_lock.html">
+            
+                <a href="2.22_kill_ddl_lock.html">
+            
+                    
+                    2.22 KILL @@DDL_LOCK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23" data-path="2.23_outerHa_linkage.html">
+            
+                <a href="2.23_outerHa_linkage.html">
+            
+                    
+                    2.23 外部高可用联动
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.23.1" data-path="2.23_outerHa_linkage/2.23.1_outerHa_linkage_overview.html">
+            
+                <a href="2.23_outerHa_linkage/2.23.1_outerHa_linkage_overview.html">
+            
+                    
+                    2.23.1 外部后端MYSQL-HA连接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23.2" data-path="2.23_outerHa_linkage/2.23.2_command_usage.html">
+            
+                <a href="2.23_outerHa_linkage/2.23.2_command_usage.html">
+            
+                    
+                    2.23.2 命令的使用说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23.3" data-path="2.23_outerHa_linkage/2.23.3_Logical_detail.html">
+            
+                <a href="2.23_outerHa_linkage/2.23.3_Logical_detail.html">
+            
+                    
+                    2.23.3 命令的实现细节
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23.4" data-path="2.23_outerHa_linkage/2.23.4_mha_sample.html">
+            
+                <a href="2.23_outerHa_linkage/2.23.4_mha_sample.html">
+            
+                    
+                    2.23.4 简单的HA交互使用案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../3.SQL_Syntax/3.0_overview.html">
+            
+                <a href="../3.SQL_Syntax/3.0_overview.html">
+            
+                    
+                    3.语法兼容
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../3.SQL_Syntax/3.1_DDL.html">
+            
+                <a href="../3.SQL_Syntax/3.1_DDL.html">
+            
+                    
+                    3.1 DDL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../3.SQL_Syntax/3.1_DDL/3.1.1_DDL&Table_Syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.1_DDL/3.1.1_DDL&Table_Syntax.html">
+            
+                    
+                    3.1.1 DDL&Table Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../3.SQL_Syntax/3.1_DDL/3.1.2_DDL&View_Syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.1_DDL/3.1.2_DDL&View_Syntax.html">
+            
+                    
+                    3.1.2 DDL&View Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="../3.SQL_Syntax/3.1_DDL/3.1.3_DDL&Index_Syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.1_DDL/3.1.3_DDL&Index_Syntax.html">
+            
+                    
+                    3.1.3 DDL&Index Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.4" data-path="../3.SQL_Syntax/3.1_DDL/3.1.4_DDL_Penetrate.html">
+            
+                <a href="../3.SQL_Syntax/3.1_DDL/3.1.4_DDL_Penetrate.html">
+            
+                    
+                    3.1.4 DDL透传
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.5" data-path="../3.SQL_Syntax/3.1_DDL/3.1.5_DDL&Database_Syntax.md">
+            
+                <span>
+            
+                    
+                    3.1.5 DDL&Database_Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../3.SQL_Syntax/3.2_DML.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML.html">
+            
+                    
+                    3.2 DML
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../3.SQL_Syntax/3.2_DML/3.2.01_INSERT.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.01_INSERT.html">
+            
+                    
+                    3.2.1 INSERT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../3.SQL_Syntax/3.2_DML/3.2.02_REPLACE.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.02_REPLACE.html">
+            
+                    
+                    3.2.2 REPLACE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3" data-path="../3.SQL_Syntax/3.2_DML/3.2.03_DELETE.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.03_DELETE.html">
+            
+                    
+                    3.2.3 DELETE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.4" data-path="../3.SQL_Syntax/3.2_DML/3.2.04_UPDATE.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.04_UPDATE.html">
+            
+                    
+                    3.2.4 UPDATE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.5" data-path="../3.SQL_Syntax/3.2_DML/3.2.05_SELECT.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.05_SELECT.html">
+            
+                    
+                    3.2.5 SELECT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.6" data-path="../3.SQL_Syntax/3.2_DML/3.2.06_SELECT_JOIN_syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.06_SELECT_JOIN_syntax.html">
+            
+                    
+                    3.2.6 SELECT JOIN syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.7" data-path="../3.SQL_Syntax/3.2_DML/3.2.07_UNION_Syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.07_UNION_Syntax.html">
+            
+                    
+                    3.2.7 SELECT UNION Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.8" data-path="../3.SQL_Syntax/3.2_DML/3.2.08_Subquery_Syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.08_Subquery_Syntax.html">
+            
+                    
+                    3.2.8 SELECT Subquery Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.9" data-path="../3.SQL_Syntax/3.2_DML/3.2.09_LOAD_DATA.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.09_LOAD_DATA.html">
+            
+                    
+                    3.2.9 LOAD DATA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.10" data-path="../3.SQL_Syntax/3.2_DML/3.2.10_Unsupport_Syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.10_Unsupport_Syntax.html">
+            
+                    
+                    3.2.10 不支持的语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../3.SQL_Syntax/3.3_Prepared_SQL_Syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.3_Prepared_SQL_Syntax.html">
+            
+                    
+                    3.3 Prepared SQL Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements.html">
+            
+                <a href="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements.html">
+            
+                    
+                    3.4 Transactional, Savepoint and Locking Statements
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.1_Lock&unlock.html">
+            
+                <a href="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.1_Lock&unlock.html">
+            
+                    
+                    3.4.1 Lock&unlock
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.2_XA_trans_syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.2_XA_trans_syntax.html">
+            
+                    
+                    3.4.2 XA 事务语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.3_normal_trans_syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.3_normal_trans_syntax.html">
+            
+                    
+                    3.4.3 一般事务语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.4" data-path="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.4_SET_TRANSACTION_Syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.4_SET_TRANSACTION_Syntax.html">
+            
+                    
+                    3.4.4 SET TRANSACTION Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.5" data-path="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.5_savepoint_syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.5_savepoint_syntax.html">
+            
+                    
+                    3.4.5 SAVEPOINT, ROLLBACK TO SAVEPOINT, and RELEASE SAVEPOINT Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../3.SQL_Syntax/3.5_DAL.html">
+            
+                <a href="../3.SQL_Syntax/3.5_DAL.html">
+            
+                    
+                    3.5 DAL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.1" data-path="../3.SQL_Syntax/3.5_DAL/3.5.1_SET.html">
+            
+                <a href="../3.SQL_Syntax/3.5_DAL/3.5.1_SET.html">
+            
+                    
+                    3.5.1 SET
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.2" data-path="../3.SQL_Syntax/3.5_DAL/3.5.2_SHOW.html">
+            
+                <a href="../3.SQL_Syntax/3.5_DAL/3.5.2_SHOW.html">
+            
+                    
+                    3.5.2 SHOW
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.3" data-path="../3.SQL_Syntax/3.5_DAL/3.5.3_KILL.html">
+            
+                <a href="../3.SQL_Syntax/3.5_DAL/3.5.3_KILL.html">
+            
+                    
+                    3.5.3 KILL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../3.SQL_Syntax/3.6_procedure_support.html">
+            
+                <a href="../3.SQL_Syntax/3.6_procedure_support.html">
+            
+                    
+                    3.6 存储过程支持方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../3.SQL_Syntax/3.7_Utility_Statements.html">
+            
+                <a href="../3.SQL_Syntax/3.7_Utility_Statements.html">
+            
+                    
+                    3.7 Utility Statements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../3.SQL_Syntax/3.8_Hint.html">
+            
+                <a href="../3.SQL_Syntax/3.8_Hint.html">
+            
+                    
+                    3.8 Hint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../3.SQL_Syntax/3.9_Other_unsupport.html">
+            
+                <a href="../3.SQL_Syntax/3.9_Other_unsupport.html">
+            
+                    
+                    3.9 其他不支持语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../3.SQL_Syntax/3.10_func_and_operators.html">
+            
+                <a href="../3.SQL_Syntax/3.10_func_and_operators.html">
+            
+                    
+                    3.10 函数与操作符支持列表(alpha版本)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../3.SQL_Syntax/3.11_Export_and_Import.html">
+            
+                <a href="../3.SQL_Syntax/3.11_Export_and_Import.html">
+            
+                    
+                    3.11 导入导出方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../4.Protocol/4.0_overview.html">
+            
+                <a href="../4.Protocol/4.0_overview.html">
+            
+                    
+                    4.协议兼容
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../4.Protocol/4.1_Packet.html">
+            
+                <a href="../4.Protocol/4.1_Packet.html">
+            
+                    
+                    4.1 基本包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../4.Protocol/4.2_Connecting.html">
+            
+                <a href="../4.Protocol/4.2_Connecting.html">
+            
+                    
+                    4.2 连接建立
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../4.Protocol/4.3_Text_Protocol.html">
+            
+                <a href="../4.Protocol/4.3_Text_Protocol.html">
+            
+                    
+                    4.3 文本协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../4.Protocol/4.4_Binary_Protocol.html">
+            
+                <a href="../4.Protocol/4.4_Binary_Protocol.html">
+            
+                    
+                    4.4 二进制协议 (Prepared Statements)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../4.Protocol/4.5_Server_Response_Packets.html">
+            
+                <a href="../4.Protocol/4.5_Server_Response_Packets.html">
+            
+                    
+                    4.5 服务响应包
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../5.Limit/5.0_overview.html">
+            
+                <a href="../5.Limit/5.0_overview.html">
+            
+                    
+                    5.已知限制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../5.Limit/5.1_druid_limit.html">
+            
+                <a href="../5.Limit/5.1_druid_limit.html">
+            
+                    
+                    5.1 druid引发的限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../5.Limit/5.2_other_limit.html">
+            
+                <a href="../5.Limit/5.2_other_limit.html">
+            
+                    
+                    5.2 其他已知限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../6.Differernce_from_MySQL_Server/6.0_overview.html">
+            
+                <a href="../6.Differernce_from_MySQL_Server/6.0_overview.html">
+            
+                    
+                    6.与MySQL Server的差异化描述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../6.Differernce_from_MySQL_Server/6.1_need_rollback.html">
+            
+                <a href="../6.Differernce_from_MySQL_Server/6.1_need_rollback.html">
+            
+                    
+                    6.1 事务中遇到主键冲突需要显式回滚
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../6.Differernce_from_MySQL_Server/6.2_insert_sequence.html">
+            
+                <a href="../6.Differernce_from_MySQL_Server/6.2_insert_sequence.html">
+            
+                    
+                    6.2 INSERT不能显式指定自增序列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../6.Differernce_from_MySQL_Server/6.3_add_show_all_tables.html">
+            
+                <a href="../6.Differernce_from_MySQL_Server/6.3_add_show_all_tables.html">
+            
+                    
+                    6.3 增加"show all tables"
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../6.Differernce_from_MySQL_Server/6.4_remove_message.html">
+            
+                <a href="../6.Differernce_from_MySQL_Server/6.4_remove_message.html">
+            
+                    
+                    6.4 去除了增删改的message信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../6.Differernce_from_MySQL_Server/6.5_about_information_schema.html">
+            
+                <a href="../6.Differernce_from_MySQL_Server/6.5_about_information_schema.html">
+            
+                    
+                    6.5 information_schema等库的支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../7.Developer_Notice/7.0_overview.html">
+            
+                <a href="../7.Developer_Notice/7.0_overview.html">
+            
+                    
+                    7.开发者须知
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../7.Developer_Notice/7.1_SQL_develop_rule.html">
+            
+                <a href="../7.Developer_Notice/7.1_SQL_develop_rule.html">
+            
+                    
+                    7.1 SQL开发编写原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../7.Developer_Notice/7.2_Demo_for_connect_dble.html">
+            
+                <a href="../7.Developer_Notice/7.2_Demo_for_connect_dble.html">
+            
+                    
+                    7.2 dble连接Demo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../7.Developer_Notice/7.3_Other_Notice.html">
+            
+                <a href="../7.Developer_Notice/7.3_Other_Notice.html">
+            
+                    
+                    7.3 其他注意事项
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../8.Configuration_samples/8.0_overview.html">
+            
+                <a href="../8.Configuration_samples/8.0_overview.html">
+            
+                    
+                    8.配置示例
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../8.Configuration_samples/8.1_timestamp_sequence_table.html">
+            
+                <a href="../8.Configuration_samples/8.1_timestamp_sequence_table.html">
+            
+                    
+                    8.1 时间戳方式全局序列的配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../8.Configuration_samples/8.2_MySQL-offset-step_sequence_table.html">
+            
+                <a href="../8.Configuration_samples/8.2_MySQL-offset-step_sequence_table.html">
+            
+                    
+                    8.2 MySQL-offset-step 方式全局序列的配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../9.Sysbench_samples/9.0_overview.html">
+            
+                <a href="../9.Sysbench_samples/9.0_overview.html">
+            
+                    
+                    9.sysbench压测dble示例
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../9.Sysbench_samples/9.1_env.html">
+            
+                <a href="../9.Sysbench_samples/9.1_env.html">
+            
+                    
+                    9.1 测试环境及架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../9.Sysbench_samples/9.2_conf.html">
+            
+                <a href="../9.Sysbench_samples/9.2_conf.html">
+            
+                    
+                    9.2 修改dble配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../9.Sysbench_samples/9.3_use_sysbench.html">
+            
+                <a href="../9.Sysbench_samples/9.3_use_sysbench.html">
+            
+                    
+                    9.3 使用sysbench进行压测
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../A.Faq/A_overview.html">
+            
+                <a href="../A.Faq/A_overview.html">
+            
+                    
+                    A.Faq
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../A.Faq/ErrorCode/A_overview1.html">
+            
+                <a href="../A.Faq/ErrorCode/A_overview1.html">
+            
+                    
+                    A.1 ErrorCode
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1.1" data-path="../A.Faq/ErrorCode/Content/MaxConnections.html">
+            
+                <a href="../A.Faq/ErrorCode/Content/MaxConnections.html">
+            
+                    
+                    max Connections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.2" data-path="../A.Faq/ErrorCode/Content/OutOfMemoryError.html">
+            
+                <a href="../A.Faq/ErrorCode/Content/OutOfMemoryError.html">
+            
+                    
+                    Out Of Memory Error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.3" data-path="../A.Faq/ErrorCode/Content/TheProblemOfHint.html">
+            
+                <a href="../A.Faq/ErrorCode/Content/TheProblemOfHint.html">
+            
+                    
+                    The Problem Of Hint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.4" data-path="../A.Faq/ErrorCode/Content/NestLoopParametersLeadToTemptableException.html">
+            
+                <a href="../A.Faq/ErrorCode/Content/NestLoopParametersLeadToTemptableException.html">
+            
+                    
+                    NestLoop Parameters Lead To Temptable Exception
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.5" data-path="../A.Faq/ErrorCode/Content/Can'tGetVariablesFromDataNode.html">
+            
+                <a href="../A.Faq/ErrorCode/Content/Can'tGetVariablesFromDataNode.html">
+            
+                    
+                    Can't Get Variables From DataNode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.6" data-path="../A.Faq/ErrorCode/Content/PortAlreadyInUse1984.html">
+            
+                <a href="../A.Faq/ErrorCode/Content/PortAlreadyInUse1984.html">
+            
+                    
+                    Port already in use:1984
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.7" data-path="../A.Faq/ErrorCode/Content/ShardingColumnCannotBeNull.html">
+            
+                <a href="../A.Faq/ErrorCode/Content/ShardingColumnCannotBeNull.html">
+            
+                    
+                    Sharding Column Cannot Be Null
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../A.Faq/Internals/A_overview2.html">
+            
+                <a href="../A.Faq/Internals/A_overview2.html">
+            
+                    
+                    A.2 原理解释
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.2.1" data-path="../A.Faq/Internals/Content/UseExplainToTraceGroupBy.html">
+            
+                <a href="../A.Faq/Internals/Content/UseExplainToTraceGroupBy.html">
+            
+                    
+                    How To Use Explain To Resolve The Distribution Rules Of Group Gy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2.2" data-path="../A.Faq/Internals/Content/HashAndConsistentHashingAndJumpstringhash.html">
+            
+                <a href="../A.Faq/Internals/Content/HashAndConsistentHashingAndJumpstringhash.html">
+            
+                    
+                    Hash And ConsistentHashing And Jumpstringhash
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../A.Faq/Usage/A_overview3.html">
+            
+                <a href="../A.Faq/Usage/A_overview3.html">
+            
+                    
+                    A.3 使用说明
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.3.1" data-path="../A.Faq/Usage/Content/ToBeContinued2.html">
+            
+                <a href="../A.Faq/Usage/Content/ToBeContinued2.html">
+            
+                    
+                    ToBeContinued2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2.20 慢查询日志</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="220-&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;">2.20 &#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;</h2>
+<p>&#x7C7B;&#x4F3C;&#x4E8E;MySQL&#x7684;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#xFF0C;&#x53EF;&#x4EE5;&#x5168;&#x5C40;&#x5F00;&#x542F;&#x5E76;&#x8BBE;&#x7F6E;&#xFF0C;&#x8BB0;&#x5F55;dble server&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x5F53;&#x4E2D;&#x7684;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#xFF0C;&#x65E5;&#x5FD7;&#x683C;&#x5F0F;&#x517C;&#x5BB9;MySQL&#x6162;&#x67E5;&#x8BE2;&#x5206;&#x6790;&#x5DE5;&#x5177;(&#x5DF2;&#x6D4B;&#x8BD5;&#x8FC7;MySQL&#x5B98;&#x65B9;&#x5DE5;&#x5177;mysqldumpslow&#x548C;Percona&#x7684;pt-query-digest)  </p>
+<h3 id="2201-&#x5728;serverxml&#x91CC;&#x589E;&#x52A0;&#x4E86;6&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x7528;&#x4E8E;&#x542F;&#x52A8;&#x65F6;&#x5019;&#x63A7;&#x5236;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x7684;&#x884C;&#x4E3A;">2.20.1 &#x5728;server.xml&#x91CC;&#x589E;&#x52A0;&#x4E86;6&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x7528;&#x4E8E;&#x542F;&#x52A8;&#x65F6;&#x5019;&#x63A7;&#x5236;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x7684;&#x884C;&#x4E3A;</h3>
+<pre><code>&lt;!-- &#x662F;&#x5426;&#x5F00;&#x542F;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7; --&gt;
+&lt;property name=&quot;enableSlowLog&quot;&gt;0&lt;/property&gt;
+&lt;!-- &#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x4FDD;&#x5B58;&#x6587;&#x4EF6;&#x76EE;&#x5F55; --&gt;
+&lt;!--&lt;property name=&quot;slowLogBaseDir&quot;&gt;./slowlogs&lt;/property&gt;--&gt;
+&lt;!-- &#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x4FDD;&#x5B58;&#x6587;&#x4EF6;&#x524D;&#x7F00;&#x540D;&#x79F0; --&gt;
+&lt;!--&lt;property name=&quot;slowLogBaseName&quot;&gt;slow-query&lt;/property&gt;--&gt;
+&lt;!-- &#x65E5;&#x5FD7;&#x4E24;&#x6B21;&#x5237;&#x76D8;&#x4E4B;&#x95F4;&#x7684;&#x6700;&#x5927;&#x5468;&#x671F;&#xFF0C;&#x5355;&#x4F4D;&#x662F;&#x79D2; --&gt;
+&lt;property name=&quot;flushSlowLogPeriod&quot;&gt;1&lt;/property&gt;
+&lt;!-- &#x65E5;&#x5FD7;&#x4E24;&#x6B21;&#x5237;&#x76D8;&#x4E4B;&#x95F4;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x6700;&#x5927;&#x6761;&#x6570;&#x9608;&#x503C; --&gt;
+&lt;property name=&quot;flushSlowLogSize&quot;&gt;1000&lt;/property&gt;
+&lt;!-- &#x6162;&#x67E5;&#x8BE2;&#x7EDF;&#x8BA1;&#x9608;&#x503C;&#xFF0C;&#x5927;&#x4E8E;&#x6B64;&#x503C;&#x4F1A;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x6162;&#x67E5;&#x8BE2; , &#x5355;&#x4F4D;&#x662F;&#x6BEB;&#x79D2; --&gt;
+&lt;property name=&quot;sqlSlowTime&quot;&gt;100&lt;/property&gt;
+</code></pre><h3 id="2202-&#x7BA1;&#x7406;&#x7AEF;&#x53E3;&#x589E;&#x52A0;&#x547D;&#x4EE4;&#xFF0C;&#x7528;&#x4E8E;&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x52A8;&#x6001;&#x4FEE;&#x6539;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x7EDF;&#x8BA1;&#x884C;&#x4E3A;">2.20.2 &#x7BA1;&#x7406;&#x7AEF;&#x53E3;&#x589E;&#x52A0;&#x547D;&#x4EE4;&#xFF0C;&#x7528;&#x4E8E;&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x52A8;&#x6001;&#x4FEE;&#x6539;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x7EDF;&#x8BA1;&#x884C;&#x4E3A;</h3>
+<pre><code>enable @@slow_query_log; -- &#x5F00;&#x542F;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;  
+show @@slow_query_log; -- &#x67E5;&#x8BE2;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x7684;&#x5F00;&#x542F;&#x72B6;&#x6001;  
+disable @@slow_query_log; -- &#x5173;&#x95ED;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;  
+show @@slow_query_log; -- &#x518D;&#x6B21;&#x67E5;&#x8BE2;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x7684;&#x5F00;&#x542F;&#x72B6;&#x6001;  
+
+show @@slow_query.time;  -- &#x67E5;&#x770B;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x7EDF;&#x8BA1;&#x9608;&#x503C;  
+reload @@slow_query.time=200;  -- &#x4FEE;&#x6539;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x7EDF;&#x8BA1;&#x9608;&#x503C;  
+
+show @@slow_query.flushperiod; -- &#x67E5;&#x770B;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x5237;&#x76D8;&#x5468;&#x671F;  
+reload @@slow_query.flushperiod=2;  -- &#x4FEE;&#x6539;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x5237;&#x76D8;&#x5468;&#x671F;  
+
+show @@slow_query.flushsize;-- &#x67E5;&#x770B;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x5237;&#x76D8;&#x6761;&#x6570;&#x9608;&#x503C;  
+reload @@slow_query.flushsize=1100;  -- &#x4FEE;&#x6539;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x5237;&#x76D8;&#x6761;&#x6570;&#x9608;&#x503C;
+</code></pre><h3 id="2203-&#x652F;&#x6301;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x5206;&#x6790;&#x5DE5;&#x5177;&#xFF1A;mysql&#x7684;-mysqldumpslow-&#x5DE5;&#x5177;&#x548C;percona-&#x7684;-pt-query-digest-&#x5DE5;&#x5177;">2.20.3 &#x652F;&#x6301;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x5206;&#x6790;&#x5DE5;&#x5177;&#xFF1A;MySQL&#x7684; mysqldumpslow &#x5DE5;&#x5177;&#x548C;Percona &#x7684; pt-query-digest &#x5DE5;&#x5177;</h3>
+<p>&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x5927;&#x6982;&#x662F;&#x8FD9;&#x6837;&#x7684; :  </p>
+<pre><code>/FAKE_PATH/mysqld, Version: FAKE_VERSION. started with:
+Tcp port: 3320  Unix socket: FAKE_SOCK
+Time                 Id Command    Argument
+# Time: 2018-08-23T17:40:10.149000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.132709  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000350  Prepare_Push: 0.116678  dn1_First_Result_Fetch: 0.013686  dn1_Last_Result_Fetch: 0.001422  Write_Client: 0.001995
+SET timestamp=1535017210149;
+select * from sharding_two_node where id =1;
+# Time: 2018-08-23T17:40:10.200000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.035600  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000062  Prepare_Push: 0.006733  dn2_First_Result_Fetch: 0.012524  dn1_First_Result_Fetch: 0.010971  dn2_Last_Result_Fetch: 0.015368  dn1_Last_Result_Fetch: 0.005119  Write_Client: 0.017834
+SET timestamp=1535017210200;
+select * from sharding_two_node;
+# Time: 2018-08-23T17:40:10.282000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.045337  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000166  Prepare_Push: 0.003941  dn1_First_Result_Fetch: 0.039652  dn1_Last_Result_Fetch: 0.000300  Write_Client: 0.001578
+SET timestamp=1535017210282;
+delete from sharding_two_node where id =15;
+# Time: 2018-08-23T17:40:10.315000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.031232  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.005467  Prepare_Push: 0.001989  dn2_First_Result_Fetch: 0.020240  dn2_Last_Result_Fetch: 0.001900  Write_Client: 0.003536
+SET timestamp=1535017210315;
+delete from sharding_two_node where id =519;
+# Time: 2018-08-23T17:40:10.432000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.116672  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.013625  Prepare_Push: 0.024767  dn2_First_Result_Fetch: 0.056395  dn1_First_Result_Fetch: 0.026420  dn2_Last_Result_Fetch: 0.000743  dn1_Last_Result_Fetch: 0.001700  Write_Client: 0.051861
+SET timestamp=1535017210432;
+insert into sharding_two_node values(15,&apos;15&apos;,15),(519,&apos;519&apos;,519);
+# Time: 2018-08-23T17:40:10.772000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.338569  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000082  Prepare_Push: 0.258365  dn1_0_First_Result_Fetch: 0.047494  dn1_0_Last_Result_Fetch: 0.029018  dn2_0_First_Result_Fetch: 0.042964  dn2_0_Last_Result_Fetch: 0.033525  Write_Client: 0.009385
+SET timestamp=1535017210772;
+select count(*) from sharding_two_node;
+# Time: 2018-08-23T17:40:10.821000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.046745  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000059  Prepare_Push: 0.025401  dn1_0_First_Result_Fetch: 0.011755  dn1_0_Last_Result_Fetch: 0.001180  Generate_New_Query: 0.001706  dn1_1_First_Result_Fetch: 0.004224  dn1_1_Last_Result_Fetch: 0.001213  Write_Client: 0.001384
+SET timestamp=1535017210821;
+select count(*) from sharding_two_node where id =(select id from sharding_two_node where id=1);
+# Time: 2018-08-23T17:40:12.061000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.036952  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.001111  Prepare_Push: 0.001132  dn1_First_Result_Fetch: 0.034266  dn1_Last_Result_Fetch: 0.000084  Write_Client: 0.000443
+SET timestamp=1535017212061;
+delete from sharding_two_node where id =15;
+# Time: 2018-08-23T17:40:12.091000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.028213  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000666  Prepare_Push: 0.001206  dn2_First_Result_Fetch: 0.025991  dn2_Last_Result_Fetch: 0.000101  Write_Client: 0.000349
+SET timestamp=1535017212091;
+delete from sharding_two_node where id =519;
+# Time: 2018-08-23T17:40:12.132000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.040365  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000223  Prepare_Push: 0.001172  dn2_First_Result_Fetch: 0.019852  dn1_First_Result_Fetch: 0.019810  dn2_Last_Result_Fetch: 0.000901  dn1_Last_Result_Fetch: 0.000780  Write_Client: 0.019160
+SET timestamp=1535017212132;
+insert into sharding_two_node values(15,&apos;15&apos;,15),(519,&apos;519&apos;,519);
+# Time: 2018-08-23T17:40:12.145000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.012196  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000115  Prepare_Push: 0.001403  dn1_0_First_Result_Fetch: 0.006714  dn1_0_Last_Result_Fetch: 0.002561  dn2_0_First_Result_Fetch: 0.006787  dn2_0_Last_Result_Fetch: 0.001806  Write_Client: 0.002280
+SET timestamp=1535017212145;
+select count(*) from sharding_two_node;
+# Time: 2018-08-23T17:40:12.164000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.016979  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000224  Prepare_Push: 0.002236  dn1_0_First_Result_Fetch: 0.006678  dn1_0_Last_Result_Fetch: 0.000703  Generate_New_Query: 0.000866  dn1_1_First_Result_Fetch: 0.004532  dn1_1_Last_Result_Fetch: 0.000879  Write_Client: 0.001002
+SET timestamp=1535017212164;
+select count(*) from sharding_two_node where id =(select id from sharding_two_node where id=1);
+# Time: 2018-08-23T17:40:13.134000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.010213  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000145  Prepare_Push: 0.001520  dn1_First_Result_Fetch: 0.007996  dn1_Last_Result_Fetch: 0.000201  Write_Client: 0.000551
+SET timestamp=1535017213134;
+select * from sharding_two_node where id =1;
+# Time: 2018-08-23T17:40:13.153000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.014257  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000080  Prepare_Push: 0.002394  dn2_First_Result_Fetch: 0.008839  dn1_First_Result_Fetch: 0.008837  dn2_Last_Result_Fetch: 0.001424  dn1_Last_Result_Fetch: 0.002407  Write_Client: 0.002945
+SET timestamp=1535017213153;
+select * from sharding_two_node;
+# Time: 2018-08-23T17:40:13.212000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.029822  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000063  Prepare_Push: 0.001128  dn1_First_Result_Fetch: 0.028277  dn1_Last_Result_Fetch: 0.000109  Write_Client: 0.000355
+SET timestamp=1535017213212;
+delete from sharding_two_node where id =15;
+# Time: 2018-08-23T17:40:13.240000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.027695  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000067  Prepare_Push: 0.000682  dn2_First_Result_Fetch: 0.026582  dn2_Last_Result_Fetch: 0.000078  Write_Client: 0.000364
+SET timestamp=1535017213240;
+delete from sharding_two_node where id =519;
+# Time: 2018-08-23T17:40:13.321000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.076093  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000231  Prepare_Push: 0.001334  dn2_First_Result_Fetch: 0.035072  dn1_First_Result_Fetch: 0.035074  dn2_Last_Result_Fetch: 0.018756  dn1_Last_Result_Fetch: 0.001263  Write_Client: 0.039457
+SET timestamp=1535017213321;
+insert into sharding_two_node values(15,&apos;15&apos;,15),(519,&apos;519&apos;,519);
+# Time: 2018-08-23T17:40:13.348000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.026278  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000335  Prepare_Push: 0.001249  dn1_0_First_Result_Fetch: 0.011028  dn1_0_Last_Result_Fetch: 0.009279  dn2_0_First_Result_Fetch: 0.019200  dn2_0_Last_Result_Fetch: 0.003441  Write_Client: 0.004600
+SET timestamp=1535017213348;
+select count(*) from sharding_two_node;
+# Time: 2018-08-23T17:40:13.381000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.029152  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000662  Prepare_Push: 0.003189  dn1_0_First_Result_Fetch: 0.014453  dn1_0_Last_Result_Fetch: 0.001013  Generate_New_Query: 0.000911  dn1_1_First_Result_Fetch: 0.005703  dn1_1_Last_Result_Fetch: 0.001483  Write_Client: 0.002114
+SET timestamp=1535017213381;
+select count(*) from sharding_two_node where id =(select id from sharding_two_node where id=1);
+# Time: 2018-08-23T17:40:14.163000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.012540  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000197  Prepare_Push: 0.001303  dn2_First_Result_Fetch: 0.006452  dn1_First_Result_Fetch: 0.007858  dn2_Last_Result_Fetch: 0.004065  dn1_Last_Result_Fetch: 0.002960  Write_Client: 0.004588
+SET timestamp=1535017214163;
+select * from sharding_two_node;
+# Time: 2018-08-23T17:40:14.220000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.027587  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000051  Prepare_Push: 0.000744  dn1_First_Result_Fetch: 0.026441  dn1_Last_Result_Fetch: 0.000104  Write_Client: 0.000350
+SET timestamp=1535017214220;
+delete from sharding_two_node where id =15;
+# Time: 2018-08-23T17:40:14.253000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.031984  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000070  Prepare_Push: 0.001144  dn2_First_Result_Fetch: 0.030202  dn2_Last_Result_Fetch: 0.000182  Write_Client: 0.000568
+SET timestamp=1535017214253;
+delete from sharding_two_node where id =519;
+# Time: 2018-08-23T17:40:14.292000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.037327  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000272  Prepare_Push: 0.001316  dn2_First_Result_Fetch: 0.014299  dn1_First_Result_Fetch: 0.014331  dn2_Last_Result_Fetch: 0.001148  dn1_Last_Result_Fetch: 0.000753  Write_Client: 0.021440
+SET timestamp=1535017214292;
+insert into sharding_two_node values(15,&apos;15&apos;,15),(519,&apos;519&apos;,519);
+# Time: 2018-08-23T17:40:14.303000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.010244  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000050  Prepare_Push: 0.001101  dn1_0_First_Result_Fetch: 0.004540  dn1_0_Last_Result_Fetch: 0.002781  dn2_0_First_Result_Fetch: 0.004708  dn2_0_Last_Result_Fetch: 0.002592  Write_Client: 0.002092
+SET timestamp=1535017214303;
+select count(*) from sharding_two_node;
+# Time: 2018-08-23T17:40:14.327000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.021078  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000109  Prepare_Push: 0.002098  dn1_0_First_Result_Fetch: 0.006720  dn1_0_Last_Result_Fetch: 0.000748  Generate_New_Query: 0.001158  dn1_1_First_Result_Fetch: 0.008043  dn1_1_Last_Result_Fetch: 0.001147  Write_Client: 0.001269
+SET timestamp=1535017214327;
+select count(*) from sharding_two_node where id =(select id from sharding_two_node where id=1);
+# Time: 2018-08-23T17:40:15.254000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.010569  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000076  Prepare_Push: 0.001050  dn1_First_Result_Fetch: 0.008330  dn1_Last_Result_Fetch: 0.000146  Write_Client: 0.001113
+SET timestamp=1535017215254;
+select * from sharding_two_node where id =1;
+# Time: 2018-08-23T17:40:15.321000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.024216  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000081  Prepare_Push: 0.001295  dn1_First_Result_Fetch: 0.021938  dn1_Last_Result_Fetch: 0.000422  Write_Client: 0.000902
+SET timestamp=1535017215321;
+delete from sharding_two_node where id =15;
+# Time: 2018-08-23T17:40:15.351000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.027796  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000666  Prepare_Push: 0.000760  dn2_First_Result_Fetch: 0.025984  dn2_Last_Result_Fetch: 0.000094  Write_Client: 0.000386
+SET timestamp=1535017215351;
+delete from sharding_two_node where id =519;
+# Time: 2018-08-23T17:40:15.392000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.039805  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000217  Prepare_Push: 0.000804  dn2_First_Result_Fetch: 0.017410  dn1_First_Result_Fetch: 0.017468  dn2_Last_Result_Fetch: 0.001490  dn1_Last_Result_Fetch: 0.001223  Write_Client: 0.021374
+SET timestamp=1535017215392;
+insert into sharding_two_node values(15,&apos;15&apos;,15),(519,&apos;519&apos;,519);
+# Time: 2018-08-23T17:40:15.410000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.017384  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000152  Prepare_Push: 0.001183  dn1_0_First_Result_Fetch: 0.005037  dn1_0_Last_Result_Fetch: 0.007164  dn2_0_First_Result_Fetch: 0.008156  dn2_0_Last_Result_Fetch: 0.004962  Write_Client: 0.004043
+SET timestamp=1535017215410;
+select count(*) from sharding_two_node;
+# Time: 2018-08-23T17:40:15.434000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.021341  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000318  Prepare_Push: 0.002764  dn1_0_First_Result_Fetch: 0.010897  dn1_0_Last_Result_Fetch: 0.000544  Generate_New_Query: 0.000798  dn1_1_First_Result_Fetch: 0.004506  dn1_1_Last_Result_Fetch: 0.000790  Write_Client: 0.000845
+SET timestamp=1535017215434;
+select count(*) from sharding_two_node where id =(select id from sharding_two_node where id=1);
+# Time: 2018-08-23T17:40:16.322000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.030106  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000217  Prepare_Push: 0.001253  dn1_First_Result_Fetch: 0.028330  dn1_Last_Result_Fetch: 0.000086  Write_Client: 0.000306
+SET timestamp=1535017216322;
+delete from sharding_two_node where id =15;
+# Time: 2018-08-23T17:40:16.353000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.030005  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.001306  Prepare_Push: 0.001004  dn2_First_Result_Fetch: 0.027242  dn2_Last_Result_Fetch: 0.000140  Write_Client: 0.000453
+SET timestamp=1535017216353;
+delete from sharding_two_node where id =519;
+# Time: 2018-08-23T17:40:16.403000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.049615  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.001459  Prepare_Push: 0.000830  dn2_First_Result_Fetch: 0.024286  dn1_First_Result_Fetch: 0.025469  dn2_Last_Result_Fetch: 0.001726  dn1_Last_Result_Fetch: 0.000853  Write_Client: 0.023039
+SET timestamp=1535017216403;
+insert into sharding_two_node values(15,&apos;15&apos;,15),(519,&apos;519&apos;,519);
+# Time: 2018-08-23T17:40:16.526000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.121702  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000337  Prepare_Push: 0.000889  dn1_0_First_Result_Fetch: 0.009370  dn1_0_Last_Result_Fetch: 0.002010  dn2_0_First_Result_Fetch: 0.009160  dn2_0_Last_Result_Fetch: 0.001779  Write_Client: 0.109753
+SET timestamp=1535017216526;
+select count(*) from sharding_two_node;
+# Time: 2018-08-23T17:40:16.560000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.030306  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.001534  Prepare_Push: 0.001759  dn1_0_First_Result_Fetch: 0.011846  dn1_0_Last_Result_Fetch: 0.001663  Generate_New_Query: 0.003223  dn1_1_First_Result_Fetch: 0.006428  dn1_1_Last_Result_Fetch: 0.002601  Write_Client: 0.002291
+SET timestamp=1535017216560;
+select count(*) from sharding_two_node where id =(select id from sharding_two_node where id=1);
+# Time: 2018-08-23T17:40:17.325000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.017545  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.006231  Prepare_Push: 0.002335  dn1_First_Result_Fetch: 0.008121  dn1_Last_Result_Fetch: 0.000277  Write_Client: 0.000857
+SET timestamp=1535017217325;
+select * from sharding_two_node where id =1;
+# Time: 2018-08-23T17:40:17.390000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.026216  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000854  Prepare_Push: 0.000904  dn1_First_Result_Fetch: 0.024157  dn1_Last_Result_Fetch: 0.000081  Write_Client: 0.000301
+SET timestamp=1535017217390;
+delete from sharding_two_node where id =15;
+# Time: 2018-08-23T17:40:17.411000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.020095  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000699  Prepare_Push: 0.000711  dn2_First_Result_Fetch: 0.017634  dn2_Last_Result_Fetch: 0.000132  Write_Client: 0.001051
+SET timestamp=1535017217411;
+delete from sharding_two_node where id =519;
+# Time: 2018-08-23T17:40:17.491000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.078505  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.001702  Prepare_Push: 0.000763  dn2_First_Result_Fetch: 0.018547  dn1_First_Result_Fetch: 0.018482  dn2_Last_Result_Fetch: 0.036637  dn1_Last_Result_Fetch: 0.000566  Write_Client: 0.057558
+SET timestamp=1535017217491;
+insert into sharding_two_node values(15,&apos;15&apos;,15),(519,&apos;519&apos;,519);
+# Time: 2018-08-23T17:40:17.518000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.026112  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000686  Prepare_Push: 0.000872  dn1_0_First_Result_Fetch: 0.007054  dn1_0_Last_Result_Fetch: 0.001072  dn2_0_First_Result_Fetch: 0.005839  dn2_0_Last_Result_Fetch: 0.017248  Write_Client: 0.016586
+SET timestamp=1535017217518;
+select count(*) from sharding_two_node;
+# Time: 2018-08-23T17:40:17.558000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.038199  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000966  Prepare_Push: 0.005189  dn1_0_First_Result_Fetch: 0.013137  dn1_0_Last_Result_Fetch: 0.001134  Generate_New_Query: 0.003973  dn1_1_First_Result_Fetch: 0.010228  dn1_1_Last_Result_Fetch: 0.003564  Write_Client: 0.002115
+SET timestamp=1535017217558;
+select count(*) from sharding_two_node where id =(select id from sharding_two_node where id=1);
+# Time: 2018-08-23T17:40:18.353000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.019048  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.003008  Prepare_Push: 0.000844  dn2_First_Result_Fetch: 0.006415  dn1_First_Result_Fetch: 0.009082  dn2_Last_Result_Fetch: 0.000323  dn1_Last_Result_Fetch: 0.005902  Write_Client: 0.008781
+SET timestamp=1535017218353;
+select * from sharding_two_node;
+# Time: 2018-08-23T17:40:18.410000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.025498  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000060  Prepare_Push: 0.000696  dn1_First_Result_Fetch: 0.024394  dn1_Last_Result_Fetch: 0.000084  Write_Client: 0.000348
+SET timestamp=1535017218410;
+delete from sharding_two_node where id =15;
+# Time: 2018-08-23T17:40:18.430000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.018794  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000047  Prepare_Push: 0.001301  dn2_First_Result_Fetch: 0.017073  dn2_Last_Result_Fetch: 0.000099  Write_Client: 0.000373
+SET timestamp=1535017218430;
+delete from sharding_two_node where id =519;
+# Time: 2018-08-23T17:40:18.471000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.039810  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000052  Prepare_Push: 0.000661  dn2_First_Result_Fetch: 0.019799  dn1_First_Result_Fetch: 0.019923  dn2_Last_Result_Fetch: 0.000698  dn1_Last_Result_Fetch: 0.000814  Write_Client: 0.019298
+SET timestamp=1535017218471;
+insert into sharding_two_node values(15,&apos;15&apos;,15),(519,&apos;519&apos;,519);
+# Time: 2018-08-23T17:40:18.484000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.012214  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000047  Prepare_Push: 0.001782  dn1_0_First_Result_Fetch: 0.007109  dn1_0_Last_Result_Fetch: 0.001544  dn2_0_First_Result_Fetch: 0.005518  dn2_0_Last_Result_Fetch: 0.001470  Write_Client: 0.003568
+SET timestamp=1535017218484;
+select count(*) from sharding_two_node;
+# Time: 2018-08-23T17:40:18.507000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.019695  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000046  Prepare_Push: 0.001448  dn1_0_First_Result_Fetch: 0.006244  dn1_0_Last_Result_Fetch: 0.000988  Generate_New_Query: 0.001564  dn1_1_First_Result_Fetch: 0.007080  dn1_1_Last_Result_Fetch: 0.001306  Write_Client: 0.001137
+SET timestamp=1535017218507;
+select count(*) from sharding_two_node where id =(select id from sharding_two_node where id=1);
+# Time: 2018-08-23T17:40:19.351000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.020937  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000059  Prepare_Push: 0.000800  dn1_First_Result_Fetch: 0.019607  dn1_Last_Result_Fetch: 0.000169  Write_Client: 0.000472
+SET timestamp=1535017219351;
+delete from sharding_two_node where id =15;
+# Time: 2018-08-23T17:40:19.370000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.018011  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.001184  Prepare_Push: 0.000583  dn2_First_Result_Fetch: 0.015894  dn2_Last_Result_Fetch: 0.000129  Write_Client: 0.000351
+SET timestamp=1535017219370;
+delete from sharding_two_node where id =519;
+# Time: 2018-08-23T17:40:19.412000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.041319  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000689  Prepare_Push: 0.000573  dn2_First_Result_Fetch: 0.017735  dn1_First_Result_Fetch: 0.017876  dn2_Last_Result_Fetch: 0.000601  dn1_Last_Result_Fetch: 0.000806  Write_Client: 0.022322
+SET timestamp=1535017219412;
+insert into sharding_two_node values(15,&apos;15&apos;,15),(519,&apos;519&apos;,519);
+# Time: 2018-08-23T17:40:19.423000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.010063  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000200  Prepare_Push: 0.001136  dn1_0_First_Result_Fetch: 0.006820  dn1_0_Last_Result_Fetch: 0.000694  dn2_0_First_Result_Fetch: 0.003519  dn2_0_Last_Result_Fetch: 0.003944  Write_Client: 0.001443
+SET timestamp=1535017219423;
+select count(*) from sharding_two_node;
+# Time: 2018-08-23T17:40:19.454000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.027592  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000182  Prepare_Push: 0.012798  dn1_0_First_Result_Fetch: 0.005960  dn1_0_Last_Result_Fetch: 0.000530  Generate_New_Query: 0.000811  dn1_1_First_Result_Fetch: 0.005659  dn1_1_Last_Result_Fetch: 0.000926  Write_Client: 0.001101
+SET timestamp=1535017219454;
+select count(*) from sharding_two_node where id =(select id from sharding_two_node where id=1);
+# Time: 2018-08-23T17:40:20.312000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.025903  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.001470  Prepare_Push: 0.000887  dn1_First_Result_Fetch: 0.022114  dn1_Last_Result_Fetch: 0.000197  Write_Client: 0.001433
+SET timestamp=1535017220312;
+delete from sharding_two_node where id =15;
+# Time: 2018-08-23T17:40:20.342000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.028503  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.005643  Prepare_Push: 0.001172  dn2_First_Result_Fetch: 0.021342  dn2_Last_Result_Fetch: 0.000074  Write_Client: 0.000346
+SET timestamp=1535017220342;
+delete from sharding_two_node where id =519;
+# Time: 2018-08-23T17:40:20.381000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.037424  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000641  Prepare_Push: 0.000959  dn2_First_Result_Fetch: 0.015139  dn1_First_Result_Fetch: 0.015238  dn2_Last_Result_Fetch: 0.000795  dn1_Last_Result_Fetch: 0.000956  Write_Client: 0.020685
+SET timestamp=1535017220381;
+insert into sharding_two_node values(15,&apos;15&apos;,15),(519,&apos;519&apos;,519);
+# Time: 2018-08-23T17:40:20.408000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.016143  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000122  Prepare_Push: 0.001979  dn1_0_First_Result_Fetch: 0.004408  dn1_0_Last_Result_Fetch: 0.000484  Generate_New_Query: 0.000965  dn1_1_First_Result_Fetch: 0.006059  dn1_1_Last_Result_Fetch: 0.001553  Write_Client: 0.000755
+SET timestamp=1535017220408;
+select count(*) from sharding_two_node where id =(select id from sharding_two_node where id=1);
+# Time: 2018-08-23T17:40:21.214000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.023376  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000073  Prepare_Push: 0.001306  dn1_First_Result_Fetch: 0.021694  dn1_Last_Result_Fetch: 0.000081  Write_Client: 0.000302
+SET timestamp=1535017221214;
+delete from sharding_two_node where id =15;
+# Time: 2018-08-23T17:40:21.241000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.025408  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000083  Prepare_Push: 0.001029  dn2_First_Result_Fetch: 0.023856  dn2_Last_Result_Fetch: 0.000122  Write_Client: 0.000440
+SET timestamp=1535017221241;
+delete from sharding_two_node where id =519;
+# Time: 2018-08-23T17:40:21.281000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.038482  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000087  Prepare_Push: 0.000871  dn2_First_Result_Fetch: 0.016690  dn1_First_Result_Fetch: 0.016708  dn2_Last_Result_Fetch: 0.000579  dn1_Last_Result_Fetch: 0.000891  Write_Client: 0.020835
+SET timestamp=1535017221281;
+insert into sharding_two_node values(15,&apos;15&apos;,15),(519,&apos;519&apos;,519);
+# Time: 2018-08-23T17:40:21.293000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.011657  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000615  Prepare_Push: 0.001320  dn1_0_First_Result_Fetch: 0.006906  dn1_0_Last_Result_Fetch: 0.001589  dn2_0_First_Result_Fetch: 0.005105  dn2_0_Last_Result_Fetch: 0.001548  Write_Client: 0.003341
+SET timestamp=1535017221293;
+select count(*) from sharding_two_node;
+# Time: 2018-08-23T17:40:21.312000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.017169  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000635  Prepare_Push: 0.001609  dn1_0_First_Result_Fetch: 0.006997  dn1_0_Last_Result_Fetch: 0.000728  Generate_New_Query: 0.001037  dn1_1_First_Result_Fetch: 0.004816  dn1_1_Last_Result_Fetch: 0.000709  Write_Client: 0.000703
+SET timestamp=1535017221312;
+select count(*) from sharding_two_node where id =(select id from sharding_two_node where id=1);
+# Time: 2018-08-23T17:40:22.150000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.026153  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000180  Prepare_Push: 0.000771  dn1_First_Result_Fetch: 0.024940  dn1_Last_Result_Fetch: 0.000061  Write_Client: 0.000261
+SET timestamp=1535017222150;
+delete from sharding_two_node where id =15;
+# Time: 2018-08-23T17:40:22.170000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.019181  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000180  Prepare_Push: 0.000642  dn2_First_Result_Fetch: 0.018060  dn2_Last_Result_Fetch: 0.000088  Write_Client: 0.000299
+SET timestamp=1535017222170;
+delete from sharding_two_node where id =519;
+# Time: 2018-08-23T17:40:22.220000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.049834  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000261  Prepare_Push: 0.000735  dn2_First_Result_Fetch: 0.019862  dn1_First_Result_Fetch: 0.019807  dn2_Last_Result_Fetch: 0.000418  dn1_Last_Result_Fetch: 0.000655  Write_Client: 0.029031
+SET timestamp=1535017222220;
+insert into sharding_two_node values(15,&apos;15&apos;,15),(519,&apos;519&apos;,519);
+# Time: 2018-08-23T17:40:22.240000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.019128  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000934  Prepare_Push: 0.002731  dn1_0_First_Result_Fetch: 0.013430  dn1_0_Last_Result_Fetch: 0.000521  dn2_0_First_Result_Fetch: 0.003296  dn2_0_Last_Result_Fetch: 0.001243  Write_Client: 0.011072
+SET timestamp=1535017222240;
+select count(*) from sharding_two_node;
+# Time: 2018-08-23T17:40:22.270000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.028479  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.003233  Prepare_Push: 0.004986  dn1_0_First_Result_Fetch: 0.009870  dn1_0_Last_Result_Fetch: 0.001172  Generate_New_Query: 0.001590  dn1_1_First_Result_Fetch: 0.006060  dn1_1_Last_Result_Fetch: 0.000771  Write_Client: 0.000700
+SET timestamp=1535017222270;
+select count(*) from sharding_two_node where id =(select id from sharding_two_node where id=1);
+# Time: 2018-08-23T17:40:23.097000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.053956  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000056  Prepare_Push: 0.001034  dn1_First_Result_Fetch: 0.052343  dn1_Last_Result_Fetch: 0.000174  Write_Client: 0.000523
+SET timestamp=1535017223097;
+select * from sharding_two_node where id =1;
+# Time: 2018-08-23T17:40:23.110000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.010839  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000499  Prepare_Push: 0.000680  dn2_First_Result_Fetch: 0.006349  dn1_First_Result_Fetch: 0.009082  dn2_Last_Result_Fetch: 0.000270  dn1_Last_Result_Fetch: 0.000333  Write_Client: 0.003311
+SET timestamp=1535017223110;
+select * from sharding_two_node;
+# Time: 2018-08-23T17:40:23.181000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.027573  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000109  Prepare_Push: 0.000980  dn2_First_Result_Fetch: 0.026156  dn2_Last_Result_Fetch: 0.000086  Write_Client: 0.000328
+SET timestamp=1535017223181;
+delete from sharding_two_node where id =519;
+# Time: 2018-08-23T17:40:23.231000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.049380  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.002435  Prepare_Push: 0.000670  dn2_First_Result_Fetch: 0.025278  dn1_First_Result_Fetch: 0.025242  dn2_Last_Result_Fetch: 0.000392  dn1_Last_Result_Fetch: 0.000629  Write_Client: 0.021032
+SET timestamp=1535017223231;
+insert into sharding_two_node values(15,&apos;15&apos;,15),(519,&apos;519&apos;,519);
+# Time: 2018-08-23T17:40:23.268000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.025207  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000060  Prepare_Push: 0.001492  dn1_0_First_Result_Fetch: 0.007693  dn1_0_Last_Result_Fetch: 0.000752  Generate_New_Query: 0.001946  dn1_1_First_Result_Fetch: 0.008776  dn1_1_Last_Result_Fetch: 0.005040  Write_Client: 0.001884
+SET timestamp=1535017223268;
+select count(*) from sharding_two_node where id =(select id from sharding_two_node where id=1);
+# Time: 2018-08-23T17:40:24.121000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.027104  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.001558  Prepare_Push: 0.001107  dn1_First_Result_Fetch: 0.024084  dn1_Last_Result_Fetch: 0.000085  Write_Client: 0.000356
+SET timestamp=1535017224121;
+delete from sharding_two_node where id =15;
+# Time: 2018-08-23T17:40:24.141000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.019191  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000072  Prepare_Push: 0.000673  dn2_First_Result_Fetch: 0.017923  dn2_Last_Result_Fetch: 0.000092  Write_Client: 0.000522
+SET timestamp=1535017224141;
+delete from sharding_two_node where id =519;
+# Time: 2018-08-23T17:40:24.182000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.039883  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000483  Prepare_Push: 0.000584  dn2_First_Result_Fetch: 0.017241  dn1_First_Result_Fetch: 0.017320  dn2_Last_Result_Fetch: 0.000603  dn1_Last_Result_Fetch: 0.000767  Write_Client: 0.021575
+SET timestamp=1535017224182;
+insert into sharding_two_node values(15,&apos;15&apos;,15),(519,&apos;519&apos;,519);
+# Time: 2018-08-23T17:40:24.196000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.012406  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000073  Prepare_Push: 0.000958  dn1_0_First_Result_Fetch: 0.008102  dn1_0_Last_Result_Fetch: 0.001255  dn2_0_First_Result_Fetch: 0.007566  dn2_0_Last_Result_Fetch: 0.001772  Write_Client: 0.002300
+SET timestamp=1535017224196;
+select count(*) from sharding_two_node;
+# Time: 2018-08-23T17:40:24.218000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.021238  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000864  Prepare_Push: 0.001143  dn1_0_First_Result_Fetch: 0.010305  dn1_0_Last_Result_Fetch: 0.000532  Generate_New_Query: 0.001852  dn1_1_First_Result_Fetch: 0.005359  dn1_1_Last_Result_Fetch: 0.000618  Write_Client: 0.000661
+SET timestamp=1535017224218;
+select count(*) from sharding_two_node where id =(select id from sharding_two_node where id=1);
+# Time: 2018-08-23T17:40:25.093000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.029579  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000106  Prepare_Push: 0.000882  dn1_First_Result_Fetch: 0.028241  dn1_Last_Result_Fetch: 0.000069  Write_Client: 0.000351
+SET timestamp=1535017225093;
+delete from sharding_two_node where id =15;
+# Time: 2018-08-23T17:40:25.121000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.027422  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.001867  Prepare_Push: 0.001330  dn2_First_Result_Fetch: 0.023887  dn2_Last_Result_Fetch: 0.000102  Write_Client: 0.000338
+SET timestamp=1535017225121;
+delete from sharding_two_node where id =519;
+# Time: 2018-08-23T17:40:25.161000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.038859  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000050  Prepare_Push: 0.000753  dn2_First_Result_Fetch: 0.019091  dn1_First_Result_Fetch: 0.019189  dn2_Last_Result_Fetch: 0.000582  dn1_Last_Result_Fetch: 0.000560  Write_Client: 0.018965
+SET timestamp=1535017225161;
+insert into sharding_two_node values(15,&apos;15&apos;,15),(519,&apos;519&apos;,519);
+# Time: 2018-08-23T17:40:25.191000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.016379  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000043  Prepare_Push: 0.001276  dn1_0_First_Result_Fetch: 0.007469  dn1_0_Last_Result_Fetch: 0.000678  Generate_New_Query: 0.001327  dn1_1_First_Result_Fetch: 0.003927  dn1_1_Last_Result_Fetch: 0.000787  Write_Client: 0.000893
+SET timestamp=1535017225191;
+select count(*) from sharding_two_node where id =(select id from sharding_two_node where id=1);
+# Time: 2018-08-23T17:40:26.026000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.029878  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000162  Prepare_Push: 0.000916  dn1_First_Result_Fetch: 0.028497  dn1_Last_Result_Fetch: 0.000084  Write_Client: 0.000303
+SET timestamp=1535017226026;
+delete from sharding_two_node where id =15;
+# Time: 2018-08-23T17:40:26.051000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.024231  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.001105  Prepare_Push: 0.000469  dn2_First_Result_Fetch: 0.022188  dn2_Last_Result_Fetch: 0.000100  Write_Client: 0.000470
+SET timestamp=1535017226051;
+delete from sharding_two_node where id =519;
+# Time: 2018-08-23T17:40:26.091000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.039762  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.001669  Prepare_Push: 0.001915  dn2_First_Result_Fetch: 0.018107  dn1_First_Result_Fetch: 0.018187  dn2_Last_Result_Fetch: 0.000633  dn1_Last_Result_Fetch: 0.000832  Write_Client: 0.018071
+SET timestamp=1535017226091;
+insert into sharding_two_node values(15,&apos;15&apos;,15),(519,&apos;519&apos;,519);
+# Time: 2018-08-23T17:40:26.105000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.012664  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000261  Prepare_Push: 0.000935  dn1_0_First_Result_Fetch: 0.007328  dn1_0_Last_Result_Fetch: 0.000733  dn2_0_First_Result_Fetch: 0.006229  dn2_0_Last_Result_Fetch: 0.002592  Write_Client: 0.003554
+SET timestamp=1535017226105;
+select count(*) from sharding_two_node;
+# Time: 2018-08-23T17:40:26.134000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.028335  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000046  Prepare_Push: 0.003442  dn1_0_First_Result_Fetch: 0.009563  dn1_0_Last_Result_Fetch: 0.001069  Generate_New_Query: 0.001856  dn1_1_First_Result_Fetch: 0.010875  dn1_1_Last_Result_Fetch: 0.000798  Write_Client: 0.000712
+SET timestamp=1535017226134;
+select count(*) from sharding_two_node where id =(select id from sharding_two_node where id=1);
+# Time: 2018-08-23T17:40:26.859000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.014882  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000067  Prepare_Push: 0.001351  dn1_First_Result_Fetch: 0.013084  dn1_Last_Result_Fetch: 0.000137  Write_Client: 0.000381
+SET timestamp=1535017226859;
+select * from sharding_two_node where id =1;
+# Time: 2018-08-23T17:40:26.874000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.010509  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000066  Prepare_Push: 0.001761  dn2_First_Result_Fetch: 0.006921  dn1_First_Result_Fetch: 0.008256  dn2_Last_Result_Fetch: 0.000279  dn1_Last_Result_Fetch: 0.000211  Write_Client: 0.001761
+SET timestamp=1535017226874;
+select * from sharding_two_node;
+# Time: 2018-08-23T17:40:26.931000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.028690  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000237  Prepare_Push: 0.001126  dn1_First_Result_Fetch: 0.026194  dn1_Last_Result_Fetch: 0.000640  Write_Client: 0.001133
+SET timestamp=1535017226931;
+delete from sharding_two_node where id =15;
+# Time: 2018-08-23T17:40:26.951000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.018818  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000342  Prepare_Push: 0.001671  dn2_First_Result_Fetch: 0.016482  dn2_Last_Result_Fetch: 0.000063  Write_Client: 0.000323
+SET timestamp=1535017226951;
+delete from sharding_two_node where id =519;
+# Time: 2018-08-23T17:40:26.991000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.039399  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000082  Prepare_Push: 0.000706  dn2_First_Result_Fetch: 0.019233  dn1_First_Result_Fetch: 0.019167  dn2_Last_Result_Fetch: 0.000426  dn1_Last_Result_Fetch: 0.000739  Write_Client: 0.019444
+SET timestamp=1535017226991;
+insert into sharding_two_node values(15,&apos;15&apos;,15),(519,&apos;519&apos;,519);
+# Time: 2018-08-23T17:40:27.032000Z
+# User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2
+# Query_time: 0.029495  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.000064  Prepare_Push: 0.001349  dn1_0_First_Result_Fetch: 0.005745  dn1_0_Last_Result_Fetch: 0.000632  Generate_New_Query: 0.001056  dn1_1_First_Result_Fetch: 0.018101  dn1_1_Last_Result_Fetch: 0.002282  Write_Client: 0.000863
+SET timestamp=1535017227032;
+select count(*) from sharding_two_node where id =(select id from sharding_two_node where id=1);
+</code></pre><h4 id="22031-mysqldumpslow-&#x7ED3;&#x679C;">2.20.3.1 mysqldumpslow &#x7ED3;&#x679C;:</h4>
+<pre><code>Reading mysql slow query log from /tmp/slow3.log
+Count: 17  Time=0.05s (0s)  Lock=0.00s (0s)  Rows=0.0 (0), root[root]@[0:0:0:0:0:0:0:1]
+  insert into sharding_two_node values(N,&apos;S&apos;,N),(N,&apos;S&apos;,N)
+
+Count: 13  Time=0.05s (0s)  Lock=0.00s (0s)  Rows=0.0 (0), root[root]@[0:0:0:0:0:0:0:1]
+  select count(*) from sharding_two_node
+
+Count: 6  Time=0.04s (0s)  Lock=0.00s (0s)  Rows=0.0 (0), root[root]@[0:0:0:0:0:0:0:1]
+  select * from sharding_two_node where id =N
+
+Count: 33  Time=0.03s (0s)  Lock=0.00s (0s)  Rows=0.0 (0), root[root]@[0:0:0:0:0:0:0:1]
+  delete from sharding_two_node where id =N
+
+Count: 17  Time=0.03s (0s)  Lock=0.00s (0s)  Rows=0.0 (0), root[root]@[0:0:0:0:0:0:0:1]
+  select count(*) from sharding_two_node where id =(select id from sharding_two_node where id=N)
+
+Count: 6  Time=0.02s (0s)  Lock=0.00s (0s)  Rows=0.0 (0), root[root]@[0:0:0:0:0:0:0:1]
+  select * from sharding_two_node
+</code></pre><h4 id="22032-pt-query-digest-&#x7ED3;&#x679C;">2.20.3.2 pt-query-digest &#x7ED3;&#x679C;:</h4>
+<pre><code>
+# 710ms user time, 70ms system time, 23.35M rss, 68.36M vsz
+# Current date: Thu Aug 23 17:48:25 2018
+# Hostname: 10-186-24-63
+# Files: /tmp/slow_query4.log
+# Overall: 92 total, 6 unique, 5.41 QPS, 0.18x concurrency _______________
+# Time range: 2018-08-23T17:40:10 to 2018-08-23T17:40:27
+# Attribute          total     min     max     avg     95%  stddev  median
+# ============     ======= ======= ======= ======= ======= ======= =======
+# Exec time             3s    10ms   339ms    34ms    75ms    37ms    27ms
+# Lock time              0       0       0       0       0       0       0
+# Rows sent              0       0       0       0       0       0       0
+# Rows examine           0       0       0       0       0       0       0
+# Query size         4.91k      31      94   54.64   92.72   20.87   42.48
+# Generate New        0.03    0.00    0.00    0.00    0.00    0.00    0.00
+# Prepare Push        0.56    0.00    0.26    0.01    0.01    0.03    0.00
+# Read SQL            0.07    0.00    0.01    0.00    0.00    0.00    0.00
+# Write Client        0.70    0.00    0.11    0.01    0.02    0.01    0.00
+# dn1 0 First         0.29    0.00    0.05    0.01    0.01    0.01    0.01
+# dn1 0 Last R        0.07    0.00    0.03    0.00    0.01    0.01    0.00
+# dn1 1 First         0.12    0.00    0.02    0.01    0.01    0.00    0.01
+# dn1 1 Last R        0.03    0.00    0.01    0.00    0.00    0.00    0.00
+# dn1 First Re        0.93    0.01    0.05    0.02    0.03    0.01    0.02
+# dn1 Last Res        0.04    0.00    0.01    0.00    0.00    0.00    0.00
+# dn2 0 First         0.13    0.00    0.04    0.01    0.02    0.01    0.01
+# dn2 0 Last R        0.08    0.00    0.03    0.01    0.02    0.01    0.00
+# dn2 First Re        0.80    0.01    0.06    0.02    0.03    0.01    0.02
+# dn2 Last Res        0.09    0.00    0.04    0.00    0.01    0.01    0.00
+
+# Profile
+# Rank Query ID                         Response time Calls R/Call V/M   I
+# ==== ================================ ============= ===== ====== ===== =
+#    1 0x13233F8ADA41C6E2D889AEE0C2B...  0.8815 28.1%    33 0.0267  0.00 DELETE sharding_two_node
+#    2 0xF68D16B46E487184E8FD3BB3912...  0.8525 27.1%    17 0.0501  0.01 INSERT sharding_two_node
+#    3 0xB46D813C53609C853F7CBA6D2DB...  0.6306 20.1%    13 0.0485  0.15 SELECT sharding_two_node
+#    4 0x3FB41587E746A475282C1ED2606...  0.4335 13.8%    17 0.0255  0.00 SELECT sharding_two_node
+#    5 0x04CDF91DDFC4E1DD7A22E312C72...  0.2399  7.6%     6 0.0400  0.05 SELECT sharding_two_node
+# MISC 0xMISC                            0.1028  3.3%     6 0.0171   0.0 &lt;1 ITEMS&gt;
+
+# Query 1: 2.06 QPS, 0.06x concurrency, ID 0x13233F8ADA41C6E2D889AEE0C2BC6CB5 at byte 943
+# Scores: V/M = 0.00
+# Time range: 2018-08-23T17:40:10 to 2018-08-23T17:40:26
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         35      33
+# Exec time     28   882ms    18ms    45ms    27ms    31ms     5ms    27ms
+# Lock time      0       0       0       0       0       0       0       0
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size    27   1.37k      42      43   42.52   42.48    0.50   42.48
+# Prepare Push   6    0.04    0.00    0.00    0.00    0.00    0.00    0.00
+# Read SQL      35    0.03    0.00    0.01    0.00    0.00    0.00    0.00
+# Write Client   2    0.02    0.00    0.00    0.00    0.00    0.00    0.00
+# dn1 First Re  45    0.42    0.02    0.04    0.03    0.03    0.01    0.03
+# dn1 Last Res   7    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+# dn2 First Re  47    0.38    0.02    0.03    0.02    0.03    0.00    0.02
+# dn2 Last Res   3    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+# String:
+# Hosts        0:0:0:0:0:0:0:1
+# Users        root
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms  ################################################################
+# 100ms
+#    1s
+#  10s+
+# Tables
+#    SHOW TABLE STATUS LIKE &apos;sharding_two_node&apos;\G
+#    SHOW CREATE TABLE `sharding_two_node`\G
+delete from sharding_two_node where id =15\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  sharding_two_node where id =15\G
+
+# Query 2: 1.06 QPS, 0.05x concurrency, ID 0xF68D16B46E487184E8FD3BB3912A3658 at byte 1690
+# Scores: V/M = 0.01
+# Time range: 2018-08-23T17:40:10 to 2018-08-23T17:40:26
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         18      17
+# Exec time     27   853ms    37ms   117ms    50ms    78ms    21ms    40ms
+# Lock time      0       0       0       0       0       0       0       0
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size    21   1.06k      64      64      64      64       0      64
+# Prepare Push   7    0.04    0.00    0.02    0.00    0.00    0.01    0.00
+# Read SQL      32    0.02    0.00    0.01    0.00    0.00    0.00    0.00
+# Write Client  63    0.45    0.02    0.06    0.03    0.05    0.01    0.02
+# dn1 First Re  37    0.35    0.01    0.04    0.02    0.03    0.00    0.02
+# dn1 Last Res  40    0.01    0.00    0.00    0.00    0.00    0.00    0.00
+# dn2 First Re  46    0.37    0.01    0.06    0.02    0.03    0.01    0.02
+# dn2 Last Res  72    0.07    0.00    0.04    0.00    0.02    0.01    0.00
+# String:
+# Hosts        0:0:0:0:0:0:0:1
+# Users        root
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms  ################################################################
+# 100ms  ####
+#    1s
+#  10s+
+# Tables
+#    SHOW TABLE STATUS LIKE &apos;sharding_two_node&apos;\G
+#    SHOW CREATE TABLE `sharding_two_node`\G
+insert into sharding_two_node values(15,&apos;15&apos;,15) /*... omitted ...*/\G
+
+# Query 3: 0.81 QPS, 0.04x concurrency, ID 0xB46D813C53609C853F7CBA6D2DB4047C at byte 2152
+# Scores: V/M = 0.15
+# Time range: 2018-08-23T17:40:10 to 2018-08-23T17:40:26
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         14      13
+# Exec time     20   631ms    10ms   339ms    49ms   116ms    84ms    12ms
+# Lock time      0       0       0       0       0       0       0       0
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     9     494      38      38      38      38       0      38
+# Prepare Push  48    0.27    0.00    0.26    0.02    0.00    0.07    0.00
+# Read SQL       5    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+# Write Client  24    0.17    0.00    0.11    0.01    0.02    0.03    0.00
+# dn1 0 First   48    0.14    0.00    0.05    0.01    0.01    0.01    0.01
+# dn1 0 Last R  80    0.06    0.00    0.03    0.00    0.01    0.01    0.00
+# dn2 0 First  100    0.13    0.00    0.04    0.01    0.02    0.01    0.01
+# dn2 0 Last R 100    0.08    0.00    0.03    0.01    0.02    0.01    0.00
+# String:
+# Hosts        0:0:0:0:0:0:0:1
+# Users        root
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms  ################################################################
+# 100ms  ###########
+#    1s
+#  10s+
+# Tables
+#    SHOW TABLE STATUS LIKE &apos;sharding_two_node&apos;\G
+#    SHOW CREATE TABLE `sharding_two_node`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select count(*) from sharding_two_node\G
+
+# Query 4: 1 QPS, 0.03x concurrency, ID 0x3FB41587E746A475282C1ED2606795FB at byte 2596
+# Scores: V/M = 0.00
+# Time range: 2018-08-23T17:40:10 to 2018-08-23T17:40:27
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         18      17
+# Exec time     13   434ms    16ms    47ms    26ms    38ms     8ms    26ms
+# Lock time      0       0       0       0       0       0       0       0
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size    31   1.56k      94      94      94      94       0      94
+# Generate New 100    0.03    0.00    0.00    0.00    0.00    0.00    0.00
+# Prepare Push  13    0.07    0.00    0.03    0.00    0.01    0.01    0.00
+# Read SQL      12    0.01    0.00    0.00    0.00    0.00    0.00    0.00
+# Write Client   2    0.02    0.00    0.00    0.00    0.00    0.00    0.00
+# dn1 0 First   51    0.15    0.00    0.01    0.01    0.01    0.00    0.01
+# dn1 0 Last R  19    0.01    0.00    0.00    0.00    0.00    0.00    0.00
+# dn1 1 First  100    0.12    0.00    0.02    0.01    0.01    0.00    0.01
+# dn1 1 Last R 100    0.03    0.00    0.01    0.00    0.00    0.00    0.00
+# String:
+# Hosts        0:0:0:0:0:0:0:1
+# Users        root
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms  ################################################################
+# 100ms
+#    1s
+#  10s+
+# Tables
+#    SHOW TABLE STATUS LIKE &apos;sharding_two_node&apos;\G
+#    SHOW CREATE TABLE `sharding_two_node`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select count(*) from sharding_two_node where id =(select id from sharding_two_node where id=1)\G
+
+# Query 5: 0.38 QPS, 0.01x concurrency, ID 0x04CDF91DDFC4E1DD7A22E312C72C268D at byte 0
+# Scores: V/M = 0.05
+# Time range: 2018-08-23T17:40:10 to 2018-08-23T17:40:26
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          6       6
+# Exec time      7   240ms    10ms   133ms    40ms   128ms    43ms    35ms
+# Lock time      0       0       0       0       0       0       0       0
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     5     258      43      43      43      43       0      43
+# Prepare Push  22    0.12    0.00    0.12    0.02    0.12    0.04    0.00
+# Read SQL       9    0.01    0.00    0.01    0.00    0.01    0.00    0.00
+# Write Client   0    0.01    0.00    0.00    0.00    0.00    0.00    0.00
+# dn1 First Re  11    0.10    0.01    0.05    0.02    0.05    0.02    0.01
+# dn1 Last Res   6    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+# String:
+# Hosts        0:0:0:0:0:0:0:1
+# Users        root
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms  ################################################################
+# 100ms  ############
+#    1s
+#  10s+
+# Tables
+#    SHOW TABLE STATUS LIKE &apos;sharding_two_node&apos;\G
+#    SHOW CREATE TABLE `sharding_two_node`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from sharding_two_node where id =1\G
+</code></pre><h4 id="22033-&#x9650;&#x5236;">2.20.3.3 &#x9650;&#x5236;</h4>
+<p>&#x5F53;mysqldumpslow&#x7248;&#x672C;&#x4E3A;5.6&#x6216;&#x66F4;&#x65E9;&#x7684;&#x7248;&#x672C;&#x65F6;&#xFF0C;&#x5728;&#x89E3;&#x6790;&#x6162;&#x65E5;&#x5FD7;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x7531;&#x4E8E;mysqldumpslow&#x53EA;&#x80FD;&#x8BC6;&#x522B;&apos;190428 10:28:16&apos;&#x683C;&#x5F0F;&#x7684;Time&#x5B57;&#x6BB5;&#xFF0C;&#x800C;dble&#x5374;&#x4F7F;&#x7528;&#x4E86;&apos;2019-04-28T10:28:16.515000Z&apos;&#x5B57;&#x6BB5;&#x683C;&#x5F0F;&#xFF0C;&#x56E0;&#x6B64;&#x89E3;&#x6790;&#x751F;&#x6210;&#x7684;&#x6162;&#x65E5;&#x5FD7;&#x4F1A;&#x51FA;&#x9519;&#x3002;&#x8BE6;&#x60C5;&#x53C2;&#x89C1;issue:<a href="https://github.com/actiontech/dble/issues/908" target="_blank">https://github.com/actiontech/dble/issues/908</a></p>
+<h3 id="2204-&#x9644;&#xFF1A;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x683C;&#x5F0F;&#x89E3;&#x6790;">2.20.4 &#x9644;&#xFF1A;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x683C;&#x5F0F;&#x89E3;&#x6790;</h3>
+<h4 id="22041-mysql-&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x683C;&#x5F0F;">2.20.4.1 MySQL &#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x683C;&#x5F0F;</h4>
+<p>&#x5148;&#x653E;&#x4E00;&#x6BB5;&#x6B63;&#x5E38;&#x8BB0;&#x5F55;&#x7684;MySQL&#x6162;&#x65E5;&#x5FD7;  </p>
+<pre><code>
+/usr/local/mysql5.7.11/bin/mysqld-debug, Version: 5.7.11-debug-log (MySQL Community Server - Debug (GPL)). started with:
+
+Tcp port: 3320  Unix socket: /tmp/mysql_3320.sock
+
+Time                 Id Command    Argument
+
+# Time: 2018-05-15T10:53:23.798040Z
+
+# User@Host: action[action] @  [192.168.2.206]  Id:   436
+
+# Query_time: 296.145816  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+
+use test;
+
+SET timestamp=1526381603;
+
+drop table sharding_two_node;
+
+# Time: 2018-05-15T11:32:25.549290Z
+
+# User@Host: action[action] @  [192.168.2.206]  Id:   451
+
+# Query_time: 129.555883  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+
+use nosharding;
+
+SET timestamp=1526383945;
+
+drop table test4;
+
+# Time: 2018-05-15T11:32:25.550190Z
+
+# User@Host: action[action] @  [192.168.2.206]  Id:   454
+
+# Query_time: 84.316518  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+
+SET timestamp=1526383945;
+
+insert into test4 values(1,&apos;1&apos;);
+
+# Time: 2018-05-15T11:37:01.079214Z
+
+# User@Host: action[action] @  [192.168.2.206]  Id:   483
+
+# Query_time: 49.571983  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+
+SET timestamp=1526384221;
+
+drop table test3;
+
+# Time: 2018-07-11T05:28:34.161405Z
+
+# User@Host: action[action] @  [192.168.2.206]  Id: 16421
+
+# Query_time: 10.035706  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0
+
+use test;
+
+SET timestamp=1531286914;
+
+insert into test4 values(1,&apos;1&apos;);
+</code></pre><p>&#x6211;&#x4EEC;&#x4ECE;MySQL&#x6E90;&#x4EE3;&#x7801;&#x4E0A;&#x6765;&#x5206;&#x6790;&#x6162;&#x65E5;&#x5FD7;&#x7684;&#x683C;&#x5F0F;&#xFF1A;</p>
+<h5 id="11-&#x6587;&#x4EF6;&#x5934;&#xFF1A;&#xFF08;&#x5305;&#x542B;&#x7248;&#x672C;&#x4FE1;&#x606F;&#x7B49;&#xFF09;">1.1 &#x6587;&#x4EF6;&#x5934;&#xFF1A;&#xFF08;&#x5305;&#x542B;&#x7248;&#x672C;&#x4FE1;&#x606F;&#x7B49;&#xFF09;</h5>
+<p>/usr/local/mysql5.7.11/bin/mysqld-debug, Version: 5.7.11-debug-log (MySQL Community Server - Debug (GPL)). started with:</p>
+<p>Tcp port: 3320  Unix socket: /tmp/mysql_3320.sock</p>
+<p>Time                 Id Command    Argument</p>
+<p>&#x5982;&#x679C;MySQL&#x5B9E;&#x4F8B;&#x6CA1;&#x6709;&#x4E13;&#x95E8;&#x8BBE;&#x7F6E;&#x53C2;&#x6570;log-short-format&#xFF0C;&#x5219;&#x4F1A;&#x6709;time&#x884C;&#x548C;session&#x4FE1;&#x606F;&#x884C;</p>
+<h5 id="12--time&#x884C;">1.2  time&#x884C;</h5>
+<p>&#x4F8B;&#x5982;&#xFF1A;</p>
+<p><code># Time: 2018-05-15T10:53:23.798040Z</code></p>
+<h5 id="13--session&#x4FE1;&#x606F;&#x884C;">1.3  session&#x4FE1;&#x606F;&#x884C;</h5>
+<p>&#x4F8B;&#x5982;&#xFF1A;</p>
+<p><code># User@Host: action[action] @  [192.168.2.206]  Id:   436</code></p>
+<h5 id="14-&#x6267;&#x884C;&#x65F6;&#x95F4;&#x884C;">1.4 &#x6267;&#x884C;&#x65F6;&#x95F4;&#x884C;</h5>
+<p>&#x6CE8;&#x610F;&#x7528;&#x4E24;&#x4E2A;&#x7A7A;&#x683C;&#x5206;&#x9694;&#x4E0D;&#x540C;&#x952E;&#x503C;&#x5BF9;&#xFF0C;&#x7528;&#x5355;&#x4E2A;&#x7A7A;&#x683C;&#x533A;&#x5206;key&#x548C;value</p>
+<p><code># Query_time: 296.145816  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0</code></p>
+<h5 id="15-&#x5982;&#x679C;&#x6709;database-changed&#xFF0C;&#x5219;&#x6709;&#x8F6C;&#x6362;schema&#x884C;&#xFF1A;">1.5 &#x5982;&#x679C;&#x6709;Database changed&#xFF0C;&#x5219;&#x6709;&#x8F6C;&#x6362;schema&#x884C;&#xFF1A;</h5>
+<p><code>use nosharding;</code></p>
+<h5 id="16-set&#x884C;&#x6CE8;&#xFF1A;mysqldumpslow&#x5B98;&#x65B9;&#x5DE5;&#x5177;&#x53EA;&#x5904;&#x7406;&#x4E86;set-timestamp">1.6 set&#x884C;(&#x6CE8;&#xFF1A;mysqldumpslow&#x5B98;&#x65B9;&#x5DE5;&#x5177;&#x53EA;&#x5904;&#x7406;&#x4E86;SET timestamp=)</h5>
+<p>&#x4E3E;&#x4F8B;</p>
+<p><code>SET timestamp=1526383945;</code></p>
+<h6 id="161-lastinsertid">1.6.1 last_insert_id</h6>
+<p>&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E86;</p>
+<p><code>stmt_depends_on_first_successful_insert_id_in_prev_stmt</code> &#xFF08;&#x542B;&#x4E49;&#x5F85;&#x8C03;&#x67E5;&#xFF09;</p>
+<p>&#x4F1A;&#x6709;last_insert_id=&#x67D0;&#x4E2A;&#x503C;</p>
+<h6 id="162-insertid">1.6.2 insert_id</h6>
+<p>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;log-short-format&#xFF0C;&#x5E76;&#x4E14;</p>
+<p><code>auto_inc_intervals_in_cur_stmt_for_binlog.nb_elements()</code> &#xFF08;&#x542B;&#x4E49;&#x5F85;&#x8C03;&#x67E5;&#xFF09;</p>
+<p>&#x4F1A;&#x6709;last_id=&#x67D0;&#x4E2A;&#x503C;</p>
+<h6 id="163-timestamp">1.6.3 timestamp=</h6>
+<p>&#x8BBE;&#x7F6E;&#x65F6;&#x95F4;&#x6233;</p>
+<h5 id="17-&#x547D;&#x4EE4;&#x884C;">1.7 &#x547D;&#x4EE4;&#x884C;</h5>
+<p>&#x4F8B;&#x5982;&#xFF1A;</p>
+<p><code># administrator command</code></p>
+<p>&#x5982;&#x679C;&#x662F;is_command&#xFF08;&#x542B;&#x4E49;&#x5F85;&#x8C03;&#x67E5;&#xFF09;&#xFF0C;&#x5219;&#x6709;&#x6B64;&#x884C;</p>
+<h5 id="18-sql&#x8BED;&#x53E5;&#x884C;">1.8 SQL&#x8BED;&#x53E5;&#x884C;</h5>
+<p>&#x4F8B;&#x5982;</p>
+<p><code>insert into test4 values(1,&apos;1&apos;);</code></p>
+<h4 id="22042-dble-&#x6162;&#x65E5;&#x5FD7;&#x683C;&#x5F0F;">2.20.4.2 dble &#x6162;&#x65E5;&#x5FD7;&#x683C;&#x5F0F;</h4>
+<p>&#x4E3A;&#x4E86;&#x517C;&#x5BB9;mysqldumpslow&#x548C;pt-query-digest &#x5DE5;&#x5177;&#xFF0C;dble&#x7684;&#x6162;&#x65E5;&#x5FD7;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<h5 id="21-&#x6587;&#x4EF6;&#x5934;">2.1 &#x6587;&#x4EF6;&#x5934;</h5>
+<pre><code>
+/FAKE_PATH/mysqld, Version: FAKE_VERSION. started with:
+
+Tcp port: 3320  Unix socket: FAKE_SOCK
+
+Time                 Id Command    Argument
+</code></pre><h5 id="22-time&#x884C;">2.2 time&#x884C;</h5>
+<p>&#x56E0;&#x4E3A;java8&#x76EE;&#x524D;&#x53EA;&#x80FD;&#x83B7;&#x53D6;&#x5230;&#x6BEB;&#x79D2;&#x7EA7;&#x522B;&#x7684;&#x7EDD;&#x5BF9;&#x65F6;&#x95F4;&#x6233;&#xFF0C;&#x6240;&#x4EE5;&#x65F6;&#x95F4;&#x6233;&#x540E;&#x4E09;&#x4F4D;&#x4E3A;0&#xFF0C;&#x4E0E;mysql&#x4E0D;&#x540C;&#xFF0C; &#x4F8B;&#x5982;&#xFF1A;</p>
+<p><code># Time: 2018-08-23T17:40:10.149000Z</code></p>
+<h5 id="23--session&#x4FE1;&#x606F;&#x884C;">2.3  session&#x4FE1;&#x606F;&#x884C;</h5>
+<p>&#x4F8B;&#x5982;&#xFF1A;</p>
+<p><code># User@Host: root[root] @  [0:0:0:0:0:0:0:1]  Id:   2</code></p>
+<h5 id="24-&#x6267;&#x884C;&#x65F6;&#x95F4;&#x884C;">2.4 &#x6267;&#x884C;&#x65F6;&#x95F4;&#x884C;</h5>
+<p>&#x6CE8;&#x610F;&#x7528;&#x4E24;&#x4E2A;&#x7A7A;&#x683C;&#x5206;&#x9694;&#x4E0D;&#x540C;&#x952E;&#x503C;&#x5BF9;&#xFF0C;&#x7528;&#x5355;&#x4E2A;&#x7A7A;&#x683C;&#x533A;&#x5206;key&#x548C;value. </p>
+<p>&#x5982;&#x56FE;&#xFF0C;&#x8FD9;&#x662F;dble&#x7684;&#x5185;&#x90E8;&#x6D41;&#x7A0B;&#xFF0C;&#x6839;&#x636E;&#x6B64;&#x56FE;&#xFF1A;</p>
+<p><img src="pic/2.20_slow_log_checkpoint.png" alt="20_slow_log_checkpoint"></p>
+<p>&#x6211;&#x4EEC;&#x5728;&#x517C;&#x5BB9;MySQL&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x589E;&#x52A0;&#x4E86;&#x5982;&#x4E0B;&#x5B57;&#x6BB5;&#xFF1A;</p>
+<p>Read_SQL: &#x63A5;&#x53D7;&#x5230;SQL&#x5B57;&#x8282;&#x6570;&#x636E;&#x5F00;&#x59CB;&#x5230;&#x5C06;&#x5B57;&#x8282;&#x6570;&#x636E;&#x8F6C;&#x4E3A;&#x53EF;&#x4F9B;&#x89E3;&#x6790;&#x7684;SQL&#x5B57;&#x7B26;&#x4E32; &#x7684;&#x8017;&#x65F6;&#xFF0C;&#x5373;T1-T0  </p>
+<p>Prepare_Push&#xFF1A;&#x89E3;&#x6790;/&#x8DEF;&#x7531;/&#x5C1D;&#x8BD5;&#x4F18;&#x5316;&#x53CA;&#x5176;&#x4ED6;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#x8017;&#x65F6;&#xFF0C;&#x4E0E;Read_SQL&#x662F;&#x7EBF;&#x6027;&#x987A;&#x5E8F;&#x7684;,&#x5373;T2-T1  </p>
+<p>{$datanodeName}_First_Result_Fetch&#xFF1A; &#x67D0;&#x4E2A;datanode&#x6536;&#x5230;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5305;&#xFF0C;&#x76F8;&#x5BF9;&#x4E8E;Prepare_Push&#x7ED3;&#x675F;&#x65F6;&#x7684;&#x8017;&#x65F6; ,&#x5373;T3-T2  &#x3002;&#x53E6;&#x5916;&#xFF1A;&#x4E0D;&#x540C;&#x7684;datanode&#x4E4B;&#x95F4;&#x662F;&#x5E76;&#x884C;&#x7684;</p>
+<p>{$datanodeName}_Last_Result_Fetch&#xFF1A; &#x67D0;&#x4E2A;datanode&#x6536;&#x5230;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5305;&#xFF0C;&#x76F8;&#x5BF9;&#x4E8E;&#x81EA;&#x5DF1;&#x7684;{$datanodeName}__First_Result_Fetch&#x7684;&#x8017;&#x65F6;,&#x5373;T5-T3    </p>
+<p>Write_Client&#xFF1A;&#x53EF;&#x4EE5;&#x5F00;&#x59CB;&#x8FD4;&#x56DE;&#x5BA2;&#x6237;&#x7AEF;&#xFF08;&#x6536;&#x5230;&#x4E00;&#x4E2A;&#x540E;&#x7AEF;&#x8FD4;&#x56DE;&#x6570;&#x636E;&#x5305;&#xFF09;&#x5230;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5305;&#x51C6;&#x5907;&#x5199;&#x51FA;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x590D;&#x6742;&#x67E5;&#x8BE2;&#xFF0C;&#x53EF;&#x80FD;&#x5305;&#x542B;&#x5408;&#x5E76;&#x7B49;&#x64CD;&#x4F5C;&#x7684;&#x7ED3;&#x679C;,&#x5373;T6-T4  </p>
+<p>&#x53E6;&#x5916;&#xFF0C;MySQL&#x539F;&#x6709;&#x7684;Query_time&#x4E3A;dble&#x5F00;&#x59CB;&#x8BFB;&#x53D6;SQL&#x5230;&#x51C6;&#x5907;&#x5199;&#x56DE;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5305;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;,&#x5373;T6-T0<br>Lock_time&#xFF0C;Rows_sent&#xFF0C;Rows_examined&#x7528;0&#x586B;&#x5145;</p>
+<p>&#x4F8B;&#x5982;&#xFF1A;</p>
+<p><code># Query_time: 0.116672  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0  Read_SQL: 0.013625  Prepare_Push: 0.024767  dn2_First_Result_Fetch: 0.056395  dn1_First_Result_Fetch: 0.026420  dn2_Last_Result_Fetch: 0.000743  dn1_Last_Result_Fetch: 0.001700  Write_Client: 0.051861</code></p>
+<h5 id="25-set&#x884C;&#x53EA;&#x5904;&#x7406;&#x4E86;set-timestamp">2.5 set&#x884C;(&#x53EA;&#x5904;&#x7406;&#x4E86;SET timestamp=)</h5>
+<p>&#x4F8B;&#x5982;&#xFF1A;</p>
+<p><code>SET timestamp=1535017210432;</code></p>
+<h5 id="26-sql&#x8BED;&#x53E5;&#x884C;">2.6 SQL&#x8BED;&#x53E5;&#x884C;</h5>
+<p>&#x4F8B;&#x5982;</p>
+<p><code>insert into sharding_two_node values(15,&apos;15&apos;,15),(519,&apos;519&apos;,519);</code></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2.19_reload_diff.html" class="navigation navigation-prev " aria-label="Previous page: 2.19 智能计算reload">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2.21_query_trace.html" class="navigation navigation-next " aria-label="Next page: 2.21 单条SQL性能trace">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.20 慢查询日志","level":"1.4.20","depth":2,"next":{"title":"2.21 单条SQL性能trace","level":"1.4.21","depth":2,"path":"2.Function/2.21_query_trace.md","ref":"2.Function/2.21_query_trace.md","articles":[]},"previous":{"title":"2.19 智能计算reload","level":"1.4.19","depth":2,"path":"2.Function/2.19_reload_diff.md","ref":"2.Function/2.19_reload_diff.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","versions-select"],"styles":{"website":"website.css"},"pluginsConfig":{"plugins":["yahei","katex","-search"],"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"sepia","family":"sans","size":2},"highlight":{},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/actiontech/dble-docs-cn/master/book.json","options":[{"value":"https://actiontech.github.io/dble-docs-cn/","text":"Version 3.21.06.0"},{"value":"https://actiontech.github.io/dble-docs-cn/history/develop/","text":"Version develop"},{"value":"https://actiontech.github.io/dble-docs-cn/history/3.21.02.0/","text":"Version 3.21.02.0"},{"value":"https://actiontech.github.io/dble-docs-cn/history/3.20.10.0/","text":"Version 3.20.10.0"},{"value":"https://actiontech.github.io/dble-docs-cn/history/3.20.07.0/","text":"Version 3.20.07.0"},{"value":"https://actiontech.github.io/dble-docs-cn/history/2.20.04.0/","text":"Version 2.20.04.0"},{"value":"https://actiontech.github.io/dble-docs-cn/history/2.19.11.0/","text":"Version 2.19.11.0"},{"value":"https://actiontech.github.io/dble-docs-cn/history/2.19.09.0/","text":"Version 2.19.09.0"},{"value":"https://actiontech.github.io/dble-docs-cn/history/2.19.07.0/","text":"Version 2.19.07.0"},{"value":"https://actiontech.github.io/dble-docs-cn/history/2.19.05.0/","text":"Version 2.19.05.0"},{"value":"https://actiontech.github.io/dble-docs-cn/history/2.19.03.0/","text":"Version 2.19.03.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a2","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dble manual","gitbook":"*"},"file":{"path":"2.Function/2.20_slow_query_log.md","mtime":"2021-10-08T10:25:24.445Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-08T10:43:19.524Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-versions-select/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
