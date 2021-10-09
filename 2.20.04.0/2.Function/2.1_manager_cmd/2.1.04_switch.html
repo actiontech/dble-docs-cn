@@ -687,12 +687,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.1.16" data-path="2.1.16_create_database.html">
+        <li class="chapter " data-level="1.4.1.16" data-path="2.1.16_database.html">
             
-                <a href="2.1.16_create_database.html">
+                <a href="2.1.16_database.html">
             
                     
-                    2.1.16 create database命令
+                    2.1.16 创建/删除物理库命令
             
                 </a>
             
@@ -732,6 +732,19 @@
             
                     
                     2.1.19 split命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.20" data-path="2.1.20_flow_control.html">
+            
+                <a href="2.1.20_flow_control.html">
+            
+                    
+                    2.1.20 flow_control 命令
             
                 </a>
             
@@ -1356,6 +1369,32 @@
     
 
             </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24" data-path="../2.24_timeout_control.html">
+            
+                <a href="../2.24_timeout_control.html">
+            
+                    
+                    2.24 超时控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.25" data-path="../2.25_flow_control.html">
+            
+                <a href="../2.25_flow_control.html">
+            
+                    
+                    2.25 流量控制
+            
+                </a>
+            
+
             
         </li>
     
@@ -2475,14 +2514,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h3 id="214-switch&#x547D;&#x4EE4;">2.1.4 switch&#x547D;&#x4EE4;</h3>
-<h4 id="2141--switch-datasource">2.1.4.1  switch @@datasource</h4>
-<p>&#x63CF;&#x8FF0;&#xFF1A;&#x5207;&#x6362;datahost&#x7684;&#x5F53;&#x524D;&#x6D3B;&#x52A8;&#x8282;&#x70B9;&#xFF08;&#x5199;&#x8282;&#x70B9;&#xFF09;&#xFF0C;&#x6709;&#x5982;&#x4E0B;&#x4E24;&#x79CD;&#x5F62;&#x5F0F;&#xFF1A;  </p>
-<h5 id="switch-datasource-keys&#xFF1B;">switch @@datasource keys&#xFF1B;</h5>
-<p>&#x6216;&#x8005;  </p>
-<h5 id="switch-datasource-keysvalue&#xFF1B;">switch @@datasource keys:value&#xFF1B;</h5>
-<p>&#x5176;&#x4E2D;&#xFF0C;<strong>keys</strong>&#x662F;datahost&#x540D;&#x5B57;&#x5217;&#x8868;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x591A;&#x4E2A;&#xFF0C;&#x7528;&#x9017;&#x53F7;&#x9694;&#x5F00;&#x7684;key&#xFF1B;<br><strong>key</strong>:&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x662F;datahost&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;datahost$0-n &#xFF08;&#x5982;datahost$0-2&#x5B9E;&#x9645;&#x4F1A;&#x8F93;&#x51FA;datahost[0],datahost[1],datahost[2]&#xFF0C;&#x7591;&#x4F3C;BUG&#xFF09;<br><strong>value</strong>:&#x53EF;&#x4EE5;&#x4E3A;&#x7A7A;&#xFF1B;&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x5207;&#x6362;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x5199;&#x8282;&#x70B9;&#xFF1B;&#x5426;&#x5219;&#x5E94;&#x5F53;&#x662F;&#x4E2A;&#x6574;&#x6570;i&#xFF0C;&#x5207;&#x6362;&#x5230;&#x7B2C;i&#x4E2A;&#x8282;&#x70B9;&#x3002;  </p>
-<p>&#x7ED3;&#x679C;&#xFF1A;&#x8FD4;&#x56DE;OK&#x3002;  </p>
-<h5 id="&#x6CE8;&#x610F;&#xFF1A;&#x672A;&#x4F5C;&#x5F02;&#x5E38;&#x5904;&#x7406;&#xFF0C;&#x614E;&#x7528;">&#x6CE8;&#x610F;&#xFF1A;&#x672A;&#x4F5C;&#x5F02;&#x5E38;&#x5904;&#x7406;&#xFF0C;&#x614E;&#x7528;</h5>
+<p>&#x672C;&#x5C0F;&#x8282;&#x90E8;&#x5206;&#x81EA;2.20.04.0 &#x7248;&#x672C;&#x8D77;&#x5E9F;&#x5F03;</p>
 
                                 
                                 </section>
@@ -2526,7 +2558,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.1.4 switch命令","level":"1.4.1.4","depth":3,"next":{"title":"2.1.5 kill命令","level":"1.4.1.5","depth":3,"path":"2.Function/2.1_manager_cmd/2.1.05_kill.md","ref":"2.Function/2.1_manager_cmd/2.1.05_kill.md","articles":[]},"previous":{"title":"2.1.3 show命令","level":"1.4.1.3","depth":3,"path":"2.Function/2.1_manager_cmd/2.1.03_show.md","ref":"2.Function/2.1_manager_cmd/2.1.03_show.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","versions-select"],"styles":{"website":"website.css"},"pluginsConfig":{"plugins":["yahei","katex","-search"],"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"sepia","family":"sans","size":2},"highlight":{},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/actiontech/dble-docs-cn/master/book.json","options":[{"value":"https://actiontech.github.io/dble-docs-cn/","text":"Version 3.21.06.0"},{"value":"https://actiontech.github.io/dble-docs-cn/history/develop/","text":"Version develop"},{"value":"https://actiontech.github.io/dble-docs-cn/history/2.20.04.0/","text":"Version 2.20.04.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a2","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dble manual","gitbook":"*"},"file":{"path":"2.Function/2.1_manager_cmd/2.1.04_switch.md","mtime":"2021-10-08T09:13:12.312Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-09T01:37:41.963Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.1.4 switch命令","level":"1.4.1.4","depth":3,"next":{"title":"2.1.5 kill命令","level":"1.4.1.5","depth":3,"path":"2.Function/2.1_manager_cmd/2.1.05_kill.md","ref":"2.Function/2.1_manager_cmd/2.1.05_kill.md","articles":[]},"previous":{"title":"2.1.3 show命令","level":"1.4.1.3","depth":3,"path":"2.Function/2.1_manager_cmd/2.1.03_show.md","ref":"2.Function/2.1_manager_cmd/2.1.03_show.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","versions-select"],"styles":{"website":"website.css"},"pluginsConfig":{"plugins":["yahei","katex","-search"],"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"sepia","family":"sans","size":2},"highlight":{},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/actiontech/dble-docs-cn/master/book.json","options":[{"value":"https://actiontech.github.io/dble-docs-cn/","text":"Version 3.21.06.0"},{"value":"https://actiontech.github.io/dble-docs-cn/history/develop/","text":"Version develop"},{"value":"https://actiontech.github.io/dble-docs-cn/history/2.20.04.0/","text":"Version 2.20.04.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a2","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dble manual","gitbook":"*"},"file":{"path":"2.Function/2.1_manager_cmd/2.1.04_switch.md","mtime":"2021-10-09T01:43:51.384Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-09T03:10:08.650Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

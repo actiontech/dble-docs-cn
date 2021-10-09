@@ -687,12 +687,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.1.16" data-path="../2.Function/2.1_manager_cmd/2.1.16_create_database.html">
+        <li class="chapter " data-level="1.4.1.16" data-path="../2.Function/2.1_manager_cmd/2.1.16_database.html">
             
-                <a href="../2.Function/2.1_manager_cmd/2.1.16_create_database.html">
+                <a href="../2.Function/2.1_manager_cmd/2.1.16_database.html">
             
                     
-                    2.1.16 create database命令
+                    2.1.16 创建/删除物理库命令
             
                 </a>
             
@@ -732,6 +732,19 @@
             
                     
                     2.1.19 split命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.20" data-path="../2.Function/2.1_manager_cmd/2.1.20_flow_control.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.20_flow_control.html">
+            
+                    
+                    2.1.20 flow_control 命令
             
                 </a>
             
@@ -1356,6 +1369,32 @@
     
 
             </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24" data-path="../2.Function/2.24_timeout_control.html">
+            
+                <a href="../2.Function/2.24_timeout_control.html">
+            
+                    
+                    2.24 超时控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.25" data-path="../2.Function/2.25_flow_control.html">
+            
+                <a href="../2.Function/2.25_flow_control.html">
+            
+                    
+                    2.25 流量控制
+            
+                </a>
+            
+
             
         </li>
     
@@ -2479,7 +2518,8 @@
 <p>&#x8FD9;&#x90E8;&#x5206;&#x4E0E;schema.dtd&#x548C;schema.xml&#x76F8;&#x5173;&#x3002;  </p>
 <p>&#x5728;2.18.12.0&#x4E4B;&#x540E;&#x7684;&#x7248;&#x672C;&#x4E2D;server.xml&#x5728;&#x6587;&#x4EF6;&#x5934;&#x4E2D;&#x6DFB;&#x52A0;&#x4E86;version&#x5C5E;&#x6027;&#xFF0C;&#x4EE5;&#x4F9B;&#x8FD0;&#x7EF4;&#x4EBA;&#x5458;&#x533A;&#x5206;&#x914D;&#x7F6E;&#x521B;&#x5EFA;&#x6216;&#x4FEE;&#x6539;&#x7684;&#x7248;&#x672C;<a href="1.10_version_change.html#1107-schemaserverrule-version-&#x53D8;&#x66F4;&#x5BF9;&#x7167;&#x8868;">(xml&#x914D;&#x7F6E;version&#x5BF9;&#x7167;&#x8868;)</a><br>verison&#x5B57;&#x6BB5;&#x4E0D;&#x5339;&#x914D;&#x65F6;&#xFF0C;&#x542F;&#x52A8;&#x548C;dryrun&#x4F1A;&#x7ED9;&#x51FA;NOTICE&#x7684;&#x63D0;&#x793A;&#xFF0C;&#x4F46;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x529F;&#x80FD;</p>
 <p>schema.dtd&#x5B9A;&#x4E49;&#x89E3;&#x6790;&#x89C4;&#x5219;, &#x4EC5;&#x4E0E;&#x5F00;&#x53D1;&#x76F8;&#x5173;&#x3002;&#x5982;&#x6709;&#x7591;&#x95EE;&#xFF0C;&#x8BF7;&#x53C2;&#x770B;<a href="https://www.w3schools.com/xml/xml_dtd_intro.asp" target="_blank">xml_dtd_intro</a>&#x3002;</p>
-<p>schema.xml&#x5305;&#x542B;&#x5177;&#x4F53;&#x7684;&#x6570;&#x636E;&#x4E3B;&#x673A;&#x914D;&#x7F6E;&#xFF0C;&#x6570;&#x636E;&#x8282;&#x70B9;&#x914D;&#x7F6E;&#xFF0C; &#x6570;&#x636E;&#x5E93;&#x914D;&#x7F6E;&#x3002;</p>
+<p>schema.xml&#x5305;&#x542B;&#x5177;&#x4F53;&#x7684;&#x6570;&#x636E;&#x4E3B;&#x673A;&#x914D;&#x7F6E;&#xFF0C;&#x6570;&#x636E;&#x8282;&#x70B9;&#x914D;&#x7F6E;&#xFF0C; &#x6570;&#x636E;&#x5E93;&#x914D;&#x7F6E;&#x3002;
+&#x6CE8;&#x610F;&#xFF1A;&#x5728;2.20.04.0&#x4E4B;&#x540E;&#x7684;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5BF9;&#x5207;&#x6362;&#x529F;&#x80FD;&#x505A;&#x4E86;&#x6BD4;&#x8F83;&#x5927;&#x7684;&#x8C03;&#x6574;&#xFF0C;&#x4E0D;&#x518D;&#x652F;&#x6301;&#x81EA;&#x52A8;switch&#xFF0C;&#x4E5F;&#x4E0D;&#x518D;&#x652F;&#x6301;&#x4E00;&#x4E2A;datahost&#x5185;&#x90E8;&#x6709;&#x591A;&#x4E2A;writehost&#x3002;</p>
 <h3 id="122-datahost&#x914D;&#x7F6E;">1.2.2 dataHost&#x914D;&#x7F6E;</h3>
 <ul>
 <li>dataHost  </li>
@@ -2517,15 +2557,8 @@
 <td>balance</td>
 <td>&#x8BFB;&#x64CD;&#x4F5C;&#x7684;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x6A21;&#x5F0F;</td>
 <td>&#x5426;</td>
-<td>&#x5FC5;&#x9700;&#x9879;&#xFF0C;&#x65E0;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x5019;&#x9009;&#x503C;0/1/2/3</td>
-<td>&#x5728;&#x8FDB;&#x884C;&#x8BFB;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x6839;&#x636E;&#x8FD9;&#x4E2A;&#x914D;&#x7F6E;&#x8FDB;&#x884C;<br>0&#xFF1A;&#x4E0D;&#x505A;&#x5747;&#x8861;&#xFF0C;&#x76F4;&#x63A5;&#x5206;&#x53D1;&#x5230;&#x5F53;&#x524D;&#x6FC0;&#x6D3B;&#x7684;writeHost&#xFF0C;readhost&#x5C06;&#x88AB;&#x5FFD;&#x7565;,&#x4E0D;&#x4F1A;&#x5C1D;&#x8BD5;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;<br>1&#xFF1A;&#x5728;&#x9664;&#x5F53;&#x524D;&#x6FC0;&#x6D3B;writeHost&#x4E4B;&#x5916;&#x968F;&#x673A;&#x9009;&#x62E9;read host&#x6216;&#x8005;standby write host<br>2&#xFF1A;&#x8BFB;&#x64CD;&#x4F5C;&#x5728;&#x6240;&#x6709;readHost&#x548C;&#x6240;&#x6709;writeHost&#x4E2D;&#x5747;&#x8861;&#x3002;<br>3&#xFF1A;&#x8BFB;&#x64CD;&#x4F5C;&#x5728;&#x6240;&#x6709;readHost&#x4E2D;&#x5747;&#x8861;,&#x5177;&#x4F53;&#x62D3;&#x6251;&#x7ED3;&#x6784;&#x89C1;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x76F8;&#x5173;&#x7AE0;&#x8282;</td>
-</tr>
-<tr>
-<td>switchType</td>
-<td>&#x5199;&#x7ED3;&#x70B9;&#x9AD8;&#x53EF;&#x7528;&#x5207;&#x6362;&#x7C7B;&#x578B;</td>
-<td>&#x5426;</td>
-<td>&#x5019;&#x9009;&#x503C;-1&#x3001;1&#x3001;2&#x3001;3&#xFF1B;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;-1&#x3002;</td>
-<td>&#x6545;&#x969C;&#x5207;&#x6362;&#x4EC5;&#x9488;&#x5BF9;writeHost&#x5B9E;&#x4F8B;&#x3002; &#x6709;4&#x79CD;&#x7C7B;&#x578B;&#x53EF;&#x9009;:<br>switchType=-1:&#x4E0D;&#x81EA;&#x52A8;&#x5207;&#x6362;<br>switchType=1:&#x5FC3;&#x8DF3;&#x53D1;&#x751F;&#x5F02;&#x5E38;&#x65F6;&#x81EA;&#x52A8;&#x5207;&#x6362;<br>switchType=2:&#x57FA;&#x4E8E;MySQL&#x4E3B;&#x4ECE;&#x540C;&#x6B65;&#x7684;&#x72B6;&#x6001;&#x51B3;&#x5B9A;&#x662F;&#x5426;&#x5207;&#x6362;&#xFF0C;&#x6839;&#x636E;&#x5FC3;&#x8DF3;&#x5EF6;&#x8FDF;&#x7ED3;&#x679C;&#x51B3;&#x5B9A;&#x662F;&#x5426;&#x5207;&#x6362;&#x3002;&#x9700;&#x8981;&#x5FC3;&#x8DF3;&#x8BED;&#x53E5;&#x4E3A;show slave status&#x3002;&#x89C1;heartbeat<br>switchType=3&#xFF0C;&#x57FA;&#x4E8E; MySQL galary cluster &#x7684;&#x5207;&#x6362;&#x673A;&#x5236;&#xFF0C;&#x6839;&#x636E;&#x5FC3;&#x8DF3;&#x5EF6;&#x8FDF;&#x7ED3;&#x679C;&#x51B3;&#x5B9A;&#x662F;&#x5426;&#x5207;&#x6362;&#x3002;&#x9700;&#x8981;&#x5FC3;&#x8DF3;&#x8BED;&#x53E5;&#x4E3A;show status like &apos;wsrep%&apos;&#xFF0C;&#x89C1;heartbeat<br>&#x5207;&#x6362;&#x4EC5;&#x901A;&#x8FC7;heartbeat&#x5BF9;writeHost&#x8FDB;&#x884C;. &#x5207;&#x6362;&#x53D1;&#x751F;&#x5FC5;&#x987B;&#x6EE1;&#x8DB3;&#x5982;&#x4E0B;&#x6761;&#x4EF6;:<br>&#x5F53;&#x524D;writeHost heartbeat&#x5F02;&#x5E38;&#x3002;<br>&#x6709;&#x591A;&#x4E2A;writeHost<br>switchtype&#x4E0D;&#x4E3A;&#x7C7B;&#x578B;-1&#x3002;</td>
+<td>&#x5FC5;&#x9700;&#x9879;&#xFF0C;&#x65E0;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x5019;&#x9009;&#x503C;0/1/2</td>
+<td>&#x5728;&#x8FDB;&#x884C;&#x8BFB;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x6839;&#x636E;&#x8FD9;&#x4E2A;&#x914D;&#x7F6E;&#x8FDB;&#x884C;<br>0&#xFF1A;&#x4E0D;&#x505A;&#x5747;&#x8861;&#xFF0C;&#x76F4;&#x63A5;&#x5206;&#x53D1;&#x5230;writeHost&#xFF0C;readhost&#x5C06;&#x88AB;&#x5FFD;&#x7565;,&#x4E0D;&#x4F1A;&#x5C1D;&#x8BD5;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#x6C60;&#xFF0C;&#x4F46;&#x4F1A;&#x6709;&#x5FC3;&#x8DF3;&#x8FDE;&#x63A5;<br>1&#xFF1A;&#x8BFB;&#x64CD;&#x4F5C;&#x5728;&#x6240;&#x6709;readHost&#x4E2D;&#x5747;&#x8861;<br>2&#xFF1A;&#x8BFB;&#x64CD;&#x4F5C;&#x5728;&#x6240;&#x6709;readHost&#x548C;writeHost&#x4E2D;&#x5747;&#x8861;&#x3002;&#x5177;&#x4F53;&#x62D3;&#x6251;&#x7ED3;&#x6784;&#x89C1;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x76F8;&#x5173;&#x7AE0;&#x8282;</td>
 </tr>
 <tr>
 <td>slaveThreshold</td>
@@ -2550,14 +2583,13 @@
 &#x8BE5;&#x914D;&#x7F6E;&#x6709;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#x5EFA;&#x8BAE;&#x503C;: <br>1.&#x666E;&#x901A;&#x5FC3;&#x8DF3;&#x53EA;&#x662F;&#x7528;&#x4E8E;&#x63A2;&#x6D3B;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;select 1 
 <br>2.&#x4F7F;&#x7528; select @@read_only &#x63A2;&#x6D4B;&#x7ED3;&#x70B9;&#x53EF;&#x7528;&#x6027;&#x4EE5;&#x53CA;&#x53EF;&#x5199;&#x6027;
 <br>3.&#x4F7F;&#x7528;show slave status,&#x53EF;&#x4EE5;&#x63A2;&#x6D3B;&#xFF0C;&#x68C0;&#x67E5;&#x590D;&#x5236;&#x662F;&#x5426;&#x6B63;&#x5E38;&#xFF0C;&#x4EE5;&#x53CA;&#x5EF6;&#x8FDF;&#x68C0;&#x6D4B;&#x3002;&#x5982;&#x679C;Seconds_Behind_Master&#x8FD4;&#x56DE;&#x7684;&#x72B6;&#x6001;&#x6709;&#x5EF6;&#x8FDF;&#xFF0C;&#x90A3;&#x4E48;&#x4F1A;&#x88AB;&#x8BB0;&#x5165;mysql&#x5B9E;&#x4F8B;&#x7684;&#x4E3B;&#x4ECE;&#x5EF6;&#x8FDF;&#x4E2D;&#xFF0C;&#x5F71;&#x54CD;&#x8BFB;&#x8BF7;&#x6C42;&#x7684;&#x8DEF;&#x7531;&#x5206;&#x53D1;&#xFF0C;&#x5EF6;&#x8FDF;&#x8D85;&#x8FC7;&#x6307;&#x5B9A;&#x9650;&#x5236;&#x8BFB;&#x5199;&#x5206;&#x79BB;&#x4F1A;&#x53D8;&#x4E3A;&#x53EA;&#x8BFB;&#x4E3B;&#x5E93;&#x3002;
-<br>4.&#x4F7F;&#x7528;show status like &apos;wsrep%&apos;,&#x8FD4;&#x56DE;&#x72B6;&#x6001;&#x4F1A;&#x6839;&#x636E;galera&#x96C6;&#x7FA4;&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;wsrep_cluster_status=Primary&#x3001;wsrep_connected=ON&#x3001;wsrep_ready=ON&#x8FDB;&#x884C;&#x5224;&#x65AD;&#xFF0C;&#x5982;&#x679C;&#x72B6;&#x6001;&#x4E0D;&#x6B63;&#x786E;&#xFF0C;&#x5FC3;&#x8DF3;&#x7ED3;&#x679C;&#x5C31;&#x89C6;&#x4E3A;&#x5931;&#x8D25;
 <br>
 </td>
 </tr>
 
 <tr>
 <td>writeHost</td>
-<td>&#x5B50;&#x5143;&#x7D20;&#xFF0C;&#x8868;&#x793A;&#x5199;&#x8282;&#x70B9;&#xFF0C;&#x914D;&#x7F6E;&#x89C1;&#x4E0B;writeHost</td>
+<td>&#x5B50;&#x5143;&#x7D20;&#xFF0C;&#x8868;&#x793A;&#x5199;&#x8282;&#x70B9;&#xFF0C;&#x6BCF;&#x4E2A;datahost&#x53EA;&#x80FD;&#x914D;&#x7F6E;&#x4E00;&#x4E2A;&#xFF0C;&#x914D;&#x7F6E;&#x89C1;&#x4E0B;&#x9762;writeHost&#x7684;&#x63CF;&#x8FF0;</td>
 <td>&#x662F;</td>
 <td>&#x7A7A;</td>
 <td>&#x5177;&#x4F53;&#x7684;&#x7269;&#x7406;&#x8282;&#x70B9;&#x914D;&#x7F6E;</td>
@@ -2584,8 +2616,7 @@
 <br>&#x5FC3;&#x8DF3;&#x53D1;&#x8D77;&#x65F6;&#x5019;&#x68C0;&#x4F1A;&#x67E5;&#x4E0A;&#x6B21;&#x5FC3;&#x8DF3;&#x662F;&#x5426;&#x4E3A;&#x4E0D;&#x6B63;&#x5E38;&#x7684;&#x5FC3;&#x8DF3;,&#x5982;&#x679C;&#x4E0A;&#x6B21;&#x5FC3;&#x8DF3;&#x5C1A;&#x672A;&#x8FD4;&#x56DE;&#xFF0C;&#x5E76;&#x4E14;&#x8DDD;&#x79BB;&#x6700;&#x8FD1;&#x7684;&#x6B63;&#x5E38;&#x5FC3;&#x8DF3;&#x7684;&#x65F6;&#x95F4;&#x5927;&#x4E8E;timeout&#xFF0C;&#x5219;&#x6807;&#x8BB0;&#x8BE5;&#x7ED3;&#x70B9;&#x4E0D;&#x53EF;&#x8FBE;&#x3002;
 <br>&#x4F8B;&#x5982;:&#x5FC3;&#x8DF3;&#x5468;&#x671F;(dataNodeHeartbeatPeriod)2&#x79D2;&#xFF0C;&#x7B2C;&#x4E00;&#x6B21;&#x5FC3;&#x8DF3;&#x6B63;&#x5E38;&#xFF0C;2s&#x540E;&#x7684;&#x7B2C;&#x4E8C;&#x6B21;&#x5FC3;&#x8DF3;&#x672A;&#x8FD4;&#x56DE;&#xFF0C;4s&#x540E;&#x7B2C;&#x4E09;&#x6B21;&#x5FC3;&#x8DF3;&#x53D1;&#x8D77;&#x65F6;&#x5019;&#x53D1;&#x73B0;&#x4E0A;&#x6B21;&#x4E0D;&#x6B63;&#x5E38;&#xFF0C;&#x4E0D;&#x4F1A;&#x771F;&#x7684;&#x518D;&#x6B21;&#x4E0B;&#x53D1;&#xFF0C;&#x800C;&#x662F;&#x4F1A;&#x6839;&#x636E;4s&#x548C;timeout&#x7684;&#x5927;&#x5C0F;&#x6765;&#x786E;&#x5B9A;&#x8BE5;&#x8282;&#x70B9;&#x662F;&#x5426;&#x771F;&#x6B63;&#x8D85;&#x65F6;(&#x8BE5;&#x8282;&#x70B9;&#x4F7F;&#x7528;&#x65F6;&#x5019;&#x624D;&#x4F1A;&#x771F;&#x6B63;&#x7528;&#x5230;&#xFF09;
 &#x5982;&#x679C;&#x672A;&#x8D85;&#x65F6;&#xFF0C;&#x5219;&#x4EC0;&#x4E48;&#x4E5F;&#x4E0D;&#x505A;&#xFF0C;&#x7EE7;&#x7EED;&#x4E0B;&#x4E00;&#x4E2A;&#x5468;&#x671F;&#x3002;&#x5982;&#x679C;&#x8D85;&#x65F6;&#x4E86;&#xFF0C;&#x5219;&#x5C1D;&#x8BD5;&#x6740;&#x6389;&#x8D85;&#x65F6;&#x7684;&#x8FDE;&#x63A5;&#xFF0C;&#x65E0;&#x8BBA;&#x662F;&#x5426;&#x6740;&#x6210;&#x529F;&#xFF0C;&#x90FD;&#x4F1A;&#x5728;&#x4E0B;&#x4E00;&#x4E2A;&#x5468;&#x671F;&#x6362;&#x4E00;&#x4E2A;&#x8FDE;&#x63A5;&#x7EE7;&#x7EED;&#x505A;&#x5FC3;&#x8DF3;&#xFF0C;&#x6781;&#x7AEF;&#x60C5;&#x51B5;&#x4E0B;&#x4F1A;&#x6D88;&#x8017;&#x5F88;&#x591A;&#x8FDE;&#x63A5;
-
-<br>2. &#x5FC3;&#x8DF3;&#x8FDE;&#x7EED;&#x8FD4;&#x56DE;&#x5931;&#x8D25;&#x540E;&#xFF0C;dble&#x4F7F;&#x7528;&#x65F6;&#xFF0C;&#x8BE5;&#x7ED3;&#x70B9;&#x65F6;&#xFF0C;&#x4F1A;&#x68C0;&#x67E5;&#x8DDD;&#x79BB;&#x7B2C;&#x4E00;&#x6B21;&#x5931;&#x8D25;&#x7684;&#x65F6;&#x95F4;&#x5DEE;&#xFF0C;&#x5982;&#x679C;&#x5927;&#x4E8E;timeout&#xFF0C;&#x5219;&#x62A5;&#x6539;&#x7ED3;&#x70B9;&#x4E0D;&#x53EF;&#x8FBE;&#x3002;
+<br>2. &#x5FC3;&#x8DF3;&#x8FDE;&#x7EED;&#x8FD4;&#x56DE;&#x5931;&#x8D25;&#x540E;&#xFF0C;dble&#x4F7F;&#x7528;&#x8BE5;&#x7ED3;&#x70B9;&#x65F6;&#xFF0C;&#x4F1A;&#x68C0;&#x67E5;&#x8DDD;&#x79BB;&#x7B2C;&#x4E00;&#x6B21;&#x5931;&#x8D25;&#x7684;&#x65F6;&#x95F4;&#x5DEE;&#xFF0C;&#x5982;&#x679C;&#x5927;&#x4E8E;timeout&#xFF0C;&#x5219;&#x62A5;&#x8BE5;&#x7ED3;&#x70B9;&#x4E0D;&#x53EF;&#x8FBE;&#x3002;
  </td>
 </tr>
 <tr>
@@ -2717,7 +2748,7 @@
 
 
 <p>&#x4E3E;&#x4F8B;&#x5982;&#x4E0B;:  </p>
-<pre><code>&lt;dataHost name=&quot;localhost1&quot; maxCon=&quot;1000&quot; minCon=&quot;10&quot; balance=&quot;2&quot; switchType=&quot;1&quot; slaveThreshold=&quot;100&quot;  [tempReadHostAvailable=&quot;&quot;]&gt;
+<pre><code>&lt;dataHost name=&quot;localhost1&quot; maxCon=&quot;1000&quot; minCon=&quot;10&quot; balance=&quot;2&quot; slaveThreshold=&quot;100&quot;  [tempReadHostAvailable=&quot;&quot;]&gt;
           &lt;heartbeat errorRetryCount=&quot;3&quot; timeout =&quot;5&quot; &gt;select user()&lt;/heartbeat&gt;
           &lt;writeHost host=&quot;hostM1&quot; url=&quot;192.168.2.177:3307&quot; user=&quot;root&quot; password=&quot;root&quot; usingDecrypt=&quot;&quot;/&gt;
                    &lt;readHost host=&quot;hosts1&quot; url=&quot;192.168.2.177:3309&quot; user=&quot;root&quot; password=&quot;root&quot; weight=&quot;&quot; usingDecrypt=&quot;&quot;/&gt;
@@ -3027,7 +3058,7 @@
     &lt;dataNode name=&quot;dn2&quot; dataHost=&quot;localhost1&quot; database=&quot;db2&quot;/&gt;
     &lt;dataNode name=&quot;dn3&quot; dataHost=&quot;localhost1&quot; database=&quot;db3&quot;/&gt;
     &lt;dataNode name=&quot;dn4&quot; dataHost=&quot;localhost1&quot; database=&quot;db4&quot;/&gt;
-    &lt;dataHost name=&quot;localhost1&quot; maxCon=&quot;1000&quot; minCon=&quot;10&quot; balance=&quot;0&quot; switchType=&quot;1&quot; slaveThreshold=&quot;100&quot;&gt;
+    &lt;dataHost name=&quot;localhost1&quot; maxCon=&quot;1000&quot; minCon=&quot;10&quot; balance=&quot;0&quot; slaveThreshold=&quot;100&quot;&gt;
         &lt;heartbeat&gt;select user()&lt;/heartbeat&gt;
         &lt;!-- can have multi write hosts --&gt;
         &lt;writeHost host=&quot;hostM1&quot; url=&quot;localhost:3306&quot; user=&quot;root&quot; password=&quot;123456&quot;&gt;
@@ -3164,7 +3195,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.2 schema.xml","level":"1.3.2","depth":2,"next":{"title":"1.3 server.xml","level":"1.3.3","depth":2,"path":"1.config_file/1.03_server.xml.md","ref":"1.config_file/1.03_server.xml.md","articles":[]},"previous":{"title":"1.1 rule.xml","level":"1.3.1","depth":2,"path":"1.config_file/1.01_rule.xml.md","ref":"1.config_file/1.01_rule.xml.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","versions-select"],"styles":{"website":"website.css"},"pluginsConfig":{"plugins":["yahei","katex","-search"],"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"sepia","family":"sans","size":2},"highlight":{},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/actiontech/dble-docs-cn/master/book.json","options":[{"value":"https://actiontech.github.io/dble-docs-cn/","text":"Version 3.21.06.0"},{"value":"https://actiontech.github.io/dble-docs-cn/history/develop/","text":"Version develop"},{"value":"https://actiontech.github.io/dble-docs-cn/history/2.20.04.0/","text":"Version 2.20.04.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a2","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dble manual","gitbook":"*"},"file":{"path":"1.config_file/1.02_schema.xml.md","mtime":"2021-10-08T10:47:59.826Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-09T01:37:41.963Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.2 schema.xml","level":"1.3.2","depth":2,"next":{"title":"1.3 server.xml","level":"1.3.3","depth":2,"path":"1.config_file/1.03_server.xml.md","ref":"1.config_file/1.03_server.xml.md","articles":[]},"previous":{"title":"1.1 rule.xml","level":"1.3.1","depth":2,"path":"1.config_file/1.01_rule.xml.md","ref":"1.config_file/1.01_rule.xml.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","versions-select"],"styles":{"website":"website.css"},"pluginsConfig":{"plugins":["yahei","katex","-search"],"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"sepia","family":"sans","size":2},"highlight":{},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/actiontech/dble-docs-cn/master/book.json","options":[{"value":"https://actiontech.github.io/dble-docs-cn/","text":"Version 3.21.06.0"},{"value":"https://actiontech.github.io/dble-docs-cn/history/develop/","text":"Version develop"},{"value":"https://actiontech.github.io/dble-docs-cn/history/2.20.04.0/","text":"Version 2.20.04.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a2","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dble manual","gitbook":"*"},"file":{"path":"1.config_file/1.02_schema.xml.md","mtime":"2021-10-09T03:08:31.873Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-09T03:10:08.650Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -687,12 +687,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.1.16" data-path="../2.Function/2.1_manager_cmd/2.1.16_create_database.html">
+        <li class="chapter " data-level="1.4.1.16" data-path="../2.Function/2.1_manager_cmd/2.1.16_database.html">
             
-                <a href="../2.Function/2.1_manager_cmd/2.1.16_create_database.html">
+                <a href="../2.Function/2.1_manager_cmd/2.1.16_database.html">
             
                     
-                    2.1.16 create database命令
+                    2.1.16 创建/删除物理库命令
             
                 </a>
             
@@ -732,6 +732,19 @@
             
                     
                     2.1.19 split命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.20" data-path="../2.Function/2.1_manager_cmd/2.1.20_flow_control.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.20_flow_control.html">
+            
+                    
+                    2.1.20 flow_control 命令
             
                 </a>
             
@@ -1356,6 +1369,32 @@
     
 
             </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24" data-path="../2.Function/2.24_timeout_control.html">
+            
+                <a href="../2.Function/2.24_timeout_control.html">
+            
+                    
+                    2.24 超时控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.25" data-path="../2.Function/2.25_flow_control.html">
+            
+                <a href="../2.Function/2.25_flow_control.html">
+            
+                    
+                    2.25 流量控制
+            
+                </a>
+            
+
             
         </li>
     
@@ -2540,6 +2579,18 @@
 <td>2.19.11.0</td>
 <td>&#x517C;&#x5BB9;</td>
 
+<tr>
+<td>&#x5220;&#x9664;</td>
+<td>schema.datahost&#x7684;switchType&#x5C5E;&#x6027;</td>
+<td>2.20.04.0</td>
+<td>&#x4E0D;&#x517C;&#x5BB9;</td>
+</tr>
+<tr>
+<td>&#x53D8;&#x66F4;</td>
+<td>schema.datahost&#x7684;balance&#x5C5E;&#x6027;</td>
+<td>&#x5C06;&#x539F;&#x6765;&#x7684;3&#x53D6;&#x6D88;&#xFF0C;1&#x7B49;&#x4EF7;&#x4E8E;&#x539F;&#x6765;3&#x7684;&#x6548;&#x679C;</td>
+<td>&#x517C;&#x5BB9;</td>
+</tr>
 </table>
 
 
@@ -2966,6 +3017,76 @@
       <td>system&#x7684;bufferPoolPageNumber&#x7684;&#x7F3A;&#x7701;&#x503C;,`&#x7531;&#x6838;&#x6570; &#xD7; 20`&#x53D8;&#x4E3A; `0.8 &#xD7; MaxDirectMemorySize / bufferPoolPageSize(default 2M)`</td>
       <td>&#x517C;&#x5BB9;</td>
     </tr> 
+    <tr>
+      <td>60</td>
+      <td>2.20.04.0</td>
+      <td>&#x5220;&#x9664;</td>
+      <td>system&#x7684;clusterHeartbeatPass&#x5C5E;&#x6027;</td>
+      <td>&#x517C;&#x5BB9;</td>
+    </tr> 
+    <tr>
+      <td>61</td>
+      <td>2.20.04.0</td>
+      <td>&#x5220;&#x9664;</td>
+      <td>system&#x7684;clusterHeartbeatUser&#x5C5E;&#x6027;</td>
+      <td>&#x517C;&#x5BB9;</td>
+    </tr> 
+    <tr>
+      <td>62</td>
+      <td>2.20.04.0</td>
+      <td>&#x5220;&#x9664;</td>
+      <td>system&#x7684;useZKSwitch&#x5C5E;&#x6027;</td>
+      <td>&#x517C;&#x5BB9;</td>
+    </tr> 
+    <tr>
+      <td>63</td>
+      <td>2.20.04.0</td>
+      <td>&#x53D8;&#x66F4;</td>
+      <td>system&#x7684;sequnceHandlerType&#x5C5E;&#x6027;&#x66F4;&#x540D;&#x4E3A;sequenceHandlerType&#xFF0C;&#x517C;&#x5BB9;&#x65E7;&#x503C;</td>
+      <td>&#x517C;&#x5BB9;</td>
+    </tr> 
+    <tr>
+      <td>64</td>
+      <td>2.20.04.0</td>
+      <td>&#x53D8;&#x66F4;</td>
+      <td>system&#x7684;transactionRatateSize&#x5C5E;&#x6027;&#x66F4;&#x540D;&#x4E3A;transactionRotateSize&#xFF0C;&#x517C;&#x5BB9;&#x65E7;&#x503C;</td>
+      <td>&#x517C;&#x5BB9;</td>
+    </tr>
+    <tr>
+      <td>65</td>
+      <td>2.20.04.0</td>
+      <td>&#x53D8;&#x66F4;</td>
+      <td>system&#x7684;clearBigSqLResultSetMapMs&#x5C5E;&#x6027;&#x66F4;&#x540D;&#x4E3A;clearBigSQLResultSetMapMs&#xFF0C;&#x517C;&#x5BB9;&#x65E7;&#x503C;</td>
+      <td>&#x517C;&#x5BB9;</td>
+    </tr> 
+    <tr>
+          <td>66</td>
+          <td>2.20.04.0</td>
+          <td>&#x65B0;&#x589E;</td>
+          <td>system&#x65B0;&#x589E;enableFlowControl&#x5C5E;&#x6027;</td>
+          <td>&#x517C;&#x5BB9;</td>
+    </tr> 
+    <tr>
+          <td>67</td>
+          <td>2.20.04.0</td>
+          <td>&#x65B0;&#x589E;</td>
+          <td>system&#x65B0;&#x589E;flowControlStartThreshold&#x5C5E;&#x6027;</td>
+          <td>&#x517C;&#x5BB9;</td>
+    </tr> 
+    <tr>
+          <td>68</td>
+          <td>2.20.04.0</td>
+          <td>&#x65B0;&#x589E;</td>
+          <td>system&#x65B0;&#x589E;flowControlStopThreshold&#x5C5E;&#x6027;</td>
+          <td>&#x517C;&#x5BB9;</td>
+    </tr> 
+    <tr>
+          <td>69</td>
+          <td>2.20.04.0</td>
+          <td>&#x53D8;&#x66F4;</td>
+          <td>system&#x7684;useOuterHa&#x9ED8;&#x8BA4;&#x5C5E;&#x6027;&#x503C;&#x7531;false&#x6539;&#x4E3A;true</td>
+          <td>&#x517C;&#x5BB9;</td>
+    </tr> 
 </table>
 
 
@@ -3023,6 +3144,20 @@
 <td>&#x65B0;&#x589E;</td>
 <td>gc&#x76F8;&#x5173;&#x914D;&#x7F6E;-XX:+PrintGCDetails</td>
 <td>2.19.03.0</td>
+<td>&#x517C;&#x5BB9;</td>
+</tr>
+
+<tr>
+<td>&#x65B0;&#x589E;</td>
+<td>OOM&#x9519;&#x8BEF;&#x76F8;&#x5173;&#x914D;&#x7F6E;-XX:+HeapDumpOnOutOfMemoryError</td>
+<td>2.20.04.0</td>
+<td>&#x517C;&#x5BB9;</td>
+</tr>
+
+<tr>
+<td>&#x65B0;&#x589E;</td>
+<td>OOM&#x9519;&#x8BEF;&#x76F8;&#x5173;&#x914D;&#x7F6E;-XX:HeapDumpPath=./logs/</td>
+<td>2.20.04.0</td>
 <td>&#x517C;&#x5BB9;</td>
 </tr>
 </table>
@@ -3098,6 +3233,11 @@
 <td>2.19.11.0</td>
 <td>&#x4E0D;&#x517C;&#x5BB9;</td>
 </tr>
+<tr>
+<td>3.0</td>
+<td>2.20.04.0</td>
+<td>&#x4E0D;&#x517C;&#x5BB9;</td>
+</tr>
 </table>
 
 <p><strong>&#x6CE8;&#x610F;</strong>:&#x5728;2.19.07.0&#x7248;&#x672C;&#x4E2D;&#x5BF9;&#x4E8E;xml&#x4E2D;&#x7684;&#x7248;&#x672C;&#x53F7;&#x8FDB;&#x884C;&#x4E86;&#x4E00;&#x6B21;&#x6539;&#x9020;&#xFF0C;&#x65B0;&#x7684;&#x7248;&#x672C;&#x53F7;&#x8131;&#x79BB;dble&#x7248;&#x672C;&#x53F7;&#x8FDB;&#x884C;&#x8FED;&#x4EE3;&#xFF0C;&#x5F62;&#x5F0F;&#x4E3A;X.Y&#x3002;X&#x4EE3;&#x8868;&#x914D;&#x7F6E;&#x7684;&#x5927;&#x7248;&#x672C;&#x53F7;&#xFF0C;Y&#x4EE3;&#x8868;&#x914D;&#x7F6E;&#x7684;&#x5C0F;&#x7248;&#x672C;&#x53F7;&#xFF0C;&#x5F53;&#x914D;&#x7F6E;&#x53D1;&#x751F;&#x975E;&#x517C;&#x5BB9;&#x6539;&#x53D8;&#x65F6;X&#x5411;&#x4E0A;&#x8FED;&#x4EE3;&#xFF0C;&#x5426;&#x5219;&#x914D;&#x7F6E;&#x6539;&#x53D8;&#x4EC5;&#x8FED;&#x4EE3;Y</p>
@@ -3144,7 +3284,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.10 配置文件变更记录","level":"1.3.10","depth":2,"next":{"title":"1.11 自定义告警","level":"1.3.11","depth":2,"path":"1.config_file/1.11_customized_alert.md","ref":"1.config_file/1.11_customized_alert.md","articles":[]},"previous":{"title":"1.9 自定义拆分算法","level":"1.3.9","depth":2,"path":"1.config_file/1.09_dble_route_function_spec.md","ref":"1.config_file/1.09_dble_route_function_spec.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","versions-select"],"styles":{"website":"website.css"},"pluginsConfig":{"plugins":["yahei","katex","-search"],"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"sepia","family":"sans","size":2},"highlight":{},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/actiontech/dble-docs-cn/master/book.json","options":[{"value":"https://actiontech.github.io/dble-docs-cn/","text":"Version 3.21.06.0"},{"value":"https://actiontech.github.io/dble-docs-cn/history/develop/","text":"Version develop"},{"value":"https://actiontech.github.io/dble-docs-cn/history/2.20.04.0/","text":"Version 2.20.04.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a2","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dble manual","gitbook":"*"},"file":{"path":"1.config_file/1.10_version_change.md","mtime":"2021-10-08T10:47:59.828Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-09T01:37:41.963Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.10 配置文件变更记录","level":"1.3.10","depth":2,"next":{"title":"1.11 自定义告警","level":"1.3.11","depth":2,"path":"1.config_file/1.11_customized_alert.md","ref":"1.config_file/1.11_customized_alert.md","articles":[]},"previous":{"title":"1.9 自定义拆分算法","level":"1.3.9","depth":2,"path":"1.config_file/1.09_dble_route_function_spec.md","ref":"1.config_file/1.09_dble_route_function_spec.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","versions-select"],"styles":{"website":"website.css"},"pluginsConfig":{"plugins":["yahei","katex","-search"],"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"sepia","family":"sans","size":2},"highlight":{},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/actiontech/dble-docs-cn/master/book.json","options":[{"value":"https://actiontech.github.io/dble-docs-cn/","text":"Version 3.21.06.0"},{"value":"https://actiontech.github.io/dble-docs-cn/history/develop/","text":"Version develop"},{"value":"https://actiontech.github.io/dble-docs-cn/history/2.20.04.0/","text":"Version 2.20.04.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a2","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dble manual","gitbook":"*"},"file":{"path":"1.config_file/1.10_version_change.md","mtime":"2021-10-09T03:08:31.875Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-09T03:10:08.650Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

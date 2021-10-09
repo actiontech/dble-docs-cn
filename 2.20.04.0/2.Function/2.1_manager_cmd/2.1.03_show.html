@@ -687,12 +687,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.1.16" data-path="2.1.16_create_database.html">
+        <li class="chapter " data-level="1.4.1.16" data-path="2.1.16_database.html">
             
-                <a href="2.1.16_create_database.html">
+                <a href="2.1.16_database.html">
             
                     
-                    2.1.16 create database命令
+                    2.1.16 创建/删除物理库命令
             
                 </a>
             
@@ -732,6 +732,19 @@
             
                     
                     2.1.19 split命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.20" data-path="2.1.20_flow_control.html">
+            
+                <a href="2.1.20_flow_control.html">
+            
+                    
+                    2.1.20 flow_control 命令
             
                 </a>
             
@@ -1356,6 +1369,32 @@
     
 
             </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24" data-path="../2.24_timeout_control.html">
+            
+                <a href="../2.24_timeout_control.html">
+            
+                    
+                    2.24 超时控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.25" data-path="../2.25_flow_control.html">
+            
+                <a href="../2.25_flow_control.html">
+            
+                    
+                    2.25 流量控制
+            
+                </a>
+            
+
             
         </li>
     
@@ -2536,20 +2575,20 @@ TOTAL_TASK: &#x603B;&#x5171;&#x4EFB;&#x52A1;&#x6570;&#x91CF;
 <p>&#x63CF;&#x8FF0;&#xFF1A;&#x5C55;&#x793A;&#x914D;&#x7F6E;&#x7684;&#x6240;&#x6709;datanode&#x4FE1;&#x606F;  </p>
 <p>&#x4F8B;&#xFF1A;  </p>
 <pre><code>mysql&gt; show @@datanode;
-+------+----------------+-------+--------+------+------+---------+---------------+
-| NAME | DATHOST        | INDEX | ACTIVE | IDLE | SIZE | EXECUTE | RECOVERY_TIME |
-+------+----------------+-------+--------+------+------+---------+---------------+
-| dn1  | dh1/dble_test  |     0 |      0 |    0 | 1000 |      34 |            -1 |
-| dn2  | dh2/dble_test  |     0 |      0 |    0 | 1000 |      34 |            -1 |
-| dn3  | dh1/dble2_test |     0 |      0 |    0 | 1000 |      26 |            -1 |
-| dn4  | dh2/dble2_test |     0 |      0 |    0 | 1000 |      26 |            -1 |
-| dn5  | dh1/nosharding |     0 |      0 |    0 | 1000 |       9 |            -1 |
-+------+----------------+-------+--------+------+------+---------+---------------+
++------+----------------+---------------+--------+------+------+---------+---------------+
+| NAME | DATHOST        | SCHEMA_EXISTS | ACTIVE | IDLE | SIZE | EXECUTE | RECOVERY_TIME |
++------+----------------+---------------+--------+------+------+---------+---------------+
+| dn1  | dh1/dble_test  | true          |      0 |    0 | 1000 |      34 |            -1 |
+| dn2  | dh2/dble_test  | true          |      0 |    0 | 1000 |      34 |            -1 |
+| dn3  | dh1/dble2_test | false         |      0 |    0 | 1000 |      26 |            -1 |
+| dn4  | dh2/dble2_test | true          |      0 |    0 | 1000 |      26 |            -1 |
+| dn5  | dh1/nosharding | true          |      0 |    0 | 1000 |       9 |            -1 |
++------+----------------+---------------+--------+------+------+---------+---------------+
 5 rows in set (0.09 sec)
 </code></pre><p>&#x5217;&#x63CF;&#x8FF0;&#xFF1A;</p>
 <pre><code>NAME: &#x540D;&#x79F0;
 DATHOST: hostName/&#x5B9E;&#x9645;schema
-INDEX: &#x5199;&#x8282;&#x70B9;&#x7684;index
+SCHEMA_EXISTS: &#x5BF9;&#x5E94;&#x540E;&#x7AEF;&#x7269;&#x7406;&#x5E93;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C;true&#x4E3A;&#x5B58;&#x5728;&#xFF0C;false&#x4E3A;&#x4E0D;&#x5B58;&#x5728;&#x3002;
 ACTIVE: &#x5F53;&#x524D;&#x6D3B;&#x52A8;&#x7684;&#x540E;&#x7AEF;&#x8FDE;&#x63A5;&#x6570;&#x91CF;
 IDLE: &#x5F53;&#x524D;&#x7A7A;&#x95F2;&#x7684;&#x540E;&#x7AEF;&#x8FDE;&#x63A5;&#x6570;&#x91CF;(&#x7A7A;&#x95F2;&#x5BB9;&#x91CF;&#x7EF4;&#x62A4;&#x7591;&#x4F3C;bug)
 SIZE: maxCon&#x5BB9;&#x91CF;
@@ -2588,7 +2627,7 @@ DISABLED: schema.xml&#x4E2D;datasource&#x4E2D;&#x7684;&#x914D;&#x7F6E; (2.19.09.
 <p>&#x5176;&#x4E2D;&#xFF0C;xxx&#x4E3A;&#x8981;&#x67E5;&#x770B;&#x7684;datanode&#x7684;&#x540D;&#x5B57;&#x3002;  </p>
 <h4 id="2139--show-datasourcesynstatus">2.1.3.9  show @@datasource.synstatus</h4>
 <h5 id="show-datasourcesynstatus&#xFF1B;">show @@datasource.synstatus&#xFF1B;</h5>
-<p>&#x63CF;&#x8FF0;&#xFF1A;&#x5C55;&#x793A;&#x5F53;&#x524D;&#x5404;datasource&#x7684;&#x540C;&#x6B65;&#x4FE1;&#x606F;<br>&#x524D;&#x63D0;&#x6761;&#x4EF6;: switch_type &#x914D;&#x7F6E;&#x4E86;2&#x5E76;&#x4E14;heartbeat &#x914D;&#x7F6E;&#x4E86; show slave status&#xFF08;&#x53C2;&#x89C1;1.2 schemal.xml&#xFF09;  </p>
+<p>&#x63CF;&#x8FF0;&#xFF1A;&#x5C55;&#x793A;&#x5F53;&#x524D;&#x5404;datasource&#x7684;&#x540C;&#x6B65;&#x4FE1;&#x606F;<br>&#x524D;&#x63D0;&#x6761;&#x4EF6;: heartbeat &#x914D;&#x7F6E;&#x4E86; show slave status&#xFF08;&#x53C2;&#x89C1;1.2 schemal.xml&#xFF09;  </p>
 <p>&#x4F8B;&#xFF1A;</p>
 <pre><code>mysql&gt; show @@datasource.synstatus;
 +------------+--------+--------------+------+--------------+-------------+-------------+-----------------------+------------------+-------------------+----------------+---------------+---------------+
@@ -2627,8 +2666,7 @@ PORT: &#x7AEF;&#x53E3;
 </code></pre><p>&#x5176;&#x4F59;&#x5217;&#x542B;&#x4E49;&#x53C2;&#x89C1;mysql&#x4E2D;show slave status&#x7684;&#x547D;&#x4EE4;&#x3002;</p>
 <h4 id="21311--show-datasourcecluster">2.1.3.11  show @@datasource.cluster</h4>
 <h5 id="show-datasourcecluster&#xFF1B;">show @@datasource.cluster&#xFF1B;</h5>
-<p>&#x63CF;&#x8FF0;&#xFF1A;&#x5C55;&#x793A;&#x5F53;&#x524D;cluser&#x4FE1;&#x606F;<br>&#x524D;&#x63D0;&#x6761;&#x4EF6;:switch_type &#x914D;&#x7F6E;&#x4E86;3 &#x5E76;&#x4E14;show status like &apos;wsrep%&apos;&#xFF08;&#x53C2;&#x89C1;1.2 schemal.xml&#xFF09;  </p>
-<p>TODO:&#x5F85;&#x8865;&#x5145;  </p>
+<p>&#x63CF;&#x8FF0;&#xFF1A;&#x6B64;&#x529F;&#x80FD;&#x5728;2.20.04.0 &#x7248;&#x672C;&#x5DF2;&#x7ECF;&#x5E9F;&#x9664;&#x3002;</p>
 <h4 id="21312--show-processor">2.1.3.12  show @@processor</h4>
 <h5 id="show-processor&#xFF1B;">show @@processor&#xFF1B;</h5>
 <p>&#x63CF;&#x8FF0;&#xFF1A;&#x5C55;&#x793A;dble&#x5B9E;&#x4F8B;&#x7684;processor&#x4FE1;&#x606F;  </p>
@@ -2962,24 +3000,25 @@ LAST_TIME:&#x4E0A;&#x6B21;SQL&#x6267;&#x884C;&#x65F6;&#x95F4;&#x6233;
 <p>&#x63CF;&#x8FF0;&#xFF1A;&#x5C55;&#x793A;datasource&#x7684;heartbeat&#x4FE1;&#x606F;  </p>
 <p>&#x4F8B;&#xFF1A;</p>
 <pre><code>mysql&gt; show @@heartbeat;
-+--------+--------------+------+---------+-------+--------+---------+--------------+------------------+-------+
-| NAME   | HOST         | PORT | RS_CODE | RETRY | STATUS | TIMEOUT | EXECUTE_TIME | LAST_ACTIVE_TIME | STOP  |
-+--------+--------------+------+---------+-------+--------+---------+--------------+------------------+-------+
-| hostM1 | 10.18x.2x.63 | 3320 |       1 |     0 | idle   |       0 | 8,8,8        | NULL             | false |
-| hostM2 | 10.18x.2x.64 | 3320 |       1 |     0 | idle   |       0 | 9,9,9        | NULL             | false |
-+--------+--------------+------+---------+-------+--------+---------+--------------+------------------+-------+
++--------+--------------+------+---------+-------+--------+---------+--------------+------------------+-------+-------------+
+| NAME   | HOST         | PORT | RS_CODE | RETRY | STATUS | TIMEOUT | EXECUTE_TIME | LAST_ACTIVE_TIME | STOP  | RS_MESSAGE  |
++--------+--------------+------+---------+-------+--------+---------+--------------+------------------+-------+-------------+
+| hostM1 | 10.18x.2x.63 | 3320 |      OK |     0 | idle   |       0 | 8,8,8        | NULL             | false | NULL        |
+| hostM2 | 10.18x.2x.64 | 3320 |      OK |     0 | idle   |       0 | 9,9,9        | NULL             | false | NULL        |
++--------+--------------+------+---------+-------+--------+---------+--------------+------------------+-------+-------------+
 2 rows in set (0.07 sec)
 </code></pre><p>&#x5217;&#x63CF;&#x8FF0;&#xFF1A;</p>
 <pre><code>NAME:dataHost&#x540D;&#x79F0;
 HOST:&#x4E3B;&#x673A;&#x540D;/IP
 PORT:&#x7AEF;&#x53E3;
-RS_CODE:&#x72B6;&#x6001;&#x7801; 0:&#x521D;&#x59CB;&#x5316;,1:OK,-1:ERROR,-2:TIMEOUT
+RS_CODE:&#x72B6;&#x6001;&#x7801;&#xFF0C;&#x6709;&#x4EE5;&#x4E0B;&#x56DB;&#x79CD;&#x72B6;&#x6001;&#xFF1A;INIT, OK, ERROR, TIMEOUT
 RETRY:&#x91CD;&#x8BD5;&#x9519;&#x8BEF;&#x6B21;&#x6570;
 STATUS:checking/idle
 TIMEOUT:&#x5FC3;&#x8DF3;&#x8D85;&#x65F6;&#x9608;&#x503C;(&#x59CB;&#x7EC8;&#x4E3A;0&#xFF0C;bug?)
 EXECUTE_TIME:&#x6700;&#x8FD1;3&#x4E2A;&#x65F6;&#x6BB5;&#x7684;&#x5E73;&#x5747;&#x54CD;&#x5E94;&#x65F6;&#x95F4;&#xFF0C;&#x9ED8;&#x8BA4;1&#xFF0C;10&#xFF0C;30&#x5206;&#x949F;
 LAST_ACTIVE_TIME:&#x4E0A;&#x6B21;&#x6536;&#x5230;&#x5FC3;&#x8DF3;&#x56DE;&#x590D;&#x65F6;&#x95F4;&#x6233;
 STOP:&#x662F;&#x5426;stop,&#x548C;stop&#x547D;&#x4EE4;&#x76F8;&#x5173;
+RS_MESSAGE:&#x5FC3;&#x8DF3;&#x5931;&#x8D25;&#x4FE1;&#x606F;&#xFF0C;&#x5F53;RS_CODE&#x4E3A;INIT, OK, TIMEOUT&#x65F6;&#xFF0C;message&#x4E3A;null&#xFF0C;&#x53EA;&#x6709;&#x5F53;RS_CODE&#x4E3A;ERROR&#x65F6;&#xFF0C;message&#x624D;&#x4F1A;&#x663E;&#x793A;&#x6700;&#x8FD1;&#x4E00;&#x6B21;&#x5FC3;&#x8DF3;&#x5931;&#x8D25;&#x7684;&#x4FE1;&#x606F;
 </code></pre><h4 id="21327--show-heartbeatdetail-where-name&#xFF1F;">2.1.3.27  show @@heartbeat.detail where name=&#xFF1F;</h4>
 <h5 id="show-heartbeatdetail-where-namexxx">show @@heartbeat.detail where name=xxx;</h5>
 <p>&#x5176;&#x4E2D;&#xFF0C;xxx&#x4E3A;&#x8981;&#x67E5;&#x8BE2;&#x7684;datasource&#x7684;&#x540D;&#x5B57;&#x3002;  </p>
@@ -3379,7 +3418,7 @@ Transactions&#xFF1A;&#x6267;&#x884C;&#x4E8B;&#x52A1;&#x7684;&#x6570;&#x91CF;&#xF
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.1.3 show命令","level":"1.4.1.3","depth":3,"next":{"title":"2.1.4 switch命令","level":"1.4.1.4","depth":3,"path":"2.Function/2.1_manager_cmd/2.1.04_switch.md","ref":"2.Function/2.1_manager_cmd/2.1.04_switch.md","articles":[]},"previous":{"title":"2.1.2 set命令","level":"1.4.1.2","depth":3,"path":"2.Function/2.1_manager_cmd/2.1.02_set.md","ref":"2.Function/2.1_manager_cmd/2.1.02_set.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","versions-select"],"styles":{"website":"website.css"},"pluginsConfig":{"plugins":["yahei","katex","-search"],"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"sepia","family":"sans","size":2},"highlight":{},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/actiontech/dble-docs-cn/master/book.json","options":[{"value":"https://actiontech.github.io/dble-docs-cn/","text":"Version 3.21.06.0"},{"value":"https://actiontech.github.io/dble-docs-cn/history/develop/","text":"Version develop"},{"value":"https://actiontech.github.io/dble-docs-cn/history/2.20.04.0/","text":"Version 2.20.04.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a2","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dble manual","gitbook":"*"},"file":{"path":"2.Function/2.1_manager_cmd/2.1.03_show.md","mtime":"2021-10-08T10:47:59.836Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-09T01:37:41.963Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.1.3 show命令","level":"1.4.1.3","depth":3,"next":{"title":"2.1.4 switch命令","level":"1.4.1.4","depth":3,"path":"2.Function/2.1_manager_cmd/2.1.04_switch.md","ref":"2.Function/2.1_manager_cmd/2.1.04_switch.md","articles":[]},"previous":{"title":"2.1.2 set命令","level":"1.4.1.2","depth":3,"path":"2.Function/2.1_manager_cmd/2.1.02_set.md","ref":"2.Function/2.1_manager_cmd/2.1.02_set.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","versions-select"],"styles":{"website":"website.css"},"pluginsConfig":{"plugins":["yahei","katex","-search"],"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"sepia","family":"sans","size":2},"highlight":{},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/actiontech/dble-docs-cn/master/book.json","options":[{"value":"https://actiontech.github.io/dble-docs-cn/","text":"Version 3.21.06.0"},{"value":"https://actiontech.github.io/dble-docs-cn/history/develop/","text":"Version develop"},{"value":"https://actiontech.github.io/dble-docs-cn/history/2.20.04.0/","text":"Version 2.20.04.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a2","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dble manual","gitbook":"*"},"file":{"path":"2.Function/2.1_manager_cmd/2.1.03_show.md","mtime":"2021-10-09T03:08:31.885Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-09T03:10:08.650Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

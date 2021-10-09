@@ -687,12 +687,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.1.16" data-path="../2.Function/2.1_manager_cmd/2.1.16_create_database.html">
+        <li class="chapter " data-level="1.4.1.16" data-path="../2.Function/2.1_manager_cmd/2.1.16_database.html">
             
-                <a href="../2.Function/2.1_manager_cmd/2.1.16_create_database.html">
+                <a href="../2.Function/2.1_manager_cmd/2.1.16_database.html">
             
                     
-                    2.1.16 create database命令
+                    2.1.16 创建/删除物理库命令
             
                 </a>
             
@@ -732,6 +732,19 @@
             
                     
                     2.1.19 split命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.20" data-path="../2.Function/2.1_manager_cmd/2.1.20_flow_control.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.20_flow_control.html">
+            
+                    
+                    2.1.20 flow_control 命令
             
                 </a>
             
@@ -1356,6 +1369,32 @@
     
 
             </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24" data-path="../2.Function/2.24_timeout_control.html">
+            
+                <a href="../2.Function/2.24_timeout_control.html">
+            
+                    
+                    2.24 超时控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.25" data-path="../2.Function/2.25_flow_control.html">
+            
+                <a href="../2.Function/2.25_flow_control.html">
+            
+                    
+                    2.25 流量控制
+            
+                </a>
+            
+
             
         </li>
     
@@ -2478,19 +2517,24 @@
 <p>&#x5728;Dble&#x4E2D;&#x9009;&#x62E9;wrapper&#x4F5C;&#x4E3A;&#x7BA1;&#x7406;dble&#x8FDB;&#x7A0B;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x5176;&#x5927;&#x6982;&#x914D;&#x7F6E;&#x90FD;&#x5C5E;&#x4E8E;&#x56FA;&#x5B9A;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x53EA;&#x6709;&#x5176;&#x4E2D;&#x7684;JVM&#x53C2;&#x6570;&#x662F;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x548C;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x4FEE;&#x6539;&#x6765;&#x8FBE;&#x6210;&#x914D;&#x7F6E;&#x76EE;&#x7684;&#x7684;
 JVM&#x53C2;&#x6570;&#x90FD;&#x7EDF;&#x4E00;&#x914D;&#x7F6E;&#x5728;&#x4EE5;&#x4E0B;&#x7684;&#x90E8;&#x5206;&#x914D;&#x7F6E;&#x6A21;&#x5757;&#x4E2D;&#xFF0C;additional&#x4E4B;&#x540E;&#x7684;&#x6807;&#x53F7;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x73B0;&#x5B9E;&#x60C5;&#x51B5;&#x8FDB;&#x884C;&#x6DFB;</p>
 <pre><code>wrapper.java.additional.1=-DDBLE_HOME=.
-wrapper.java.additional.2=-agentlib:jdwp=transport=dt_socket,server=y,address=8088,suspend=n
-wrapper.java.additional.3=-server
-wrapper.java.additional.4=-XX:MaxPermSize=64M
-wrapper.java.additional.5=-XX:+AggressiveOpts
-wrapper.java.additional.6=-Dfile.encoding=UTF-8
-wrapper.java.additional.7=-Dcom.sun.management.jmxremote
-wrapper.java.additional.8=-Dcom.sun.management.jmxremote.port=1984
-wrapper.java.additional.9=-Dcom.sun.management.jmxremote.authenticate=false
-wrapper.java.additional.10=-Dcom.sun.management.jmxremote.ssl=false
-wrapper.java.additional.11=-Dcom.sun.management.jmxremote.host=127.0.0.1
-wrapper.java.additional.12=-Xmx4G
-wrapper.java.additional.13=-Xms1G
-wrapper.java.additional.14=-XX:MaxDirectMemorySize=2G
+wrapper.java.additional.2=-server
+wrapper.java.additional.3=-XX:+AggressiveOpts
+wrapper.java.additional.4=-Dfile.encoding=UTF-8
+wrapper.java.additional.5=-Dcom.sun.management.jmxremote
+wrapper.java.additional.6=-Dcom.sun.management.jmxremote.port=1984
+wrapper.java.additional.7=-Dcom.sun.management.jmxremote.authenticate=false
+wrapper.java.additional.8=-Dcom.sun.management.jmxremote.ssl=false
+wrapper.java.additional.9=-Dcom.sun.management.jmxremote.host=127.0.0.1
+wrapper.java.additional.10=-Xmx4G
+wrapper.java.additional.11=-Xms1G
+wrapper.java.additional.12=-XX:MaxDirectMemorySize=2G
+wrapper.java.additional.13=-XX:+PrintHeapAtGC
+wrapper.java.additional.14=-XX:+PrintGCDateStamps
+wrapper.java.additional.15=-Xloggc:./logs/gc_%t_%p.log
+wrapper.java.additional.16=-XX:+PrintGCTimeStamps
+wrapper.java.additional.17=-XX:+PrintGCDetails
+wrapper.java.additional.18=-XX:+HeapDumpOnOutOfMemoryError
+wrapper.java.additional.19=-XX:HeapDumpPath=./logs/
 </code></pre><p>&#x5927;&#x90E8;&#x5206;&#x4EE5;&#x4E0A;&#x7684;&#x914D;&#x7F6E;&#x90FD;&#x6CA1;&#x6709;&#x7279;&#x6B8A;&#x7684;&#x610F;&#x4E49;&#xFF0C;&#x4EC5;&#x4EC5;&#x662F;&#x4E00;&#x822C;&#x7684;JVM&#x914D;&#x7F6E;&#xFF0C;&#x5173;&#x4E8E;JVM&#x8C03;&#x4F18;&#x7684;&#x90E8;&#x5206;&#x9700;&#x8981;&#x4EE5;&#x73B0;&#x5B9E;&#x60C5;&#x51B5;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;&#x5728;&#x6B64;&#x4EC5;&#x4ECB;&#x7ECD;&#x51E0;&#x4E2A;&#x7279;&#x6B8A;&#x60C5;&#x51B5;</p>
 <ol>
 <li><p>MaxDirectMemorySize&#x9700;&#x8981;&#x6839;&#x636E;&#x673A;&#x5668;&#x7684;&#x60C5;&#x51B5;&#x8FDB;&#x884C;&#x63D0;&#x524D;&#x9002;&#x914D;&#xFF0C;&#x4E0D;&#x7136;&#x4F1A;&#x5BFC;&#x81F4;&#x670D;&#x52A1;&#x65E0;&#x6CD5;&#x6B63;&#x5E38;&#x542F;&#x52A8;
@@ -2668,7 +2712,7 @@ configuration.directory.in.classpath.first=conf
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.4 wrapper.conf","level":"1.3.4","depth":2,"next":{"title":"1.5 log4j2.xml","level":"1.3.5","depth":2,"path":"1.config_file/1.05_log4j2.xml.md","ref":"1.config_file/1.05_log4j2.xml.md","articles":[]},"previous":{"title":"1.3 server.xml","level":"1.3.3","depth":2,"path":"1.config_file/1.03_server.xml.md","ref":"1.config_file/1.03_server.xml.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","versions-select"],"styles":{"website":"website.css"},"pluginsConfig":{"plugins":["yahei","katex","-search"],"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"sepia","family":"sans","size":2},"highlight":{},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/actiontech/dble-docs-cn/master/book.json","options":[{"value":"https://actiontech.github.io/dble-docs-cn/","text":"Version 3.21.06.0"},{"value":"https://actiontech.github.io/dble-docs-cn/history/develop/","text":"Version develop"},{"value":"https://actiontech.github.io/dble-docs-cn/history/2.20.04.0/","text":"Version 2.20.04.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a2","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dble manual","gitbook":"*"},"file":{"path":"1.config_file/1.04_wrapper.conf.md","mtime":"2021-10-08T09:13:12.296Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-09T01:37:41.963Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.4 wrapper.conf","level":"1.3.4","depth":2,"next":{"title":"1.5 log4j2.xml","level":"1.3.5","depth":2,"path":"1.config_file/1.05_log4j2.xml.md","ref":"1.config_file/1.05_log4j2.xml.md","articles":[]},"previous":{"title":"1.3 server.xml","level":"1.3.3","depth":2,"path":"1.config_file/1.03_server.xml.md","ref":"1.config_file/1.03_server.xml.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","versions-select"],"styles":{"website":"website.css"},"pluginsConfig":{"plugins":["yahei","katex","-search"],"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"sepia","family":"sans","size":2},"highlight":{},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/actiontech/dble-docs-cn/master/book.json","options":[{"value":"https://actiontech.github.io/dble-docs-cn/","text":"Version 3.21.06.0"},{"value":"https://actiontech.github.io/dble-docs-cn/history/develop/","text":"Version develop"},{"value":"https://actiontech.github.io/dble-docs-cn/history/2.20.04.0/","text":"Version 2.20.04.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a2","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dble manual","gitbook":"*"},"file":{"path":"1.config_file/1.04_wrapper.conf.md","mtime":"2021-10-09T03:08:31.874Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-09T03:10:08.650Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
