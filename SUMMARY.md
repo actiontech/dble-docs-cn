@@ -18,7 +18,7 @@
         * [1.7.2 时间戳方式(类Snowflake)](1.config_file/1.7_global_sequence/1.7.2_timestamp.md)
         * [1.7.3 分布式时间戳方式(类Snowflake)](1.config_file/1.7_global_sequence/1.7.3_distribute_timestamp.md)
         * [1.7.4 分布式offset-step方式](1.config_file/1.7_global_sequence/1.7.4_distribute_offset-step.md)
-    * [1.8 cache配置](1.config_file/1.06_cache.md)
+    * [1.8 cache配置](1.config_file/1.08_cache.md)
         * [1.8.1 cache配置](1.config_file/1.8_cache/1.8.1_cache_setting.md) 
         * [1.8.2 ehcache配置](1.config_file/1.8_cache/1.8.2_ehcache_setting.md)
     * [1.9 自定义拆分算法](1.config_file/1.09_dble_route_function_spec.md)
@@ -37,11 +37,11 @@
         * [2.1.5 kill命令](2.Function/2.1_manager_cmd/2.1.05_kill.md)
         * [2.1.6 stop命令](2.Function/2.1_manager_cmd/2.1.06_stop.md)
         * [2.1.7 reload命令](2.Function/2.1_manager_cmd/2.1.07_reload.md)
-        * [2.1.8 rollback命令(已废弃)]()
+        * 2.1.8 rollback命令（已废弃）
         * [2.1.9 offline命令](2.Function/2.1_manager_cmd/2.1.09_offline.md)
         * [2.1.10 online命令](2.Function/2.1_manager_cmd/2.1.10_online.md)
-        * [2.1.11 file命令（已废弃）]()
-        * [2.1.12 log命令（已废弃）]()
+        * 2.1.11 file命令（已废弃）
+        * 2.1.12 log命令（已废弃）
         * [2.1.13 配置检查命令](2.Function/2.1_manager_cmd/2.1.13_dryrun.md)
         * [2.1.14 pause & resume 命令](2.Function/2.1_manager_cmd/2.1.14_pause_resume.md)
         * [2.1.15 慢查询日志相关命令](2.Function/2.1_manager_cmd/2.1.15_slow_query.md)
