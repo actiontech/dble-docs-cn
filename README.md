@@ -1,5 +1,7 @@
 # dble 中文技术参考手册
 
+## 注意
+本分支上的手册适用于3.21.10.0版dble，其他版本的文档请参考对应tag分支或者release版文档。 
 
 ## 目录
 参考 [gitbook](https://actiontech.github.io/dble-docs-cn) 左侧目录区 或 [SUMMARY.md](https://github.com/actiontech/dble-docs-cn/blob/master/SUMMARY.md) 
@@ -7,9 +9,9 @@
 ## 软件包下载
 [下载](https://github.com/actiontech/dble/releases) 或者[github镜像站下载](https://hub.fastgit.org/actiontech/dble/releases)
 
-## 文档PDF下载(未发布版本不能下载)
+## 文档PDF下载
 [文档PDF下载](https://github.com/actiontech/dble-docs-cn/releases/download/3.21.10.0%2Ftag/dble-manual-3.21.10.0.pdf)  或者[github镜像站下载](https://hub.fastgit.org/actiontech/dble-docs-cn/releases/download/3.21.10.0%2Ftag/dble-manual-3.21.10.0.pdf)
-
+注意：如版本尚未发布，则不能下载)
 
 
 ## 中文公开课
@@ -27,8 +29,6 @@
   ![QR_code](./QR_code.png)
 
 
-## 注意
-本分支上的手册适用于3.21.10.0版dble，其他版本的文档请参考对应tag分支或者release版文档。 
     
 ## 提示
 [如果您使用了dble，请告诉我们。](https://wj.qq.com/s/2291106/09f4)
