@@ -6,8 +6,9 @@ load data语句，一共有17G的数据，每条语句4K
 load data相关参数值均为默认 
 
 ## Issue
- - INFO | jvm 1 | 2019/06/28 14:55:37 | Exception in thread "backendBusinessExecutor17" java.lang.OutOfMemoryError: GC overhead limit exceeded. 
-
+ - INFO | jvm 1 | 2019/06/28 14:55:37 | Exception in thread "backendBusinessExecutor17" java.lang.OutOfMemoryError: GC overhead limit exceeded.   
+   
+Special instructions：backendBusinessExecutor17 被替换成了17-backendWorker
 ## Resolution  
 
 1. 调小maxRowSizeToFile参数值，减少占用内存量
