@@ -56,12 +56,13 @@ hint 的语法沿用 [dble hint](../2.04_hint.md)
 ```sql
 /*!dble:plan=a & ( b | c )$left2inner$right2inner$in2join*/ sql
 ```
-其中关键点在于 a & ( b | c ) 表达式，其中a，b，c 表示 sql 中的表名
+其中关键点在于 a & ( b | c ) 表达式，其中a，b，c 表示 sql 中的 **表的别名**
+
 我们使用 &，| 表示两表操作的先后顺序。
 针对上面的不同场景可以使用如下表达式指定复杂查询的执行顺序：
 * 对于场景1: a & ( b | c )
 * 对于场景2: (a,c) & b
-* 对于场景3: 第一种小场景可以是：a & ( b | c )，第二种小场景可以是(a & b) | c
+* 对于场景3: 第一种小场景可以是：a&b&c ，第二种小场景可以是(a & b) | c
 
 其中：
 1. (a,c) 表示a和c表之间存在ER关系，可以整体下推
@@ -75,3 +76,8 @@ hint 的语法沿用 [dble hint](../2.04_hint.md)
 ## 限制
 1. 执行计划中hint语法支持的不够完善，在有括号的场景下会解析错误。
 2. 对于像 Hibernate 这样自动生成表别名的框架，当前还不支持。后续会优化。
+3. 当 sql 存在笛卡尔积（join 不指定关联key） 时，暂不支持，hint会报错。举例：`select * from table_a a, table_b b ` 
+4. 当 sql 存在 多个 right join 时，暂不支持，hint会报错
+5. 当 sql 存在 子查询 时，暂不支持，hint会报错
+6. left join 和 inner join指向同一个节点的执行顺序不被允许，会报错。举例：`/*!dble:plan=a & c & b */ SELECT * FROM Employee a LEFT JOIN Dept b on a.name=b.manager inner JOIN Info c on a.name=c.name and b.manager=c.name ORDER BY a.name;` 其中，a 和 c 可以正常 inner join ,但其结果和 b 发生join 时，需要同时完成 a 和 b 的 left join以及 c 和 b 的inner join，这在sql语法上不受支持，故不支持。
+
