@@ -68,9 +68,9 @@ hint 的语法沿用 [dble hint](../2.04_hint.md)
 1. (a,c) 表示a和c表之间存在ER关系，可以整体下推
 2. & 表示后面的内容依赖前面的内容，需要等待前面的结果返回之后带入到后面之中作为条件下发，相当于nestloop的方式
 3. | 表示两者可以并发，数据处理方式取决于join的方式
-4. left2inner 参数表示是否用left join取代inner join
-5. right2inner 参数表示是否用right join取代inner join
-6. in2join 参数表示是否in子查询转为join
+4. left2inner 参数表示是将left join转成inner join
+5. right2inner 参数表示是将right join转成inner join
+6. in2join 参数表示将in子查询转为join查询；（此参数优先于bootstrap.cnf中的inSubQueryTransformToJoin策略）
 
 
 ## 限制
