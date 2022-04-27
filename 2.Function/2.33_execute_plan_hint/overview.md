@@ -1,0 +1,77 @@
+# 2.23 通过hint指定复杂查询执行计划
+
+## 需求背景
+
+有如下场景1:
+```sql
+table_a a left join table_b b on a.col_1 = b.col_1 left join table_c c on a.col_2 =c.col_2 where a.col =xxx
+```
+在3.22.01.0之前版本的查询计划是:
+1. a 表带条件 a.col=xxx 下发，结果集比较小，大约数百
+2. b 表大表，全数据拉取
+3. c 表小表，全数据拉取
+
+三表并发下发，在dble内存中进行join，其中 b 表比较大，占用内存比较大，这样造成这条sql的执行效率不高，并且dble容易内存溢出。
+因此，期望如下的查询计划:
+1. a 表带条件下发，结果集大约数百
+2. b 表带着 a 表的结果下发
+3. c 表带着 a 表的结果下发
+
+这样，a 表先下发，之后 b 表带上 a 表查询回来的 col_1 的结果下发，c 表带着 a 表查询回来的 col_2 的结果下发，这里，b 表和 c表的是可以并发下发的。最终将结果在dble内部进行join，这样dble处理的结果集就小很多。
+
+有如下场景2:
+```sql
+table_a a left join table_b b on a.col_1 = b.col_1 left join table_c c on a.sharding_col = c.sharding_col where a.col =xxx
+```
+同场景1的处理方式。
+因此，期望如下的查询计划:
+1. a，c 表优先进行联表查询处理，带条件下发，结果集大约数百
+2. b 表带着 a 表查询返回的 col_1 的结果下发
+
+有如下场景3:
+```sql
+table_a a left join table_b b on a.col_1 = b.col_1 left join table_c c on b.col_2 = c.col_2 where a.col =xxx
+```
+同场景1的查询计划。
+
+因此，期望如下的查询计划:
+1. a 表带条件下发，结果集大约数百
+2. b 表带着 a 表的结果下发
+3. c 表带着 b 表的结果下发
+
+这样，a 表先处理，然后 b 表带着 a 表 col_1 结果下发，最后 c 表带着 b 表 col_2的值下发。
+
+另外，还可以有如下的查询计划:
+1. a 表带条件下发，结果集大约数百
+2. b 表带着a表的结果下发
+3. c 表数据量不大的情形下全量下发
+
+这样，a 表先处理，然后 b 表带着a 表 col_1 的结果下发，同时 c 表并发
+
+## hint语法
+针对上面三种场景，dble不能估算数据量的大小，按照表达式运算来尽量优化下发顺序。在dble 3.22.01.0版本中，dble提供通过hint的方式让用户可以自定义合理的执行顺序。
+
+hint 的语法沿用 [dble hint](../2.04_hint.md)
+比如：
+```sql
+/*!dble:plan=a & ( b | c )$left2inner$right2inner$in2join*/ sql
+```
+其中关键点在于 a & ( b | c ) 表达式，其中a，b，c 表示 sql 中的表名
+我们使用 &，| 表示两表操作的先后顺序。
+针对上面的不同场景可以使用如下表达式指定复杂查询的执行顺序：
+* 对于场景1: a & ( b | c )
+* 对于场景2: (a,c) & b
+* 对于场景3: 第一种小场景可以是：a & ( b | c )，第二种小场景可以是(a & b) | c
+
+其中：
+1. (a,c) 表示a和c表之间存在ER关系，可以整体下推
+2. & 表示后面的内容依赖前面的内容，需要等待前面的结果返回之后带入到后面之中作为条件下发，相当于nestloop的方式
+3. | 表示两者可以并发，数据处理方式取决于join的方式
+4. left2inner 参数表示是否用left join取代inner join
+5. right2inner 参数表示是否用right join取代inner join
+6. in2join 参数表示是否in子查询转为join
+
+
+## 限制
+1. 执行计划中hint语法支持的不够完善，在有括号的场景下会解析错误。
+2. 对于像 Hibernate 这样自动生成表别名的框架，当前还不支持。后续会优化。
