@@ -72,6 +72,13 @@ hint 的语法沿用 [dble hint](../2.04_hint.md)
 5. right2inner 参数表示是将right join转成inner join
 6. in2join 参数表示将in子查询转为join查询；（此参数优先于bootstrap.cnf中的inSubQueryTransformToJoin策略）
 
+#### hint使用nestLoop的原则  
+- hint期望的下发结果，如果违背优化的初衷那么就会报错  
+举例： a join b ,如果a,b具有er关系，hint希望执行为（a & b）,那么就会报错  
+- hint期望的下发方式被判定为不合理就会报错  
+举例： a join b on a.col1 = b.col1 join c on c.col2 = a.col2, hint希望执行为 ( a & b & c), 那么就会报错  
+
+
 
 ## 限制
 1. 执行计划中hint语法支持的不够完善，在有括号的场景下会解析错误。
@@ -80,4 +87,6 @@ hint 的语法沿用 [dble hint](../2.04_hint.md)
 4. 当 sql 存在 多个 right join 时，暂不支持，hint会报错
 5. 当 sql 存在 子查询 时，暂不支持，hint会报错
 6. left join 和 inner join指向同一个节点的执行顺序不被允许，会报错。举例：`/*!dble:plan=a & c & b */ SELECT * FROM Employee a LEFT JOIN Dept b on a.name=b.manager inner JOIN Info c on a.name=c.name and b.manager=c.name ORDER BY a.name;` 其中，a 和 c 可以正常 inner join ,但其结果和 b 发生join 时，需要同时完成 a 和 b 的 left join以及 c 和 b 的inner join，这在sql语法上不受支持，故不支持。
-
+7. sql具有er关系，但是hint依旧下发成功。  
+原因：我们尽可能的按照hint期望的方式下发语句，所以dble可能尝试在内部改写sql以便满足hint的需求，举例`/*!dble:plan=a | c | b */ SELECT a.Name,a.DeptName,b.Manager,c.salary FROM Employee a LEFT JOIN Dept b on a.DeptName=b.DeptName LEFT JOIN Level c on a.Level=c.levelname and c.salary=10000 order by a.Name ;`
+会被调整为`SELECT a.Name,a.DeptName,b.Manager,c.salary FROM Employee a  LEFT JOIN Level c on a.Level=c.levelname and c.salary=10000 LEFT JOIN Dept b on a.DeptName=b.DeptName  order by a.Name`,此时a表和c表不具有er关系，且er关系的检测不能跨节点，所以没有违背hint使用nestLoop的原则的第一条,可以正常下发
