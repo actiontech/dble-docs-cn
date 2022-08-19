@@ -108,6 +108,7 @@
     * [2.31 DDL日志解读](2.Function/2.31_ddl_log.md)
     * [2.32 分析用户](2.Function/2.32_analysis_user.md)
     * [2.33 hint指定执行计划](2.Function/2.33_execute_plan_hint/overview.md)
+    * [2.34 安全加密](2.Function/2.34_security/overview.md)
 * [3.语法兼容](3.SQL_Syntax/3.0_overview.md)
     * [3.1 DDL](3.SQL_Syntax/3.1_DDL.md)
         * [3.1.1 DDL&Table Syntax](3.SQL_Syntax/3.1_DDL/3.1.1_DDL&Table_Syntax.md)
