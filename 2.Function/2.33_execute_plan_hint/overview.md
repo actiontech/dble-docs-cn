@@ -54,7 +54,7 @@ table_a a left join table_b b on a.col_1 = b.col_1 left join table_c c on b.col_
 hint 的语法沿用 [dble hint](../2.04_hint.md)
 比如：
 ```sql
-/*!dble:plan=a & ( b | c )$left2inner$right2inner$in2join*/ sql
+/*!dble:plan=a & ( b | c )$left2inner$right2inner$in2join$use_table_index*/ sql
 ```
 其中关键点在于 a & ( b | c ) 表达式，其中a，b，c 表示 sql 中的 **表的别名**
 
@@ -71,6 +71,14 @@ hint 的语法沿用 [dble hint](../2.04_hint.md)
 4. left2inner 参数表示是将left join转成inner join
 5. right2inner 参数表示是将right join转成inner join
 6. in2join 参数表示将in子查询转为join查询；（此参数优先于bootstrap.cnf中的inSubQueryTransformToJoin策略）
+
+在实际使用中，sql中的表别名通常是由框架生成，不易获取。
+dble提供 use_table_index 参数，使用该参数可以通过sql中表的序列号来表示表的别名。
+比如：
+```sql
+/*!dble:plan=1 & 2 & 3 )$use_table_index*/ select * from t1 a left join t2 b on a.id = b.id left join t3 c on a.id=c.id
+```
+这样的话，1 就表示 a，2 表示 b，3 表示 c。1，2，3表示 sql 中的 **表的别名序列号**
 
 #### hint使用nestLoop的原则  
 - hint期望的下发结果，如果违背优化的初衷那么就会报错  
