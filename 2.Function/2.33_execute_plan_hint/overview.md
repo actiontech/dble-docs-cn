@@ -76,9 +76,14 @@ hint 的语法沿用 [dble hint](../2.04_hint.md)
 dble提供 use_table_index 参数，使用该参数可以通过sql中表的序列号来表示表的别名。
 比如：
 ```sql
-/*!dble:plan=1 & 2 & 3 )$use_table_index*/ select * from t1 a left join t2 b on a.id = b.id left join t3 c on a.id=c.id
+/*!dble:plan=1 & 2 & 3 $use_table_index*/ select * from t1 a left join t2 b on a.id = b.id left join t3 c on a.id=c.id
 ```
-这样的话，1 就表示 a，2 表示 b，3 表示 c。1，2，3表示 sql 中的 **表的别名序列号**
+这样的话，1 就表示表 a，2 表示表 b，3 表示表 c。1，2，3表示 sql 中的 **表的别名序列号**
+
+等价于：
+```sql
+/*!dble:plan=a & b & c*/ select * from t1 a left join t2 b on a.id = b.id left join t3 c on a.id=c.id
+```
 
 #### hint使用nestLoop的原则  
 - hint期望的下发结果，如果违背优化的初衷那么就会报错  
