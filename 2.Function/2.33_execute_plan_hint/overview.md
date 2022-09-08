@@ -90,23 +90,23 @@ public abstract class jdbctest {
             stmt.addBatch("drop table if EXISTS t_warehouse_sku ;");
             stmt.executeBatch();
             stmt.addBatch("create table t_spec_group(" +
-                    "    id     int unsigned primary key auto_increment comment '主键'," +
+                    "    id     int unsigned primary key  comment '主键'," +
                     "    spg_id int unsigned not null comment '品类ID'," +
                     "    `type` varchar(200) not null comment '品类类型'," +
                     "    `name` varchar(200) not null comment '品类名称'" +
                     ") comment ='详细品类表';");
             stmt.addBatch("create table t_spu(" +
-                    "    id               int unsigned primary key auto_increment comment '主键'," +
+                    "    id               int unsigned primary key  comment '主键'," +
                     "    title            varchar(200) not null comment '标题'," +
                     "    category_id      int unsigned not null comment '产品ID'," +
                     "    saleable         int unsigned not null comment '是否上架', " +
                     "    spg_id           int unsigned comment '品类ID'" +
                     ") comment ='产品表';");
             stmt.addBatch("create table t_sku(" +
-                    "    id               int unsigned primary key auto_increment comment '主键'," +
-                    "    spu_id           int unsigned            not null comment '商品ID'," +
-                    "    spg_id           int unsigned            not null comment '品类ID'," +
-                    "    title            varchar(200)            not null comment '标题'," +
+                    "    id               int unsigned primary key  comment '主键'," +
+                    "    spu_id           int unsigned not null comment '商品ID'," +
+                    "    spg_id           int unsigned not null comment '品类ID'," +
+                    "    title            varchar(200) not null comment '标题'," +
                     "    price            int unsigned not null comment '价格'" +
                     ") comment ='商品表';");
             stmt.addBatch("create table t_warehouse_sku(" +
@@ -311,11 +311,9 @@ sharding.xml
     <shardingNode dbGroup="dbGroup3" database="db1" name="dn3"/>
     <shardingNode dbGroup="dbGroup4" database="db1" name="dn4"/>
 
-    <function name="func_hashString" class="StringHash">
+    <function name="hash-string-into-two" class="StringHash">
         <property name="partitionCount">2</property>
-        <property name="partitionLength">256</property>
-        <property name="hashSlice">0:12</property>
-        <!--<property name="hashSlice">-4:0</property> -->
+        <property name="partitionLength">1</property>
     </function>
 
     <function name="sql-mod" class="Hash">
