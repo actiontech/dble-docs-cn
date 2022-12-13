@@ -7,11 +7,11 @@
 - db.xml 片段
 
 ```
-<dbGroup name="localhost1" rwSplitMode="0" delayThreshold="100">
+<dbGroup name="localhost1" rwSplitMode="0" delayThreshold="10000">
 <heartbeat>show slave status</heartbeat>
 <dbInstance host="hostM1" url="localhost:3306" user="root"  password="nE7jA%5m" maxCon="1000" minCon="10" primary="true" >  </dbInstance>
 </dbGroup>
-<dbGroup name="localhost2" rwSplitMode="0" delayThreshold="100">
+<dbGroup name="localhost2" rwSplitMode="0" delayThreshold="10000">
 <heartbeat>show slave status</heartbeat>
 <dbInstance host="hostM2" url="localhost:3306" user="root"  password="nE7jA%5m" maxCon="1000" minCon="10" primary="true">  </dbInstance>  </dbGroup>
 ```

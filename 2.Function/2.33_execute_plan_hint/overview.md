@@ -335,28 +335,28 @@ db.xml
   -->
 <!DOCTYPE dble:db SYSTEM "db.dtd">
 <dble:db xmlns:dble="http://dble.cloud/" version="4.0">
-    <dbGroup name="dbGroup1" rwSplitMode="0" delayThreshold="100" >
+    <dbGroup name="dbGroup1" rwSplitMode="0" delayThreshold="10000" >
         <heartbeat timeout="30" >show slave status</heartbeat>
         <dbInstance name="M1" url="ip1:3306" user="root" password="123456" maxCon="300" minCon="10" id="100"
                     primary="true" >
         </dbInstance>
     </dbGroup>
 
-    <dbGroup name="dbGroup2" rwSplitMode="0" delayThreshold="100">
+    <dbGroup name="dbGroup2" rwSplitMode="0" delayThreshold="10000">
         <heartbeat>show slave status</heartbeat>
         <dbInstance name="M2" url="ip2:3306" user="root" password="123456" id="1" maxCon="2000" minCon="10"
                     primary="true">
         </dbInstance>
     </dbGroup>
 
-        <dbGroup name="dbGroup3" rwSplitMode="0" delayThreshold="100">
+        <dbGroup name="dbGroup3" rwSplitMode="0" delayThreshold="10000">
             <heartbeat errorRetryCount="1" timeout="10">show slave status</heartbeat>
             <dbInstance name="M3" url="ip3:3306" user="root" password="123456" id="1" maxCon="2000" minCon="10"
                         primary="true">
             </dbInstance>
         </dbGroup>
 
-    <dbGroup name="dbGroup4" rwSplitMode="2" delayThreshold="100">
+    <dbGroup name="dbGroup4" rwSplitMode="2" delayThreshold="10000">
         <heartbeat errorRetryCount="1" timeout="10">show slave status</heartbeat>
         <dbInstance name="M4" user="root" password="123456" url="ip4:3306" maxCon="20" minCon="10"
                     primary="true">
