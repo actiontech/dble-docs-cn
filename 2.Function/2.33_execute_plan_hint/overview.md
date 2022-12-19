@@ -367,7 +367,9 @@ db.xml
 
 ### 带有where条件
 场景一   
+```
 select  *  from t_warehouse_sku a left join t_spu b on a.spg_id = b.spg_id left join t_sku c on b.spg_id=c.spg_id where a.type = 'phone';
+```
 
 使用hint前（并发下发）
 1. a表带有条件下发，结果集约为数百
@@ -375,7 +377,9 @@ select  *  from t_warehouse_sku a left join t_spu b on a.spg_id = b.spg_id left 
 3. c表直接下发，全数据拉取结果集为百万
 
 使用hint后  
+```
 /*!dble:plan=a & b & c */ select  *  from t_warehouse_sku a left join t_spu b on a.spg_id = b.spg_id left join t_sku c on b.spg_id=c.spg_id where a.type = 'phone';
+```
 
 hint语法 a & b & c
 1. a表带有条件下发，结果集约为数百
@@ -385,15 +389,19 @@ hint语法 a & b & c
 结论：推荐使用hint写法
 
 场景二   
+```
 select  *  from t_warehouse_sku a left join t_spu b on a.spg_id = b.spg_id left join t_sku c on a.sku_id=c.id where a.type = 'phone';
+```
 
 使用hint前（并发下发）
 1. a表带有条件下发，结果集约为数百
 2. b表直接下发，全数据拉取结果集为百万
 3. c表直接下发，全数据拉取结果集为百万
 
-使用hint后   
+使用hint后 
+```
 /*!dble:plan=a & b & c */ select  *  from t_warehouse_sku a left join t_spu b on a.spg_id = b.spg_id left join t_sku c on a.sku_id=c.id where a.type = 'phone';
+```
 
 hint语法 a & b & c  
 1. a表带有条件下发，结果集约为数百
@@ -403,7 +411,9 @@ hint语法 a & b & c
 结论：推荐使用hint写法
 
 使用hint后  
+```
 /*!dble:plan=a & (b | c) */ select  *  from t_warehouse_sku a left join t_spu b on a.spg_id = b.spg_id left join t_sku c on a.sku_id=c.id where a.type = 'phone';
+```
 
 hint语法a & (b | c)
 1. a表带有条件下发，结果集约为数百
@@ -412,7 +422,9 @@ hint语法a & (b | c)
 结论：当a表的结果集较小且b表和c表的结果集较大，更推荐该hint写法
 
 场景三  
+```
 select  *  from t_warehouse_sku a inner join t_sku b on a.sku_id = b.id inner join t_spec_group c on b.spg_id=c.spg_id where a.type = 'phone';
+```
 
 使用hint前（并发下发）
 1. a表带有条件下发，结果集约为数百
@@ -420,7 +432,9 @@ select  *  from t_warehouse_sku a inner join t_sku b on a.sku_id = b.id inner jo
 3. c表直接下发，全数据拉取结果集约为数百
 
 使用hint后  
+```
 /*!dble:plan=a & b & c */ select  *  from t_warehouse_sku a inner join t_sku b on a.sku_id = b.id inner join t_spec_group c on b.spg_id=c.spg_id where a.type = 'phone';
+```
 
 hint语法 a & b & c
 1. a表带有条件下发，结果集约为数百
@@ -430,7 +444,9 @@ hint语法 a & b & c
 结论：推荐使用hint写法
 
 使用hint后  
+```
 /*!dble:plan=a & b | c */ select  *  from t_warehouse_sku a inner join t_sku b on a.sku_id = b.id inner join t_spec_group c on b.spg_id=c.spg_id where a.type = 'phone';
+```
 
 hint语法 a & b | c
 1. a表带有条件下发，结果集约为数百，c表直接下发，结果集约为数百
@@ -439,7 +455,9 @@ hint语法 a & b | c
 结论：当a表的结果集和c表的结果集较小且b表的结果集较大，更推荐使用该hint写法
 
 场景四  
+```
 select  *  from t_warehouse_sku a inner join t_sku b on a.sku_id = b.id inner join t_spec_group c on a.spg_id=c.spg_id where a.type = 'phone';
+```
 
 使用hint前（并发下发）
 1. a表带有条件下发，结果集约为数百
@@ -447,7 +465,9 @@ select  *  from t_warehouse_sku a inner join t_sku b on a.sku_id = b.id inner jo
 3. c表直接下发，全数据拉取结果集约为数百
 
 使用hint后  
+```
 /*!dble:plan=a & b & c */ select  *  from t_warehouse_sku a inner join t_sku b on a.sku_id = b.id inner join t_spec_group c on a.spg_id=c.spg_id where a.type = 'phone';
+```
 
 hint语法 a & b & c
 1. a表带有条件下发，结果集约为数百
@@ -457,7 +477,9 @@ hint语法 a & b & c
 结论：推荐使用hint写法
 
 使用hint后  
+```
 /*!dble:plan=a & (b | c) */ select  *  from t_warehouse_sku a inner join t_sku b on a.sku_id = b.id inner join t_spec_group c on a.spg_id=c.spg_id where a.type = 'phone';
+```
 
 hint语法 a & (b | c)
 1. a表带有条件下发，结果集约为数百
@@ -467,7 +489,9 @@ hint语法 a & (b | c)
 
 
 使用hint后  
+```
 /*!dble:plan=a & b | c */ select  *  from t_warehouse_sku a inner join t_sku b on a.sku_id = b.id inner join t_spec_group c on a.spg_id=c.spg_id where a.type = 'phone';  
+```
 
 hint语法 a & b | c
 1. a表带有条件下发，结果集约为数百，c表直接下发，结果集约为数百
@@ -476,7 +500,9 @@ hint语法 a & b | c
 结论：当a表和c表的结果集较小且b表的结果集较大，更推荐使用该hint写法
 
 场景五  
+```
 select  *  from t_warehouse_sku a inner join t_spu b on a.spg_id = b.spg_id inner join t_sku c on a.title=c.title where a.type = 'phone';
+```
 
 使用hint前（并发下发）
 1. a表带有条件下发，结果集约为数百
@@ -484,7 +510,9 @@ select  *  from t_warehouse_sku a inner join t_spu b on a.spg_id = b.spg_id inne
 3. c表直接下发，全数据拉取结果集为百万
 
 使用hint后  
+```
 /*!dble:plan=(a,c) & b*/ select  *  from t_warehouse_sku a inner join t_spu b on a.spg_id = b.spg_id inner join t_sku c on a.title=c.title where a.type = 'phone';
+```
 
 hint语法 (a,c) & b
 1. a表和c表带有条件整体下发，结果集约为数百
@@ -493,7 +521,9 @@ hint语法 (a,c) & b
 结论：推荐使用hint写法
 
 场景六   
+```
 select  *  from t_warehouse_sku a inner join t_spec_group b on a.spg_id = b.spg_id inner join t_sku c on a.title=c.title where a.type = 'phone';
+```
 
 使用hint前（并发下发）
 1. a表带有条件下发，结果集约为数百
@@ -501,7 +531,9 @@ select  *  from t_warehouse_sku a inner join t_spec_group b on a.spg_id = b.spg_
 3. c表直接下发，全数据拉取结果集为百万
 
 使用hint后  
+```
 /*!dble:plan=(a,c) & b*/ select  *  from t_warehouse_sku a inner join t_spec_group b on a.spg_id = b.spg_id inner join t_sku c on a.title=c.title where a.type = 'phone';  
+```
 
 hint语法 (a,c) & b  
 1. a表和c表带有条件整体下发，结果集约为数百  
@@ -510,7 +542,9 @@ hint语法 (a,c) & b
 结论：推荐使用hint写法  
 
 使用hint后  
+```
 /*!dble:plan=(a,c) | b*/ select  *  from t_warehouse_sku a inner join t_spec_group b on a.spg_id = b.spg_id inner join t_sku c on a.title=c.title where a.type = 'phone';
+```
 
 hint语法 (a,c) | b  
 1. a表和c表带有条件整体下发，结果集约为数百,b表直接结果下发，结果集约为数百
@@ -518,7 +552,9 @@ hint语法 (a,c) | b
 结论：当a表和c表整体下发且b表的结果集较小时，更推荐使用该hint写法
 
 场景七  
+```
 select  *  from t_warehouse_sku a left join t_spu b on a.spg_id = b.spg_id left join t_sku c on a.sku_id=c.id where a.type = 'phone' and b.category_id < 200;
+```
 
 使用hint前（并发下发）
 1. a表带有条件下发，结果集约为数百
@@ -526,7 +562,9 @@ select  *  from t_warehouse_sku a left join t_spu b on a.spg_id = b.spg_id left 
 3. c表直接下发，全数据拉取结果集为百万
 
 使用hint后  
+```
 /*!dble:plan=a & b & c */ select  *  from t_warehouse_sku a left join t_spu b on a.spg_id = b.spg_id left join t_sku c on a.sku_id=c.id where a.type = 'phone' and b.category_id < 200;
+```
 
 hint语法 a & b & c
 1. a表带有条件下发，结果集约为数百
@@ -536,7 +574,9 @@ hint语法 a & b & c
 结论：推荐使用hint写法
 
 使用hint后  
+```
 /*!dble:plan=a & (b | c) */ select  *  from t_warehouse_sku a left join t_spu b on a.spg_id = b.spg_id left join t_sku c on a.sku_id=c.id where a.type = 'phone' and b.category_id < 200;
+```
 
 hint语法 a & (b | c)
 1. a表带有条件下发，结果集约为数百
@@ -546,7 +586,9 @@ hint语法 a & (b | c)
 结论：当a表的结果集较小并且b表和c表的结果集较大时,更推荐使用该hint写法
 
 场景八  
+```
 select  *  from t_warehouse_sku a left join t_spu b on a.spg_id = b.spg_id left join t_sku c on a.sku_id=c.id where a.type = 'phone' and c.title like 'iphone%';
+```
 
 使用hint前（并发下发）
 1. a表带有条件下发，结果集约为数百
@@ -554,7 +596,9 @@ select  *  from t_warehouse_sku a left join t_spu b on a.spg_id = b.spg_id left 
 3. c表带有条件下发，结果集约为数百
 
 使用hint后   
+```
 /*!dble:plan=a & b & c */ select  *  from t_warehouse_sku a left join t_spu b on a.spg_id = b.spg_id left join t_sku c on a.sku_id=c.id where a.type = 'phone' and c.title like 'iphone%';
+```
 
 hint语法 a & b & c  
 1. a表带有条件下发，结果集约为数百
@@ -564,7 +608,9 @@ hint语法 a & b & c
 结论：推荐使用hint写法
 
 使用hint后   
+```
 /*!dble:plan=a & (b | c) */ select  *  from t_warehouse_sku a left join t_spu b on a.spg_id = b.spg_id left join t_sku c on a.sku_id=c.id where a.type = 'phone' and c.title like 'iphone%';
+```
 
 hint语法 a & (b | c)
 1. a表带有条件下发，结果集约为数百
@@ -574,7 +620,9 @@ hint语法 a & (b | c)
 结论：当a表的结果集较小且b表和c表的结果集较大,推荐使用hint写法
 
 使用hint后  
+```
 /*!dble:plan=a & b | c */ select  *  from t_warehouse_sku a left join t_spu b on a.spg_id = b.spg_id left join t_sku c on a.sku_id=c.id where a.type = 'phone' and c.title like 'iphone%';
+```
 
 hint语法 a & b | c
 1. a表带有条件下发，结果集约为数百,c表带有条件下发，结果集约为数百,
@@ -584,7 +632,9 @@ hint语法 a & b | c
 
 ### 不带有where条件   
 场景场景一   
+```
 select  *  from t_spec_group a inner join t_spu b on a.spg_id = b.spg_id inner join t_sku c on b.spg_id=c.spg_id;  
+```
 
 使用hint前（并发下发）
 1. a表直接下发，结果集约为数百
@@ -592,7 +642,9 @@ select  *  from t_spec_group a inner join t_spu b on a.spg_id = b.spg_id inner j
 3. c表直接下发，全数据拉取结果集为百万
 
 使用hint后  
+```
 /*!dble:plan=a & b & c */ select  *  from t_spec_group a inner join t_spu b on a.spg_id = b.spg_id inner join t_sku c on b.spg_id=c.spg_id;
+```
 
 hint语法 a & b & c
 1. a表直接下发，结果集约为数百
@@ -602,7 +654,9 @@ hint语法 a & b & c
 结论：推荐使用hint写法
 
 场景二  
+```
 select  *  from t_spec_group a inner join t_spu b on a.spg_id = b.spg_id inner join t_sku c on a.spg_id=c.spg_id;
+```
 
 使用hint前（并发下发）
 1. a表直接下发，结果集约为数百
@@ -610,7 +664,9 @@ select  *  from t_spec_group a inner join t_spu b on a.spg_id = b.spg_id inner j
 3. c表直接下发，全数据拉取结果集为百万
 
 使用hint后  
+```
 /*!dble:plan=a & b & c */ select  *  from t_spec_group a inner join t_spu b on a.spg_id = b.spg_id inner join t_sku c on a.spg_id=c.spg_id;
+```
 
 hint语法 a & b & c  
 1. a表直接下发，结果集约为数百
@@ -620,7 +676,9 @@ hint语法 a & b & c
 结论：推荐使用hint写法  
 
 使用hint后   
+```
 /*!dble:plan=a & ( b | c) */ select  *  from t_spec_group a inner join t_spu b on a.spg_id = b.spg_id inner join t_sku c on a.spg_id=c.spg_id;
+```
 
 hint语法 a & ( b | c)
 1. a表直接下发，结果集约为数百
@@ -629,7 +687,9 @@ hint语法 a & ( b | c)
 结论：当a表的结果集较小，更推荐使用该hint写法
 
 场景三  
+```
 select  *  from t_spec_group a inner join t_warehouse_sku b on a.spg_id = b.spg_id left join t_sku c on b.title=c.title;
+```
 
 使用hint前（并发下发） 
 1. a表直接下发，全数据拉取结果集约为数百
@@ -637,7 +697,9 @@ select  *  from t_spec_group a inner join t_warehouse_sku b on a.spg_id = b.spg_
 3. c表直接下发，全数据拉取结果集为百万
 
 使用hint后   
+```
 /*!dble:plan=(b,c) & a */ select  *  from t_spec_group a inner join t_warehouse_sku b on a.spg_id = b.spg_id left join t_sku c on b.title=c.title;
+```
 
 hint语法 (b,c) & a  
 1. b表和c表整体下发，结果集约为数百
@@ -646,7 +708,9 @@ hint语法 (b,c) & a
 结论：b表和c表存在er关系,推荐使用hint写法
 
 使用hint后   
+```
 /*!dble:plan=(b,c) | a */ select  *  from t_spec_group a inner join t_warehouse_sku b on a.spg_id = b.spg_id inner join t_sku c on b.title=c.title;
+```
 
 hint语法 (b,c) | a  
 1. b表和c表整体下发，结果集约为数百
