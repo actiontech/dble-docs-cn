@@ -38,7 +38,7 @@ if [ "$VERSION" = "master" ]; then
         git config user.email "${GH_MAIL}"
         git add .
         git commit -m "Update GitBook By TravisCI With Build $TRAVIS_BUILD_NUMBER"
-        git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages 
+        git push --force --quiet "https://${GH_TOKEN}@${GH_REF}.git" master:gh-pages 
     fi
    
 elif [ "$VERSION" = "develop" ]; then
@@ -56,7 +56,7 @@ elif [ "$VERSION" = "develop" ]; then
         cd ./_master_book/dble-docs-cn
         git add .
         git commit -m "Update GitBook By TravisCI With Build $TRAVIS_BUILD_NUMBER"
-        git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" gh-pages:gh-pages
+        git push --force --quiet "https://${GH_TOKEN}@${GH_REF}.git" gh-pages:gh-pages
         # push develop—pages
         cd ../../_book
         git init
@@ -64,7 +64,7 @@ elif [ "$VERSION" = "develop" ]; then
         git config user.email "${GH_MAIL}"
         git add .
         git commit -m "Update GitBook By TravisCI With Build $TRAVIS_BUILD_NUMBER"
-        git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:develop-pages
+        git push --force --quiet "https://${GH_TOKEN}@${GH_REF}.git" master:develop-pages
     fi
 else 
     echo "do nothing"
