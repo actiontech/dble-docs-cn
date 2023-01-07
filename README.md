@@ -23,7 +23,7 @@
 - 文档库 github: [github.com/actiontech/dble-docs-cn](https://github.com/actiontech/dble-docs-cn)
 - 文档库 github pages: [actiontech.github.io/dble-docs-cn](https://actiontech.github.io/dble-docs-cn)
 - 网站：[DBLE官方网站](https://opensource.actionsky.com)
-- QQ group: 669663113 
+- QQ group: 669663113
 - 开源社区微信公众号
   
   ![QR_code](./QR_code.png)
