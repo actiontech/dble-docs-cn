@@ -114,6 +114,7 @@
     * [2.35 堆外内存泄露监控](2.Function/2.35_memory_buffer_monitor.md)
     * [2.36 延迟检测](2.Function/2.36_delay_detection.md)
     * [2.37 审计日志](2.Function/2.37_sql_dump_log.md)
+    * [2.38 tcp相关参数](2.Function/2.38_tcp_parameter.md)
 * [3.语法兼容](3.SQL_Syntax/3.0_overview.md)
     * [3.1 DDL](3.SQL_Syntax/3.1_DDL.md)
         * [3.1.1 DDL&Table Syntax](3.SQL_Syntax/3.1_DDL/3.1.1_DDL&Table_Syntax.md)
