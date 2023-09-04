@@ -82,6 +82,7 @@
         * [2.11.4 命令统计](2.Function/2.11_statistics_manager/2.11.4_cmd_stat.md)
         * [2.11.5 heartbeat统计](2.Function/2.11_statistics_manager/2.11.5_heartbeat_stat.md)
         * [2.11.6 网络读写统计](2.Function/2.11_statistics_manager/2.11.6_net_io_stat.md)
+        * [2.11.7 快速sql统计命令](2.Function/2.11_statistics_manager/2.11.7_sql_stat.md)
     * [2.12 故障切换](2.Function/2.12_failover.md)
     * [2.13 前后端连接检查](2.Function/2.13_conns_check.md)
     * [2.14 ER表](2.Function/2.14_ER_Sharding.md)
