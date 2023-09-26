@@ -10,7 +10,7 @@ language: node_js
 # 指定sudo权限
 sudo: required
 # 指定node版本
-node_js: stable
+node_js: v14.2.0
 # 指定缓存模块，缓存可以加速编译
 cache:
   directories:
@@ -27,38 +27,39 @@ notifications:
 # 构建的分支
 branches:
   only:
-    - master 
-
+    - master
+    - develop
+    - /^[0-9]{1}.[0-9]{2}.[0-9]{2}.doc$/  #eg: 2.20.04.doc
 # 调整时区
 before_install:
   - export TZ='Asia/Shanghai'
   - sudo apt-get install -y calibre fonts-arphic-gbsn00lp
- 
+
 # 安装环境
 install:
-  - npm install -g gitbook-cli 
+  - npm install -g gitbook-cli
   - npm install gitbook-plugin-yahei
   - gitbook install
-  
 # gitbook生成静态文件
 script:
   - gitbook build
-  - cd ./_book
-  - git init
-  - git config user.name "${GH_USER}"
-  - git config user.email "${GH_MAIL}"
-  - git add .
-  - git commit -m "Update GitBook By TravisCI With Build $TRAVIS_BUILD_NUMBER"
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages 
-  - cd .. 
-# pdf
-  - xvfb-run gitbook pdf ./ ./dble-manual.pdf
-  - mkdir pdf
-  - cp dble-manual.pdf ./pdf/
-  - cd ./pdf
-  - git init
-  - git config user.name "${GH_USER}"
-  - git config user.email "${GH_MAIL}"
-  - git add .
-  - git commit -m "Update GitBook By TravisCI With Build PDF $TRAVIS_BUILD_NUMBER"
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:pdf 
+deploy:
+  # deploy develop to the staging environment
+  - provider: script
+    skip_cleanup: true
+    script: bash ./deploy.sh develop 1 ${GH_TOKEN} $TRAVIS_BUILD_NUMBER
+    on:
+      branch: develop
+  # deploy master to production
+  - provider: script
+    skip_cleanup: true
+    script: bash ./deploy.sh master 1 ${GH_TOKEN} $TRAVIS_BUILD_NUMBER
+    on:
+      branch: master
+  #branch eg: 2.20.04.doc
+  - provider: script
+    skip_cleanup: true
+    script: bash ./deploy.sh $TRAVIS_BRANCH 1 ${GH_TOKEN} $TRAVIS_BUILD_NUMBER
+    on:
+      all_branches: true
+      condition: $TRAVIS_BRANCH =~ ^[0-9]{1}.[0-9]{2}.[0-9]{2}.doc$
