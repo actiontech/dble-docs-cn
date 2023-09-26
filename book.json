@@ -1,11 +1,22 @@
 {
-    "plugins": ["expandable-chapters"],
+    "plugins": ["expandable-chapters", "splitter", "back-to-top-button","github","popup","versions-select"],
     "pluginsConfig": {
         "fontsettings": {
             "theme": "sepia",
             "family": "sans",
             "size": 2
-        }
+        },
+	"versions": {
+		"gitbookConfigURL": "https://raw.githubusercontent.com/actiontech/dble-docs-cn/master/book.json"
+	},
+	"github":{
+		"url":"https://github.com/actiontech/dble"
+	},
+	"plugins": [
+		"yahei",
+		"katex",
+		 "-search"
+	 ]
     },
     "styles": {
         "website": "website.css"
