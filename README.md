@@ -1,7 +1,7 @@
 # dble 中文技术参考手册
 
 ## 注意
-本分支上的手册适用于3.22.11.0版dble，其他版本的文档请参考对应tag分支或者release版文档。 
+本分支上的手册适用于3.22.11.x版dble，其他版本的文档请参考对应tag分支或者release版文档。 
 
 ## 目录
 参考 [gitbook](https://actiontech.github.io/dble-docs-cn) 左侧目录区 或 [SUMMARY.md](https://github.com/actiontech/dble-docs-cn/blob/master/SUMMARY.md) 
