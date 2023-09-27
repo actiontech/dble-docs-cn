@@ -1,0 +1,2858 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4.4 二进制协议 (Prepared Statements) · dble manual</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ActionTech">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-versions-select/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../website.css">
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="4.5_Server_Response_Packets.html" />
+    
+    
+    <link rel="prev" href="4.3_Text_Protocol.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../0.overview/0.0_overview.html">
+            
+                <a href="../0.overview/0.0_overview.html">
+            
+                    
+                    0.概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../0.overview/0.1_dble_overview.html">
+            
+                <a href="../0.overview/0.1_dble_overview.html">
+            
+                    
+                    0.1 dble 简介与整体架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../0.overview/0.2_dble_enhance_MyCat.html">
+            
+                <a href="../0.overview/0.2_dble_enhance_MyCat.html">
+            
+                    
+                    0.2 dble对MyCat做的增强
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../0.overview/0.3_dble_quick_start.html">
+            
+                <a href="../0.overview/0.3_dble_quick_start.html">
+            
+                    
+                    0.3 快速开始
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../0.overview/0.3_quick_start/0.3.1_dble_quick_start_docker.html">
+            
+                <a href="../0.overview/0.3_quick_start/0.3.1_dble_quick_start_docker.html">
+            
+                    
+                    0.3.1 docker镜像快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../0.overview/0.3_quick_start/0.3.2_dble_docker_compose.html">
+            
+                <a href="../0.overview/0.3_quick_start/0.3.2_dble_docker_compose.html">
+            
+                    
+                    0.3.2 docker-compose快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../0.overview/0.4_sharding_brief_introduction.html">
+            
+                <a href="../0.overview/0.4_sharding_brief_introduction.html">
+            
+                    
+                    0.4 数据拆分简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../1.config_file/1.00_config_file.html">
+            
+                <a href="../1.config_file/1.00_config_file.html">
+            
+                    
+                    1.配置文件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../1.config_file/1.01_cluster.cnf.html">
+            
+                <a href="../1.config_file/1.01_cluster.cnf.html">
+            
+                    
+                    1.1 cluster.cnf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../1.config_file/1.02_bootstrap.cnf.html">
+            
+                <a href="../1.config_file/1.02_bootstrap.cnf.html">
+            
+                    
+                    1.2 bootstrap.cnf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../1.config_file/1.03_user.xml.html">
+            
+                <a href="../1.config_file/1.03_user.xml.html">
+            
+                    
+                    1.3 user.xml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../1.config_file/1.04_db.xml.html">
+            
+                <a href="../1.config_file/1.04_db.xml.html">
+            
+                    
+                    1.4 db.xml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../1.config_file/1.05_sharding.xml.html">
+            
+                <a href="../1.config_file/1.05_sharding.xml.html">
+            
+                    
+                    1.5 sharding.xml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../1.config_file/1.06_log4j2.xml.html">
+            
+                <a href="../1.config_file/1.06_log4j2.xml.html">
+            
+                    
+                    1.6 log4j2.xml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../1.config_file/1.07_global_sequence.html">
+            
+                <a href="../1.config_file/1.07_global_sequence.html">
+            
+                    
+                    1.7 全局序列配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.7.1" data-path="../1.config_file/1.7_global_sequence/1.7.1_MySQL-offset-setp.html">
+            
+                <a href="../1.config_file/1.7_global_sequence/1.7.1_MySQL-offset-setp.html">
+            
+                    
+                    1.7.1 MySQL offset-step方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.2" data-path="../1.config_file/1.7_global_sequence/1.7.2_timestamp.html">
+            
+                <a href="../1.config_file/1.7_global_sequence/1.7.2_timestamp.html">
+            
+                    
+                    1.7.2 时间戳方式(类Snowflake)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.3" data-path="../1.config_file/1.7_global_sequence/1.7.3_distribute_timestamp.html">
+            
+                <a href="../1.config_file/1.7_global_sequence/1.7.3_distribute_timestamp.html">
+            
+                    
+                    1.7.3 分布式时间戳方式(类Snowflake)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.4" data-path="../1.config_file/1.7_global_sequence/1.7.4_distribute_offset-step.html">
+            
+                <a href="../1.config_file/1.7_global_sequence/1.7.4_distribute_offset-step.html">
+            
+                    
+                    1.7.4 分布式offset-step方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../1.config_file/1.06_cache.md">
+            
+                <span>
+            
+                    
+                    1.8 cache配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.8.1" data-path="../1.config_file/1.8_cache/1.8.1_cache_setting.html">
+            
+                <a href="../1.config_file/1.8_cache/1.8.1_cache_setting.html">
+            
+                    
+                    1.8.1 cache配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.2" data-path="../1.config_file/1.8_cache/1.8.2_ehcache_setting.html">
+            
+                <a href="../1.config_file/1.8_cache/1.8.2_ehcache_setting.html">
+            
+                    
+                    1.8.2 ehcache配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../1.config_file/1.09_dble_route_function_spec.html">
+            
+                <a href="../1.config_file/1.09_dble_route_function_spec.html">
+            
+                    
+                    1.9 自定义拆分算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../1.config_file/1.10_version_change.html">
+            
+                <a href="../1.config_file/1.10_version_change.html">
+            
+                    
+                    1.10 版本变更
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../1.config_file/1.11_customized_alert.html">
+            
+                <a href="../1.config_file/1.11_customized_alert.html">
+            
+                    
+                    1.11 自定义告警
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../1.config_file/1.12_customized_global_table_check.html">
+            
+                <a href="../1.config_file/1.12_customized_global_table_check.html">
+            
+                    
+                    1.12 自定义全局表一致性检查
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../2.Function/2.000_overview.html">
+            
+                <a href="../2.Function/2.000_overview.html">
+            
+                    
+                    2.功能描述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../2.Function/2.001_manager_dble_information.html">
+            
+                <a href="../2.Function/2.001_manager_dble_information.html">
+            
+                    
+                    2.0 管理端元数据库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../2.Function/2.001_dble_information/2.0.1.27_dble_config.html">
+            
+                <a href="../2.Function/2.001_dble_information/2.0.1.27_dble_config.html">
+            
+                    
+                    2.0.1 dble_config表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../2.Function/2.01_manager_cmd.html">
+            
+                <a href="../2.Function/2.01_manager_cmd.html">
+            
+                    
+                    2.1 管理端命令
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../2.Function/2.1_manager_cmd/2.1.01_select.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.01_select.html">
+            
+                    
+                    2.1.1 select命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../2.Function/2.1_manager_cmd/2.1.02_set.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.02_set.html">
+            
+                    
+                    2.1.2 set命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3" data-path="../2.Function/2.1_manager_cmd/2.1.03_show.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.03_show.html">
+            
+                    
+                    2.1.3 show命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.4" data-path="../2.Function/2.1_manager_cmd/2.1.04_switch.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.04_switch.html">
+            
+                    
+                    2.1.4 switch命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.5" data-path="../2.Function/2.1_manager_cmd/2.1.05_kill.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.05_kill.html">
+            
+                    
+                    2.1.5 kill命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.6" data-path="../2.Function/2.1_manager_cmd/2.1.06_stop.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.06_stop.html">
+            
+                    
+                    2.1.6 stop命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7" data-path="../2.Function/2.1_manager_cmd/2.1.07_reload.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.07_reload.html">
+            
+                    
+                    2.1.7 reload命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.8" >
+            
+                <span>
+            
+                    
+                    2.1.8 rollback命令(已废弃)
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.9" data-path="../2.Function/2.1_manager_cmd/2.1.09_offline.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.09_offline.html">
+            
+                    
+                    2.1.9 offline命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.10" data-path="../2.Function/2.1_manager_cmd/2.1.10_online.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.10_online.html">
+            
+                    
+                    2.1.10 online命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.11" >
+            
+                <span>
+            
+                    
+                    2.1.11 file命令（已废弃）
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.12" >
+            
+                <span>
+            
+                    
+                    2.1.12 log命令（已废弃）
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.13" data-path="../2.Function/2.1_manager_cmd/2.1.13_dryrun.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.13_dryrun.html">
+            
+                    
+                    2.1.13 配置检查命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.14" data-path="../2.Function/2.1_manager_cmd/2.1.14_pause_resume.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.14_pause_resume.html">
+            
+                    
+                    2.1.14 pause & resume 命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.15" data-path="../2.Function/2.1_manager_cmd/2.1.15_slow_query.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.15_slow_query.html">
+            
+                    
+                    2.1.15 慢查询日志相关命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.16" data-path="../2.Function/2.1_manager_cmd/2.1.16_database.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.16_database.html">
+            
+                    
+                    2.1.16 创建/删除物理库命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.17" data-path="../2.Function/2.1_manager_cmd/2.1.17_check_meta_data.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.17_check_meta_data.html">
+            
+                    
+                    2.1.17 check @@metadata命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.18" data-path="../2.Function/2.1_manager_cmd/2.1.18_release.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.18_release.html">
+            
+                    
+                    2.1.18 release @@metadata命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.19" data-path="../2.Function/2.1_manager_cmd/2.1.19_split.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.19_split.html">
+            
+                    
+                    2.1.19 split命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.20" data-path="../2.Function/2.1_manager_cmd/2.1.20_flow_control.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.20_flow_control.html">
+            
+                    
+                    2.1.20 flow_control 命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.21" data-path="../2.Function/2.1_manager_cmd/2.1.21_fresh_conn.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.21_fresh_conn.html">
+            
+                    
+                    2.1.21 刷新连接池命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../2.Function/2.02_global_sequence.html">
+            
+                <a href="../2.Function/2.02_global_sequence.html">
+            
+                    
+                    2.2 全局序列
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="../2.Function/2.2_global_sequence/2.2.1_MySQL-offset-setp.html">
+            
+                <a href="../2.Function/2.2_global_sequence/2.2.1_MySQL-offset-setp.html">
+            
+                    
+                    2.2.1 MySQL offset-step方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.2" data-path="../2.Function/2.2_global_sequence/2.2.2_timestamp.html">
+            
+                <a href="../2.Function/2.2_global_sequence/2.2.2_timestamp.html">
+            
+                    
+                    2.2.2 时间戳方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.3" data-path="../2.Function/2.2_global_sequence/2.2.3_distribute_timestamp.html">
+            
+                <a href="../2.Function/2.2_global_sequence/2.2.3_distribute_timestamp.html">
+            
+                    
+                    2.2.3 分布式时间戳方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.4" data-path="../2.Function/2.2_global_sequence/2.2.4_distribute_offset-step.html">
+            
+                <a href="../2.Function/2.2_global_sequence/2.2.4_distribute_offset-step.html">
+            
+                    
+                    2.2.4 分布式offset-step方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../2.Function/2.03_RW_Split.html">
+            
+                <a href="../2.Function/2.03_RW_Split.html">
+            
+                    
+                    2.3 读写分离
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../2.Function/2.04_hint.html">
+            
+                <a href="../2.Function/2.04_hint.html">
+            
+                    
+                    2.4 注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../2.Function/2.05_distribute_transaction.html">
+            
+                <a href="../2.Function/2.05_distribute_transaction.html">
+            
+                    
+                    2.5 分布式事务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="../2.Function/2.5_distribute_transaction/2.5.1_XA_trans_overview.html">
+            
+                <a href="../2.Function/2.5_distribute_transaction/2.5.1_XA_trans_overview.html">
+            
+                    
+                    2.5.1 XA事务概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="../2.Function/2.5_distribute_transaction/2.5.2_XA_trans_commit&rollback.html">
+            
+                <a href="../2.Function/2.5_distribute_transaction/2.5.2_XA_trans_commit&rollback.html">
+            
+                    
+                    2.5.2 XA事务的提交以及回滚
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="../2.Function/2.5_distribute_transaction/2.5.3_XA_trans_make_up.html">
+            
+                <a href="../2.Function/2.5_distribute_transaction/2.5.3_XA_trans_make_up.html">
+            
+                    
+                    2.5.3 XA事务的后续补偿以及日志清理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.4" data-path="../2.Function/2.5_distribute_transaction/2.5.4_XA_trans_records.html">
+            
+                <a href="../2.Function/2.5_distribute_transaction/2.5.4_XA_trans_records.html">
+            
+                    
+                    2.5.4 XA事务的记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.5" data-path="../2.Function/2.5_distribute_transaction/2.5.5_normal_trans_overview.html">
+            
+                <a href="../2.Function/2.5_distribute_transaction/2.5.5_normal_trans_overview.html">
+            
+                    
+                    2.5.5 一般分布式事务概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.6" data-path="../2.Function/2.5_distribute_transaction/2.5.6_XA_trans_residual_xid.html">
+            
+                <a href="../2.Function/2.5_distribute_transaction/2.5.6_XA_trans_residual_xid.html">
+            
+                    
+                    2.5.6 检测疑似残留XA事务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../2.Function/2.06_conns_pool.html">
+            
+                <a href="../2.Function/2.06_conns_pool.html">
+            
+                    
+                    2.6 连接池管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../2.Function/2.07_memory_manager.html">
+            
+                <a href="../2.Function/2.07_memory_manager.html">
+            
+                    
+                    2.7 内存管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../2.Function/2.08_cluster.html">
+            
+                <a href="../2.Function/2.08_cluster.html">
+            
+                    
+                    2.8 集群同步协调&状态管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../2.Function/2.09_Grpc_warning.html">
+            
+                <a href="../2.Function/2.09_Grpc_warning.html">
+            
+                    
+                    2.9 grpc 告警
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../2.Function/2.10_table_meta.html">
+            
+                <a href="../2.Function/2.10_table_meta.html">
+            
+                    
+                    2.10 表meta数据管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.11.1" data-path="../2.Function/2.10_table_meta/2.10.1_Meta_init.html">
+            
+                <a href="../2.Function/2.10_table_meta/2.10.1_Meta_init.html">
+            
+                    
+                    2.10.1 Meta信息初始化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.2" data-path="../2.Function/2.10_table_meta/2.10.2_Meta_change.html">
+            
+                <a href="../2.Function/2.10_table_meta/2.10.2_Meta_change.html">
+            
+                    
+                    2.10.2 Meta信息维护
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.3" data-path="../2.Function/2.10_table_meta/2.10.3_consistency_check.html">
+            
+                <a href="../2.Function/2.10_table_meta/2.10.3_consistency_check.html">
+            
+                    
+                    2.10.3 一致性检测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.4" data-path="../2.Function/2.10_table_meta/2.10.4_View_Meta.html">
+            
+                <a href="../2.Function/2.10_table_meta/2.10.4_View_Meta.html">
+            
+                    
+                    2.10.4 View Meta
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../2.Function/2.11_statistics_manager.html">
+            
+                <a href="../2.Function/2.11_statistics_manager.html">
+            
+                    
+                    2.11 统计管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.12.1" data-path="../2.Function/2.11_statistics_manager/2.11.1_condition_stat.html">
+            
+                <a href="../2.Function/2.11_statistics_manager/2.11.1_condition_stat.html">
+            
+                    
+                    2.11.1 查询条件统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12.2" data-path="../2.Function/2.11_statistics_manager/2.11.2_table_stat.html">
+            
+                <a href="../2.Function/2.11_statistics_manager/2.11.2_table_stat.html">
+            
+                    
+                    2.11.2 表状态统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12.3" data-path="../2.Function/2.11_statistics_manager/2.11.3_user_stat.html">
+            
+                <a href="../2.Function/2.11_statistics_manager/2.11.3_user_stat.html">
+            
+                    
+                    2.11.3 用户状态统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12.4" data-path="../2.Function/2.11_statistics_manager/2.11.4_cmd_stat.html">
+            
+                <a href="../2.Function/2.11_statistics_manager/2.11.4_cmd_stat.html">
+            
+                    
+                    2.11.4 命令统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12.5" data-path="../2.Function/2.11_statistics_manager/2.11.5_heartbeat_stat.html">
+            
+                <a href="../2.Function/2.11_statistics_manager/2.11.5_heartbeat_stat.html">
+            
+                    
+                    2.11.5 heartbeat统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12.6" data-path="../2.Function/2.11_statistics_manager/2.11.6_net_io_stat.html">
+            
+                <a href="../2.Function/2.11_statistics_manager/2.11.6_net_io_stat.html">
+            
+                    
+                    2.11.6 网络读写统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../2.Function/2.12_failover.html">
+            
+                <a href="../2.Function/2.12_failover.html">
+            
+                    
+                    2.12 故障切换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../2.Function/2.13_conns_check.html">
+            
+                <a href="../2.Function/2.13_conns_check.html">
+            
+                    
+                    2.13 前后端连接检查
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../2.Function/2.14_ER_Sharding.html">
+            
+                <a href="../2.Function/2.14_ER_Sharding.html">
+            
+                    
+                    2.14 ER表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="../2.Function/2.15_global_table.html">
+            
+                <a href="../2.Function/2.15_global_table.html">
+            
+                    
+                    2.15 global表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="../2.Function/2.16_cache.html">
+            
+                <a href="../2.Function/2.16_cache.html">
+            
+                    
+                    2.16 缓存的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="../2.Function/2.17_explain.html">
+            
+                <a href="../2.Function/2.17_explain.html">
+            
+                    
+                    2.17 执行计划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="../2.Function/2.18_performance_observation.html">
+            
+                <a href="../2.Function/2.18_performance_observation.html">
+            
+                    
+                    2.18 性能观测和调整
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="../2.Function/2.19_reload_diff.html">
+            
+                <a href="../2.Function/2.19_reload_diff.html">
+            
+                    
+                    2.19 智能计算reload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21" data-path="../2.Function/2.20_slow_query_log.html">
+            
+                <a href="../2.Function/2.20_slow_query_log.html">
+            
+                    
+                    2.20 慢查询日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22" data-path="../2.Function/2.21_query_trace.html">
+            
+                <a href="../2.Function/2.21_query_trace.html">
+            
+                    
+                    2.21 单条SQL性能trace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23" data-path="../2.Function/2.22_kill_ddl_lock.html">
+            
+                <a href="../2.Function/2.22_kill_ddl_lock.html">
+            
+                    
+                    2.22 KILL @@DDL_LOCK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24" data-path="../2.Function/2.23_outerHa_linkage.html">
+            
+                <a href="../2.Function/2.23_outerHa_linkage.html">
+            
+                    
+                    2.23 外部高可用联动
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.24.1" data-path="../2.Function/2.23_outerHa_linkage/2.23.1_outerHa_linkage_overview.html">
+            
+                <a href="../2.Function/2.23_outerHa_linkage/2.23.1_outerHa_linkage_overview.html">
+            
+                    
+                    2.23.1 外部后端MYSQL-HA连接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24.2" data-path="../2.Function/2.23_outerHa_linkage/2.23.2_command_usage.html">
+            
+                <a href="../2.Function/2.23_outerHa_linkage/2.23.2_command_usage.html">
+            
+                    
+                    2.23.2 命令的使用说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24.3" data-path="../2.Function/2.23_outerHa_linkage/2.23.3_Logical_detail.html">
+            
+                <a href="../2.Function/2.23_outerHa_linkage/2.23.3_Logical_detail.html">
+            
+                    
+                    2.23.3 命令的实现细节
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24.4" data-path="../2.Function/2.23_outerHa_linkage/2.23.4_mha_sample.html">
+            
+                <a href="../2.Function/2.23_outerHa_linkage/2.23.4_mha_sample.html">
+            
+                    
+                    2.23.4 简单的HA交互使用案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.25" data-path="../2.Function/2.24_timeout_control.html">
+            
+                <a href="../2.Function/2.24_timeout_control.html">
+            
+                    
+                    2.24 超时控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.26" data-path="../2.Function/2.25_flow_control.html">
+            
+                <a href="../2.Function/2.25_flow_control.html">
+            
+                    
+                    2.25 流量控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.27" data-path="../2.Function/2.26_cap_client_found_rows.html">
+            
+                <a href="../2.Function/2.26_cap_client_found_rows.html">
+            
+                    
+                    2.26 client_found_rows权能标志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.28" data-path="../2.Function/2.27_general_log.html">
+            
+                <a href="../2.Function/2.27_general_log.html">
+            
+                    
+                    2.27 general日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.29" data-path="../2.Function/2.28_sql_statistic.html">
+            
+                <a href="../2.Function/2.28_sql_statistic.html">
+            
+                    
+                    2.28 sql统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.30" data-path="../2.Function/2.29_load_data.html">
+            
+                <a href="../2.Function/2.29_load_data.html">
+            
+                    
+                    2.29 load data批处理模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../3.SQL_Syntax/3.0_overview.html">
+            
+                <a href="../3.SQL_Syntax/3.0_overview.html">
+            
+                    
+                    3.语法兼容
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../3.SQL_Syntax/3.1_DDL.html">
+            
+                <a href="../3.SQL_Syntax/3.1_DDL.html">
+            
+                    
+                    3.1 DDL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../3.SQL_Syntax/3.1_DDL/3.1.1_DDL&Table_Syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.1_DDL/3.1.1_DDL&Table_Syntax.html">
+            
+                    
+                    3.1.1 DDL&Table Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../3.SQL_Syntax/3.1_DDL/3.1.2_DDL&View_Syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.1_DDL/3.1.2_DDL&View_Syntax.html">
+            
+                    
+                    3.1.2 DDL&View Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="../3.SQL_Syntax/3.1_DDL/3.1.3_DDL&Index_Syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.1_DDL/3.1.3_DDL&Index_Syntax.html">
+            
+                    
+                    3.1.3 DDL&Index Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.4" data-path="../3.SQL_Syntax/3.1_DDL/3.1.4_DDL_Penetrate.html">
+            
+                <a href="../3.SQL_Syntax/3.1_DDL/3.1.4_DDL_Penetrate.html">
+            
+                    
+                    3.1.4 DDL透传
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.5" data-path="../3.SQL_Syntax/3.1_DDL/3.1.5_DDL&Database_Syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.1_DDL/3.1.5_DDL&Database_Syntax.html">
+            
+                    
+                    3.1.5 DDL&Database_Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.6" data-path="../3.SQL_Syntax/3.1_DDL/3.1.6_DDL&online_ddl.html">
+            
+                <a href="../3.SQL_Syntax/3.1_DDL/3.1.6_DDL&online_ddl.html">
+            
+                    
+                    3.1.6 ONLINE DDL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../3.SQL_Syntax/3.2_DML.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML.html">
+            
+                    
+                    3.2 DML
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../3.SQL_Syntax/3.2_DML/3.2.01_INSERT.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.01_INSERT.html">
+            
+                    
+                    3.2.1 INSERT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../3.SQL_Syntax/3.2_DML/3.2.02_REPLACE.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.02_REPLACE.html">
+            
+                    
+                    3.2.2 REPLACE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3" data-path="../3.SQL_Syntax/3.2_DML/3.2.03_DELETE.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.03_DELETE.html">
+            
+                    
+                    3.2.3 DELETE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.4" data-path="../3.SQL_Syntax/3.2_DML/3.2.04_UPDATE.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.04_UPDATE.html">
+            
+                    
+                    3.2.4 UPDATE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.5" data-path="../3.SQL_Syntax/3.2_DML/3.2.05_SELECT.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.05_SELECT.html">
+            
+                    
+                    3.2.5 SELECT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.6" data-path="../3.SQL_Syntax/3.2_DML/3.2.06_SELECT_JOIN_syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.06_SELECT_JOIN_syntax.html">
+            
+                    
+                    3.2.6 SELECT JOIN syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.7" data-path="../3.SQL_Syntax/3.2_DML/3.2.07_UNION_Syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.07_UNION_Syntax.html">
+            
+                    
+                    3.2.7 SELECT UNION Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.8" data-path="../3.SQL_Syntax/3.2_DML/3.2.08_Subquery_Syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.08_Subquery_Syntax.html">
+            
+                    
+                    3.2.8 SELECT Subquery Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.9" data-path="../3.SQL_Syntax/3.2_DML/3.2.09_LOAD_DATA.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.09_LOAD_DATA.html">
+            
+                    
+                    3.2.9 LOAD DATA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.10" data-path="../3.SQL_Syntax/3.2_DML/3.2.10_Unsupport_Syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.10_Unsupport_Syntax.html">
+            
+                    
+                    3.2.10 不支持的语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../3.SQL_Syntax/3.3_Prepared_SQL_Syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.3_Prepared_SQL_Syntax.html">
+            
+                    
+                    3.3 Prepared SQL Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements.html">
+            
+                <a href="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements.html">
+            
+                    
+                    3.4 Transactional, Savepoint and Locking Statements
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.1_Lock&unlock.html">
+            
+                <a href="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.1_Lock&unlock.html">
+            
+                    
+                    3.4.1 Lock&unlock
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.2_XA_trans_syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.2_XA_trans_syntax.html">
+            
+                    
+                    3.4.2 XA 事务语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.3_normal_trans_syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.3_normal_trans_syntax.html">
+            
+                    
+                    3.4.3 一般事务语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.4" data-path="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.4_SET_TRANSACTION_Syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.4_SET_TRANSACTION_Syntax.html">
+            
+                    
+                    3.4.4 SET TRANSACTION Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.5" data-path="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.5_savepoint_syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.5_savepoint_syntax.html">
+            
+                    
+                    3.4.5 SAVEPOINT, ROLLBACK TO SAVEPOINT, and RELEASE SAVEPOINT Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../3.SQL_Syntax/3.5_DAL.html">
+            
+                <a href="../3.SQL_Syntax/3.5_DAL.html">
+            
+                    
+                    3.5 DAL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.1" data-path="../3.SQL_Syntax/3.5_DAL/3.5.1_SET.html">
+            
+                <a href="../3.SQL_Syntax/3.5_DAL/3.5.1_SET.html">
+            
+                    
+                    3.5.1 SET
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.2" data-path="../3.SQL_Syntax/3.5_DAL/3.5.2_SHOW.html">
+            
+                <a href="../3.SQL_Syntax/3.5_DAL/3.5.2_SHOW.html">
+            
+                    
+                    3.5.2 SHOW
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.3" data-path="../3.SQL_Syntax/3.5_DAL/3.5.3_KILL.html">
+            
+                <a href="../3.SQL_Syntax/3.5_DAL/3.5.3_KILL.html">
+            
+                    
+                    3.5.3 KILL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../3.SQL_Syntax/3.6_procedure_support.html">
+            
+                <a href="../3.SQL_Syntax/3.6_procedure_support.html">
+            
+                    
+                    3.6 存储过程支持方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../3.SQL_Syntax/3.7_Utility_Statements.html">
+            
+                <a href="../3.SQL_Syntax/3.7_Utility_Statements.html">
+            
+                    
+                    3.7 Utility Statements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../3.SQL_Syntax/3.8_Hint.html">
+            
+                <a href="../3.SQL_Syntax/3.8_Hint.html">
+            
+                    
+                    3.8 Hint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../3.SQL_Syntax/3.9_Other_unsupport.html">
+            
+                <a href="../3.SQL_Syntax/3.9_Other_unsupport.html">
+            
+                    
+                    3.9 其他不支持语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../3.SQL_Syntax/3.10_func_and_operators.html">
+            
+                <a href="../3.SQL_Syntax/3.10_func_and_operators.html">
+            
+                    
+                    3.10 函数与操作符支持列表(alpha版本)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../3.SQL_Syntax/3.11_Export_and_Import.html">
+            
+                <a href="../3.SQL_Syntax/3.11_Export_and_Import.html">
+            
+                    
+                    3.11 导入导出方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../3.SQL_Syntax/3.12_Implicit_commit.html">
+            
+                <a href="../3.SQL_Syntax/3.12_Implicit_commit.html">
+            
+                    
+                    3.12 含隐式提交语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="4.0_overview.html">
+            
+                <a href="4.0_overview.html">
+            
+                    
+                    4.协议兼容
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="4.1_Packet.html">
+            
+                <a href="4.1_Packet.html">
+            
+                    
+                    4.1 基本包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="4.2_Connecting.html">
+            
+                <a href="4.2_Connecting.html">
+            
+                    
+                    4.2 连接建立
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="4.3_Text_Protocol.html">
+            
+                <a href="4.3_Text_Protocol.html">
+            
+                    
+                    4.3 文本协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.4" data-path="4.4_Binary_Protocol.html">
+            
+                <a href="4.4_Binary_Protocol.html">
+            
+                    
+                    4.4 二进制协议 (Prepared Statements)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="4.5_Server_Response_Packets.html">
+            
+                <a href="4.5_Server_Response_Packets.html">
+            
+                    
+                    4.5 服务响应包
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../5.Limit/5.0_overview.html">
+            
+                <a href="../5.Limit/5.0_overview.html">
+            
+                    
+                    5.已知限制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../5.Limit/5.1_druid_limit.html">
+            
+                <a href="../5.Limit/5.1_druid_limit.html">
+            
+                    
+                    5.1 druid引发的限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../5.Limit/5.2_other_limit.html">
+            
+                <a href="../5.Limit/5.2_other_limit.html">
+            
+                    
+                    5.2 其他已知限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../6.Differernce_from_MySQL_Server/6.0_overview.html">
+            
+                <a href="../6.Differernce_from_MySQL_Server/6.0_overview.html">
+            
+                    
+                    6.与MySQL Server的差异化描述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../6.Differernce_from_MySQL_Server/6.1_need_rollback.html">
+            
+                <a href="../6.Differernce_from_MySQL_Server/6.1_need_rollback.html">
+            
+                    
+                    6.1 事务中遇到主键冲突需要显式回滚
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../6.Differernce_from_MySQL_Server/6.2_insert_sequence.html">
+            
+                <a href="../6.Differernce_from_MySQL_Server/6.2_insert_sequence.html">
+            
+                    
+                    6.2 INSERT不能显式指定自增序列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../6.Differernce_from_MySQL_Server/6.3_add_show_all_tables.html">
+            
+                <a href="../6.Differernce_from_MySQL_Server/6.3_add_show_all_tables.html">
+            
+                    
+                    6.3 增加"show all tables"
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../6.Differernce_from_MySQL_Server/6.4_remove_message.html">
+            
+                <a href="../6.Differernce_from_MySQL_Server/6.4_remove_message.html">
+            
+                    
+                    6.4 去除了增删改的message信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../6.Differernce_from_MySQL_Server/6.5_about_information_schema.html">
+            
+                <a href="../6.Differernce_from_MySQL_Server/6.5_about_information_schema.html">
+            
+                    
+                    6.5 information_schema等库的支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../7.Developer_Notice/7.0_overview.html">
+            
+                <a href="../7.Developer_Notice/7.0_overview.html">
+            
+                    
+                    7.开发者须知
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../7.Developer_Notice/7.1_SQL_develop_rule.html">
+            
+                <a href="../7.Developer_Notice/7.1_SQL_develop_rule.html">
+            
+                    
+                    7.1 SQL开发编写原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../7.Developer_Notice/7.2_Demo_for_connect_dble.html">
+            
+                <a href="../7.Developer_Notice/7.2_Demo_for_connect_dble.html">
+            
+                    
+                    7.2 dble连接Demo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../7.Developer_Notice/7.3_Other_Notice.html">
+            
+                <a href="../7.Developer_Notice/7.3_Other_Notice.html">
+            
+                    
+                    7.3 其他注意事项
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../8.Configuration_samples/8.0_overview.html">
+            
+                <a href="../8.Configuration_samples/8.0_overview.html">
+            
+                    
+                    8.配置示例
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../8.Configuration_samples/8.1_timestamp_sequence_table.html">
+            
+                <a href="../8.Configuration_samples/8.1_timestamp_sequence_table.html">
+            
+                    
+                    8.1 时间戳方式全局序列的配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../8.Configuration_samples/8.2_MySQL-offset-step_sequence_table.html">
+            
+                <a href="../8.Configuration_samples/8.2_MySQL-offset-step_sequence_table.html">
+            
+                    
+                    8.2 MySQL-offset-step 方式全局序列的配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../9.Sysbench_samples/9.0_overview.html">
+            
+                <a href="../9.Sysbench_samples/9.0_overview.html">
+            
+                    
+                    9.sysbench压测dble示例
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../9.Sysbench_samples/9.1_env.html">
+            
+                <a href="../9.Sysbench_samples/9.1_env.html">
+            
+                    
+                    9.1 测试环境及架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../9.Sysbench_samples/9.2_conf.html">
+            
+                <a href="../9.Sysbench_samples/9.2_conf.html">
+            
+                    
+                    9.2 修改dble配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../9.Sysbench_samples/9.3_use_sysbench.html">
+            
+                <a href="../9.Sysbench_samples/9.3_use_sysbench.html">
+            
+                    
+                    9.3 使用sysbench进行压测
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../A.Faq/A_overview.html">
+            
+                <a href="../A.Faq/A_overview.html">
+            
+                    
+                    A.Faq
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../A.Faq/ErrorCode/A_overview1.html">
+            
+                <a href="../A.Faq/ErrorCode/A_overview1.html">
+            
+                    
+                    A.1 ErrorCode
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1.1" data-path="../A.Faq/ErrorCode/Content/MaxConnections.html">
+            
+                <a href="../A.Faq/ErrorCode/Content/MaxConnections.html">
+            
+                    
+                    max Connections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.2" data-path="../A.Faq/ErrorCode/Content/OutOfMemoryError.html">
+            
+                <a href="../A.Faq/ErrorCode/Content/OutOfMemoryError.html">
+            
+                    
+                    Out Of Memory Error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.3" data-path="../A.Faq/ErrorCode/Content/TheProblemOfHint.html">
+            
+                <a href="../A.Faq/ErrorCode/Content/TheProblemOfHint.html">
+            
+                    
+                    The Problem Of Hint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.4" data-path="../A.Faq/ErrorCode/Content/NestLoopParametersLeadToTemptableException.html">
+            
+                <a href="../A.Faq/ErrorCode/Content/NestLoopParametersLeadToTemptableException.html">
+            
+                    
+                    NestLoop Parameters Lead To Temptable Exception
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.5" data-path="../A.Faq/ErrorCode/Content/Can'tGetVariablesFromShardingNode.html">
+            
+                <a href="../A.Faq/ErrorCode/Content/Can'tGetVariablesFromShardingNode.html">
+            
+                    
+                    Can't Get Variables From ShardingNode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.6" data-path="../A.Faq/ErrorCode/Content/PortAlreadyInUse1984.html">
+            
+                <a href="../A.Faq/ErrorCode/Content/PortAlreadyInUse1984.html">
+            
+                    
+                    Port already in use:1984
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.7" data-path="../A.Faq/ErrorCode/Content/ShardingColumnCannotBeNull.html">
+            
+                <a href="../A.Faq/ErrorCode/Content/ShardingColumnCannotBeNull.html">
+            
+                    
+                    Sharding Column Cannot Be Null
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../A.Faq/Internals/A_overview2.html">
+            
+                <a href="../A.Faq/Internals/A_overview2.html">
+            
+                    
+                    A.2 原理解释
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.2.1" data-path="../A.Faq/Internals/Content/UseExplainToTraceGroupBy.html">
+            
+                <a href="../A.Faq/Internals/Content/UseExplainToTraceGroupBy.html">
+            
+                    
+                    How To Use Explain To Resolve The Distribution Rules Of Group Gy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2.2" data-path="../A.Faq/Internals/Content/HashAndConsistentHashingAndJumpstringhash.html">
+            
+                <a href="../A.Faq/Internals/Content/HashAndConsistentHashingAndJumpstringhash.html">
+            
+                    
+                    Hash And ConsistentHashing And Jumpstringhash
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../A.Faq/Usage/A_overview3.html">
+            
+                <a href="../A.Faq/Usage/A_overview3.html">
+            
+                    
+                    A.3 使用说明
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.3.1" data-path="../A.Faq/Usage/Content/ToBeContinued2.html">
+            
+                <a href="../A.Faq/Usage/Content/ToBeContinued2.html">
+            
+                    
+                    ToBeContinued2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >4.4 二进制协议 (Prepared Statements)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="44-&#x9884;&#x7F16;&#x8BD1;&#x8BED;&#x53E5;-prepared-statements">4.4 &#x9884;&#x7F16;&#x8BD1;&#x8BED;&#x53E5; (Prepared Statements)</h2>
+<h3 id="441-&#x5F00;&#x542F;&#x65B9;&#x5F0F;">4.4.1 &#x5F00;&#x542F;&#x65B9;&#x5F0F;</h3>
+<p><strong>&#x5BA2;&#x6237;&#x7AEF;</strong></p>
+<ul>
+<li>&#x5982;&#x679C;&#x662F;jdbc&#x9700;&#x5F00;&#x542F;useServerPrepStmts&#xFF0C;&#x6B64;&#x65F6;&#x624D;&#x4F1A;&#x4F7F;&#x7528; server-side prepare&#xFF0C;&#x5426;&#x5219;&#x5C5E;&#x4E8E; client-side prepare&#x3002;</li>
+<li>&#x5176;&#x4ED6;&#x8BED;&#x8A00;&#x7684; driver&#x901A;&#x5E38;&#x4E0D;&#x7528;&#x914D;&#x7F6E;&#x9009;&#x9879;&#x3002;</li>
+</ul>
+<p><strong>&#x9A8C;&#x8BC1;&#x662F;&#x5426;&#x5F00;&#x542F;&#x4E86;</strong></p>
+<p>&#x53EA;&#x63D0;&#x4F9B; java &#x7248;&#x672C;&#x7684;</p>
+<pre><code class="lang-java">PreparedStatement preparedStatement = con.prepareStatement(<span class="hljs-string">&quot;select t1.id from no_sharding_t1 t1 where t1.id=?&quot;</span>); <span class="hljs-comment">//&#x53EF;&#x7528;&#x4E8E;&#x9A8C;&#x8BC1;&#x662F;&#x5426;&#x4F7F;&#x7528;&#x4E86;dble &#x4FA7; prepare assert preparedStatement instanceof ServerPreparedStatement;</span>
+</code></pre>
+<h3 id="442-&#x4F7F;&#x7528;&#x65B9;&#x5F0F;">4.4.2 &#x4F7F;&#x7528;&#x65B9;&#x5F0F;</h3>
+<p>&#x548C;&#x76F4;&#x8FDE; mysql &#x4E00;&#x6837;</p>
+<h3 id="444-&#x5206;&#x7C7B;">4.4.4 &#x5206;&#x7C7B;</h3>
+<ul>
+<li>server-side prepare&#xFF1A;&#x901A;&#x8FC7; client&#x53D1;&#x9001; PS &#x534F;&#x8BAE;&#x7684;&#x62A5;&#x6587;&#x7ED9;server&#xFF0C;&#x7531; server&#x6765;&#x5B8C;&#x6210;&#x62FC;&#x88C5;&#x53C2;&#x6570;&#x3001;&#x4F18;&#x5316;&#x3001;&#x6267;&#x884C;&#x3002; </li>
+<li>client-side prepare : &#x7531; client &#x6765;&#x5B9E;&#x73B0; PS &#x63A5;&#x53E3;&#xFF0C;prepare &#x9636;&#x6BB5;&#x5B8C;&#x6210;&#x62FC;&#x88C5;&#x53C2;&#x6570;&#xFF0C;&#x62FC;&#x88C5;&#x5B8C;&#x540E;&#xFF0C;&#x4E00;&#x6B21;&#x6027;&#x53D1;&#x9001; &#x5373;&#x65F6; SQL&#x7ED9; server&#xFF0C;&#x7531; server &#x6765;&#x5B8C;&#x6210;&#x4F18;&#x5316;&#x3001;&#x6267;&#x884C;&#x3002;&#x8FD9;&#x672C;&#x8D28;&#x4E0A;&#x662F;&#x4E00;&#x4E2A;&#x4F2A;&#x9884;&#x7F16;&#x8BD1;&#xFF0C;&#x4E0A;&#x8FF0;&#x7684; &#x201D;&#x7701;&#x53BB;&#x4E86;&#x6BCF;&#x6B21;&#x90FD;&#x8981;&#x89E3;&#x6790;&#x4F18;&#x5316;&#x7684;&#x8FC7;&#x7A0B;&#x201C; &#x8FD9;&#x4E2A;&#x4F18;&#x70B9;&#x65E0;&#x6CD5;&#x5B9E;&#x73B0;&#x3002;</li>
+</ul>
+<h3 id="445-mysql&#x6D41;&#x7A0B;">4.4.5 MySQL&#x6D41;&#x7A0B;</h3>
+<p><img src="pic/4.4.1.png" alt=""></p>
+<p>&#x6CE8;&#x610F;&#x70B9;&#xFF1A;</p>
+<ul>
+<li>&#x53EF;&#x901A;&#x8FC7;url&#x65B9;&#x5F0F;&#x6307;&#x5B9A;useCursorFetch=true&#xFF0C;&#x5F00;&#x542F;&#x5206;&#x6279;&#x4ECE;server&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x3002;</li>
+<li>&#x4F46;&#x662F;jdbc&#x4E2D;&#x9ED8;&#x8BA4;fetchSize&#x4E3A;0&#xFF0C;jdbc&#x4E2D;&#x5FC5;&#x987B;fetchSize &gt; 0&#x624D;&#x4F1A;&#x53D1;&#x9001;fetch&#x5305;&#x5206;&#x6279;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#xFF0C;&#x5426;&#x5219;&#x548C;&#x666E;&#x901A;prepareStatement&#x6CA1;&#x6709;&#x533A;&#x522B;&#x3002;</li>
+</ul>
+<h3 id="446-dble&#x6D41;&#x7A0B;">4.4.6 Dble&#x6D41;&#x7A0B;</h3>
+<p><img src="pic/4.4.2.png" alt="">
+&#x53EF;&#x4EE5;&#x770B;&#x5230;  client &lt;-&gt; dble &#x901A;&#x8BAF;&#x4F7F;&#x7528;&#x4E86; server-side prepare&#xFF0C;dble  &lt;-&gt; mysql &#x901A;&#x8BAF;&#x4F7F;&#x7528;&#x4E86; client-side prepare&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x540E;&#x7AEF;&#x901A;&#x8BAF;&#x548C;&#x666E;&#x901A;&#x7684;&#x5373;&#x65F6;&#x67E5;&#x8BE2;&#x65E0;&#x5F02;&#xFF0C;&#x53EA;&#x662F;&#x9700;&#x8981;&#x505A;&#x4E00;&#x4E9B;&#x534F;&#x8BAE;&#x4E0A;&#x7684;&#x5305;&#x4E0A;&#x7684;&#x8F6C;&#x6362;&#x3002;</p>
+<h3 id="447-&#x901A;&#x8BAF;&#x534F;&#x8BAE;&#x4ECB;&#x7ECD;">4.4.7 &#x901A;&#x8BAF;&#x534F;&#x8BAE;&#x4ECB;&#x7ECD;</h3>
+<ul>
+<li>COM_STMT_CLOSE<br>Closes a previously prepared statement.</li>
+<li><p>COM_STMT_EXECUTE<br>Executes a previously prepared statement.</p>
+</li>
+<li><p>COM_STMT_RESET<br>Resets a prepared statement on client and server to state after preparing.</p>
+</li>
+<li><p>COM_STMT_SEND_LONG_DATA<br>When data for a specific column is big, it can be sent separately.</p>
+</li>
+<li><p>COM_STMT_PREPARE<br>Prepares a statement on the server</p>
+<blockquote>
+<p>NOTICE:  Although COM_STMT_PREPARE  works , but dble will not do pre-compile .</p>
+</blockquote>
+</li>
+<li><p>COM_STMT_FETCH<br>Fetches rows from a prepared statement</p>
+</li>
+</ul>
+<h3 id="448-dble-&#x6E38;&#x6807;">4.4.8 Dble &#x6E38;&#x6807;</h3>
+<h4 id="4481-&#x6E38;&#x6807;&#x5206;&#x7C7B;">4.4.8.1 &#x6E38;&#x6807;&#x5206;&#x7C7B;</h4>
+<ul>
+<li>server-side  cursor&#xFF1A;server&#x628A;&#x7ED3;&#x679C;&#x96C6;&#x6682;&#x5B58;&#x8D77;&#x6765;&#xFF0C;&#x7EF4;&#x62A4;&#x4E00;&#x4E2A;&#x6E38;&#x6807;&#xFF0C;client &#x6839;&#x636E;&#x9700;&#x8981;&#x8BFB;&#x53D6;&#x6307;&#x5B9A;&#x7684;&#x884C;&#x6570;</li>
+<li>client-side cursor: client &#x4ECE; tcp &#x5C42;&#x9762; &#x63A7;&#x5236;&#x62A5;&#x6587;&#x7684;&#x8BFB;&#x53D6;&#xFF0C;&#x5F53;&#x62A5;&#x6587;&#x8F83;&#x5927;&#x65F6;&#x6682;&#x505C;&#x8BFB;&#x53D6; socket&#x3002;(&#x4E0D;&#x63A8;&#x8350;&#xFF0C;&#x56E0;&#x4E3A;server &#x9700;&#x8981;&#x7B49;&#x5F85;&#x6240;&#x6709;&#x6570;&#x636E;&#x53D1;&#x9001;&#x7ED9; client &#x540E;&#xFF0C;&#x624D;&#x80FD;&#x91CA;&#x653E;&#x8D44;&#x6E90;&#x3002;&#xFF09;</li>
+<li><p>&#x53E6;&#x4E00;&#x79CD; client-side cursor&#xFF1A;client &#x628A;&#x6240;&#x6709;&#x7ED3;&#x679C;&#x96C6;&#x8BFB;&#x53D6;&#x5230;&#x672C;&#x5730;&#x7F13;&#x5B58;&#xFF0C;client&#x6BCF;&#x6B21;&#x4ECE;&#x7F13;&#x5B58;&#x8BFB;&#x53D6;&#x6307;&#x5B9A;&#x884C;&#x6570;&#xFF08;&#x4E0D;&#x63A8;&#x8350;&#xFF0C;&#x672C;&#x8D28;&#x4E0A;&#x662F;&#x4E2A;&#x4F2A; cursor&#xFF0C;&#x53EA;&#x5B9E;&#x73B0;&#x4E86; cursor API&#x3002;&#x5E76;&#x4E14;&#x5728;&#x6570;&#x636E;&#x91CF;&#x8F83;&#x5927;&#x65F6;&#x5F88;&#x5BB9;&#x6613;&#x6491;&#x7206; client &#x7684;&#x5185;&#x5B58;&#xFF09;</p>
+<h4 id="4482-&#x6E38;&#x6807;&#x5F00;&#x542F;&#x5FC5;&#x8981;&#x6761;&#x4EF6;">4.4.8.2 &#x6E38;&#x6807;&#x5F00;&#x542F;&#x5FC5;&#x8981;&#x6761;&#x4EF6;</h4>
+<p><strong>DBLE &#x7AEF;</strong></p>
+</li>
+<li><p>&#x5982;&#x679C;&#x7248;&#x672C;&lt;3.21.02, &#x4E0D;&#x652F;&#x6301;&#x3002;</p>
+</li>
+<li>&#x5982;&#x679C;&#x7248;&#x672C;=3.21.02,&#x65E0;&#x9700;&#x8BBE;&#x7F6E;</li>
+<li>&#x5982;&#x679C;&#x7248;&#x672C;&gt;3.21.02,&#x9700;&#x5728; bootstrap.cnf&#x5F00;&#x542F;-DenableCursor=false</li>
+</ul>
+<p><strong>&#x5BA2;&#x6237;&#x7AEF;</strong></p>
+<ol>
+<li>&#x4F7F;&#x7528;&#x652F;&#x6301;&#x6E38;&#x6807;&#x7684;driver&#xFF08;mysql&#x5B98;&#x65B9;&#x7684;jdbc driver&#x5C31;&#x652F;&#x6301;&#xFF09;</li>
+<li>&#x5982;&#x679C;&#x662F;jdbc&#x9700;&#x5F00;&#x542F;useServerPrepStmts&#x548C;useCursorFetch&#x9009;&#x9879;</li>
+<li>&#x6267;&#x884C; prepareStatement &#x540E;&#x8BBE;&#x7F6E; fetchSize&#xFF0C;&#x5FC5;&#x987B;&#x5927;&#x4E8E; 0.</li>
+<li>&#x6267;&#x884C; execute</li>
+</ol>
+<p>&#x6B64;&#x65F6;&#x662F;&#x5F00;&#x542F;&#x6E38;&#x6807;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x5BF9;&#x7ED3;&#x679C;&#x96C6; resultSet&#x8FDB;&#x884C;&#x904D;&#x5386;&#xFF0C;&#x4F1A;&#x6309; fetchSize &#x7684;&#x5927;&#x5C0F;&#x4E00;&#x6B21;&#x6B21;&#x5730;&#x4ECE; dble &#x53D6;&#x56DE;&#x6570;&#x636E;&#x3002;</p>
+<p><strong>&#x9A8C;&#x8BC1;&#x662F;&#x5426;&#x5F00;&#x542F;&#x4E86;&#x6E38;&#x6807;</strong></p>
+<p>&#x5BA2;&#x6237;&#x7AEF;&#x6267;&#x884C;&#x7B2C;4&#x6B65;&#x540E;, &#x8C03;&#x7528;&#x79C1;&#x6709;&#x65B9;&#x6CD5; useServerFetch &#x53EF;&#x9A8C;&#x8BC1;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">final</span> ResultSet resultSet = preparedStatement.executeQuery();
+<span class="hljs-comment">//&#x53EF;&#x7528;&#x4E8E;&#x9A8C;&#x8BC1;&#x662F;&#x5426;&#x4F7F;&#x7528;&#x4E86;server-side &#x6E38;&#x6807;</span>
+Method method = com.mysql.cj.jdbc.StatementImpl.class.getDeclaredMethod(<span class="hljs-string">&quot;useServerFetch&quot;</span>);
+method.setAccessible(<span class="hljs-keyword">true</span>);
+Boolean useServerFetch = (Boolean) method.invoke(preparedStatement);
+<span class="hljs-keyword">assert</span> useServerFetch==<span class="hljs-keyword">true</span>;
+</code></pre>
+<h4 id="4483-dble-server-side-cursor-flow">4.4.8.3 Dble Server-side Cursor Flow</h4>
+<p><img src="pic/4.4.4.png" alt=""></p>
+<p>&#x539F;&#x7406;&#xFF1A;</p>
+<ol>
+<li>prepare&#x9636;&#x6BB5;&#x4E0B;&#x53D1;&#x7279;&#x6B8A;&#x8BED;&#x53E5;&#x3002;&#x7528;&#x4E8E;&#x8BA1;&#x7B97;sql &#x4E2D;&#x7684;&#x5217;&#x6570;&#xFF0C;&#x8FD9;&#x662F;client &#x6240;&#x9700;&#x7684;&#x5F00;&#x542F;&#x6E38;&#x6807;&#x7684;&#x5FC5;&#x8981;&#x6761;&#x4EF6;&#x3002;</li>
+<li>execute&#x9636;&#x6BB5;&#x628A;&#x7ED3;&#x679C;&#x96C6;&#x5B58;&#x50A8;&#x5230;&#x4E34;&#x65F6;&#x6587;&#x4EF6;</li>
+<li>fetch&#x9636;&#x6BB5;&#x628A;&#x7ED3;&#x679C;&#x96C6;&#x5206;&#x6279;&#x6B21;&#x4E00;&#x6B21;&#x6B21;&#x53D6;&#x51FA;&#x6765;</li>
+</ol>
+<h4 id="4484-&#x76F8;&#x5173;&#x53C2;&#x6570;">4.4.8.4 &#x76F8;&#x5173;&#x53C2;&#x6570;</h4>
+<ul>
+<li>maxHeapTableSize</li>
+<li>heapTableBufferChunkSize</li>
+</ul>
+<p>&#x89C1;&#x6587;&#x6863; <a href="https://actiontech.github.io/dble-docs-cn/1.config_file/1.02_bootstrap.cnf.html" target="_blank">https://actiontech.github.io/dble-docs-cn/1.config_file/1.02_bootstrap.cnf.html</a></p>
+
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="4.3_Text_Protocol.html" class="navigation navigation-prev " aria-label="Previous page: 4.3 文本协议">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="4.5_Server_Response_Packets.html" class="navigation navigation-next " aria-label="Next page: 4.5 服务响应包">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4.4 二进制协议 (Prepared Statements)","level":"1.6.4","depth":2,"next":{"title":"4.5 服务响应包","level":"1.6.5","depth":2,"path":"4.Protocol/4.5_Server_Response_Packets.md","ref":"4.Protocol/4.5_Server_Response_Packets.md","articles":[]},"previous":{"title":"4.3 文本协议","level":"1.6.3","depth":2,"path":"4.Protocol/4.3_Text_Protocol.md","ref":"4.Protocol/4.3_Text_Protocol.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","splitter","back-to-top-button","github","popup","versions-select"],"styles":{"website":"website.css","pdf":"pdf.css"},"pluginsConfig":{"plugins":["yahei","katex","-search"],"github":{"url":"https://github.com/actiontech/dble"},"splitter":{},"search":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"sepia","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/actiontech/dble-docs-cn/master/book.json","options":[{"value":"https://actiontech.github.io/dble-docs-cn/","text":"Version 3.21.06.0"},{"value":"https://actiontech.github.io/dble-docs-cn/history/develop/","text":"Version develop"},{"value":"https://actiontech.github.io/dble-docs-cn/history/3.21.06.0/","text":"Version 3.21.06.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a3","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dble manual","gitbook":"*"},"file":{"path":"4.Protocol/4.4_Binary_Protocol.md","mtime":"2021-11-19T10:00:24.065Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-19T10:03:57.623Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-versions-select/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

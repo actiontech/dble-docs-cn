@@ -1,0 +1,3857 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.2 bootstrap.cnf · dble manual</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ActionTech">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-versions-select/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="1.03_user.xml.html" />
+    
+    
+    <link rel="prev" href="1.01_cluster.cnf.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../0.overview/0.0_overview.html">
+            
+                <a href="../0.overview/0.0_overview.html">
+            
+                    
+                    0.概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../0.overview/0.1_dble_overview.html">
+            
+                <a href="../0.overview/0.1_dble_overview.html">
+            
+                    
+                    0.1 dble 简介与整体架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../0.overview/0.2_dble_enhance_MyCat.html">
+            
+                <a href="../0.overview/0.2_dble_enhance_MyCat.html">
+            
+                    
+                    0.2 dble对MyCat做的增强
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../0.overview/0.3_dble_quick_start.html">
+            
+                <a href="../0.overview/0.3_dble_quick_start.html">
+            
+                    
+                    0.3 快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../0.overview/0.4_dble_quick_start_docker.html">
+            
+                <a href="../0.overview/0.4_dble_quick_start_docker.html">
+            
+                    
+                    0.4 docker镜像快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../0.overview/0.5_dble_start_docker_compose.html">
+            
+                <a href="../0.overview/0.5_dble_start_docker_compose.html">
+            
+                    
+                    0.5 docker-compose快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../0.overview/0.6_sharding_brief_introduction.html">
+            
+                <a href="../0.overview/0.6_sharding_brief_introduction.html">
+            
+                    
+                    0.6 数据拆分简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../0.overview/0.7_dble_mgr_quick_start_docker.html">
+            
+                <a href="../0.overview/0.7_dble_mgr_quick_start_docker.html">
+            
+                    
+                    0.7 docker-compose快速开始dble高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="1.00_config_file.html">
+            
+                <a href="1.00_config_file.html">
+            
+                    
+                    1.配置文件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="1.01_cluster.cnf.html">
+            
+                <a href="1.01_cluster.cnf.html">
+            
+                    
+                    1.1 cluster.cnf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2" data-path="1.02_bootstrap.cnf.html">
+            
+                <a href="1.02_bootstrap.cnf.html">
+            
+                    
+                    1.2 bootstrap.cnf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="1.03_user.xml.html">
+            
+                <a href="1.03_user.xml.html">
+            
+                    
+                    1.3 user.xml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="1.04_db.xml.html">
+            
+                <a href="1.04_db.xml.html">
+            
+                    
+                    1.4 db.xml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="1.05_sharding.xml.html">
+            
+                <a href="1.05_sharding.xml.html">
+            
+                    
+                    1.5 sharding.xml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="1.06_log4j2.xml.html">
+            
+                <a href="1.06_log4j2.xml.html">
+            
+                    
+                    1.6 log4j2.xml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="1.07_global_sequence.html">
+            
+                <a href="1.07_global_sequence.html">
+            
+                    
+                    1.7 全局序列配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.7.1" data-path="1.7_global_sequence/1.7.1_MySQL-offset-setp.html">
+            
+                <a href="1.7_global_sequence/1.7.1_MySQL-offset-setp.html">
+            
+                    
+                    1.7.1 MySQL offset-step方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.2" data-path="1.7_global_sequence/1.7.2_timestamp.html">
+            
+                <a href="1.7_global_sequence/1.7.2_timestamp.html">
+            
+                    
+                    1.7.2 时间戳方式(类Snowflake)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.3" data-path="1.7_global_sequence/1.7.3_distribute_timestamp.html">
+            
+                <a href="1.7_global_sequence/1.7.3_distribute_timestamp.html">
+            
+                    
+                    1.7.3 分布式时间戳方式(类Snowflake)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.4" data-path="1.7_global_sequence/1.7.4_distribute_offset-step.html">
+            
+                <a href="1.7_global_sequence/1.7.4_distribute_offset-step.html">
+            
+                    
+                    1.7.4 分布式offset-step方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="1.06_cache.md">
+            
+                <span>
+            
+                    
+                    1.8 cache配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.8.1" data-path="1.8_cache/1.8.1_cache_setting.html">
+            
+                <a href="1.8_cache/1.8.1_cache_setting.html">
+            
+                    
+                    1.8.1 cache配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.2" data-path="1.8_cache/1.8.2_ehcache_setting.html">
+            
+                <a href="1.8_cache/1.8.2_ehcache_setting.html">
+            
+                    
+                    1.8.2 ehcache配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="1.09_dble_route_function_spec.html">
+            
+                <a href="1.09_dble_route_function_spec.html">
+            
+                    
+                    1.9 自定义拆分算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="1.10_version_change.html">
+            
+                <a href="1.10_version_change.html">
+            
+                    
+                    1.10 配置文件变更记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="1.11_customized_alert.html">
+            
+                <a href="1.11_customized_alert.html">
+            
+                    
+                    1.11 自定义告警
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="1.12_customized_global_table_check.html">
+            
+                <a href="1.12_customized_global_table_check.html">
+            
+                    
+                    1.11 自定义全局表一致性检查
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../2.Function/2.00_overview.html">
+            
+                <a href="../2.Function/2.00_overview.html">
+            
+                    
+                    2.功能描述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../2.Function/2.01_manager_cmd.html">
+            
+                <a href="../2.Function/2.01_manager_cmd.html">
+            
+                    
+                    2.1 管理端命令
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../2.Function/2.1_manager_cmd/2.1.01_select.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.01_select.html">
+            
+                    
+                    2.1.1 select命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="../2.Function/2.1_manager_cmd/2.1.02_set.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.02_set.html">
+            
+                    
+                    2.1.2 set命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="../2.Function/2.1_manager_cmd/2.1.03_show.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.03_show.html">
+            
+                    
+                    2.1.3 show命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.4" data-path="../2.Function/2.1_manager_cmd/2.1.04_switch.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.04_switch.html">
+            
+                    
+                    2.1.4 switch命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.5" data-path="../2.Function/2.1_manager_cmd/2.1.05_kill.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.05_kill.html">
+            
+                    
+                    2.1.5 kill命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.6" data-path="../2.Function/2.1_manager_cmd/2.1.06_stop.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.06_stop.html">
+            
+                    
+                    2.1.6 stop命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.7" data-path="../2.Function/2.1_manager_cmd/2.1.07_reload.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.07_reload.html">
+            
+                    
+                    2.1.7 reload命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.8" data-path="../2.Function/2.1_manager_cmd/2.1.08_rollback.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.08_rollback.html">
+            
+                    
+                    2.1.8 rollback命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.9" data-path="../2.Function/2.1_manager_cmd/2.1.09_offline.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.09_offline.html">
+            
+                    
+                    2.1.9 offline命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.10" data-path="../2.Function/2.1_manager_cmd/2.1.10_online.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.10_online.html">
+            
+                    
+                    2.1.10 online命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.11" data-path="../2.Function/2.1_manager_cmd/2.1.11_file.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.11_file.html">
+            
+                    
+                    2.1.11 file命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.12" data-path="../2.Function/2.1_manager_cmd/2.1.12_log.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.12_log.html">
+            
+                    
+                    2.1.12 log命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.13" data-path="../2.Function/2.1_manager_cmd/2.1.13_dryrun.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.13_dryrun.html">
+            
+                    
+                    2.1.13 配置检查命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.14" data-path="../2.Function/2.1_manager_cmd/2.1.14_pause_resume.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.14_pause_resume.html">
+            
+                    
+                    2.1.14 pause & resume 命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.15" data-path="../2.Function/2.1_manager_cmd/2.1.15_slow_query.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.15_slow_query.html">
+            
+                    
+                    2.1.15 慢查询日志相关命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.16" data-path="../2.Function/2.1_manager_cmd/2.1.16_database.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.16_database.html">
+            
+                    
+                    2.1.16 创建/删除物理库命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.17" data-path="../2.Function/2.1_manager_cmd/2.1.17_check_meta_data.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.17_check_meta_data.html">
+            
+                    
+                    2.1.17 check @@metadata命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.18" data-path="../2.Function/2.1_manager_cmd/2.1.18_release.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.18_release.html">
+            
+                    
+                    2.1.18 release @@metadata命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.19" data-path="../2.Function/2.1_manager_cmd/2.1.19_split.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.19_split.html">
+            
+                    
+                    2.1.19 split命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.20" data-path="../2.Function/2.1_manager_cmd/2.1.20_flow_control.html">
+            
+                <a href="../2.Function/2.1_manager_cmd/2.1.20_flow_control.html">
+            
+                    
+                    2.1.20 flow_control 命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../2.Function/2.02_global_sequence.html">
+            
+                <a href="../2.Function/2.02_global_sequence.html">
+            
+                    
+                    2.2 全局序列
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../2.Function/2.2_global_sequence/2.2.1_MySQL-offset-setp.html">
+            
+                <a href="../2.Function/2.2_global_sequence/2.2.1_MySQL-offset-setp.html">
+            
+                    
+                    2.2.1 MySQL offset-step方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../2.Function/2.2_global_sequence/2.2.2_timestamp.html">
+            
+                <a href="../2.Function/2.2_global_sequence/2.2.2_timestamp.html">
+            
+                    
+                    2.2.2 时间戳方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3" data-path="../2.Function/2.2_global_sequence/2.2.3_distribute_timestamp.html">
+            
+                <a href="../2.Function/2.2_global_sequence/2.2.3_distribute_timestamp.html">
+            
+                    
+                    2.2.3 分布式时间戳方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.4" data-path="../2.Function/2.2_global_sequence/2.2.4_distribute_offset-step.html">
+            
+                <a href="../2.Function/2.2_global_sequence/2.2.4_distribute_offset-step.html">
+            
+                    
+                    2.2.4 分布式offset-step方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../2.Function/2.03_RW_Split.html">
+            
+                <a href="../2.Function/2.03_RW_Split.html">
+            
+                    
+                    2.3 读写分离
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../2.Function/2.04_hint.html">
+            
+                <a href="../2.Function/2.04_hint.html">
+            
+                    
+                    2.4 注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../2.Function/2.05_distribute_transaction.html">
+            
+                <a href="../2.Function/2.05_distribute_transaction.html">
+            
+                    
+                    2.5 分布式事务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="../2.Function/2.5_distribute_transaction/2.5.1_XA_trans_overview.html">
+            
+                <a href="../2.Function/2.5_distribute_transaction/2.5.1_XA_trans_overview.html">
+            
+                    
+                    2.5.1 XA事务概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="../2.Function/2.5_distribute_transaction/2.5.2_XA_trans_commit&rollback.html">
+            
+                <a href="../2.Function/2.5_distribute_transaction/2.5.2_XA_trans_commit&rollback.html">
+            
+                    
+                    2.5.2 XA事务的提交以及回滚
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" data-path="../2.Function/2.5_distribute_transaction/2.5.3_XA_trans_make_up.html">
+            
+                <a href="../2.Function/2.5_distribute_transaction/2.5.3_XA_trans_make_up.html">
+            
+                    
+                    2.5.3 XA事务的后续补偿以及日志清理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.4" data-path="../2.Function/2.5_distribute_transaction/2.5.4_XA_trans_records.html">
+            
+                <a href="../2.Function/2.5_distribute_transaction/2.5.4_XA_trans_records.html">
+            
+                    
+                    2.5.4 XA事务的记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.5" data-path="../2.Function/2.5_distribute_transaction/2.5.5_normal_trans_overview.html">
+            
+                <a href="../2.Function/2.5_distribute_transaction/2.5.5_normal_trans_overview.html">
+            
+                    
+                    2.5.5 一般分布式事务概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../2.Function/2.06_conns_pool.html">
+            
+                <a href="../2.Function/2.06_conns_pool.html">
+            
+                    
+                    2.6 连接池管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../2.Function/2.07_memory_manager.html">
+            
+                <a href="../2.Function/2.07_memory_manager.html">
+            
+                    
+                    2.7 内存管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../2.Function/2.08_cluster.html">
+            
+                <a href="../2.Function/2.08_cluster.html">
+            
+                    
+                    2.8 集群同步协调&状态管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../2.Function/2.09_Grpc_warning.html">
+            
+                <a href="../2.Function/2.09_Grpc_warning.html">
+            
+                    
+                    2.9 grpc 告警
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../2.Function/2.10_table_meta.html">
+            
+                <a href="../2.Function/2.10_table_meta.html">
+            
+                    
+                    2.10 表meta数据管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.10.1" data-path="../2.Function/2.10_table_meta/2.10.1_Meta_init.html">
+            
+                <a href="../2.Function/2.10_table_meta/2.10.1_Meta_init.html">
+            
+                    
+                    2.10.1 Meta信息初始化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10.2" data-path="../2.Function/2.10_table_meta/2.10.2_Meta_change.html">
+            
+                <a href="../2.Function/2.10_table_meta/2.10.2_Meta_change.html">
+            
+                    
+                    2.10.2 Meta信息维护
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10.3" data-path="../2.Function/2.10_table_meta/2.10.3_consistency_check.html">
+            
+                <a href="../2.Function/2.10_table_meta/2.10.3_consistency_check.html">
+            
+                    
+                    2.10.3 一致性检测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10.4" data-path="../2.Function/2.10_table_meta/2.10.4_View_Meta.html">
+            
+                <a href="../2.Function/2.10_table_meta/2.10.4_View_Meta.html">
+            
+                    
+                    2.10.4 View Meta
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../2.Function/2.11_statistics_manager.html">
+            
+                <a href="../2.Function/2.11_statistics_manager.html">
+            
+                    
+                    2.11 统计管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.11.1" data-path="../2.Function/2.11_statistics_manager/2.11.1_condition_stat.html">
+            
+                <a href="../2.Function/2.11_statistics_manager/2.11.1_condition_stat.html">
+            
+                    
+                    2.11.1 查询条件统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.2" data-path="../2.Function/2.11_statistics_manager/2.11.2_table_stat.html">
+            
+                <a href="../2.Function/2.11_statistics_manager/2.11.2_table_stat.html">
+            
+                    
+                    2.11.2 表状态统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.3" data-path="../2.Function/2.11_statistics_manager/2.11.3_user_stat.html">
+            
+                <a href="../2.Function/2.11_statistics_manager/2.11.3_user_stat.html">
+            
+                    
+                    2.11.3 用户状态统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.4" data-path="../2.Function/2.11_statistics_manager/2.11.4_cmd_stat.html">
+            
+                <a href="../2.Function/2.11_statistics_manager/2.11.4_cmd_stat.html">
+            
+                    
+                    2.11.4 命令统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.5" data-path="../2.Function/2.11_statistics_manager/2.11.5_heartbeat_stat.html">
+            
+                <a href="../2.Function/2.11_statistics_manager/2.11.5_heartbeat_stat.html">
+            
+                    
+                    2.11.5 heartbeat统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.6" data-path="../2.Function/2.11_statistics_manager/2.11.6_net_io_stat.html">
+            
+                <a href="../2.Function/2.11_statistics_manager/2.11.6_net_io_stat.html">
+            
+                    
+                    2.11.6 网络读写统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../2.Function/2.12_failover.html">
+            
+                <a href="../2.Function/2.12_failover.html">
+            
+                    
+                    2.12 故障切换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../2.Function/2.13_conns_check.html">
+            
+                <a href="../2.Function/2.13_conns_check.html">
+            
+                    
+                    2.13 前后端连接检查
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../2.Function/2.14_ER_Sharding.html">
+            
+                <a href="../2.Function/2.14_ER_Sharding.html">
+            
+                    
+                    2.14 ER表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../2.Function/2.15_global_table.html">
+            
+                <a href="../2.Function/2.15_global_table.html">
+            
+                    
+                    2.15 global表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="../2.Function/2.16_cache.html">
+            
+                <a href="../2.Function/2.16_cache.html">
+            
+                    
+                    2.16 缓存的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="../2.Function/2.17_explain.html">
+            
+                <a href="../2.Function/2.17_explain.html">
+            
+                    
+                    2.17 执行计划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="../2.Function/2.18_performance_observation.html">
+            
+                <a href="../2.Function/2.18_performance_observation.html">
+            
+                    
+                    2.18 性能观测和调整
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="../2.Function/2.19_reload_diff.html">
+            
+                <a href="../2.Function/2.19_reload_diff.html">
+            
+                    
+                    2.19 智能计算reload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="../2.Function/2.20_slow_query_log.html">
+            
+                <a href="../2.Function/2.20_slow_query_log.html">
+            
+                    
+                    2.20 慢查询日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21" data-path="../2.Function/2.21_query_trace.html">
+            
+                <a href="../2.Function/2.21_query_trace.html">
+            
+                    
+                    2.21 单条SQL性能trace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22" data-path="../2.Function/2.22_kill_ddl_lock.html">
+            
+                <a href="../2.Function/2.22_kill_ddl_lock.html">
+            
+                    
+                    2.22 KILL @@DDL_LOCK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23" data-path="../2.Function/2.23_outerHa_linkage.html">
+            
+                <a href="../2.Function/2.23_outerHa_linkage.html">
+            
+                    
+                    2.23 外部高可用联动
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.23.1" data-path="../2.Function/2.23_outerHa_linkage/2.23.1_outerHa_linkage_overview.html">
+            
+                <a href="../2.Function/2.23_outerHa_linkage/2.23.1_outerHa_linkage_overview.html">
+            
+                    
+                    2.23.1 外部后端MYSQL-HA连接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23.2" data-path="../2.Function/2.23_outerHa_linkage/2.23.2_command_usage.html">
+            
+                <a href="../2.Function/2.23_outerHa_linkage/2.23.2_command_usage.html">
+            
+                    
+                    2.23.2 命令的使用说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23.3" data-path="../2.Function/2.23_outerHa_linkage/2.23.3_Logical_detail.html">
+            
+                <a href="../2.Function/2.23_outerHa_linkage/2.23.3_Logical_detail.html">
+            
+                    
+                    2.23.3 命令的实现细节
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23.4" data-path="../2.Function/2.23_outerHa_linkage/2.23.4_mha_sample.html">
+            
+                <a href="../2.Function/2.23_outerHa_linkage/2.23.4_mha_sample.html">
+            
+                    
+                    2.23.4 简单的HA交互使用案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24" data-path="../2.Function/2.24_timeout_control.html">
+            
+                <a href="../2.Function/2.24_timeout_control.html">
+            
+                    
+                    2.24 超时控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.25" data-path="../2.Function/2.25_flow_control.html">
+            
+                <a href="../2.Function/2.25_flow_control.html">
+            
+                    
+                    2.25 流量控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../3.SQL_Syntax/3.0_overview.html">
+            
+                <a href="../3.SQL_Syntax/3.0_overview.html">
+            
+                    
+                    3.语法兼容
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../3.SQL_Syntax/3.1_DDL.html">
+            
+                <a href="../3.SQL_Syntax/3.1_DDL.html">
+            
+                    
+                    3.1 DDL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../3.SQL_Syntax/3.1_DDL/3.1.1_DDL&Table_Syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.1_DDL/3.1.1_DDL&Table_Syntax.html">
+            
+                    
+                    3.1.1 DDL&Table Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../3.SQL_Syntax/3.1_DDL/3.1.2_DDL&View_Syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.1_DDL/3.1.2_DDL&View_Syntax.html">
+            
+                    
+                    3.1.2 DDL&View Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="../3.SQL_Syntax/3.1_DDL/3.1.3_DDL&Index_Syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.1_DDL/3.1.3_DDL&Index_Syntax.html">
+            
+                    
+                    3.1.3 DDL&Index Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.4" data-path="../3.SQL_Syntax/3.1_DDL/3.1.4_DDL_Penetrate.html">
+            
+                <a href="../3.SQL_Syntax/3.1_DDL/3.1.4_DDL_Penetrate.html">
+            
+                    
+                    3.1.4 DDL透传
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.5" data-path="../3.SQL_Syntax/3.1_DDL/3.1.5_DDL&Database_Syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.1_DDL/3.1.5_DDL&Database_Syntax.html">
+            
+                    
+                    3.1.5 DDL&Database_Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.6" data-path="../3.SQL_Syntax/3.1_DDL/3.1.6_DDL&online_ddl.html">
+            
+                <a href="../3.SQL_Syntax/3.1_DDL/3.1.6_DDL&online_ddl.html">
+            
+                    
+                    3.1.6 ONLINE DDL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../3.SQL_Syntax/3.2_DML.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML.html">
+            
+                    
+                    3.2 DML
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../3.SQL_Syntax/3.2_DML/3.2.01_INSERT.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.01_INSERT.html">
+            
+                    
+                    3.2.1 INSERT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../3.SQL_Syntax/3.2_DML/3.2.02_REPLACE.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.02_REPLACE.html">
+            
+                    
+                    3.2.2 REPLACE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3" data-path="../3.SQL_Syntax/3.2_DML/3.2.03_DELETE.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.03_DELETE.html">
+            
+                    
+                    3.2.3 DELETE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.4" data-path="../3.SQL_Syntax/3.2_DML/3.2.04_UPDATE.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.04_UPDATE.html">
+            
+                    
+                    3.2.4 UPDATE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.5" data-path="../3.SQL_Syntax/3.2_DML/3.2.05_SELECT.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.05_SELECT.html">
+            
+                    
+                    3.2.5 SELECT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.6" data-path="../3.SQL_Syntax/3.2_DML/3.2.06_SELECT_JOIN_syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.06_SELECT_JOIN_syntax.html">
+            
+                    
+                    3.2.6 SELECT JOIN syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.7" data-path="../3.SQL_Syntax/3.2_DML/3.2.07_UNION_Syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.07_UNION_Syntax.html">
+            
+                    
+                    3.2.7 SELECT UNION Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.8" data-path="../3.SQL_Syntax/3.2_DML/3.2.08_Subquery_Syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.08_Subquery_Syntax.html">
+            
+                    
+                    3.2.8 SELECT Subquery Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.9" data-path="../3.SQL_Syntax/3.2_DML/3.2.09_LOAD_DATA.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.09_LOAD_DATA.html">
+            
+                    
+                    3.2.9 LOAD DATA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.10" data-path="../3.SQL_Syntax/3.2_DML/3.2.10_Unsupport_Syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.2_DML/3.2.10_Unsupport_Syntax.html">
+            
+                    
+                    3.2.10 不支持的语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../3.SQL_Syntax/3.3_Prepared_SQL_Syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.3_Prepared_SQL_Syntax.html">
+            
+                    
+                    3.3 Prepared SQL Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements.html">
+            
+                <a href="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements.html">
+            
+                    
+                    3.4 Transactional, Savepoint and Locking Statements
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.1_Lock&unlock.html">
+            
+                <a href="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.1_Lock&unlock.html">
+            
+                    
+                    3.4.1 Lock&unlock
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.2_XA_trans_syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.2_XA_trans_syntax.html">
+            
+                    
+                    3.4.2 XA 事务语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.3_normal_trans_syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.3_normal_trans_syntax.html">
+            
+                    
+                    3.4.3 一般事务语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.4" data-path="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.4_SET_TRANSACTION_Syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.4_SET_TRANSACTION_Syntax.html">
+            
+                    
+                    3.4.4 SET TRANSACTION Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.5" data-path="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.5_savepoint_syntax.html">
+            
+                <a href="../3.SQL_Syntax/3.4_Transactional_and_Locking_Statements/3.4.5_savepoint_syntax.html">
+            
+                    
+                    3.4.5 SAVEPOINT, ROLLBACK TO SAVEPOINT, and RELEASE SAVEPOINT Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../3.SQL_Syntax/3.5_DAL.html">
+            
+                <a href="../3.SQL_Syntax/3.5_DAL.html">
+            
+                    
+                    3.5 DAL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.1" data-path="../3.SQL_Syntax/3.5_DAL/3.5.1_SET.html">
+            
+                <a href="../3.SQL_Syntax/3.5_DAL/3.5.1_SET.html">
+            
+                    
+                    3.5.1 SET
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.2" data-path="../3.SQL_Syntax/3.5_DAL/3.5.2_SHOW.html">
+            
+                <a href="../3.SQL_Syntax/3.5_DAL/3.5.2_SHOW.html">
+            
+                    
+                    3.5.2 SHOW
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.3" data-path="../3.SQL_Syntax/3.5_DAL/3.5.3_KILL.html">
+            
+                <a href="../3.SQL_Syntax/3.5_DAL/3.5.3_KILL.html">
+            
+                    
+                    3.5.3 KILL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../3.SQL_Syntax/3.6_procedure_support.html">
+            
+                <a href="../3.SQL_Syntax/3.6_procedure_support.html">
+            
+                    
+                    3.6 存储过程支持方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../3.SQL_Syntax/3.7_Utility_Statements.html">
+            
+                <a href="../3.SQL_Syntax/3.7_Utility_Statements.html">
+            
+                    
+                    3.7 Utility Statements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../3.SQL_Syntax/3.8_Hint.html">
+            
+                <a href="../3.SQL_Syntax/3.8_Hint.html">
+            
+                    
+                    3.8 Hint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../3.SQL_Syntax/3.9_Other_unsupport.html">
+            
+                <a href="../3.SQL_Syntax/3.9_Other_unsupport.html">
+            
+                    
+                    3.9 其他不支持语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../3.SQL_Syntax/3.10_func_and_operators.html">
+            
+                <a href="../3.SQL_Syntax/3.10_func_and_operators.html">
+            
+                    
+                    3.10 函数与操作符支持列表(alpha版本)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../3.SQL_Syntax/3.11_Export_and_Import.html">
+            
+                <a href="../3.SQL_Syntax/3.11_Export_and_Import.html">
+            
+                    
+                    3.11 导入导出方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../4.Protocol/4.0_overview.html">
+            
+                <a href="../4.Protocol/4.0_overview.html">
+            
+                    
+                    4.协议兼容
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../4.Protocol/4.1_Packet.html">
+            
+                <a href="../4.Protocol/4.1_Packet.html">
+            
+                    
+                    4.1 基本包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../4.Protocol/4.2_Connecting.html">
+            
+                <a href="../4.Protocol/4.2_Connecting.html">
+            
+                    
+                    4.2 连接建立
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../4.Protocol/4.3_Text_Protocol.html">
+            
+                <a href="../4.Protocol/4.3_Text_Protocol.html">
+            
+                    
+                    4.3 文本协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../4.Protocol/4.4_Binary_Protocol.html">
+            
+                <a href="../4.Protocol/4.4_Binary_Protocol.html">
+            
+                    
+                    4.4 二进制协议 (Prepared Statements)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../4.Protocol/4.5_Server_Response_Packets.html">
+            
+                <a href="../4.Protocol/4.5_Server_Response_Packets.html">
+            
+                    
+                    4.5 服务响应包
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../5.Limit/5.0_overview.html">
+            
+                <a href="../5.Limit/5.0_overview.html">
+            
+                    
+                    5.已知限制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../5.Limit/5.1_druid_limit.html">
+            
+                <a href="../5.Limit/5.1_druid_limit.html">
+            
+                    
+                    5.1 druid引发的限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../5.Limit/5.2_other_limit.html">
+            
+                <a href="../5.Limit/5.2_other_limit.html">
+            
+                    
+                    5.2 其他已知限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../6.Differernce_from_MySQL_Server/6.0_overview.html">
+            
+                <a href="../6.Differernce_from_MySQL_Server/6.0_overview.html">
+            
+                    
+                    6.与MySQL Server的差异化描述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../6.Differernce_from_MySQL_Server/6.1_need_rollback.html">
+            
+                <a href="../6.Differernce_from_MySQL_Server/6.1_need_rollback.html">
+            
+                    
+                    6.1 事务中遇到主键冲突需要显式回滚
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../6.Differernce_from_MySQL_Server/6.2_insert_sequence.html">
+            
+                <a href="../6.Differernce_from_MySQL_Server/6.2_insert_sequence.html">
+            
+                    
+                    6.2 INSERT不能显式指定自增序列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../6.Differernce_from_MySQL_Server/6.3_add_show_all_tables.html">
+            
+                <a href="../6.Differernce_from_MySQL_Server/6.3_add_show_all_tables.html">
+            
+                    
+                    6.3 增加"show all tables"
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../6.Differernce_from_MySQL_Server/6.4_remove_message.html">
+            
+                <a href="../6.Differernce_from_MySQL_Server/6.4_remove_message.html">
+            
+                    
+                    6.4 去除了增删改的message信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../6.Differernce_from_MySQL_Server/6.5_about_information_schema.html">
+            
+                <a href="../6.Differernce_from_MySQL_Server/6.5_about_information_schema.html">
+            
+                    
+                    6.5 information_schema等库的支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../7.Developer_Notice/7.0_overview.html">
+            
+                <a href="../7.Developer_Notice/7.0_overview.html">
+            
+                    
+                    7.开发者须知
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../7.Developer_Notice/7.1_SQL_develop_rule.html">
+            
+                <a href="../7.Developer_Notice/7.1_SQL_develop_rule.html">
+            
+                    
+                    7.1 SQL开发编写原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../7.Developer_Notice/7.2_Demo_for_connect_dble.html">
+            
+                <a href="../7.Developer_Notice/7.2_Demo_for_connect_dble.html">
+            
+                    
+                    7.2 dble连接Demo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../7.Developer_Notice/7.3_Other_Notice.html">
+            
+                <a href="../7.Developer_Notice/7.3_Other_Notice.html">
+            
+                    
+                    7.3 其他注意事项
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../8.Configuration_samples/8.0_overview.html">
+            
+                <a href="../8.Configuration_samples/8.0_overview.html">
+            
+                    
+                    8.配置示例
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../8.Configuration_samples/8.1_timestamp_sequence_table.html">
+            
+                <a href="../8.Configuration_samples/8.1_timestamp_sequence_table.html">
+            
+                    
+                    8.1 时间戳方式全局序列的配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../8.Configuration_samples/8.2_MySQL-offset-step_sequence_table.html">
+            
+                <a href="../8.Configuration_samples/8.2_MySQL-offset-step_sequence_table.html">
+            
+                    
+                    8.2 MySQL-offset-step 方式全局序列的配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../9.Sysbench_samples/9.0_overview.html">
+            
+                <a href="../9.Sysbench_samples/9.0_overview.html">
+            
+                    
+                    9.sysbench压测dble示例
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../9.Sysbench_samples/9.1_env.html">
+            
+                <a href="../9.Sysbench_samples/9.1_env.html">
+            
+                    
+                    9.1 测试环境及架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../9.Sysbench_samples/9.2_conf.html">
+            
+                <a href="../9.Sysbench_samples/9.2_conf.html">
+            
+                    
+                    9.2 修改dble配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../9.Sysbench_samples/9.3_use_sysbench.html">
+            
+                <a href="../9.Sysbench_samples/9.3_use_sysbench.html">
+            
+                    
+                    9.3 使用sysbench进行压测
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../A.Faq/A_overview.html">
+            
+                <a href="../A.Faq/A_overview.html">
+            
+                    
+                    A.Faq
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../A.Faq/ErrorCode/A_overview1.html">
+            
+                <a href="../A.Faq/ErrorCode/A_overview1.html">
+            
+                    
+                    A.1 ErrorCode
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1.1" data-path="../A.Faq/ErrorCode/Content/MaxConnections.html">
+            
+                <a href="../A.Faq/ErrorCode/Content/MaxConnections.html">
+            
+                    
+                    max Connections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.2" data-path="../A.Faq/ErrorCode/Content/OutOfMemoryError.html">
+            
+                <a href="../A.Faq/ErrorCode/Content/OutOfMemoryError.html">
+            
+                    
+                    Out Of Memory Error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.3" data-path="../A.Faq/ErrorCode/Content/TheProblemOfHint.html">
+            
+                <a href="../A.Faq/ErrorCode/Content/TheProblemOfHint.html">
+            
+                    
+                    The Problem Of Hint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.4" data-path="../A.Faq/ErrorCode/Content/NestLoopParametersLeadToTemptableException.html">
+            
+                <a href="../A.Faq/ErrorCode/Content/NestLoopParametersLeadToTemptableException.html">
+            
+                    
+                    NestLoop Parameters Lead To Temptable Exception
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.5" data-path="../A.Faq/ErrorCode/Content/Can'tGetVariablesFromShardingNode.html">
+            
+                <a href="../A.Faq/ErrorCode/Content/Can'tGetVariablesFromShardingNode.html">
+            
+                    
+                    Can't Get Variables From ShardingNode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.6" data-path="../A.Faq/ErrorCode/Content/PortAlreadyInUse1984.html">
+            
+                <a href="../A.Faq/ErrorCode/Content/PortAlreadyInUse1984.html">
+            
+                    
+                    Port already in use:1984
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.7" data-path="../A.Faq/ErrorCode/Content/ShardingColumnCannotBeNull.html">
+            
+                <a href="../A.Faq/ErrorCode/Content/ShardingColumnCannotBeNull.html">
+            
+                    
+                    Sharding Column Cannot Be Null
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../A.Faq/Internals/A_overview2.html">
+            
+                <a href="../A.Faq/Internals/A_overview2.html">
+            
+                    
+                    A.2 原理解释
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.2.1" data-path="../A.Faq/Internals/Content/UseExplainToTraceGroupBy.html">
+            
+                <a href="../A.Faq/Internals/Content/UseExplainToTraceGroupBy.html">
+            
+                    
+                    How To Use Explain To Resolve The Distribution Rules Of Group Gy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2.2" data-path="../A.Faq/Internals/Content/HashAndConsistentHashingAndJumpstringhash.html">
+            
+                <a href="../A.Faq/Internals/Content/HashAndConsistentHashingAndJumpstringhash.html">
+            
+                    
+                    Hash And ConsistentHashing And Jumpstringhash
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../A.Faq/Usage/A_overview3.html">
+            
+                <a href="../A.Faq/Usage/A_overview3.html">
+            
+                    
+                    A.3 使用说明
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.3.1" data-path="../A.Faq/Usage/Content/ToBeContinued2.html">
+            
+                <a href="../A.Faq/Usage/Content/ToBeContinued2.html">
+            
+                    
+                    ToBeContinued2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >1.2 bootstrap.cnf</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="12-bootstrapcnf">1.2 bootstrap.cnf</h2>
+<p>&#x672C;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E3A;dble&#x5B9E;&#x4F8B;&#x542F;&#x52A8;&#x65F6;&#x5019;&#x52A0;&#x8F7D;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;wrapper.cnf&#x542F;&#x52A8;&#x7684;&#x5916;&#x7F6E;&#x53C2;&#x6570;&#x6587;&#x4EF6;&#x7684;&#x683C;&#x5F0F;&#xFF0C;&#x5373;&#x4F7F;&#x4E0D;&#x4F7F;&#x7528;wrapper&#x542F;&#x52A8;&#x65F6;&#xFF0C;&#x4E5F;&#x4F1A;&#x52A0;&#x8F7D;&#x6B64;&#x6587;&#x4EF6;&#x3002;  </p>
+<h3 id="121-jvm&#x542F;&#x52A8;&#x53C2;&#x6570;">1.2.1 jvm&#x542F;&#x52A8;&#x53C2;&#x6570;</h3>
+<p>&#x672C;&#x6587;&#x4EF6;&#x7B2C;&#x4E00;&#x90E8;&#x5206;&#x4E3A;JVM&#x542F;&#x52A8;&#x53C2;&#x6570;,&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x3002;  </p>
+<pre><code>-agentlib:jdwp=transport=dt_socket,server=y,address=8088,suspend=n  
+-server  
+-XX:+AggressiveOpts  
+-Dfile.encoding=UTF-8  
+-Dcom.sun.management.jmxremote  
+-Dcom.sun.management.jmxremote.port=1984  
+-Dcom.sun.management.jmxremote.authenticate=false  
+-Dcom.sun.management.jmxremote.ssl=false  
+-Dcom.sun.management.jmxremote.host=127.0.0.1  
+-Xmx4G  
+-Xms1G  
+-XX:MaxDirectMemorySize=2G
+</code></pre><p>&#x5927;&#x90E8;&#x5206;&#x4EE5;&#x4E0A;&#x7684;&#x914D;&#x7F6E;&#x90FD;&#x6CA1;&#x6709;&#x7279;&#x6B8A;&#x7684;&#x610F;&#x4E49;&#xFF0C;&#x4EC5;&#x4EC5;&#x662F;&#x4E00;&#x822C;&#x7684;JVM&#x914D;&#x7F6E;&#xFF0C;&#x5173;&#x4E8E;JVM&#x8C03;&#x4F18;&#x7684;&#x90E8;&#x5206;&#x9700;&#x8981;&#x4EE5;&#x73B0;&#x5B9E;&#x60C5;&#x51B5;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;&#x5728;&#x6B64;&#x4EC5;&#x4ECB;&#x7ECD;&#x4EE5;&#x4E2A;&#x7279;&#x6B8A;&#x60C5;&#x51B5;</p>
+<p>MaxDirectMemorySize&#x4E0A;&#x9650;&#x503C;&#x4E3A;81917M&#xFF0C;&#x7EA6;&#x7B49;&#x4E8E;79G&#x3002;&#x9700;&#x8981;&#x6839;&#x636E;&#x673A;&#x5668;&#x7684;&#x60C5;&#x51B5;&#x8FDB;&#x884C;&#x63D0;&#x524D;&#x9002;&#x914D;&#xFF0C;&#x4E0D;&#x7136;&#x4F1A;&#x5BFC;&#x81F4;&#x670D;&#x52A1;&#x65E0;&#x6CD5;&#x6B63;&#x5E38;&#x542F;&#x52A8;
+&#x5177;&#x4F53;&#x7684;&#x7EC6;&#x8282;&#x4E3A;&#x9700;&#x8981;&#x5927;&#x4E8E;bufferPoolPageNumber*bufferPoolPageSize&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x9009;&#x9879;&#x5728;&#x7B2C;&#x4E8C;&#x90E8;&#x5206;&#x4E2D;&#x914D;&#x7F6E;</p>
+<p>bufferPoolPageNumber &#x7684;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#x662F;20 &#xD7; &#x673A;&#x5668;CPU&#x7EBF;&#x7A0B;&#x6570;(&#x6CE8;&#x610F;&#x8FD9;&#x91CC;I5&#x548C;I7&#x7684;CPU&#x53EF;&#x80FD;&#x4F1A;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x7ED3;&#x679C;)&#xFF0C;&#x4E0A;&#x9650;&#x503C;&#x4E3A;32767 &#xD7;1024</p>
+<p>bufferPoolPageSize &#x7684;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#x662F; 4 &#xD7; 512 &#xD7;1024&#xFF0C;&#x4E0A;&#x9650;&#x503C;&#x4E3A;32767 &#xD7;1024</p>
+<p>&#x4EE5;&#x4E0B;&#x4E3A;&#x5EFA;&#x8BAE;&#x503C;&#xFF1A;<br>dble&#x603B;&#x5185;&#x5B58;=0.6 <em> &#x53EF;&#x7528;&#x7269;&#x7406;&#x5185;&#x5B58;(&#x5228;&#x9664;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;,&#x9A71;&#x52A8;&#x7B49;&#x7684;&#x5360;&#x7528;)<br>Xmx = 0.4 </em> dble&#x603B;&#x5185;&#x5B58;<br>MaxDirectMemorySize = 0.6 * dble&#x603B;&#x5185;&#x5B58;  </p>
+<p>&#x53E6;&#x5916;&#xFF0C;&#x5728;&#x542F;&#x52A8;&#x53C2;&#x6570;&#x4E2D;&#x7684;bufferPoolPageNumber &#x548C;bufferPoolPageSize &#x53D7;MaxDirectMemorySize&#x5F71;&#x54CD;&#x3002;<br>&#x5EFA;&#x8BAE; &#x548C;bufferPoolPageSize&#x8BBE;&#x7F6E;&#x4E3A;2M&#xFF0C;bufferPoolPageNumber &#x8BBE;&#x7F6E;&#x4E3A;  &#x53D6;&#x6574;(MaxDirectMemorySize * 0.8 /bufferPoolPageSize)  </p>
+<h3 id="122-dble&#x7CFB;&#x7EDF;&#x53C2;&#x6570;">1.2.2 dble&#x7CFB;&#x7EDF;&#x53C2;&#x6570;</h3>
+<p>&#x672C;&#x6587;&#x4EF6;&#x7B2C;&#x4E8C;&#x90E8;&#x5206;&#x4E3A;dble&#x7CFB;&#x7EDF;&#x53C2;&#x6570;,&#x914D;&#x7F6E;&#x683C;&#x5F0F;&#x9075;&#x7167;&#x542F;&#x52A8;&#x53C2;&#x6570;&#x7684;&#x683C;&#x5F0F;&#xFF1A;-Dkey=value&#xFF0C; 
+&#x6CE8;&#x610F;&#x5982;&#x679C;&#x662F;&#x901A;&#x8FC7;JSW&#x542F;&#x52A8;&#x7684;dble&#x670D;&#x52A1;&#xFF0C;&#x9700;&#x8981;&#x590D;&#x5408;JSW&#x5BF9;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x8981;&#x6C42;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4E0D;&#x80FD;&#x6709;&#x7A7A;&#x683C;&#xFF0C;&#x5177;&#x4F53;&#x53C2;&#x89C1; <a href="https://wrapper.tanukisoftware.com/doc/english/prop-app-parameter-n.html#file" target="_blank">wrapper.app.parameter_file</a><br>&#x5177;&#x4F53;&#x7CFB;&#x7EDF;&#x53C2;&#x6570;&#x542B;&#x4E49;&#x53C2;&#x89C1;&#x4EE5;&#x4E0B;&#x8868;&#x683C;&#x3002;  </p>
+<table>  
+<tbody>  
+<tr>  
+<td colspan="1"><sub><strong>&#x6A21;&#x5757;</strong></sub></td>  
+<td><br>  
+<p><sub><strong>&#x914D;&#x7F6E;&#x540D;&#x79F0;</strong></sub></p><br></td>  
+<td><br>  
+<p><sub><strong>&#x914D;&#x7F6E;&#x5185;&#x5BB9;</strong></sub></p><br></td>  
+<td><br>  
+<p><sub><strong>&#x9ED8;&#x8BA4;&#x503C;/&#x5355;&#x4F4D;</strong></sub></p><br></td>  
+<td><br>  
+<p><sub><strong>&#x8BE6;&#x7EC6;&#x4F5C;&#x7528;&#x539F;&#x7406;&#x6216;&#x5E94;&#x7528;</strong></sub></p><br></td>  
+<td><br>  
+<p><sub><strong>&#x914D;&#x7F6E;&#x8303;&#x56F4;</strong></sub></p><br></td>  
+</tr>  
+
+<tr>  
+<td rowspan="18"><sub>&#x7CFB;&#x7EDF;&#x670D;&#x52A1;&#x57FA;&#x672C;&#x53C2;&#x6570;</sub></td>  
+<td><br>  
+<p><sub>homePath</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x57FA;&#x672C;&#x76EE;&#x5F55; &#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#xFF08;slowlogs&#xFF09;&#x3001;&#x89C6;&#x56FE;&#x8BB0;&#x5F55;&#x65E5;&#x5FD7;&#xFF08;viewConf&#xFF09;&#x3001;xa&#x7684;tm&#x65E5;&#x5FD7;&#xFF08;xalogs&#xFF09;&#x3001;load data&#x4E34;&#x65F6;&#x6587;&#x4EF6;&#xFF08;temp&#xFF09;&#x7B49;&#x5B58;&#x653E;&#x8DEF;&#x5F84;&#x7684;&#x7236;&#x76EE;&#x5F55;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;&#x4E3A;&#x5F53;&#x524D;&#x76EE;&#x5F55;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5176;&#x4ED6;&#x4E00;&#x4E9B;&#x7C7B;&#x4F3C;&#x4E8E;&#x4E8B;&#x52A1;&#x6216;&#x8005;&#x89C6;&#x56FE;&#x5B58;&#x50A8;&#x7684;&#x7684;&#x6839;&#x8DEF;&#x5F84;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6709;&#x6548;&#x8DEF;&#x5F84;,<br>&#x63A8;&#x8350;&#x9ED8;&#x8BA4;</sub></p><br></td>  
+</tr>  
+
+<tr>  
+<td><br>  
+<p><sub>instanceName</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5B9E;&#x4F8B;&#x540D;&#x79F0;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x65E0;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x4E0D;&#x914D;&#x7F6E;&#x4F1A;&#x62A5;&#x9519;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x96C6;&#x7FA4;&#x914D;&#x7F6E;&#x65F6;&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#xFF0C;xa&#x4E8B;&#x52A1;&#x65F6;&#x7684;&#x5B9E;&#x4F8B;&#x6807;&#x8BC6;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x96C6;&#x7FA4;&#x5185;&#x552F;&#x4E00;&#x503C;</sub></p><br></td>  
+</tr>  
+
+<tr>  
+<td><br>  
+<p><sub>instanceId</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5B9E;&#x4F8B;id</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x65E0;&#x9ED8;&#x8BA4;&#x503C;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x96C6;&#x7FA4;&#x914D;&#x7F6E;&#x65F6;&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#xFF0C;&#x5168;&#x5C40;&#x5E8F;&#x5217;&#x65F6;&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x4EC5;&#x5F53;sequenceHandlerType=2 &#x6216;&#x8005; 3&#x65F6;&#x5019;&#x6709;&#x610F;&#x4E49;.</sub></p><br>  
+<p><sub>&#x5F53;sequenceHandlerType=2&#xFF0C;&#x5408;&#x6CD5;&#x503C;&#x8303;&#x56F4;&#x4E3A;0~1023</sub></p><br>  
+<p><sub>&#x5F53;sequenceHandlerType=3&#xFF0C;&#x5408;&#x6CD5;&#x503C;&#x8303;&#x56F4;&#x4E3A;0~,511</sub></p><br></td>  
+</tr>  
+
+<tr>  
+<td><br>  
+<p><sub>serverId</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x670D;&#x52A1;&#x5668;&#x540D;&#x79F0;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;&#x670D;&#x52A1;&#x5668;IP</sub></p><br></td>  
+<td><br>  
+<p><sub>dble&#x6240;&#x5728;&#x673A;&#x5668;&#x7684;&#x540D;&#x79F0;</sub></p><br></td>  
+<td><br>  
+<p>&#x7528;&#x4E8E;&#x544A;&#x8B66;&#x65F6;&#x5019;&#x62A5;&#x544A;&#x670D;&#x52A1;&#x5668;&#x540D;&#x79F0;</p><br></td>  
+</tr>  
+
+<tr>  
+<td><br>  
+<p><sub>bindIp</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x670D;&#x52A1;IP</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4; &quot;0.0.0.0&quot;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5728;&#x670D;&#x52A1;&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#x4F5C;&#x4E3A;&#x4FA6;&#x542C;&#x7684;IP</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6709;&#x6548;IP&#x5730;&#x5740;,<br>&#x63A8;&#x8350;&#x9ED8;&#x8BA4;</sub></p><br></td>  
+</tr>  
+
+<tr>  
+<td><br>  
+<p><sub>serverPort</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x670D;&#x52A1;&#x7AEF;&#x53E3;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;8066</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5728;&#x670D;&#x52A1;&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#x4F5C;&#x4E3A;&#x670D;&#x52A1;&#x4FA6;&#x542C;&#x7684;&#x7AEF;&#x53E3;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x673A;&#x5668;&#x7A7A;&#x95F2;&#x7AEF;&#x53E3;</sub></p><br></td>  
+</tr>  
+
+<tr>  
+<td><br>  
+<p><sub>managerPort</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x63A7;&#x5236;&#x7AEF;&#x53E3;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;9066</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5728;&#x670D;&#x52A1;&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#x4F5C;&#x4E3A;&#x63A7;&#x5236;&#x4FA6;&#x542C;&#x7684;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x673A;&#x5668;&#x7A7A;&#x95F2;&#x7AEF;&#x53E3;</sub></p><br></td>  
+</tr>  
+
+<tr>  
+<td><br>  
+<p><sub>maxCon</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x63A7;&#x5236;&#x6700;&#x5927;&#x8FDE;&#x63A5;&#x6570;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;0</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;&#x4E0D;&#x505A;&#x9650;&#x5236;&#x3002;&#x82E5;maxCon&#x5927;&#x4E8E;0,&#x5EFA;&#x7ACB;&#x7684;&#x8FDE;&#x63A5;&#x6570;&#x5927;&#x4E8E;maxCon&#x4E4B;&#x540E;,&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#x4F1A;&#x5931;&#x8D25;.&#x6CE8;&#x610F;&#x5F53;&#x5404;&#x4E2A;&#x7528;&#x6237;&#x7684;maxcon&#x603B;&#x548C;&#x503C;&#x5927;&#x4E8E;&#x6B64;&#x503C;&#x65F6;&#xFF0C;&#x4EE5;&#x5F53;&#x524D;&#x503C;&#x4E3A;&#x51C6;&#x3002;</sub>  
+<sub>&#x5168;&#x5C40;maxCon&#x4E0D;&#x4F5C;&#x7528;&#x4E8E;manager&#x7528;&#x6237;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6B63;&#x6574;&#x6570;</sub></p><br></td>  
+</tr>  
+
+<tr>  
+<td><br>  
+<p><sub>processors</sub></p><br></td>  
+<td><br>  
+<p><sub>NIO&#x524D;&#x7AEF;&#x5904;&#x7406;&#x5668;&#x7684;&#x6570;&#x91CF;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;java&#x865A;&#x62DF;&#x673A;&#x6838;&#x6570;<br>,&#x5355;&#x4F4D;&#x4E2A;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x8FDB;&#x884C;&#x524D;&#x7AEF;&#x7F51;&#x7EDC;IO&#x541E;&#x5410;&#x7684;&#x7EBF;&#x7A0B;&#x6570;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6B63;&#x6574;&#x6570;</sub></p><br></td>  
+</tr>  
+
+<tr>  
+<td><br>  
+<p><sub>backendProcessors</sub></p><br></td>  
+<td><br>  
+<p><sub>NIO&#x540E;&#x7AEF;&#x5904;&#x7406;&#x5668;&#x7684;&#x6570;&#x91CF;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;java&#x865A;&#x62DF;&#x673A;&#x6838;&#x6570;<br>,&#x5355;&#x4F4D;&#x4E2A;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x8FDB;&#x884C;&#x540E;&#x7AEF;&#x7F51;&#x7EDC;IO&#x541E;&#x5410;&#x7684;&#x7EBF;&#x7A0B;&#x6570;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6B63;&#x6574;&#x6570;</sub></p><br></td>  
+</tr>  
+
+<tr>  
+<td><br>  
+<p><sub>processorExecutor</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x524D;&#x7AEF;&#x4E1A;&#x52A1;&#x5904;&#x7406;&#x7EBF;&#x7A0B;&#x6C60;&#x6570;&#x91CF;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;<br>(&#x5355;&#x6838;&#x4E3A;2,&#x5426;&#x5219;&#x7B49;&#x4E8E;&#x5BBF;&#x4E3B;&#x673A;&#x6838;&#x6570;)</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x8FDB;&#x884C;&#x524D;&#x7AEF;&#x5177;&#x4F53;&#x4E1A;&#x52A1;&#x5904;&#x7406;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#x5927;&#x5C0F;&#xFF0C;&#x8D1F;&#x8D23;&#x89E3;&#x6790;&#x8DEF;&#x7531;&#x4E0B;&#x53D1;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6B63;&#x6574;&#x6570;</sub></p><br></td>  
+</tr>  
+
+<tr>  
+<td><br>  
+<p><sub>backendProcessorExecutor</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x540E;&#x7AEF;&#x4E1A;&#x52A1;&#x5904;&#x7406;&#x7EBF;&#x7A0B;&#x6C60;&#x6570;&#x91CF;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;<br>(&#x5355;&#x6838;&#x4E3A;2,&#x5426;&#x5219;&#x7B49;&#x4E8E;&#x5BBF;&#x4E3B;&#x673A;&#x6838;&#x6570;)</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x8FDB;&#x884C;&#x540E;&#x7AEF;&#x5177;&#x4F53;&#x4E1A;&#x52A1;&#x5904;&#x7406;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#x5927;&#x5C0F;&#xFF0C;&#x8D1F;&#x8D23;&#x56DE;&#x6536;&#x7ED3;&#x679C;&#x96C6;&#x5E76;&#x5408;&#x5E76;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6B63;&#x6574;&#x6570;</sub></p><br></td>  
+</tr>  
+
+<tr>  
+<td><br>  
+<p><sub>complexExecutor</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x590D;&#x6742;&#x67E5;&#x8BE2;&#x540E;&#x7AEF;&#x4E1A;&#x52A1;&#x7EBF;&#x7A0B;&#x6C60;&#x6570;&#x91CF;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;<br>(&#x5355;&#x6838;&#x4E3A;2,&#x5426;&#x5219;&#x7B49;&#x4E8E;&#x5BBF;&#x4E3B;&#x673A;&#x6838;&#x6570;&#xFF0C;&#x5BBF;&#x4E3B;&#x673A;&#x6838;&#x6570;&#x5927;&#x4E8E;8&#x65F6;&#xFF0C;&#x6570;&#x91CF;&#x4E3A;8</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x8D1F;&#x8D23;&#x590D;&#x6742;&#x67E5;&#x8BE2;&#x6216;&#x8005;&#x5B50;&#x547D;&#x4EE4;&#x7ED3;&#x679C;&#x96C6;&#x7684;&#x56DE;&#x6536;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6B63;&#x6574;&#x6570;</sub></p><br></td>  
+</tr>  
+
+<tr>  
+<td><br>  
+<p><sub>writeToBackendExecutor</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5E7F;&#x64AD;&#x4E0B;&#x53D1;SQL&#x65F6;&#x5019;&#x6279;&#x91CF;&#x5904;&#x7406;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#x68B3;&#x7406;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;<br>(&#x5355;&#x6838;&#x4E3A;2,&#x5426;&#x5219;&#x7B49;&#x4E8E;&#x5BBF;&#x4E3B;&#x673A;&#x6838;&#x6570;)</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x8D1F;&#x8D23;&#x5E7F;&#x64AD;&#x4E0B;&#x53D1;SQL&#x65F6;&#x5019;&#x6279;&#x91CF;&#x5904;&#x7406;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6B63;&#x6574;&#x6570;</sub></p><br></td>  
+</tr>  
+
+<tr>  
+<td><br>  
+<p><sub>fakeMySQLVersion</sub></p><br></td>  
+<td><br>  
+<p><sub>dble&#x6A21;&#x62DF;mysql&#x7248;&#x672C;&#x53F7;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;NULL</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6A21;&#x62DF;&#x6210;&#x6B63;&#x5E38;&#x7684;MySql&#x7248;&#x672C;&#x5728;&#x8FDB;&#x884C;&#x524D;&#x7AEF;&#x534F;&#x8BAE;&#x4EA4;&#x4E92;&#x7684;&#x65F6;&#x5019;&#x80FD;&#x591F;&#x4F7F;&#x7528;&#x5230;</sub></p><br></td>  
+<td><br>  
+<p><sub>MYSQL&#x7248;&#x672C;&#x53F7;</sub></p><br></td>  
+</tr>  
+
+<tr>  
+<td><sub>serverBacklog</sub></td>  
+<td><sub>&#x524D;&#x7AEF;tcp&#x8FDE;&#x63A5; backlog</sub></td>  
+<td><sub>&#x9ED8;&#x8BA4;2048</sub></td>  
+<td><sub>&#x524D;&#x7AEF;tcp&#x8FDE;&#x63A5; backlog</sub></td>  
+<td><br>  
+<p><sub>&#x6B63;&#x6574;&#x6570;</sub></p><br></td>  
+
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>usePerformanceMode</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x662F;&#x5426;&#x542F;&#x7528;&#x6027;&#x80FD;&#x6A21;&#x5F0F;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;0/&#x5355;&#x4F4D;&#x65E0;</sub></p><br>  
+</td><td><br>  
+<p><sub>&#x5F00;&#x542F;&#x4E4B;&#x540E;Dble&#x4F1A;&#x5927;&#x91CF;&#x5360;&#x7528;CPU&#x8D44;&#x6E90;&#xFF0C;&#x5E76;&#x63D0;&#x4F9B;&#x66F4;&#x9AD8;&#x7684;&#x6027;&#x80FD;&#x4F53;&#x73B0;,&#x614E;&#x7528;</sub></p></td>  
+<td><br>  
+<p><sub>1-&#x662F;0-&#x5426;</sub></p><br></td>  
+</tr>  
+
+<tr>  
+<td><br>  
+<p><sub>useOuterHa</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x662F;&#x5426;&#x542F;&#x7528;&#x5916;&#x90E8;&#x9AD8;&#x53EF;&#x7528;&#x8054;&#x52A8;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;&#x4E3A;true&#xFF0C;&#x82E5;&#x6B64;&#x65F6;&#x4E0D;&#x8BBE;&#x7F6E;&#x5916;&#x90E8;&#x9AD8;&#x53EF;&#x7528;&#xFF0C;&#x5C06;&#x4E0D;&#x505A;&#x5207;&#x6362;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5982;&#x5173;&#x95ED;&#x6B64;&#x529F;&#x80FD;&#x5E76;&#x4E14;dble&#x90E8;&#x7F72;&#x65B9;&#x5F0F;&#x4E3A;&#x5355;&#x673A;&#xFF0C;&#x5C06;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x7684;&#x5207;&#x6362;&#x65B9;&#x5F0F;&#xFF0C;&#x8BE6;&#x60C5;&#x8BF7;&#x89C1;&#x5207;&#x6362;&#x76F8;&#x5173;&#x7AE0;&#x8282;</sub></p><br></td>  
+<td><br>  
+<sub>true/false</sub><br></td>  
+</tr>  
+
+
+<tr>  
+<td rowspan="4"><br><sub>&#x8FDE;&#x63A5;&#x7F3A;&#x7701;&#x503C;</sub><br>  
+<br>  
+<br></td>  
+<td><br>  
+<p><sub>charset</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5B57;&#x7B26;&#x96C6;</sub></p><br></td>  
+<td><br>  
+<p><sub>utf8mb4</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x670D;&#x52A1;&#x542F;&#x52A8;&#x540E;&#x7684;&#x9ED8;&#x8BA4;&#x5B57;&#x7B26;&#x96C6;&#x4E8E;&#x6240;&#x6709;&#x5B57;&#x7B26;&#x96C6;&#x76F8;&#x5173;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x5305;&#x62EC;&#x524D;&#x7AEF;&#x8FDE;&#x63A5;&#x548C;&#x540E;&#x7AEF;&#x8FDE;&#x63A5;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6709;&#x6548;&#x5B57;&#x7B26;&#x96C6;</sub></p><br></td>  
+
+</tr>  
+
+<tr>  
+<td><br>  
+<p><sub>maxPacketSize</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5305;&#x5927;&#x5C0F;&#x9650;&#x5236;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4; 4&#xD7;1024&#xD7;1024</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9650;&#x5236;&#x8BF7;&#x6C42;&#x7684;&#x5305;&#x5927;&#x5C0F;&#xFF0C;&#x542F;&#x52A8;&#x65F6;&#x5019;dble&#x4F1A;&#x62C9;&#x53D6;&#x5E76;&#x5C1D;&#x8BD5;&#x540C;&#x6B65;(&#x6B64;&#x503C;+1024)&#x5230;&#x6BCF;&#x4E2A;dbInstance&#xFF0C;&#x5982;&#x679C;&#x540C;&#x6B65;&#x5931;&#x8D25;&#xFF0C;&#x5C31;&#x53D6;&#x914D;&#x7F6E;&#x503C;&#x4E0E;&#x5404;&#x4E2A;dbInstance&#x4E2D;&#x6700;&#x5C0F;&#x7684;&#x90A3;&#x4E2A;&#x503C;-1024.&#x7559;&#x51FA;1024&#x7684;&#x5197;&#x4F59;&#x7528;&#x4E8E;&#x5BF9;SQL&#x6539;&#x5199;&#x6216;&#x8005;&#x4E0A;&#x4E0B;&#x6587;&#x540C;&#x6B65;&#x7684;&#x652F;&#x6301;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6B63;&#x6574;&#x6570;</sub></p><br></td>  
+
+</tr>  
+
+<tr>  
+<td><br>  
+<p><sub>txIsolation</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9694;&#x79BB;&#x7EA7;&#x522B;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4; 3</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6267;&#x884C;&#x5177;&#x4F53;SQL&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x6BD4;&#x8F83;&#x524D;&#x540E;&#x7AEF;&#x8FDE;&#x63A5;&#xFF0C;</sub></p><br>  
+<p><sub>&#x542F;&#x52A8;&#x65F6;&#x5019;dble&#x4F1A;&#x4F1A;&#x62C9;&#x53D6;&#x5E76;&#x5C1D;&#x8BD5;&#x540C;&#x6B65;&#x6B64;&#x503C;&#x5230;&#x6BCF;&#x4E2A;dbInstance&#xFF0C;&#x5982;&#x679C;&#x540C;&#x6B65;&#x5931;&#x8D25;&#x6216;&#x8005;session&#x7EA7;&#x522B;&#x91CD;&#x65B0;&#x8BBE;&#x7F6E;&#x8BE5;&#x503C;&#xFF0C;session&#x5728;SQL&#x4E0B;&#x53D1;&#x4E4B;&#x524D;&#xFF0C;&#x4F1A;&#x6267;&#x884C;session&#x7EA7;&#x522B;&#x7684;&#x9694;&#x79BB;&#x7EA7;&#x522B;set</sub></p><br></td>  
+<td><br>  
+<p><sub>1-READ_UNCOMMITTED<br>2-READ_COMMITTED<br>3-REPEATABLE_READ<br>4-SERIALIZABLE</sub></p></td>  
+
+</tr>  
+
+<tr>  
+<td><br>  
+<p><sub>autocommit</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x662F;&#x5426;&#x81EA;&#x52A8;&#x63D0;&#x4EA4;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4; 1&#xFF0C;&#x81EA;&#x52A8;&#x63D0;&#x4EA4;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x542F;&#x52A8;&#x65F6;&#x5019;dble&#x4F1A;&#x4F1A;&#x62C9;&#x53D6;&#x5E76;&#x5C1D;&#x8BD5;&#x540C;&#x6B65;&#x6B64;&#x503C;&#x5230;&#x6BCF;&#x4E2A;dbInstance</sub></p><br>  
+<p><sub>&#x5982;&#x679C;&#x540C;&#x6B65;&#x5931;&#x8D25;&#x6216;&#x8005;session&#x7EA7;&#x522B;&#x91CD;&#x65B0;&#x8BBE;&#x7F6E;&#x8BE5;&#x503C;&#xFF0C;&#x6267;&#x884C;&#x5177;&#x4F53;SQL&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x6BD4;&#x8F83;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x4E00;&#x81F4;&#x5C06;&#x4F1A;&#x6267;&#x884C;session&#x7EA7;&#x522B;&#x7684;set</sub></p><br></td>  
+<td><br>  
+<p><sub>0/1</sub></p></td>  
+</tr>  
+
+<tr>  
+<td rowspan="2"><sub>&#x529F;&#x80FD;&#x6027;&#x914D;&#x7F6E;</sub></td>  
+<td><br>  
+<p><sub>useCompression</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x662F;&#x5426;&#x542F;&#x7528;&#x6570;&#x636E;&#x538B;&#x7F29;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4; 0&#x5426;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x4F7F;&#x7528;mysql&#x538B;&#x7F29;&#x534F;&#x8BAE;</sub></p><br></td>  
+<td><br>  
+<p><sub>1 - &#x662F; 0 - &#x5426;</sub></p><br></td>  
+</tr>  
+
+
+
+
+<tr>  
+<td><br>  
+<p><sub>usingAIO</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x662F;&#x5426;&#x542F;&#x7528;AIO</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;0</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5728;&#x521D;&#x59CB;&#x5316;&#x670D;&#x52A1;&#x7684;&#x65F6;&#x5019;&#x5C06;&#x4F1A;&#x4F5C;&#x4E3A;&#x5224;&#x65AD;&#x542F;&#x7528;AIO&#x6216;&#x662F;NIO&#x7684;&#x4F9D;&#x636E;</sub></p><br></td>  
+<td><br>  
+<p><sub>1 - &#x662F; 0 - &#x5426;</sub></p><br></td>  
+</tr>  
+
+<tr>  
+<td rowspan="4">  
+<p><sub>&#x7EBF;&#x7A0B;&#x4F7F;&#x7528;&#x7387;&#x7EDF;&#x8BA1;</sub></p><br></td>  
+<td><br>  
+<p><sub>useThreadUsageStat</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5F00;&#x542F;&#x7EBF;&#x7A0B;&#x4F7F;&#x7528;&#x7387;&#x7EDF;&#x8BA1;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;0/&#x5355;&#x4F4D;&#x65E0;</sub></p><br>  
+<br></td>  
+<td><br>  
+<p><sub>&#x5F00;&#x542F;&#x4E4B;&#x540E;&#x80FD;&#x5728;&#x7BA1;&#x7406;&#x7AEF;&#x901A;&#x8FC7;&#x7BA1;&#x7406;&#x547D;&#x4EE4;show @@thread_used&#x67E5;&#x770B;&#x5404;&#x4E2A;&#x90E8;&#x5206;&#x7684;&#x7EBF;&#x7A0B;&#x4F7F;&#x7528;&#x60C5;&#x51B5;</sub></p></td>  
+<td><br>  
+<p><sub>1-&#x662F;0-&#x5426;</sub></p><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>useCostTimeStat</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x662F;&#x5426;&#x542F;&#x7528;&#x67E5;&#x8BE2;&#x8017;&#x65F6;&#x7EDF;&#x8BA1;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;0/&#x5355;&#x4F4D;&#x65E0;</sub></p><br>  
+</td>  
+<td><br>  
+<p><sub>&#x5F00;&#x542F;&#x4E4B;&#x540E;&#x4EE5;&#x4E00;&#x5B9A;&#x7684;&#x6BD4;&#x4F8B;&#x7EDF;&#x8BA1;&#x67E5;&#x8BE2;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x5404;&#x4E2A;&#x6B65;&#x9AA4;&#x7684;&#x8017;&#x65F6;&#x60C5;&#x51B5;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;BTraceCostTime.jav&#x8FDB;&#x884C;&#x89C2;&#x6D4B;,&#x4E5F;&#x53EF;&#x5728;&#x7BA1;&#x7406;&#x7AEF;&#x4F7F;&#x7528;show @@cost_time&#x89C2;&#x5BDF;</sub></p></td>  
+<td><br>  
+<p><sub>1-&#x662F;0-&#x5426;</sub></p><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>maxCostStatSize</sub></p><br></td>  
+<td><br>  
+<p><sub></sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;100</sub></p><br>  
+</td>  
+<td><br>  
+<p><sub>show @@cost_time&#x7ED3;&#x679C;&#x6700;&#x8FD1;&#x4FDD;&#x7559;&#x7684;&#x884C;&#x6570;</sub></p></td>  
+<td><br>  
+<p><sub></sub></p><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>costSamplePercent</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x67E5;&#x8BE2;&#x91C7;&#x6837;&#x767E;&#x5206;&#x6BD4;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;1/&#x5355;&#x4F4D;%</sub></p><br>  
+<br></td>  
+<td><br>  
+<p><sub>&#x5728;&#x8017;&#x65F6;&#x91C7;&#x6837;&#x7EDF;&#x8BA1;&#x4E2D;&#x5B9E;&#x9645;&#x91C7;&#x6837;&#x767E;&#x5206;&#x6BD4;&#x4E3A;costSamplePercent</sub></p></td>  
+<td><br>  
+<p><sub></sub></p><br></td>  
+</tr>  
+
+<tr>  
+<td rowspan="2"><sub>&#x4E00;&#x81F4;&#x6027;&#x68C0;&#x67E5;</sub></td>  
+<td><br>  
+<p><sub>checkTableConsistency</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x8868;&#x683C;&#x4E00;&#x81F4;&#x6027;&#x68C0;&#x67E5;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;0</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5982;&#x679C;&#x503C;&#x4E3A;1&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x670D;&#x52A1;&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x542F;&#x52A8;&#x4E00;&#x4E2A;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#xFF0C;&#x5728;</sub></p><br>  
+<p><sub>&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x4F1A;&#x68C0;&#x67E5;DB&#x662F;&#x4E0D;&#x662F;&#x5B58;&#x5728;&#xFF0C;&#x8868;&#x683C;&#x662F;&#x4E0D;&#x662F;&#x5B58;&#x5728;&#xFF0C;&#x8868;&#x7ED3;&#x6784;&#x662F;&#x5426;&#x4E00;&#x81F4;</sub></p><br></td>  
+<td><br>  
+<p><sub>1-&#x662F;,0-&#x5426;</sub></p><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>checkTableConsistencyPeriod</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x8868;&#x683C;&#x4E00;&#x81F4;&#x6027;&#x68C0;&#x67E5;&#x5468;&#x671F;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;30&#xD7;60&#xD7;1000<br>,&#x5355;&#x4F4D;&#x6BEB;&#x79D2;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x8868;&#x683C;&#x4E00;&#x81F4;&#x6027;&#x68C0;&#x67E5;&#x5468;&#x671F;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6B63;&#x6574;&#x6570;</sub></p><br></td>  
+</tr>  
+
+<tr>  
+<td rowspan="3"><sub>processor&#x5185;&#x90E8;&#x524D;&#x540E;&#x7AEF;&#x8FDE;&#x63A5;&#x68C0;&#x67E5;</sub><br>&#xA0;</td>  
+<td><br>  
+<p><sub>sqlExecuteTimeout</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x540E;&#x7AEF;&#x8FDE;&#x63A5;&#x6267;&#x884C;&#x8D85;&#x65F6;&#x65F6;&#x95F4;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4; 300<br>,&#x5355;&#x4F4D;&#x79D2;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5982;&#x679C;&#x8D85;&#x8FC7;&#x8FD9;&#x4E2A;&#x65F6;&#x95F4;&#x6CA1;&#x6709;&#x5B8C;&#x6BD5;&#xFF0C;&#x5C31;&#x76F4;&#x63A5;&#x5173;&#x95ED;&#x8FDE;&#x63A5;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6B63;&#x6574;&#x6570;</sub></p><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>idleTimeout</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x524D;&#x7AEF;&#x8FDE;&#x63A5;&#x65E0;&#x54CD;&#x5E94;&#x8D85;&#x65F6;&#x65F6;&#x95F4;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#xA0;&#x9ED8;&#x8BA4; 30&#xD7;60 &#xD7; 1000<br>,&#x5355;&#x4F4D;&#x6BEB;&#x79D2;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5728;processor&#x5B9A;&#x65F6;&#x8FDE;&#x63A5;&#x68C0;&#x67E5;&#x65F6;&#xFF0C;&#x53D1;&#x73B0;&#x524D;&#x7AEF;&#x8FDE;&#x63A5;&#x4E0A;&#x4E00;&#x6B21;&#x7684;&#x8BFB;&#x5199;&#x8DDD;&#x4ECA;&#x8D85;&#x8FC7;&#x9600;&#x503C;&#xFF0C;&#x4F1A;&#x76F4;&#x63A5;&#x5173;&#x95ED;&#x8FDE;&#x63A5;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6B63;&#x6574;&#x6570;</sub></p><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>processorCheckPeriod</sub></p><br></td>  
+<td><br>  
+<p><sub>processor&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x68C0;&#x67E5;&#x5468;&#x671F;</sub></p><br></td>  
+<td><br>  
+<p><sub>1000<br>,&#x5355;&#x4F4D;&#x6BEB;&#x79D2;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6839;&#x636E;&#x6B64;&#x914D;&#x7F6E;&#x5B9A;&#x65F6;&#x7684;&#x68C0;&#x67E5;&#x5728;processor&#x4E2D;&#x7684;&#x524D;&#x540E;&#x7AEF;&#x8FDE;&#x63A5;&#x7684;&#x72B6;&#x6001;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6B63;&#x6574;&#x6570;</sub></p><br></td>  
+</tr>  
+
+
+<tr>  
+<td rowspan="3"><sub>&#x540E;&#x7AEF;&#x8FDE;&#x63A5;socket &#x914D;&#x7F6E;</sub></td>  
+<td><br>  
+<p><sub>backSocketSoRcvbuf &#xA0;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x540E;&#x7AEF;&#x5957;&#x63A5;&#x5B57;&#x63A5;&#x6536;&#x7F13;&#x51B2;&#x533A;&#x5927;&#x5C0F;</sub></p><br></td>  
+<td><br>  
+<p><sub>1024&#xD7;1024&#xD7;4<br>,&#x5355;&#x4F4D;&#x5B57;&#x8282;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5728;&#x521B;&#x5EFA;&#x540E;&#x7AEF;&#x7BA1;&#x9053;&#x7684;&#x65F6;&#x5019;&#x4F5C;&#x4E3A;buffer&#x5927;&#x5C0F;&#x4F7F;&#x7528;</sub></p><br></td>  
+<td><br>  
+<sub>&#x6B63;&#x6574;&#x6570;</sub><br></td>  
+</tr>  
+
+<tr>  
+<td><br>  
+<p><sub>backSocketSoSndbuf</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x540E;&#x7AEF;&#x5957;&#x63A5;&#x5B57;&#x53D1;&#x9001;&#x7F13;&#x51B2;&#x533A;&#x5927;&#x5C0F;</sub></p><br></td>  
+<td><br>  
+<p><sub>1024&#xD7;1024<br>,&#x5355;&#x4F4D;&#x5B57;&#x8282;</sub></p><em><br> </em></td>  
+<td><br>  
+<p><sub>&#x5728;&#x521B;&#x5EFA;&#x540E;&#x7AEF;&#x7BA1;&#x9053;&#x7684;&#x65F6;&#x5019;&#x4F5C;&#x4E3A;buffer&#x5927;&#x5C0F;&#x4F7F;&#x7528;</sub></p><br></td>  
+<td><br>  
+<sub>&#x6B63;&#x6574;&#x6570;</sub><br></td>  
+</tr>  
+
+
+
+<tr>  
+<td><br>  
+<p><sub>backSocketNoDelay</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x540E;&#x7AEF;Nagle&#x7B97;&#x6CD5;&#x662F;&#x5426;&#x7981;&#x7528;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;1/&#x5355;&#x4F4D;&#x65E0;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5728;&#x521B;&#x5EFA;&#x540E;&#x7AEF;&#x7BA1;&#x9053;&#x7684;&#x65F6;&#x5019;&#x7981;&#x7528;&#x5EF6;&#x8FDF;&#x52A0;&#x8F7D;&#xFF0C;&#x4F1A;&#x5F71;&#x54CD;&#x7F51;&#x7EDC;&#x5305;&#x7684;&#x60C5;&#x51B5;  
+&#x8BE6;&#x89C1;<a href="https://docs.oracle.com/javase/7/docs/api/java/net/StandardSocketOptions.html#TCP_NODELAY" target="_blank">&#x76F8;&#x5173;&#x8D44;&#x6599;</a>  
+</sub></p><br></td>  
+<td><br>  
+<sub>1-&#x662F;,<br>0-&#x5426;</sub><br></td>  
+
+</tr>  
+<tr>  
+<td rowspan="3"><sub>&#x524D;&#x7AEF;&#x8FDE;&#x63A5;socket &#x914D;&#x7F6E;</sub></td>  
+<td><br>  
+<p><sub>frontSocketSoRcvbuf &#xA0;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x524D;&#x7AEF;&#x5957;&#x63A5;&#x5B57;&#x63A5;&#x53D7;&#x7F13;&#x51B2;&#x533A;&#x5927;&#x5C0F;</sub></p><br></td>  
+<td><br>  
+<p><sub>10241X1024<br>,&#x5355;&#x4F4D;&#x5B57;&#x8282;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5728;&#x8BFB;&#x53D6;&#x7F51;&#x7EDC;&#x4F20;&#x8F93;&#x4FE1;&#x606F;&#x7684;&#x65F6;&#x5019;&#x4F5C;&#x4E3A;&#x6BCF;&#x6B21;&#x7F13;&#x51B2;&#x7684;&#x5927;&#x5C0F;&#x4F7F;&#x7528;</sub></p><br></td>  
+<td><br>  
+<sub>&#x6B63;&#x6574;&#x6570;</sub><br></td>  
+
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>frontSocketSoSndbuf</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x524D;&#x7AEF;&#x5957;&#x63A5;&#x5B57;&#x53D1;&#x9001;&#x7F13;&#x51B2;&#x533A;&#x5927;&#x5C0F;</sub></p><br></td>  
+<td><br>  
+<p><sub>1024&#xD7;1024&#xD7;4<br>,&#x5355;&#x4F4D;&#x5B57;&#x8282;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5728;&#x521B;&#x5EFA;&#x524D;&#x7AEF;&#x7BA1;&#x9053;&#x7684;&#x65F6;&#x5019;&#x4F5C;&#x4E3A;buffer&#x5927;&#x5C0F;&#x4F7F;&#x7528;</sub></p><br></td>  
+<td><br>  
+<sub>&#x6B63;&#x6574;&#x6570;</sub><br></td>  
+
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>frontSocketNoDelay</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x524D;&#x7AEF;Nagle&#x7B97;&#x6CD5;&#x662F;&#x5426;&#x7981;&#x7528;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;1</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5728;&#x521B;&#x5EFA;&#x524D;&#x7AEF;&#x7BA1;&#x9053;&#x7684;&#x65F6;&#x5019;&#x7981;&#x7528;&#x5EF6;&#x8FDF;&#x52A0;&#x8F7D;  
+<a href="https://docs.oracle.com/javase/7/docs/api/java/net/StandardSocketOptions.html#TCP_NODELAY" target="_blank">&#x76F8;&#x5173;&#x8D44;&#x6599;</a>  
+</sub></p><br></td>  
+<td><br>  
+<sub>1-&#x662F;,0-&#x5426;</sub><br></td>  
+
+</tr>  
+<tr>  
+<td rowspan="3"><sub>Session&#x9884;&#x7559;&#x5185;&#x5B58;&#x914D;&#x7F6E;</sub></td>  
+<td><br>  
+<p><sub>orderMemSize</sub></p><br></td>  
+<td><br>  
+<p><sub>session&#x4E2D;&#x7684;&#x590D;&#x6742;&#x67E5;&#x8BE2;order&#x9884;&#x7559;&#x5185;&#x5B58;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;4,&#x5355;&#x4F4D;M</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5728;session&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#x521B;&#x5EFA;&#x5185;&#x5B58;&#x5206;&#x914D;&#x5BF9;&#x8C61;&#xFF0C;&#x5728;&#x590D;&#x6742;&#x67E5;&#x8BE2;order by&#x7684;&#x65F6;&#x5019;&#x4F7F;&#x7528;&#x5230;</sub></p><br></td>  
+<td><br>  
+<sub>&#x6B63;&#x6574;&#x6570;</sub><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>otherMemSize</sub></p><br></td>  
+<td><br>  
+<p><sub>session&#x4E2D;&#x7684;&#x590D;&#x6742;&#x67E5;&#x8BE2;&#x5176;&#x4ED6;&#x9884;&#x7559;&#x5185;&#x5B58;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;4,&#x5355;&#x4F4D;M</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5728;session&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#x521B;&#x5EFA;&#x5185;&#x5B58;&#x5206;&#x914D;&#x5BF9;&#x8C61;&#xFF0C;&#x5728;&#x590D;&#x6742;&#x67E5;&#x8BE2;subQuery&#x4EE5;&#x53CA;distinctd&#x7684;&#x65F6;&#x5019;&#x4F7F;&#x7528;</sub></p><br></td>  
+<td><br>  
+<sub>&#x6B63;&#x6574;&#x6570;</sub><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>joinMemSize</sub></p><br></td>  
+<td><br>  
+<p><sub>session&#x4E2D;&#x7684;&#x590D;&#x6742;&#x67E5;&#x8BE2;join&#x9884;&#x7559;&#x5185;&#x5B58;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;4&#xFF0C;&#x5355;&#x4F4D;M</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5728;session&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#x521B;&#x5EFA;&#x5185;&#x5B58;&#x5206;&#x914D;&#x5BF9;&#x8C61;&#xFF0C;&#x5728;&#x590D;&#x6742;&#x67E5;&#x8BE2;join&#x4F7F;&#x7528;&#x5230;</sub></p><br></td>  
+<td><br>  
+<sub>&#x6B63;&#x6574;&#x6570;</sub><br></td>  
+</tr>  
+<tr>  
+<td rowspan="4"><sub>&#x5806;&#x5916;&#x5185;&#x5B58;&#x7BA1;&#x7406;</sub></td>  
+<td><br>  
+<p><sub>bufferPoolChunkSize</sub></p><br></td>  
+<td><sub>&#x5185;&#x5B58;&#x6C60;&#x4E2D;&#x5206;&#x914D;&#x7684;&#x6700;&#x5C0F;&#x7C92;&#x5EA6;</sub></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;4096<br>,&#x5355;&#x4F4D;&#x5B57;&#x8282;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5185;&#x5B58;&#x6C60;&#x4E2D;&#x5206;&#x914D;&#x7684;&#x6700;&#x5C0F;&#x7C92;&#x5EA6;&#xFF0C;&#x9700;&#x8981;&#x7684;&#x5927;&#x5C0F;&#x9664;&#x4EE5;&#x6B64;&#x7C92;&#x5EA6;&#xFF0C;&#x5411;&#x4E0A;&#x53D6;&#x6574;</sub></p><br></td>  
+<td><br>  
+<p><sub></sub></p><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>bufferPoolPageNumber</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9884;&#x5206;&#x914D;&#x5185;&#x5B58;&#x6C60;&#x9875;&#x6570;&#x91CF;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4; 0.8 &#xD7; MaxDirectMemorySize / bufferPoolPageSize(default 2M)</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5728;&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#x901A;&#x8FC7;&#x548C;bufferPoolPageSize&#x7684;&#x76F8;&#x4E58;&#x786E;&#x5B9A;&#x7F13;&#x51B2;&#x6C60;&#x6700;&#x540E;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x5185;&#x5B58;&#x914D;&#x7F6E;&#x5EFA;&#x8BAE;&#x89C1;<a href="1.04_wrapper.conf.md">1.4_wrapper.conf</a></sub></p><br></td>  
+<td><br>  
+<p><sub></sub></p><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>bufferPoolPageSize</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9884;&#x5206;&#x914D;&#x5185;&#x5B58;&#x6C60;&#x9875;&#x5927;&#x5C0F;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;512&#xD7;1024&#xD7;4<br>,&#x5355;&#x4F4D;&#x5B57;&#x8282;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5728;&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#x901A;&#x8FC7;&#x548C;bufferPoolPageNumbe&#x7684;&#x76F8;&#x4E58;&#x786E;&#x5B9A;&#x7F13;&#x51B2;&#x6C60;&#x6700;&#x540E;&#x7684;&#x5927;&#x5C0F;,</sub></p><br>  
+<p><sub>  
+<strong><em>&#x6CE8;&#x610F;&#xFF1A;&#x865A;&#x62DF;&#x673A;&#x53C2;&#x6570;MaxDirectMemorySize(&#x89C1;<a href="1.04_wrapper.conf.md">1.4_wrapper.conf</a>)&#x9700;&#x8981;&#x5927;&#x4E8E;bufferPoolPageNumber * bufferPoolPageSize&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x89E6;&#x53D1;OOM </em></strong><em>  
+</em></sub></p><br></td>  
+<td><br>  
+<p><sub></sub></p><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>mappedFileSize</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6587;&#x4EF6;&#x6620;&#x5C04;&#x533A;&#x5355;&#x4E2A;&#x6587;&#x4EF6;&#x6700;&#x5927;&#x4F53;&#x79EF;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;1024&#xD7;1024&#xD7;64<br>,&#x5355;&#x4F4D;&#x5B57;&#x8282;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5728;&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#x6B64;&#x53C2;&#x6570;&#x786E;&#x5B9A;&#x6587;&#x4EF6;&#x6620;&#x5C04;&#x533A;&#x6700;&#x5927;&#x5BB9;&#x91CF;,&#x53C2;&#x89C1;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x7AE0;&#x8282;</sub></p><br>  
+<br></td>  
+<td><br>  
+<p><sub></sub></p><br></td>  
+</tr>  
+
+<tr>  
+<td rowspan="5">  
+<p><sub>&#x7EDF;&#x8BA1;&#x7BA1;&#x7406;</sub></p><br></td>  
+<td><br>  
+<p><sub>bufferUsagePercent</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x662F;&#x5426;&#x6E05;&#x7406;&#x5927;&#x7ED3;&#x679C;&#x96C6;&#x9608;&#x503C;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;80, &#x5355;&#x4F4D;&#x767E;&#x5206;&#x53F7;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;resultSetMapClear&#x4F7F;&#x7528;&#xFF0C;&#x5468;&#x671F;clearBigSQLResultSetMapMs&#xFF0C;&#x5B9A;&#x65F6;&#x6E05;&#x7406;&#x7EDF;&#x8BA1;&#x7684;&#x7ED3;&#x679C;&#x96C6;&#xFF0C;&#x5F53;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x65F6;&#x53D1;&#x73B0;&#x7ED3;&#x679C;&#x96C6;&#x7EDF;&#x8BA1;&#x8D85;&#x8FC7;&#x9600;&#x503C;&#xFF0C;&#x89E6;&#x53D1;&#x6E05;&#x7406;&#x7ED3;&#x679C;&#x96C6;&#x7684;&#x884C;&#x4E3A;</sub></p>  
+<br></td>  
+<td><br>  
+<p><sub>0-100</sub></p><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>useSqlStat</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x662F;&#x5426;&#x542F;&#x7528;SQL&#x7EDF;&#x8BA1;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;1/&#x5355;&#x4F4D;&#x65E0;</sub></p><br>  
+<p><sub>&#xA0;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x542F;&#x7528;&#x4E4B;&#x540E;&#x4F1A;&#x5BF9;&#x4E8E;&#x4E0B;&#x53D1;&#x7684;&#x67E5;&#x8BE2;&#x8FDB;&#x884C;SQL&#x7684;&#x7EDF;&#x8BA1;&#xFF0C;&#x5206;&#x522B;&#x6309;&#x7167;&#x7528;&#x6237;&#x3001;&#x8868;&#x683C;&#x3001;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x8FDB;&#x884C;&#x5B58;&#x653E;&#x5728;&#x5185;&#x5B58;&#x4E2D;</sub></p>  
+<p><sub>&#x5E76;&#x4E14;&#x5F00;&#x542F;&#x4E4B;&#x540E;&#x4F1A;&#x968F;&#x4E4B;&#x5F00;&#x542F;recycleSqlStat&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x4EE5;&#x56FA;&#x5B9A;5&#x79D2;&#x4E00;&#x6B21;&#x7684;&#x5468;&#x671F;&#x56DE;&#x6536;SQL&#x7EDF;&#x8BA1;&#x7684;&#x7ED3;&#x679C;</sub></p><br></td>  
+<td><br>  
+<p><sub>1-&#x662F;0-&#x5426;</sub></p><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>clearBigSQLResultSetMapMs</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5B9A;&#x671F;&#x5927;&#x7ED3;&#x679C;&#x6E05;&#x7406;&#x65F6;&#x95F4;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;600&#xD7;1000<br>,&#x5355;&#x4F4D;&#x6BEB;&#x79D2;</sub></p><em><br> </em></td>  
+<td><br>  
+<p><sub>&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;resultSetMapClear&#x7684;&#x6267;&#x884C;&#x5468;&#x671F;&#xFF0C;&#x5B9A;&#x65F6;&#x6E05;&#x7406;&#x8BB0;&#x5F55;&#x7684;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x96C6;</sub></p><br>  
+<p><sub></sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6B63;&#x6574;&#x6570;</sub></p><br></td>  
+</tr>  
+<tr>  
+<td><sub>sqlRecordCount</sub></td>  
+<td><sub>&#x6162;&#x67E5;&#x8BE2;&#x8BB0;&#x5F55;&#x9608;&#x503C;</sub></td>  
+<td><sub>&#x9ED8;&#x8BA4;10<br>,&#x5355;&#x4F4D;&#x6761;</sub></td>  
+<td><sub>&#x5728;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;recycleSqlStat&#x4E2D;&#x4F1A;&#x8FDB;&#x884C;sql&#x8BB0;&#x5F55;&#x7684;&#x6E05;&#x7406;,&#x5F53;&#x53D1;&#x73B0;&#x8BB0;&#x5F55;&#x7684;&#x6162;&#x67E5;&#x8BE2;SQL&#x6570;&#x91CF;&#x8D85;&#x8FC7;&#x9600;&#x503C;&#x65F6;&#xFF0C;&#x4F1A;&#x4EC5;&#x4FDD;&#x7559;&#x9600;&#x503C;&#x6570;&#x91CF;&#x4E2A;&#x5143;&#x7D20;</sub>  
+</td>  
+<td><br>  
+<p><sub>&#x6B63;&#x6574;&#x6570;</sub></p><br></td>  
+</tr>  
+<tr>  
+<td><sub>maxResultSet</sub></td>  
+<td><sub>&#x5927;&#x7ED3;&#x679C;&#x96C6;&#x9608;&#x503C;</sub></td>  
+<td><sub>&#x9ED8;&#x8BA4;512&#xD7;1024 <br>,&#x5355;&#x4F4D;&#x5B57;&#x8282;</sub></td>  
+<td><sub>&#x5F53;&#x67E5;&#x8BE2;&#x7684;&#x7ED3;&#x679C;&#x96C6;&#x8D85;&#x8FC7;&#x8FD9;&#x4E2A;&#x9600;&#x503C;&#x65F6;&#xFF0C;&#x67E5;&#x8BE2;&#x7684;SQL&#x548C;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x96C6;&#x7684;&#x5927;&#x5C0F;&#x624D;&#x4F1A;&#x88AB;&#x8BB0;&#x5F55;&#x5230;&#x7ED3;&#x679C;&#x96C6;&#x7EDF;&#x8BA1;&#x91CC;&#x9762;</sub></td>  
+<td><br>  
+<p><sub>&#x6B63;&#x6574;&#x6570;</sub></p><br></td>  
+</tr>  
+
+
+<tr>  
+<td rowspan="4"><sub>&#x666E;&#x901A;&#x4E8B;&#x52A1;&#x65E5;&#x5FD7;&#x76F8;&#x5173;</sub></td>  
+<td><br>  
+<p><sub>recordTxn</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x4E8B;&#x52A1;log&#x8BB0;&#x5F55;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;0</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5728;&#x521D;&#x59CB;&#x5316;&#x670D;&#x52A1;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x5176;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x5C06;&#x4E8B;&#x52A1;&#x7684;log&#x5199;&#x5230;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x7684;&#x6587;&#x4EF6;&#x4E2D;</sub></p><br></td>  
+<td><br>  
+<p><sub>1-&#x662F;&#xFF0C;0-&#x5426;</sub></p><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>transactionLogBaseDir</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x4E8B;&#x52A1;log&#x76EE;&#x5F55;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;&#x5F53;&#x524D;&#x8DEF;&#x5F84;/txlogs</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5F53;&#x5F00;&#x542F;&#x65E5;&#x5FD7;log&#x8BB0;&#x5F55;&#x65F6;&#xFF0C;&#x8BB0;&#x5F55;&#x6587;&#x4EF6;&#x4F1A;&#x88AB;&#x5B58;&#x653E;&#x5728;&#x5BF9;&#x5E94;&#x76EE;&#x5F55;&#x4E0B;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;</sub></p><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>transactionLogBaseName</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x4E8B;&#x52A1;log&#x6587;&#x4EF6;&#x540D;&#x79F0;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;server-tx</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x4E8B;&#x52A1;&#x8BB0;&#x5F55;&#x5B58;&#x50A8;&#x6587;&#x4EF6;&#x7684;&#x6587;&#x4EF6;&#x540D;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x7B26;&#x5408;&#x8FD0;&#x884C;&#x7CFB;&#x7EDF;<br>&#x6587;&#x4EF6;&#x7684;&#x547D;&#x540D;&#x89C4;&#x8303;</sub></p><br></td>  
+</tr>  
+<tr>  
+<td><sub>transactionRotateSize</sub></td>  
+<td><sub>&#x4E8B;&#x52A1;&#x65E5;&#x5FD7;&#x5355;&#x4E2A;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x3002;</sub></td>  
+<td><sub>&#x9ED8;&#x8BA4;16<br>,&#x5355;&#x4F4D;M</sub></td>  
+<td></td>  
+<td><br>  
+<p><sub>&#x6B63;&#x6574;&#x6570;</sub></p><br></td>  
+</tr>  
+
+<tr>  
+<td rowspan="5"><sub>XA &#x4E8B;&#x52A1;</sub></td>  
+<td><br>  
+<p><sub>xaRecoveryLogBaseDir</sub></p><br></td>  
+<td><br>  
+<p><sub>xa&#x7684;tm&#x65E5;&#x5FD7;&#x8DEF;&#x5F84;</sub></p><br></td>  
+<td><br>  
+<p><sub>dble&#x76EE;&#x5F55;/tmlogs/<span style="color: rgb(0,128,0);">&#xA0;</span></sub></p><br></td>  
+<td><sub>&#x6B64;&#x65E5;&#x5FD7;&#x6D89;&#x53CA;&#x5230;XA&#x4E8B;&#x52A1;&#x72B6;&#x6001;&#x7684;&#x8BB0;&#x5F55;&#xFF0C;&#x5E76;&#x4E14;&#x5728;Dble&#x610F;&#x5916;&#x91CD;&#x542F;&#x4E4B;&#x540E;&#x9700;&#x8981;&#x4ECE;&#x91CC;&#x9762;&#x83B7;&#x53D6;&#x91CD;&#x542F;&#x4E4B;&#x524D;&#x7684;xa&#x4E8B;&#x52A1;&#x72B6;&#x6001;&#xFF0C;&#x5207;&#x52FF;&#x81EA;&#x884C;&#x4FEE;&#x6539;</sub></td>  
+<td><br>  
+<p><sub>&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;</sub></p><br></td>  
+</tr>  
+<tr>  
+<td><sub>xaRecoveryLogBaseName</sub></td>  
+<td><sub>xa&#x7684;tm&#x65E5;&#x5FD7;&#x540D;&#x79F0;</sub></td>  
+<td><sub>tmlog</sub></td>  
+<td>&#xA0;</td>  
+<td><br>  
+<p><sub>&#x7B26;&#x5408;&#x8FD0;&#x884C;&#x7CFB;&#x7EDF;<br>&#x6587;&#x4EF6;&#x7684;&#x547D;&#x540D;&#x89C4;&#x8303;</sub></p><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>xaSessionCheckPeriod</sub></p><br></td>  
+<td><br>  
+<p><sub>XA&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x5468;&#x671F;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;1000&#xFF0C; &#x5355;&#x4F4D;ms</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5728;server&#x5F00;&#x59CB;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x4EE5;&#x6B64;&#x53C2;&#x6570;&#x4E3A;&#x6267;&#x884C;&#x5468;&#x671F;</sub></p><br>  
+<p><sub>&#xFF08;&#x6CE8;&#xFF1A;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x5FC5;&#x5B9A;&#x4F1A;&#x88AB;&#x6CE8;&#x518C;&#xFF09;</sub></p><br>  
+<p><sub>&#x5982;&#x679C;&#x6709;&#x5C1D;&#x8BD5;&#x591A;&#x6B21;&#x6CA1;&#x6709;&#x6210;&#x529F;&#x63D0;&#x4EA4;&#x7684;session&#x5728;&#x4E4B;&#x540E;&#x7684;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x4F1A;&#x88AB;&#x91CD;&#x590D;&#x63D0;&#x4EA4;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6B63;&#x6574;&#x6570;</sub></p><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>xaLogCleanPeriod</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5B9A;&#x65F6;XAlog&#x6E05;&#x9664;&#x5468;&#x671F;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;1000&#xFF0C; &#x5355;&#x4F4D;ms</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5728;server&#x5F00;&#x59CB;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x6839;&#x636E;&#x8FD9;&#x4E2A;&#x5468;&#x671F;&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;</sub></p><br>  
+<p><sub>&#xFF08;&#x6CE8;&#xFF1A;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x5FC5;&#x5B9A;&#x4F1A;&#x88AB;&#x6CE8;&#x518C;&#xFF09;</sub></p><br>  
+<p><sub>&#x5B9A;&#x65F6;&#x6E05;XA log&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x5C06;&#x5DF2;&#x7ECF;&#x56DE;&#x6EDA;&#x548C;&#x63D0;&#x4EA4;&#x6210;&#x529F;&#x7684;&#x90E8;&#x5206;&#x4ECE;&#x8BB0;&#x5F55;&#x4E2D;&#x5220;&#x9664;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6B63;&#x6574;&#x6570;</sub></p><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>xaRetryCount</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x540E;&#x53F0;&#x91CD;&#x8BD5;XA&#x6B21;&#x6570;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;0</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x540E;&#x53F0;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x91CD;&#x8BD5;XA&#x6B21;&#x6570;&#xFF0C;0&#x4E3A;&#x65E0;&#x9650;&#x91CD;&#x8BD5;&#xFF0C;&#x8FBE;&#x5230;&#x8BBE;&#x5B9A;&#x6B21;&#x6570;&#x540E;&#xFF0C;&#x505C;&#x6B62;&#x91CD;&#x8BD5;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6B63;&#x6574;&#x6570;</sub></p><br></td>  
+</tr>  
+
+<tr>  
+<td rowspan="2"><sub>&#x89C6;&#x56FE;&#x76F8;&#x5173;&#x53C2;&#x6570;</sub></td>  
+<td><br>  
+<p><sub>viewPersistenceConfBaseDir</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x89C6;&#x56FE;&#x8BB0;&#x5F55;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;</sub></p><br></td>  
+<td><br>  
+<p><sub>dble&#x76EE;&#x5F55;/viewConf</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x89C6;&#x56FE;&#x672C;&#x5730;&#x8BB0;&#x5F55;&#x6587;&#x4EF6;&#x7684;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;,&#x96C6;&#x7FA4;&#x914D;&#x7F6E;&#x65F6;&#x65E0;&#x610F;&#x4E49;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;</sub></p><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>viewPersistenceConfBaseName</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x89C6;&#x56FE;&#x8BB0;&#x5F55;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x540D;</sub></p><br></td>  
+<td><br>  
+<p><sub>viewJson</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x89C6;&#x56FE;&#x8BB0;&#x5F55;&#x7684;&#x6587;&#x4EF6;&#x6587;&#x4EF6;&#x540D;,&#x96C6;&#x7FA4;&#x914D;&#x7F6E;&#x65F6;&#x65E0;&#x610F;&#x4E49;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x7B26;&#x5408;&#x8FD0;&#x884C;&#x7CFB;&#x7EDF;<br>&#x6587;&#x4EF6;&#x7684;&#x547D;&#x540D;&#x89C4;&#x8303;</sub></p><br></td>  
+</tr>  
+
+<tr>  
+<td rowspan="3"><sub>&#x961F;&#x5217;&#x5927;&#x5C0F;&#x53C2;&#x6570;</sub></td>  
+<td><sub>joinQueueSize</sub></td>  
+<td><sub>join&#x65F6;,&#x5DE6;&#x53F3;&#x7ED3;&#x70B9;&#x7684;&#x6682;&#x5B58;&#x6570;&#x636E;&#x884C;&#x6570;&#x7684;&#x961F;&#x5217;&#x5927;&#x5C0F;</sub></td>  
+<td><sub>1024</sub></td>  
+<td><sub>&#x5F53;&#x884C;&#x6570;&#x5927;&#x4E8E;&#x6B64;&#x503C;&#x800C;&#x53C8;&#x6CA1;&#x6709;&#x53CA;&#x65F6;&#x88AB;&#x6D88;&#x8D39;&#x8005;&#x6D88;&#x8D39;&#x6389;&#xFF0C;&#x5C06;&#x4F1A;&#x963B;&#x585E;&#xFF0C;&#x76EE;&#x7684;&#x662F;&#x9632;&#x6B62;&#x63A5;&#x6536;&#x6570;&#x636E;&#x91CF;&#x592A;&#x5927;&#xFF0C;&#x5806;&#x79EF;&#x5728;&#x5185;&#x5B58;&#x4E2D;</sub></td>  
+<td><sub>&#x6B63;&#x6574;&#x6570;</sub></td>  
+</tr>  
+<tr>  
+<td><sub>mergeQueueSize</sub></td>  
+<td><sub>merge&#x65F6;,&#x5DE6;&#x53F3;&#x7ED3;&#x70B9;&#x7684;&#x6682;&#x5B58;&#x6570;&#x636E;&#x884C;&#x6570;&#x7684;&#x961F;&#x5217;&#x5927;&#x5C0F;</sub></td>  
+<td><sub>1024</sub></td>  
+<td><sub>&#x5F53;&#x884C;&#x6570;&#x5927;&#x4E8E;&#x6B64;&#x503C;&#x800C;&#x53C8;&#x6CA1;&#x6709;&#x53CA;&#x65F6;&#x88AB;&#x6D88;&#x8D39;&#x8005;&#x6D88;&#x8D39;&#x6389;&#xFF0C;&#x5C06;&#x4F1A;&#x963B;&#x585E;&#xFF0C;&#x76EE;&#x7684;&#x662F;&#x9632;&#x6B62;&#x63A5;&#x6536;&#x6570;&#x636E;&#x91CF;&#x592A;&#x5927;&#xFF0C;&#x5806;&#x79EF;&#x5728;&#x5185;&#x5B58;&#x4E2D;</sub></td>  
+<td><sub>&#x6B63;&#x6574;&#x6570;</sub></td>  
+</tr>  
+<tr>  
+<td><sub>orderByQueueSize</sub></td>  
+<td><sub>&#x6392;&#x5E8F;&#x65F6;&#xFF0C;&#x65F6;,&#x5DE6;&#x53F3;&#x7ED3;&#x70B9;&#x7684;&#x6682;&#x5B58;&#x6570;&#x636E;&#x884C;&#x6570;&#x7684;&#x961F;&#x5217;&#x5927;&#x5C0F;</sub></td>  
+<td><sub>1024</sub></td>  
+<td><sub>&#x5F53;&#x884C;&#x6570;&#x5927;&#x4E8E;&#x6B64;&#x503C;&#x800C;&#x53C8;&#x6CA1;&#x6709;&#x53CA;&#x65F6;&#x88AB;&#x6D88;&#x8D39;&#x8005;&#x6D88;&#x8D39;&#x6389;&#xFF0C;&#x5C06;&#x4F1A;&#x963B;&#x585E;&#xFF0C;&#x76EE;&#x7684;&#x662F;&#x9632;&#x6B62;&#x63A5;&#x6536;&#x6570;&#x636E;&#x91CF;&#x592A;&#x5927;&#xFF0C;&#x5806;&#x79EF;&#x5728;&#x5185;&#x5B58;&#x4E2D;</sub></td>  
+<td><sub>&#x6B63;&#x6574;&#x6570;</sub></td>  
+</tr>  
+<tr>  
+<td rowspan="3"><sub>&#x4F7F;&#x7528;Nest Loop&#x4F18;&#x5316;</sub></td>  
+<td><sub>useJoinStrategy</sub></td>  
+<td><sub>&#x662F;&#x5426;&#x4F7F;&#x7528;nest loop &#x4F18;&#x5316;</sub></td>  
+<td><sub>&#x9ED8;&#x8BA4;&#x4E0D;&#x4F7F;&#x7528;</sub></td>  
+<td><sub>&#x5F00;&#x542F;&#x4E4B;&#x540E;&#x4F1A;&#x5C1D;&#x8BD5;&#x5224;&#x65AD;join&#x4E24;&#x8FB9;&#x7684;where&#x6765;&#x91CD;&#x65B0;&#x8C03;&#x6574;&#x67E5;&#x8BE2;SQL&#x4E0B;&#x53D1;&#x7684;&#x987A;&#x5E8F;</sub></td>  
+<td><sub>true &#x5F00;&#x542F;<br>false &#x4E0D;&#x5F00;&#x542F;</sub></td>  
+</tr>  
+<tr>  
+<td><sub>nestLoopConnSize</sub></td>  
+<td><sub>&#x4E34;&#x65F6;&#x8868;&#x9608;&#x503C;</sub></td>  
+<td><sub>&#x9ED8;&#x8BA4;4</sub></td>  
+<td rowspan="2"><br><sub>&#x82E5;&#x4E34;&#x65F6;&#x8868;&#x884C;&#x6570;&#x5927;&#x4E8E;&#x8FD9;&#x4E24;&#x4E2A;&#x503C;&#x4E58;&#x79EF;&#xFF0C;&#x5219;&#x62A5;&#x544A;&#x9519;&#x8BEF;</sub></td>  
+<td rowspan="2"><br><sub>&#x6B63;&#x6574;&#x6570;</sub></td>  
+</tr>  
+<tr>  
+<td><sub>nestLoopRowsSize</sub></td>  
+<td><sub>&#x4E34;&#x65F6;&#x8868;&#x9608;&#x503C;</sub></td>  
+<td><sub>&#x9ED8;&#x8BA4;2000</sub></td>  
+</tr>  
+<tr>  
+<td rowspan="6"><sub>&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x76F8;&#x5173;&#x914D;&#x7F6E;</sub></td>  
+<td><br>  
+<p><sub>enableSlowLog</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x5F00;&#x5173;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;&#x4E3A;0&#xFF0C;&#x5173;&#x95ED;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x5F00;&#x5173;</sub></p><br></td>  
+<td><br>  
+<sub>0&#x6216;&#x8005;1</sub><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>slowLogBaseDir</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x5B58;&#x50A8;&#x6587;&#x4EF6;&#x5939;</sub></p><br></td>  
+<td><br>  
+<p><sub>dble&#x6839;&#x76EE;&#x5F55;/slowlogs</sub></p><em><br> </em></td>  
+<td><br>  
+<p><sub>&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x5B58;&#x50A8;&#x6587;&#x4EF6;&#x5939;</sub></p><br></td>  
+<td><br>  
+<sub>&#x6587;&#x4EF6;&#x5939;&#x8DEF;&#x5F84;</sub><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>slowLogBaseName</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x5B58;&#x50A8;&#x6587;&#x4EF6;&#x540D;&#x524D;&#x7F00;</sub></p><br></td>  
+<td><br>  
+<p><sub>slow-query</sub></p><em><br> </em></td>  
+<td><br>  
+<p><sub>&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x5B58;&#x50A8;&#x6587;&#x4EF6;&#x540D;&#x524D;&#x7F00;(&#x540E;&#x7F00;&#x540D;&#x662F;.log)</sub></p><br></td>  
+<td><br>  
+<sub>&#x5408;&#x6CD5;&#x6587;&#x4EF6;&#x540D;</sub><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>flushSlowLogPeriod</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x65E5;&#x5FD7;&#x5237;&#x76D8;&#x5468;&#x671F;&#xFF0C;&#x5355;&#x4F4D;&#x79D2;</sub></p><br></td>  
+<td><br>  
+<p><sub>1</sub></p><em><br> </em></td>  
+<td><br>  
+<p><sub>&#x65E5;&#x5FD7;&#x5237;&#x76D8;&#x5468;&#x671F;&#xFF0C;&#x6BCF;&#x9694;&#x8FD9;&#x4E2A;&#x5468;&#x671F;&#xFF0C;&#x4F1A;&#x5F3A;&#x5236;&#x5C06;&#x5185;&#x5B58;&#x6570;&#x636E;&#x5237;&#x5165;&#x78C1;&#x76D8;</sub></p><br></td>  
+<td><br>  
+<sub>&#x6B63;&#x6574;&#x6570;</sub><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>flushSlowLogSize</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x65E5;&#x5FD7;&#x5237;&#x76D8;&#x6761;&#x6570;&#x9608;&#x503C;</sub></p><br></td>  
+<td><br>  
+<p><sub>1000</sub></p><em><br> </em></td>  
+<td><br>  
+<p><sub>&#x65E5;&#x5FD7;&#x5237;&#x76D8;&#x6761;&#x6570;&#x9608;&#x503C;&#xFF0C;&#x5185;&#x5B58;&#x4E2D;&#x6BCF;&#x6B21;&#x5199;&#x51FA;&#x8FD9;&#x4E48;&#x591A;&#x6761;&#x65E5;&#x5FD7;&#xFF0C;&#x4F1A;&#x5F3A;&#x5236;&#x5237;&#x76D8;1&#x6B21;</sub></p><br></td>  
+<td><br>  
+<sub>&#x6B63;&#x6574;&#x6570;</sub><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>sqlSlowTime</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6162;&#x65E5;&#x5FD7;&#x65F6;&#x95F4;&#x9608;&#x503C;&#xFF0C;&#x5355;&#x4F4D;&#x6BEB;&#x79D2;</sub></p><br></td>  
+<td><br>  
+<p><sub>100</sub></p><em><br> </em></td>  
+<td><br>  
+<p><sub>&#x6162;&#x65E5;&#x5FD7;&#x65F6;&#x95F4;&#x9608;&#x503C;&#xFF0C;&#x5927;&#x4E8E;&#x6B64;&#x65F6;&#x95F4;&#x7684;&#x67E5;&#x8BE2;&#x4F1A;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;</sub></p><br></td>  
+<td><br>  
+<sub>&#x6B63;&#x6574;&#x6570;</sub><br></td>  
+</tr>  
+<tr>  
+<td rowspan="2"><sub>load data &#x76F8;&#x5173;&#x914D;&#x7F6E;</sub></td>  
+<td><br>  
+<p><sub>maxCharsPerColumn</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6BCF;&#x5217;&#x6240;&#x5141;&#x8BB8;&#x6700;&#x5927;&#x5B57;&#x7B26;&#x6570;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;&#x4E3A;65535</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6BCF;&#x884C;&#x6240;&#x5141;&#x8BB8;&#x6700;&#x5927;&#x5B57;&#x7B26;&#x6570;</sub></p><br></td>  
+<td><br>  
+<sub>&#x6B63;&#x6574;&#x6570;</sub><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>maxRowSizeToFile</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9700;&#x8981;&#x6301;&#x4E45;&#x5316;&#x7684;&#x6700;&#x5927;&#x884C;&#x6570;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;&#x4E3A;10000</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5F53;load data&#x7684;&#x6570;&#x636E;&#x884C;&#x6570;&#x8D85;&#x8FC7;&#x9608;&#x503C;&#x540E;&#xFF0C;&#x4F1A;&#x5C06;&#x6570;&#x636E;&#x4FDD;&#x5B58;&#x5728;&#x6587;&#x4EF6;&#x4E2D;&#x4EE5;&#x9632;OOM</sub></p><br></td>  
+<td><br>  
+<sub>&#x6B63;&#x6574;&#x6570;</sub><br></td>  
+</tr>  
+
+<tr>  
+<td rowspan="3">  
+<sub>&#x6D41;&#x91CF;&#x63A7;&#x5236;&#x76F8;&#x5173;&#x53C2;&#x6570;</sub></td>  
+<td><br>  
+<p><sub>enableFlowControl</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x662F;&#x5426;&#x542F;&#x7528;&#x6D41;&#x91CF;&#x63A7;&#x5236;&#xFF0C;true/false</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;&#x4E3A;false</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5177;&#x4F53;&#x6D41;&#x91CF;&#x63A7;&#x5236;&#x8BF7;&#x53C2;&#x89C1;&#x76F8;&#x5173;&#x529F;&#x80FD;&#x63CF;&#x8FF0;&#x7AE0;&#x8282;</sub></p><br></td>  
+<td><br>  
+<sub>true/false</sub><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>flowControlStartThreshold</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6D41;&#x91CF;&#x63A7;&#x5236;&#x89E6;&#x53D1;&#x961F;&#x5217;&#x957F;&#x5EA6;&#x9608;&#x503C;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;&#x4E3A;4096</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5F53;&#x90E8;&#x5206;&#x8FDE;&#x63A5;&#x7684;&#x5199;&#x51FA;&#x961F;&#x5217;&#x8D85;&#x51FA;&#x9608;&#x503C;&#x65F6;&#x89E6;&#x53D1;&#x6D41;&#x91CF;&#x63A7;&#x5236;</sub></p><br></td>  
+<td><br>  
+<sub>&#x6B63;&#x6574;&#x6570;</sub><br></td>  
+</tr>  
+<tr>  
+<td><br>  
+<p><sub>flowControlStopThreshold</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x6D41;&#x91CF;&#x63A7;&#x5236;&#x53D6;&#x6D88;&#x961F;&#x5217;&#x957F;&#x5EA6;&#x9608;&#x503C;</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x9ED8;&#x8BA4;&#x4E3A;256</sub></p><br></td>  
+<td><br>  
+<p><sub>&#x5F53;&#x6D41;&#x91CF;&#x63A7;&#x5236;&#x7684;&#x8FDE;&#x63A5;&#x5199;&#x51FA;&#x961F;&#x5217;&#x957F;&#x5EA6;&#x5C0F;&#x4E8E;&#x9608;&#x503C;&#x53D6;&#x6D88;&#x6D41;&#x91CF;&#x63A7;&#x5236;</sub></p><br></td>  
+<td><br>  
+<sub>&#x6B63;&#x6574;&#x6570;</sub><br></td>  
+</tr>  
+
+</tbody>  
+</table>   
+
+
+
+<h3 id="123-bootstrapdynamiccnf">1.2.3 bootstrap.dynamic.cnf</h3>
+<p>&#x6709;&#x4E9B;&#x53C2;&#x6570;&#x662F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7BA1;&#x7406;&#x547D;&#x4EE4;&#x70ED;&#x751F;&#x6548;&#x7684;&#xFF0C;&#x8FD9;&#x90E8;&#x5206;&#x53C2;&#x6570;&#x4F1A;&#x5199;&#x5230;bootstrap.dynamic.cnf&#x4E2D;&#xFF0C;&#x5F53;dble&#x91CD;&#x542F;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x7528;&#x5185;&#x90E8;&#x7684;&#x503C;&#x66FF;&#x6362;bootstrap.cnf&#x4E2D;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#xFF0C;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x662F;&#xFF1A;<br>enableAlert<br>enableSlowLog<br>flushSlowLogPeriod<br>flushSlowLogSize<br>sqlSlowTime<br>enableFlowControl<br>flowControlStartThreshold<br>flowControlStopThreshold  </p>
+<h3 id="124-&#x914D;&#x7F6E;&#x5B9E;&#x4F8B;">1.2.4 &#x914D;&#x7F6E;&#x5B9E;&#x4F8B;</h3>
+<pre><code>#encoding=UTF-8
+-agentlib:jdwp=transport=dt_socket,server=y,address=8088,suspend=n
+-server
+-XX:+AggressiveOpts
+-Dfile.encoding=UTF-8
+-Dcom.sun.management.jmxremote
+-Dcom.sun.management.jmxremote.port=1984
+-Dcom.sun.management.jmxremote.authenticate=false
+-Dcom.sun.management.jmxremote.ssl=false
+-Dcom.sun.management.jmxremote.host=127.0.0.1
+-Xmx4G
+-Xms1G
+-XX:MaxDirectMemorySize=2G
+#  base config
+-DhomePath=.
+-DinstanceName=1
+# valid for sequenceHandlerType=2 or 3
+-DinstanceId=1
+-DserverId=xxx1
+#-DbindIp=0.0.0.0
+#-DserverPort=8066
+#-DmanagerPort=9066
+#-DmaxCon=1024
+#-Dprocessors=4
+#-DbackendProcessors=12
+#-DprocessorExecutor=4
+#-DbackendProcessorExecutor=12
+#-DcomplexExecutor=8
+#-DwriteToBackendExecutor=4
+
+
+-DfakeMySQLVersion=5.7.11
+
+# serverBacklog size,default 2048
+-DserverBacklog=2048
+
+#-DusePerformanceMode=0
+# if need out HA
+-DuseOuterHa=true
+
+# connection
+#-Dcharset=utf8mb4
+-DmaxPacketSize=167772160
+-DtxIsolation=2
+#-Dautocommit=1
+
+# option
+#-DuseCompression=1
+-DusingAIO=0
+
+-DuseThreadUsageStat=1
+#  query time cost statistics
+#-DuseCostTimeStat=0
+#-DmaxCostStatSize=100
+#-DcostSamplePercent=1
+
+
+# consistency
+#  check the consistency of table structure between nodes,default not
+-DcheckTableConsistency=0
+#  check period, he default period is 60000 milliseconds
+-DcheckTableConsistencyPeriod=60000
+
+#  processor check conn
+-DprocessorCheckPeriod=1000
+-DsqlExecuteTimeout=3000
+-DidleTimeout=1800000
+
+
+#-DbackSocket unit:bytes
+#-DbackSocketSoRcvbuf=4194304
+#-DbackSocketSoSndbuf=1048576
+#-DbackSocketNoDelay=1
+
+#  frontSocket
+#-DfrontSocketSoRcvbuf=1048576
+#-DfrontSocketSoSndbuf=4194304
+#-DfrontSocketNoDelay=1
+
+
+#  query memory used for per session,unit is M
+-DotherMemSize=4
+-DorderMemSize=4
+-DjoinMemSize=4
+
+
+#  off Heap unit:bytes
+-DbufferPoolChunkSize=32767
+-DbufferPoolPageNumber=512
+-DbufferPoolPageSize=2097152
+#-DmappedFileSize=2097152
+
+
+#  sql statistics
+#  1 means use SQL statistics, 0 means not
+-DuseSqlStat=1
+#-DbufferUsagePercent=80
+-DclearBigSQLResultSetMapMs=600000
+#-DsqlRecordCount=10
+#-DmaxResultSet=524288
+
+
+#  transaction log
+#  1 enable record the transaction log, 0 disable ,the unit of transactionRotateSize is M
+-DrecordTxn=0
+#-DtransactionLogBaseDir=/txlogs
+#-DtransactionLogBaseName=server-tx
+#-DtransactionRotateSize=16
+#  XA transaction
+#  use XA transaction ,if the mysql service crash,the unfinished XA commit/rollback will retry for several times , it is the check period for ,default is 1000 milliseconds
+-DxaSessionCheckPeriod=1000
+#  use XA transaction ,the finished XA log will removed. the default period is 1000 milliseconds
+-DxaLogCleanPeriod=1000
+#  XA Recovery Log path
+# -DxaRecoveryLogBaseDir=/tmlogs/
+#  XA Recovery Log name
+#-DxaRecoveryLogBaseName=tmlog
+#  XA Retry count, retry times in backend, 0 means always retry until success
+#-DxaRetryCount=0
+
+#-DviewPersistenceConfBaseDir=/viewPath
+#-viewPersistenceConfBaseName=viewJson
+
+#  for join tmp results
+#-DmergeQueueSize=1024
+#-DorderByQueueSize=1024
+#-DjoinQueueSize=1024
+
+
+#  true is use JoinStrategy, default false
+#-DuseJoinStrategy=true
+-DnestLoopConnSize=4
+-DnestLoopRowsSize=2000
+
+
+#  if enable the slow query log
+-DenableSlowLog=1
+#  the slow query log location
+#-DslowLogBaseDir=./slowlogs
+#-DslowLogBaseName=slow-query
+#  the max period for flushing the slow query log from memory to disk  after last time , unit is second
+-DflushSlowLogPeriod=1
+#  the max records for flushing the slow query log from memory to disk after last time
+-DflushSlowLogSize=1000
+#  the threshold for judging if the query is slow , unit is millisecond
+-DsqlSlowTime=100
+
+#  used for load data,maxCharsPerColumn means max chars length for per column when load data
+#-DmaxCharsPerColumn=65535
+#  used for load data, because dble need save to disk if loading file contains large size
+#-DmaxRowSizeToFile=10000
+
+#enableFlowControl=false
+#flowControlStartThreshold=4096
+#flowControlStopThreshold=256
+</code></pre><footer class="page-footer"><span class="copyright">Copyright (C) 2016-2020 ActionTech. all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Last Update:
+2021-10-09 01:43:51
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1.01_cluster.cnf.html" class="navigation navigation-prev " aria-label="Previous page: 1.1 cluster.cnf">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="1.03_user.xml.html" class="navigation navigation-next " aria-label="Next page: 1.3 user.xml">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.2 bootstrap.cnf","level":"1.3.2","depth":2,"next":{"title":"1.3 user.xml","level":"1.3.3","depth":2,"path":"1.config_file/1.03_user.xml.md","ref":"1.config_file/1.03_user.xml.md","articles":[]},"previous":{"title":"1.1 cluster.cnf","level":"1.3.1","depth":2,"path":"1.config_file/1.01_cluster.cnf.md","ref":"1.config_file/1.01_cluster.cnf.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","splitter","back-to-top-button","github","popup","tbfed-pagefooter","versions-select"],"styles":{"website":"website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright (C) 2016-2020 ActionTech.","modify_label":"Last Update:","modify_format":"YYYY-MM-DD HH:mm:ss"},"plugins":["yahei","katex","-search"],"github":{"url":"https://github.com/actiontech/dble"},"splitter":{},"search":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"versions-select":{"type":"branches"},"fontsettings":{"theme":"sepia","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"versions":{"gitbookConfigURL":"https://raw.githubusercontent.com/actiontech/dble-docs-cn/master/book.json","options":[{"value":"https://actiontech.github.io/dble-docs-cn/","text":"Version 3.21.06.0"},{"value":"https://actiontech.github.io/dble-docs-cn/history/develop/","text":"Version develop"},{"value":"https://actiontech.github.io/dble-docs-cn/history/3.20.07.0/","text":"Version 3.20.07.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a2","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dble manual","gitbook":"*"},"file":{"path":"1.config_file/1.02_bootstrap.cnf.md","mtime":"2021-10-09T01:43:51.333Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-09T01:47:59.872Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-versions-select/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

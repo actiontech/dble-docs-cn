@@ -1,0 +1,64 @@
+dist: trusty
+env:
+ global:
+   - GH_REF: github.com/actiontech/dble-docs-cn
+   - GH_USER: actiontech-bot
+   - GH_MAIL: github@actionsky.com
+
+# 指定环境语言
+language: node_js
+# 指定sudo权限
+sudo: required
+# 指定node版本
+node_js: stable
+# 指定缓存模块，缓存可以加速编译
+cache:
+  directories:
+    - node_modules
+
+# 邮件通知
+notifications:
+  email:
+    recipients:
+      - yanhuqing@actionsky.com
+    on_success: never # default: change
+    on_failure: always # default: always
+
+# 构建的分支
+branches:
+  only:
+    - master 
+
+# 调整时区
+before_install:
+  - export TZ='Asia/Shanghai'
+  - sudo apt-get install -y calibre fonts-arphic-gbsn00lp
+ 
+# 安装环境
+install:
+  - npm install -g gitbook-cli 
+  - npm install gitbook-plugin-yahei
+  - gitbook install
+  
+# gitbook生成静态文件
+script:
+  - gitbook build
+  - cd ./_book
+  - git init
+  - git config user.name "${GH_USER}"
+  - git config user.email "${GH_MAIL}"
+  - git add .
+  - git commit -m "Update GitBook By TravisCI With Build $TRAVIS_BUILD_NUMBER"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages 
+  - cd .. 
+# pdf
+  - xvfb-run gitbook pdf ./ ./dble-manual.pdf
+  - mkdir pdf
+  - cp dble-manual.pdf ./pdf/
+  - cd ./pdf
+  - git init
+  - git config user.name "${GH_USER}"
+  - git config user.email "${GH_MAIL}"
+  - git add .
+  - git commit -m "Update GitBook By TravisCI With Build PDF $TRAVIS_BUILD_NUMBER"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:pdf 
