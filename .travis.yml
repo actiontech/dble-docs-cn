@@ -29,6 +29,7 @@ branches:
   only:
     - master 
     - develop
+    - /^[0-9]{1}.[0-9]{2}.[0-9]{2}.doc$/  #eg: 2.20.04.doc
 # 调整时区
 before_install:
   - export TZ='Asia/Shanghai'
@@ -55,3 +56,10 @@ deploy:
     script: bash ./deploy.sh master 1 ${GH_TOKEN} $TRAVIS_BUILD_NUMBER
     on:
       branch: master
+  #branch eg: 2.20.04.doc
+  - provider: script
+    skip_cleanup: true
+    script: bash ./deploy.sh $TRAVIS_BRANCH 1 ${GH_TOKEN} $TRAVIS_BUILD_NUMBER
+    on:
+      all_branches: true
+      condition: $TRAVIS_BRANCH =~ ^[0-9]{1}.[0-9]{2}.[0-9]{2}.doc$
