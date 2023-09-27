@@ -11,6 +11,7 @@ GH_REF="github.com/actiontech/dble-docs-cn"
 GH_USER="actiontech-bot"
 GH_MAIL="github@actionsky.com"
 
+reg='^[0-9]{1}\.[0-9]{2}\.[0-9]{2}\.doc$' #eg: 2.20.04.doc
 if [ "$VERSION" = "master" ]; then
     # pdf
     # xvfb-run gitbook pdf ./ ./dble-manual.pdf
@@ -40,7 +41,7 @@ if [ "$VERSION" = "master" ]; then
         git commit -m "Update GitBook By TravisCI With Build $TRAVIS_BUILD_NUMBER"
         git push --force --quiet "https://${GH_TOKEN}@${GH_REF}.git" master:gh-pages 
     fi
-   
+
 elif [ "$VERSION" = "develop" ]; then
   # merge master—pages
     mkdir _master_book
@@ -66,6 +67,41 @@ elif [ "$VERSION" = "develop" ]; then
         git commit -m "Update GitBook By TravisCI With Build $TRAVIS_BUILD_NUMBER"
         git push --force --quiet "https://${GH_TOKEN}@${GH_REF}.git" master:develop-pages
     fi
-else 
+elif [[ "$VERSION" =~ $reg ]]; then
+    mkdir _old_book
+    cd ./_old_book
+    COMMAND_LINE="git clone -b history-pages https://${GH_REF}.git"
+    eval "$COMMAND_LINE"
+    rm -rf dble-docs-cn/$VERSION
+    cd ..
+    cp -R _book/ _old_book/dble-docs-cn/$VERSION
+    cd _old_book/dble-docs-cn/$VERSION
+    rm -rf .gitignore .travis.yml deploy.sh package-lock.json
+
+    cd ../../..
+    mkdir _master_book
+    cd ./_master_book
+    COMMAND_LINE="git clone -b gh-pages https://${GH_REF}.git"
+    eval "$COMMAND_LINE"
+    rm -rf dble-docs-cn/history/$VERSION/
+    cd ..
+    cp -R _book/ _master_book/dble-docs-cn/history/$VERSION/
+    cd _master_book/dble-docs-cn/history/$VERSION/
+    rm -rf .gitignore .travis.yml deploy.sh package-lock.json
+    cd ../../../..
+
+    ## push
+    if [ "$DEPLOY" = "1" ]; then
+        cd ./_old_book/dble-docs-cn ##history-pages
+        git add .
+        git commit -m "Update GitBook By TravisCI With Build $TRAVIS_BUILD_NUMBER"
+        git push --force --quiet "https://${GH_TOKEN}@${GH_REF}.git" history-pages:history-pages
+        cd ../../
+        cd ./_master_book/dble-docs-cn  ##gh-pages
+        git add .
+        git commit -m "Update GitBook By TravisCI With Build $TRAVIS_BUILD_NUMBER"
+        git push --force --quiet "https://${GH_TOKEN}@${GH_REF}.git" gh-pages:gh-pages
+    fi
+else
     echo "do nothing"
 fi
