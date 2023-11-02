@@ -11,13 +11,17 @@
 		"options": [
 		{
 		  "value": "https://actiontech.github.io/dble-docs-cn/",
-		  "text": "Version 3.23.04"
+		  "text": "Version 3.23.08"
 		},
 		{
 		  "value": "https://actiontech.github.io/dble-docs-cn/history/develop/",
 		  "text": "Version develop"
 		},
-		{
+  		{
+  		  "value": "https://actiontech.github.io/dble-docs-cn/history/3.23.04.doc/",
+  		  "text": "Version 3.23.04"
+  		},
+  		{
 		  "value": "https://actiontech.github.io/dble-docs-cn/history/3.22.11.doc/",
 		  "text": "Version 3.22.11"
 		},
