@@ -1,0 +1,6 @@
+/* fix https://github.com/GitbookIO/gitbook/issues/1626 */
+.markdown-section table {
+    table-layout: fixed;
+    display:block;
+    overflow-x: auto;
+}
