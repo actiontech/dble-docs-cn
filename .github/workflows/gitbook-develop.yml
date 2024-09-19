@@ -20,3 +20,6 @@ jobs:
         source_branch: develop             # clone source master
         publish_push_force: true
         publish_dir: /history/develop/
+        gitbook_pdf: true
+        gitbook_pdf_dir: /
+        gitbook_pdf_name: dble-manual
