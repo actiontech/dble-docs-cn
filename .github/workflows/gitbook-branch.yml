@@ -19,3 +19,6 @@ jobs:
         source_branch: ${{ github.ref_name }}  
         publish_push_force: true
         publish_dir: /history/${{ github.ref_name }}/
+        gitbook_pdf: true
+        gitbook_pdf_dir: /
+        gitbook_pdf_name: dble-manual
