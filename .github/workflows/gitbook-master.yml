@@ -17,7 +17,6 @@ jobs:
       with:                                # Just example, click above, use latest please 
         token: ${{ secrets.PUBLISH_TOKEN }}
         time_zone: Asia/Shanghai   # set time zone
-        source_dir: source         # clone from source
         source_branch: master             # clone source master 
         publish_push_force: true
         publish_remove_last_build: false
