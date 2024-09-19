@@ -10,7 +10,7 @@
 		"gitbookConfigURL": "https://raw.githubusercontent.com/actiontech/dble-docs-cn/master/book.json",
 		"options": [
 		{
-		  "value": "https://actiontech.github.io/dble-docs-cn/history/master/",
+		  "value": "https://actiontech.github.io/dble-docs-cn/docs/",
 		  "text": "Version 3.23.08"
 		},
 		{
