@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: zanderzhao/gitbook-action@v1.2.4 # https://github.com/ZanderZhao/gitbook-action/releases 
+      - uses: yanhuqing666/gitbook-action@1.2.5 # https://github.com/ZanderZhao/gitbook-action/releases 
         with:
           token: ${{ secrets.PUBLISH_TOKEN }}
           time_zone: Asia/Shanghai   # set time zone
@@ -22,4 +22,4 @@ jobs:
           gitbook_pdf_dir: /
           gitbook_pdf_name: dble-manual
           #font_install: sudo apt-get install fonts-noto-cjk ttf-mscorefonts-installer
-          prepare_install: bash chj-fonts.sh #sudo add-apt-repository universe && sudo apt update && sudo apt-get install calibre fonts-arphic-gbsn00lp
+          #prepare_install: bash chj-fonts.sh #sudo add-apt-repository universe && sudo apt update && sudo apt-get install calibre fonts-arphic-gbsn00lp
