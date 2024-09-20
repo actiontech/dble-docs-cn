@@ -23,5 +23,5 @@ jobs:
         gitbook_pdf: true
         gitbook_pdf_dir: /
         gitbook_pdf_name: dble-manual
-        font_install: sudo apt-get install fonts-noto-cjk
-        prepare_install: sudo apt-get install -y calibre fonts-arphic-ukai fonts-arphic-uming
+        font_install: sudo apt-get install fonts-noto-cjk ttf-mscorefonts-installer
+        prepare_install: sudo add-apt-repository universe && sudo apt update && sudo apt-get install calibre fonts-arphic-gbsn00lp
