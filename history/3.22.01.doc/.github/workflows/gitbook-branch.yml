@@ -1,0 +1,24 @@
+name: 'Gitbook-Branch'
+
+on:
+  push:
+    branches:
+      - '[0-9]+.[0-9]+.[0-9]+.doc'  #eg: 2.20.04.doc
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout action
+      uses: actions/checkout@v4
+ 
+    - name: Gitbook Action
+      uses: zanderzhao/gitbook-action@v1.2.4 # https://github.com/ZanderZhao/gitbook-action/releases 
+      with:                                # Just example, click above, use latest please
+        token: ${{ secrets.PUBLISH_TOKEN }}
+        time_zone: Asia/Shanghai   # set time zone
+        source_branch: ${{ github.ref_name }}  
+        publish_push_force: true
+        publish_dir: /history/${{ github.ref_name }}/
+        gitbook_pdf: true
+        gitbook_pdf_dir: /
+        gitbook_pdf_name: dble-manual
