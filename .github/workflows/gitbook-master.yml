@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: RisingInIris2017/cjk-fonts-action@v1  
+      - uses: RisingInIris2017/cjk-fonts-action@v1.0.7 
       - uses: zanderzhao/gitbook-action@v1.2.4 # https://github.com/ZanderZhao/gitbook-action/releases 
         with:
           token: ${{ secrets.PUBLISH_TOKEN }}
