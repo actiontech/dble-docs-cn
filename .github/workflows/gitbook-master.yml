@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: RisingInIris2017/cjk-fonts-action@v1  
       - uses: zanderzhao/gitbook-action@v1.2.4 # https://github.com/ZanderZhao/gitbook-action/releases 
-      	with:                                # Just example, click above, use latest please 
+        with:
           token: ${{ secrets.PUBLISH_TOKEN }}
           time_zone: Asia/Shanghai   # set time zone
           source_branch: master             # clone source master 
