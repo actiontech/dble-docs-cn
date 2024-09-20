@@ -4,6 +4,7 @@ if [ ! -d "/root/.fonts" ] ; then
     echo -e "create ~/.fonts/ \n"
 fi
 
+sudo apt-get install -y wget unzip
 # Download
 
 wget -O SourceHanSansHWSC.zip -nv https://github.com/adobe-fonts/source-han-sans/releases/download/2.004R/SourceHanSansHWSC.zip
