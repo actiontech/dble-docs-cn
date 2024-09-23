@@ -1,5 +1,5 @@
 {
-    "plugins": ["expandable-chapters", "splitter", "back-to-top-button","github","popup","versions-select","yahei"],
+    "plugins": ["expandable-chapters", "splitter", "back-to-top-button","github","popup","versions-select"],
     "pluginsConfig": {
         "fontsettings": {
             "theme": "sepia",
